@@ -1,0 +1,124 @@
+<div class="layout w600" node-name="signDialog">
+    <div class="t-close"></div>
+    <div class="layout-title">编辑内容><span>公司招牌</span></div>
+    <div class="layout-con">
+        <div class="layout-info" node-name="companyLogo">
+            <h2>公司LOGO</h2>
+
+            <div class="logo-box">
+                <dl>
+                    <dt class="com-logo">
+                    <p><img src="{{logourl}}"/></p>
+                    </dt>
+                    <dd>
+                        <a href="javascript:;" class="uploadBtn">上传</a>
+                        <a href="javascript:;" class="aDelBtn" style="display: {{isShowDel}}">删除</a>
+
+                        <p>请上传.jpg,jpeg,gif,png格式图片，160x80效果的图片最佳</p>
+                    </dd>
+                </dl>
+            </div>
+            <!--点击上传后出现的框 -->
+            <div class="updown-file-box" style="display: none">
+                <a href="javascript:;" class="uploadBtn" id="logoUploadBtn">选择文件</a><span class="txt">未选择任何文件</span>
+
+                <p class="mT10">请上传.jpg,jpeg,gif,png格式图片，对上传图片不做裁切，上传160×80效果的图片最佳，上传图片不大于200k。</p>
+
+                <div class="textR">
+                    <a href="javascript:;" class="uploadBtn" node-name="upload">上传</a>
+                    <a href="javascript:;" class="uploadBtn" node-name="undo">撤消</a>
+                </div>
+            </div>
+        </div>
+        <div class="layout-info" node-name="companyName">
+            <h2>公司名称</h2>
+
+            <div class="layout-info-con">
+                <div class="chkwidth">
+                    <span class="checkBox {{{showCompanyName}}}"><em></em><label>显示公司名称</label></span>
+                </div>
+                <div class="selbox">
+                    <select name="wordType">
+                        {{#fontType}}
+                        {{{setFontType}}}
+                        {{/fontType}}
+                    </select>
+                </div>
+                <div class="selbox">
+                    <select name="wordSize">
+                        {{#fontSize}}
+                        {{{setFontSize}}}
+                        {{/fontSize}}
+                    </select>
+                </div>
+                <div class="chkwidth mL18">
+                    <span class="checkBox {{{setFontBold}}}"><em></em><label>加粗</label></span>
+                    <span class="checkBox {{{setFontStyle}}}"><em></em><label>斜体</label></span>
+                </div>
+                <div class="bgColor mT4" node-name="colorjoeWrap">
+                    <input type="text" node-name="colorjoe" data-color="{{companyname.color}}"><!-- <em style="background:{{backgroundCollor}}" node-name="colorjoe" data-color="{{companyname.color}}"></em> -->
+                </div>
+            </div>
+        </div>
+        <div class="layout-info" node-name="signHeight">
+            <h2>招牌高度</h2>
+            <div class="layout-info-con">
+                <div class="radioBox">
+                    {{#signHeight}}
+                    <span class="radioCon {{{signSelectedHeight}}}" data-val="{{val}}"><em></em><label>{{text}}</label></span>
+                    {{/signHeight}}
+                </div>
+            </div>
+        </div>
+        <div class="layout-info" node-name="signList">
+            <h2>招牌背景</h2>
+
+            <div class="layout-info-con">
+                <div class="radioBox">
+                    <span class="radioCon {{{setDefaultSign}}}"><em></em><label>默认招牌</label></span>
+                    <span class="radioCon {{{setUserSign}}}"><em></em><label>自定义</label></span>
+                </div>
+                <!--默认招牌-->
+                <div class="signBg mT4" style="display:{{#showUserSign}}{{setDefaultSign}}{{/showUserSign}}"
+                     node-name="defaultSign">
+                    <p class="signBg-pic"><img src="{{defaultBg}}"/></p>
+                </div>
+                <!--自定义-->
+                <div style="display:{{#showUserSign}}{{setUserSign}}{{/showUserSign}}" node-name="userSign">
+                    <!-- 选择图片 -->
+                    <div class="updown-pic">
+                        <dl>
+                            <dt><a href="javascript:;" class="uploadBtn">选择图片</a></dt>
+                            <dd>
+                                <p>（1）支持.jpg,jpeg,gif,png格式图片，高度限<em class="wrapSignHeight">{{height}}</em>像素，最大5M</p>
+
+                                <p>（2）招牌宽度为<span class="blue">1920像素</span></p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!--点击 选择图片 选择文件-->
+                    <div class="updown-file-box" style="display: none">
+                        <a href="javascript:;" class="uploadBtn" id="signUploadBtn">选择文件</a><span class="txt">未选择任何文件</span>
+
+                        <p class="mT10">（1）支持.jpg,jpeg,gif,png格式图片，高度限<em class="wrapSignHeight">{{height}}</em>像素，最大5M</p>
+
+                        <p>（2）招牌宽度为<span class="blue">1920像素</span></p>
+
+                        <div class="textR">
+                            <a href="javascript:;" class="uploadBtn" node-name="upload">上传</a>
+                            <a href="javascript:;" class="uploadBtn" node-name="undo">撤消</a>
+                        </div>
+                    </div>
+                    <!-- 图片显示区域 -->
+                    <div class="signBg mT4" style="display: {{isShowUserImg}}" node-name="customImg">
+                        <p class="signBg-pic" noda-name="imgShowWrap"><img src="{{#signBjImg}}{{setUserSign}}{{/signBjImg}}"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="confirm">
+            <button type="button" class="Save">保存</button>
+            <button type="button" class="Cancel">取消</button>
+        </div>
+    </div>
+</div>

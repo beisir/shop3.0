@@ -1,0 +1,926 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>大图页改版</title>
+    <link href="http://style.org.hc360.com/css/detail/mysite/siteconfig/pxk/default.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="http://style.org.hc360.com/css/detail/mysite/siteconfig/new_product/bigImgStyle.css"/>
+    <style>
+
+        .check-num-box a,.check-price-box a{color:#333;text-decoration:none}
+
+        .check-num-box a:hover,.check-price-box a:hover{text-decoration:none}
+
+        .check-num-box{width:560px;height:auto;background:#fff;border-radius:4px;padding-bottom:10px;font-family: "Microsoft YaHei" !important;z-index: 100000000000;}
+        .check-num{background-color:#fff;font-size:14px;border-radius:4px;width:520px;height:auto;position:relative;font-family:"Microsoft YaHei";color:#333;padding:0 20px;}
+        .check-num p{font-family:"Microsoft YaHei"}
+        .close_window{width: 59px;height: 98px;position:absolute;right: 0;top: -98px;background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/new_product/xunjia-new/l-more.png) no-repeat 0 -189px;cursor:pointer;}
+        .close_window:hover{background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/new_product/xunjia-new/l-more.png) no-repeat -66px -189px;}
+        .check-num .title,.inquiry_popup .title,.check-price-box .title{font-size:24px;line-height:70px;height:70px;width:520px;border-bottom:1px solid #e5e5e5;position:relative;}
+        .check-num .title span.t-left{width:5px;height:24px;display:inline-block;position: absolute;left:-20px;top:25px;background:#d11120;}
+        .check-num .word-box{position:relative;overflow:hidden;}
+        .check-num .word1{position:relative;padding-bottom: 10px}
+        .check-num .word1 .p,.check-num .word3 .p{font-size:14px;width:520px;height:36px;line-height:40px;vertical-align:middle;position:relative}
+        .check-num .word1 .p em.warning{position: absolute;left:110px;top:2px;display:none;width:199px;height:38px;}
+        .check-num .word1 .w320 em.warning{width:319px}
+        .check-num .word1 .p em strong,.check-num .word2 .p .hide strong,.inquiry_form ul li.inquiry_form_con .inquiry_form_con_tip strong{width:14px;height:14px;vertical-align: middle;display: inline-block;background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/new_product/xunjia-new/l-more.png) no-repeat -60px 0;margin-right:4px;margin-bottom:2px;}
+        .check-num .word-box .word1 .tel2 em{font-weight:bold;}
+        .check-num .word1 .p span,.check-num .word3 .p span{display:block;height:26px;float:left;text-align:center}
+        .check-num .word1 .p b{width:14px;height:14px;margin:14px 4px 4px 6px;display:inline-block;vertical-align:middle;float:left;background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/new_product/xunjia-new/l-more.png) no-repeat;}
+        .check-num .word1 .p em{position:absolute;left:81px;top:0px}
+        .check-num .word1 .sate b{background-position:0px -58px}
+        .check-num .word1 .name b{background-position:0px -78px}
+        .check-num .word1 .tel1 b{background-position:0px -99px}
+        .check-num .word1 .p .itemxunp{margin-left:145px}
+        .check-num .word1 .name .l-qq{width:14px;height:16px;display: inline-block;background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/new_product/xunjia-new/l-more.png) no-repeat 0 0;float:none;margin:0 6px 0;}
+        .check-num .word1 .name .l-ff{width:16px;height:16px;display: inline-block;background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/new_product/xunjia-new/l-more.png) no-repeat -23px 0;float:none;}
+
+
+    </style>
+    <link rel="stylesheet"  type="text/css"  href="http://style.org.hc360.com/css/detail/mysite/siteconfig/new_product/detaiAlert.css" />
+    <style type="text/css">
+        .proTopBox{height:90px; background:#fff; border-bottom:1px solid #ee2e2c;}
+
+        .proTopBoxCon{height:48px; padding:21px 0; margin:0 auto; width:1190px;}
+
+        .proTopBoxCon .logoBox{height:48px;width:160px;float: left;}
+
+        .proTopBoxCon .logoBox a{display:block;height:48px;width:160px;background: url(http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/NewProIco.png) -270px -1px;}
+
+        .part-search{width:100%;height:70px;background:#fff;padding-top:20px;margin-bottom:10px;}
+
+        .logo{float:left;margin-right:162px;}
+
+        .logo-img,.goods-tit span b,.com-xx-box .com-xx p b{background:url(http://style.org.hc360.cn/images/detail/mysite/siteconfig/SY-shop/more-little.png) no-repeat;}
+
+        .logo-img{background-position:0px 0px;width:148px;height:48px;display:block}
+
+        .search{float:left;width:580px;padding-left: 40px;padding-top: 2px;height: 66px;}
+
+        .search-box{width: 700px;height:40px;}
+
+        .search input{width:480px;height:32px;border: 2px solid #e5e5e5;border-right:none;line-height:32px;color:#A8A8A8;padding-left:10px;float:left;display: inline-block;}
+
+        .search label{float:left}
+
+        .search label button{width:86px;height:36px;background:#018BF6;text-align: center;line-height:34px;color:#fff;font-size:14px;display: inline-block;border:none;cursor:pointer}
+
+        .ht-words{color: #999;float:left;}
+
+        .hot-word{z-index:10;font-size: 12px;padding-top: 4px;}
+
+        .hot-word ul{overflow:hidden;float: left;overflow: hidden;}
+
+        .hot-word ul li{float:left;margin:0 10px;max-width: 90px;height: 20px;/*line-height:20px;*/}
+
+        .hot-word ul li a{color:#999;max-width: 75px;height: 20px;display:block;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;-moz-binding:url('ellipsis.xml#ellipsis');overflow:hidden;}
+
+        .hot-word ul li a:hover{color:#ee2e2c; text-decoration:none;}
+
+        .hot-word span.more{cursor: pointer;display:block;float:left;color:#999;padding-left:10px;height: 20px;position: relative;}
+
+        .hot-word span.more .showkey{background:#fff;padding:5px;border:1px solid #c7c7c7;position:absolute;top:18px;left:-200px;width:390px;z-index:9909}
+
+        .hot-word span.more .showkey a{display:inline-block;width:86px;line-height:180%;margin-right:5px;-o-text-overflow:ellipsis;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;color:#999}
+
+    </style>
+    <meta name="description" content="慧聪网（Hc360.com）供应商莱芜市万耀经贸有限公司提供：供应进口、国产食品级 阿斯巴甜、阿斯巴甜图片，包括供应进口、国产食品级 阿斯巴甜、阿斯巴甜高清图，细节图等。360行，行行在慧聪。">
+    <meta name="keywords" content=""></head>
+
+    <script src="http://style.org.hc360.cn/js/build/source/core/hc.common.js" type="text/javascript"></script>
+    <script>
+        var businUrl = "http://wqhgxkj2010.b2b.hc360.com/shop/businwindow.html";
+        var inquiryParamVO = {"areaName":"","areaid":"","businId":521792640,"businTitle":"","comeUrl":"","companyName":"","contact":"","isbusin":"","sellerProviderId":100024398173,"supcatId":"001022001","supcatName":"","sysFlag":"","telPhone":""};
+        var company_username ='wqhgxkj2010';
+        var scyps={
+            sc:{pageType:'pics',providerId:"100024398173",is3y:"0"},
+            b:{visitorType:""},
+            s:{userid:""}
+        }
+    </script>
+    <script src="http://style.org.hc360.cn/js/module/p4p/dist/p4p.b2b.shopLargeImage.js" type="text/javascript"></script>
+
+
+<body>
+
+<!--顶部条-->
+<div class="webTopNav" style="position:fixed; top:-800px;">
+    <ul class="TopNavUl">
+        <li class="Topitem_nav lastNav">
+            <a href="http://www.hc360.com/map-new.htm" class="lasticon" rel="nofollow">网站导航<s></s></a>
+            <!--导航2-->
+            <ul class="hc_web_nav" id="hcHomeDistrict" style="display: none;">
+                <li class="header_title">特色市场</li>
+                <li><a target="_blank" href="http://www.hc360.com/" onclick="return hcclick(\&quot;?hcdetail_supplyselflog=supplyself_Logged&amp;hcdetail_secondlog=hc_home_home\&quot;);">首页</a>
+                </li>
+                <li><a rel="nofollow" target="_blank" href="http://s.hc360.com/" onclick="return hcclick(&quot;?hcdetail_supplyselflog=supplyself_Logged&amp;hcdetail_secondlog=all_services_search&quot;);">搜索</a>
+                </li>
+                <li><a target="_blank" href="http://b2b.hc360.com/" onclick="return hcclick(\&quot;?hcdetail_supplyselflog=supplyself_Logged&amp;hcdetail_secondlog=hc_home_supply\&quot;);">供应</a>
+                </li>
+                <li><a target="_blank" href="http://b2b.hc360.com/buy/index.htm" onclick="return hcclick(\&quot;?hcdetail_supplyselflog=supplyself_Logged&amp;hcdetail_secondlog=hc_home_buy\&quot;);">求购</a>
+                </li>
+                <li><a href="http://www.hc360.com/cp/" target="_blank" onclick="return hcclick(\&quot;?hcdetail_supplyselflog=supplyself_Logged&amp;hcdetail_secondlog=all_services_portal\&quot;);">产品微门户</a>
+                </li>
+                <li><a target="_blank" href="http://cn.hc360.com/">企业大全</a></li>
+                <li><a target="_blank" href="http://top.hc360.com/">热搜</a></li>
+                <li><a target="_blank" href="http://m.hc360.com/">手机站</a></li>
+                <li><a target="_blank" href="http://js.hc360.com/">极速站</a></li>
+                <li><a target="_blank" href="http://b2b.hc360.com/xinchanpin/">新产品</a></li>
+                <li><a target="_blank" href="http://b2b.hc360.com/xingongsi/">新公司</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://www.y.hc360.com/">产业带</a></li>
+                <li class="header_title">专业市场</li>
+                <li><a rel="nofollow" target="_blank" href="http://market.hc360.com/wujin/">五金商城</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://market.hc360.com/lamp/">灯饰商城</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://mall.hc360.com/secu/">安防商城</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://market.hc360.com/bm/">建材商城</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://market.hc360.com/ec/">电子市场</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://market.hc360.com/chem/">化工市场</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://jr.hc360.com/">慧聪金融</a></li>
+                <li><a rel="nofollow" target="_blank" href="http://56.hc360.com/">慧聪物流</a></li>
+            </ul>
+
+        </li>
+    </ul>
+</div>
+
+<!--头部-->
+<div class="proTopBox">
+    <div class="proTopBoxCon">
+
+        <div class="logoBox">
+            <a data-useractivelogs="UserBehavior_supplyselflogo" href="http://www.hc360.com/"  onMouseDown="return hcclick('?hcdetail_enterpriselog=supplyself_viewpics_hclogo_sy')"  target="_blank"></a>
+        </div>
+        <div class="search">
+            <div class="search-box"  id="searchMod">
+            </div>
+            <div class="hot-word">
+                <span class="ht-words"><a href="http://top.hc360.com/"  target="_blank">热搜词：</a></span>
+            </div>
+        </div>
+
+        <div class="topRigBtn">
+            <a href="http://my.b2b.hc360.com/my/turbine/template/firstview,purchaseplan.html?buyerSourceId=my_rapid_release_buy" target="_blank" onclick="return hcclick('?hcdetail_enterpriselog=supplyself_viewpics_search_buy');" onmousedown="HC.UBA.sendUserlogsElement('UserBehavior_supplyself_viewpics_search_buy')">我要采购</a>
+            <a href="http://my.b2b.hc360.com/my/turbine/template/corcenter,business,businmain.html" target="_blank" onclick="return hcclick('?hcdetail_enterpriselog=supplyself_viewpics_search_sell');">我要供应</a>
+        </div>
+    </div>
+</div>
+
+<!--内容部分-->
+<div class="bigPicBox">
+    <!--当前位置-->
+    <div class="picLocation">
+        <a href="#" target="_blank">首页</a>
+        <em>></em>
+        <a href="#" target="_blank">供应信息</a>
+        <em>></em>
+        <a href="#" class="link1" target="_blank" title="">广东华纳斯实业有限公司</a>
+        <em>></em>
+        <a href="#" class="link2" target="_blank" title="">华纳斯高白亮度免喷涂银粉 耐高温300度超强金属质感银粉</a>
+    </div>
+
+
+    <!--<div class="adBox1"></div>-->
+    <!--广告位置-->
+    <div style="width:1190px; height:120px;margin-top: 0px;margin-right: auto;margin-bottom: 0px;margin-left: auto;overflow:hidden;">
+        <script type="text/javascript">
+            var cpro_id="u2785869";
+            (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"1000",rsi1:"120",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"0",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"140",pih:"90",ptp:"0"}
+        </script>
+        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+
+
+    <div class="bigPicBoxCon">
+        <div class="PicLeftBox">
+            <div class="bigPicLeft">
+                <div class="titBox">
+                    <span><a href="#" target="_blank">厂家直销室内阳台户外吊篮鸟巢 环保PE仿藤秋千单环保PE仿藤秋千单双成人藤编秋千厂家直销室内阳台户外吊篮鸟巢厂家直销室内阳台户外吊篮鸟巢 环保PE仿藤秋千单</a></span>
+                    <a href="#" target="_blank" class="detailBtn">查看商品详情></a>
+                    <a href="javascript:;" class="inquiryBtn" data-name="inquiryPrice">询底价</a>
+                </div>
+                <div class="bigPicLeftCon">
+                    <div class="imgContent" id="bigImgContainer">
+                        <a hrel="nofollow" href="#" class="imgLeft"></a>
+                        <a hrel="nofollow" href="#" class="imgRight"></a>
+                        <div class="arrowLeft" id="prevBtn">
+                            <a rel="nofollow" href="javascript:void(0);">
+                                <em>上一件商品</em>
+                            </a>
+                            <!--<a rel="nofollow" href="javascript:void(0);" class="leftNimg" style="display:none;"></a>-->
+                        </div>
+                        <div class="imgContentBox">
+                            <div class="imgContentBoxCon">
+                                <ul id="bigImgCon">
+                                    <li><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg"/></li>
+                                    <li><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg"/></li>
+                                    <li><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg"/></li>
+                                    <li><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg"/></li>
+                                    <li><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg"/></li>
+                                    <li>
+                                    <div id="baidu278" style="width:325px; height:220px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: auto;overflow:hidden;">
+                                        <script type="text/javascript">
+                                            var cpro_id = "u2785870";
+                                        </script>
+                                        <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                                    </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--<div class="endProBox">
+                                <h3>更多商品推荐</h3>
+                                <div class="">
+                                    <ul>
+                                        <li>
+                                            <dl>
+                                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg" alt="-"></a></dt>
+                                                <dd><a href="#" target="_blank">亚龙 新型面条机 鲜面条机</a></dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg" alt="-"></a></dt>
+                                                <dd><a href="#" target="_blank">亚龙 新型面条机 鲜面条机</a></dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg" alt="-"></a></dt>
+                                                <dd><a href="#" target="_blank">亚龙 新型面条机 鲜面条机</a></dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg" alt="-"></a></dt>
+                                                <dd></dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="arrowRig" id="nextBtn">
+                            <a rel="nofollow" href="javascript:;"><em>下一件商品</em></a>
+                            <!--<a rel="nofollow" href="javascript:;" class="rigNimg" style="display:none;"></a>-->
+                        </div>
+                    </div>
+                    <!--大图底部图片-->
+                    <div class="ImgBotCon" id="smallImgContainer">
+                        <a href="javascript:void(0);" class="ImgLeftArrow" style="display:none;"></a>
+                        <a href="javascript:void(0);" class="leftNimg"></a>
+                        <div class="BotCenter">
+                            <ul id="smallImgCon">
+                                <li><span class="imgCur"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></span></li>
+                                <li><span><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></span></li>
+                                <li><span><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></span></li>
+                                <li><span><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></span></li>
+                                <li><span><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></span></li>
+                            </ul>
+                        </div>
+                        <div class="BotRight">
+                            <a href="javascript:void(0);" class="ImgRigArrow"></a>
+                            <a href="javascript:void(0);" class="rigNimg" style="display:none;"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="botPrompt">请注意：本图片来自南康区温馨家缘家具销售中心提供的厂家直销室内阳台户外吊篮鸟巢 环保PE仿藤秋千单双成人藤编吊产品，图片仅供参考，厂家直销室内阳台户外吊篮鸟巢 环保PE仿藤秋千单双成人藤编吊产品会因为批次的不同可能与本图片不一致，请以收到的实物为准。</div>
+            </div>
+            <!--联盟广告-->
+            <div class="adBox2"></div>
+            <!--店内其他商品-->
+            <div class="bigPicBot">
+                <div class="botTit"><h3>相关推荐</h3></div>
+                <div class="botOtherCon">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--我的浏览记录-->
+            <!--<div class="bigPicBot">
+                <div class="botTit"><h3>我的浏览记录</h3></div>
+                <div class="botOtherCon">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><a href="#"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></a></dt>
+                                <dd class="proName"><a href="#" target="_blank">供应保达汽车尾灯 海马福美来二代供应保达汽车尾灯 海马福美来二代06-08</a></dd>
+                                <dd class="proPrice">&yen; 20.00</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>-->
+            <div class="similar-pro my-history" id="historyMod" style="display:none">
+                <div class="similar-pro-hd"><h2>我的浏览记录</h2></div>
+                <div class="similar-pro-con">
+                    <ul id="historyList">
+                    </ul>
+                </div>
+            </div>
+
+            <!--相关推荐-->
+            <div class="bigPicBot marBot30">
+                <div class="botTit"><h3>T恤相关推荐</h3></div>
+                <div class="reListBox">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>T恤热门商机</dt>
+                                <dd>
+                                    <a title="美能达数码印刷机" href="http://www.hc360.com/cp/meinengdashumayinshuaji.html" target="_blank">美能达数码印刷机</a>
+                                    <a title="A4数码印刷机" href="http://www.hc360.com/cp/a4shumayinshuaji.html" target="_blank">A4数码印刷机</a>
+                                    <a title="爱普生数码印刷机" href="http://www.hc360.com/cp/aipushengshumayinshuaji.html" target="_blank">爱普生数码印刷机</a>
+                                    <a title="箱包数码印刷机" href="http://www.hc360.com/cp/xiangbaoshumayinshuaji.html" target="_blank">箱包数码印刷机</a>
+                                    <a title="不干胶数码印刷机" href="http://www.hc360.com/cp/buganjiaoshumayinshuaji.html" target="_blank">不干胶数码印刷机</a>
+                                    <a title="平板数码印刷机" href="http://www.hc360.com/cp/pingbanshumayinshuaji.html" target="_blank">平板数码印刷机</a>
+                                    <a title="工业数码印刷机" href="http://www.hc360.com/cp/gongyeshumayinshuaji.html" target="_blank">工业数码印刷机</a>
+                                    <a title="彩色数码印刷机" href="http://www.hc360.com/cp/caiseshumayinshuaji.html" target="_blank">彩色数码印刷机</a>
+                                    <a title="3D数码印刷机" href="http://www.hc360.com/cp/3dshumayinshuaji.html" target="_blank">3D数码印刷机</a>
+                                    <a title="A3数码印刷机" href="http://www.hc360.com/cp/a3shumayinshuaji.html" target="_blank">A3数码印刷机</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>T恤相关商机</dt>
+                                <dd>
+                                    <a title="美能达数码印刷机" href="http://www.hc360.com/cp/meinengdashumayinshuaji.html" target="_blank">美能达数码印刷机</a>
+                                    <a title="A4数码印刷机" href="http://www.hc360.com/cp/a4shumayinshuaji.html" target="_blank">A4数码印刷机</a>
+                                    <a title="爱普生数码印刷机" href="http://www.hc360.com/cp/aipushengshumayinshuaji.html" target="_blank">爱普生数码印刷机</a>
+                                    <a title="箱包数码印刷机" href="http://www.hc360.com/cp/xiangbaoshumayinshuaji.html" target="_blank">箱包数码印刷机</a>
+                                    <a title="不干胶数码印刷机" href="http://www.hc360.com/cp/buganjiaoshumayinshuaji.html" target="_blank">不干胶数码印刷机</a>
+                                    <a title="平板数码印刷机" href="http://www.hc360.com/cp/pingbanshumayinshuaji.html" target="_blank">平板数码印刷机</a>
+                                    <a title="工业数码印刷机" href="http://www.hc360.com/cp/gongyeshumayinshuaji.html" target="_blank">工业数码印刷机</a>
+                                    <a title="彩色数码印刷机" href="http://www.hc360.com/cp/caiseshumayinshuaji.html" target="_blank">彩色数码印刷机</a>
+                                    <a title="3D数码印刷机" href="http://www.hc360.com/cp/3dshumayinshuaji.html" target="_blank">3D数码印刷机</a>
+                                    <a title="A3数码印刷机" href="http://www.hc360.com/cp/a3shumayinshuaji.html" target="_blank">A3数码印刷机</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>数码印刷机热门产品搜索</dt>
+                                <dd>
+                                    <a title="美能达数码印刷机" href="http://www.hc360.com/cp/meinengdashumayinshuaji.html" target="_blank">美能达数码印刷机</a>
+                                    <a title="A4数码印刷机" href="http://www.hc360.com/cp/a4shumayinshuaji.html" target="_blank">A4数码印刷机</a>
+                                    <a title="爱普生数码印刷机" href="http://www.hc360.com/cp/aipushengshumayinshuaji.html" target="_blank">爱普生数码印刷机</a>
+                                    <a title="箱包数码印刷机" href="http://www.hc360.com/cp/xiangbaoshumayinshuaji.html" target="_blank">箱包数码印刷机</a>
+                                    <a title="不干胶数码印刷机" href="http://www.hc360.com/cp/buganjiaoshumayinshuaji.html" target="_blank">不干胶数码印刷机</a>
+                                    <a title="平板数码印刷机" href="http://www.hc360.com/cp/pingbanshumayinshuaji.html" target="_blank">平板数码印刷机</a>
+                                    <a title="工业数码印刷机" href="http://www.hc360.com/cp/gongyeshumayinshuaji.html" target="_blank">工业数码印刷机</a>
+                                    <a title="彩色数码印刷机" href="http://www.hc360.com/cp/caiseshumayinshuaji.html" target="_blank">彩色数码印刷机</a>
+                                    <a title="3D数码印刷机" href="http://www.hc360.com/cp/3dshumayinshuaji.html" target="_blank">3D数码印刷机</a>
+                                    <a title="A3数码印刷机" href="http://www.hc360.com/cp/a3shumayinshuaji.html" target="_blank">A3数码印刷机</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>数码印刷机热门产品搜索</dt>
+                                <dd>
+                                    <a title="美能达数码印刷机" href="http://www.hc360.com/cp/meinengdashumayinshuaji.html" target="_blank">美能达数码印刷机</a>
+                                    <a title="A4数码印刷机" href="http://www.hc360.com/cp/a4shumayinshuaji.html" target="_blank">A4数码印刷机</a>
+                                    <a title="爱普生数码印刷机" href="http://www.hc360.com/cp/aipushengshumayinshuaji.html" target="_blank">爱普生数码印刷机</a>
+                                    <a title="箱包数码印刷机" href="http://www.hc360.com/cp/xiangbaoshumayinshuaji.html" target="_blank">箱包数码印刷机</a>
+                                    <a title="不干胶数码印刷机" href="http://www.hc360.com/cp/buganjiaoshumayinshuaji.html" target="_blank">不干胶数码印刷机</a>
+                                    <a title="平板数码印刷机" href="http://www.hc360.com/cp/pingbanshumayinshuaji.html" target="_blank">平板数码印刷机</a>
+                                    <a title="工业数码印刷机" href="http://www.hc360.com/cp/gongyeshumayinshuaji.html" target="_blank">工业数码印刷机</a>
+                                    <a title="彩色数码印刷机" href="http://www.hc360.com/cp/caiseshumayinshuaji.html" target="_blank">彩色数码印刷机</a>
+                                    <a title="3D数码印刷机" href="http://www.hc360.com/cp/3dshumayinshuaji.html" target="_blank">3D数码印刷机</a>
+                                    <a title="A3数码印刷机" href="http://www.hc360.com/cp/a3shumayinshuaji.html" target="_blank">A3数码印刷机</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div class="reListShow" style="display: none;">完整显示</div>
+                    <div class="reListHide" style="display: block;">隐藏</div>
+                </div>
+            </div>
+            <div class="adBox2"></div>
+            <div class="adBox3"></div>
+            <div class="similarxo">
+                <strong>提示：</strong>
+                您在慧聪网上采购商品属于商业贸易行为。以上所展示的信息由卖家自行提供，内容的真实性、准确性和合法性由发布卖家负责，请意识到互联网交易中的风险是客观存在的。推荐使用<a href="http://hfb.hc360.com" target="blank" rel="nofollow">慧付宝资金保障服务</a>，保障您的交易安全！
+            </div>
+        </div>
+        <div class="PicRigBox">
+            <!--商家信息-->
+            <div class="ParameteCon">
+                <div class="rigTit"><h4><a href="#" target="_blank">上海赞嘉数码科技有限公司</a></h4></div>
+                <div class="introCon">
+                    <ul>
+                        <li><span>所在地区：</span><p title="上海&nbsp;长宁区">上海&nbsp;长宁区</p></li>
+                        <li>
+                            <span>联系卖家：</span><p class="w138">位保利 先生</p>
+                            <a class="rigQQ" rel="nofollow" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=28716579&amp;site=qq&amp;menu=yes"></a>
+                        </li>
+                    </ul>
+                    <div class="topBot">
+                        <button type="button" class="showInquiryMessage" id="immediateInquiry">立即询价</button>
+                        <button type="button" id="findContact">查看联系方式</button>
+                        <button type="button" class="grayBtn">进入店铺</button>
+                        <button type="button" class="grayBtn">查看供应信息</button>
+                    </div>
+                </div>
+            </div>
+            <!--基本参数-->
+            <div class="ParameteCon">
+                <div class="rigTit"><h3>基本参数</h3></div>
+                <div class="ParameteTab">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr><th>产品认证：</th><td>3C认证  </td></tr>
+                        <tr><th>尺寸：</th><td>咨询  </td></tr>
+                        <tr><th>发光角度：</th><td>70  </td></tr>
+                        <tr><th>防护等级：</th><td>IP33  </td></tr>
+                        <tr><th>工作频率：</th><td>25  </td></tr>
+                        <tr><th>功率：</th><td>16w  </td></tr>
+                        <tr><th>光通量：</th><td>500lm  </td></tr>
+                    </table>
+                    <a href="#" target="_blank">查看更多商品说明</a>
+                </div>
+            </div>
+            <!--P4P广告-->
+            <div id="p4p_pic"></div>
+
+            <!--<div class="ImgRightBox">
+                <div class="RightBot">
+                    <dl>
+                        <dd>
+                            <div class="bwAdBox">
+                                <div class="bImgBox">
+                                    <a href="#" target="_blank" class="bwAdimg" id="imgBox">
+                                        <img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg" alt="1231" href="http://www.baidu1.com">
+                                    </a>
+                                    <div class="bImgTit" id="titleBox">
+                                        <span></span>
+                                        <p><a href="#" target="_blank">1231</a></p>
+                                    </div>
+                                </div>
+                                <div class="sImgBox">
+                                    <ul>
+                                        <li value="1"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></li>
+                                        <li value="2"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></li>
+                                        <li value="3"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></li>
+                                        <li value="4"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></li>
+                                        <li value="5"><img src="http://img003.hc360.cn/hb/MTQ3MTk0MTcwNDE2Mjg1NjM1NDc1OA==.jpg..220x220a.jpg"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <em class="searchad">广告</em>
+                </div>
+            </div>
+            <div class="rigAdBot2"><a href="#" title=""><img src="http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/bigImg/bigImgRigAd.png" /></a></div>-->
+            <!--产品分类-->
+            <div class="ParameteCon">
+                <div class="rigTit"><h3>优质商品推荐</h3></div>
+                <div class="yzList">
+                    <ul>
+                        <li><div class="hideImg"><a href="#" target="_blank"><img src="http://img006.hc360.cn/k3/M06/EB/B5/wKhQx1jvuICEaCpGAAAAAK6ZgGc886.jpg..180x180.jpg"></a></div><span><a href="#" target="_blank">汇骏时尚加厚塑料刷牙杯子洗漱杯 简约创意漱口杯情侣水杯</a></span></li>
+                        <li><div class="hideImg"><a href="#" target="_blank"><img src="http://img010.hc360.cn/k1/M04/CA/67/wKhQw1kK8imELtR1AAAAAA4mSxk140.jpg..180x180.jpg"></a></div><span><a href="#" target="_blank">蘑菇点点 宝宝学饮杯儿童水杯 吸管杯 婴儿防漏水杯 学生水壶H007</a></span></li>
+                        <li class="curHide"><div class="hideImg"><a href="#" target="_blank"><img src="http://img011.hc360.cn/k3/M0D/DF/3B/wKhQx1juxQOEAYNJAAAAAAIGDbU893.jpg..180x180.jpg"></a></div><span><a href="#" target="_blank">直销 儿童水壶吸管杯 手柄儿童学饮杯 户外把手宝宝塑料水杯</a></span></li>
+                        <li><div class="hideImg"><a href="#" target="_blank"><img src="http://img009.hc360.cn/k3/M0C/B4/86/wKhQv1kJX4WERMPuAAAAALCNc94260.jpg..180x180.jpg"></a></div><span><a href="#" target="_blank">玉米淀粉杯白色一次性杯子9OZ 可降解环保水杯</a></span></li>
+                        <li><div class="hideImg"><a href="#" target="_blank"><img src="http://img008.hc360.cn/k2/M0F/8C/F7/wKhQxVkBvreEG65SAAAAAIAvpHM900.jpg..180x180.jpg"></a></div><span><a href="#" target="_blank">酒店客房骨质瓷白色茶杯带盖 可加印LOGO 商务会议待客水杯</a></span></li>
+                    </ul>
+                </div>
+            </div>
+            <!--联盟广告-->
+            <div class="rigAdBot"></div>
+        </div>
+    </div>
+</div>
+<!--网站底部-->
+<div class="footerBox">
+    <div class="classify-box">
+        <div class="classify">
+            <span class="classify-cont">按字母分类 ：</span>
+            <a href="http://top.hc360.com/a-1.html" target="_blank">A</a>
+            <a href="http://top.hc360.com/b-1.html" target="_blank">B</a>
+            <a href="http://top.hc360.com/c-1.html" target="_blank">C</a>
+            <a href="http://top.hc360.com/d-1.html" target="_blank">D</a>
+            <a href="http://top.hc360.com/e-1.html" target="_blank">E</a>
+            <a href="http://top.hc360.com/f-1.html" target="_blank">F</a>
+            <a href="http://top.hc360.com/g-1.html" target="_blank">G</a>
+            <a href="http://top.hc360.com/h-1.html" target="_blank">H</a>
+            <a href="http://top.hc360.com/i-1.html" target="_blank">I</a>
+            <a href="http://top.hc360.com/j-1.html" target="_blank">J</a>
+            <a href="http://top.hc360.com/k-1.html" target="_blank">K</a>
+            <a href="http://top.hc360.com/l-1.html" target="_blank">L</a>
+            <a href="http://top.hc360.com/m-1.html" target="_blank">M</a>
+            <a href="http://top.hc360.com/n-1.html" target="_blank">N</a>
+            <a href="http://top.hc360.com/o-1.html" target="_blank">O</a>
+            <a href="http://top.hc360.com/p-1.html" target="_blank">P</a>
+            <a href="http://top.hc360.com/q-1.html" target="_blank">Q</a>
+            <a href="http://top.hc360.com/r-1.html" target="_blank">R</a>
+            <a href="http://top.hc360.com/s-1.html" target="_blank">S</a>
+            <a href="http://top.hc360.com/t-1.html" target="_blank">T</a>
+            <a href="http://top.hc360.com/u-1.html" target="_blank">U</a>
+            <a href="http://top.hc360.com/v-1.html" target="_blank">V</a>
+            <a href="http://top.hc360.com/w-1.html" target="_blank">W</a>
+            <a href="http://top.hc360.com/x-1.html" target="_blank">X</a>
+            <a href="http://top.hc360.com/y-1.html" target="_blank">Y</a>
+            <a href="http://top.hc360.com/z-1.html" target="_blank">Z</a>
+            <a href="http://top.hc360.com/0-9-1.html" target="_blank">0-9</a>
+        </div>
+    </div>
+    <div class="d-footer">
+        <p>
+            <a target="_blank" rel="nofollow" href="http://hcgroup.hc360.com/Chinese/index.asp">关于慧聪</a> | <a target="_blank" rel="nofollow" href="http://hcgroup.hc360.com/Chinese/fzjg.html">分支机构</a> | <a target="_blank" rel="nofollow" href="http://agent.hc360.com/">买卖通渠道</a> | <a target="_blank" href="http://www.hc360.com/map-new.htm">网站导航</a> | <a target="_blank" rel="nofollow" href="http://www.hc360.com/law.htm">法律声明</a> | <a target="_blank" rel="nofollow" href="http://help.hc360.com/">帮助中心</a> | <a target="_blank" href="http://www.hc360.com/cp/">产品微门户</a> | <a target="_blank" href="http://top.hc360.com/">产品库</a> |  <a target="_blank" href="http://www.hc360.com/toplist/">排行榜</a> | <a target="_blank" href="http://cn.hc360.com">企业大全</a> | <a target="_blank" href="http://m.hc360.com/supplyself/411655944.html">手机移动版</a> | <a target="_blank" href="http://js.hc360.com/supplyself/411655944.html">手机极速版</a>
+        </p>
+        <p>客服咨询热线：400-6360-888 (免长途费)　投诉热线：010-61723333 （工作时间：8:00-19:00）</p>
+        <p>互联网药品信息服务资格证书：（京）－经营性－2014－0015　海淀公安局网络备案编号：11010802015485</p>
+        <p>版权所有 慧聪网 <a target="_blank" rel="nofollow" href="http://www.hc360.com/icp.html">京ICP证010051号</a> 通用网址：hc360</p>
+        <p>Copyright&copy;2000-2016 hc360.com. All Rights Reserved</p>
+    </div>
+</div>
+
+<div id="inquiryMessageDialog" class="dAlertBoxNew w600" style="top:130%; display:none;">
+    <a class="closeBtn" data-close="1" data-query="clearMask"  onMouseDown="return hcclick('?hcdetail_supply=supplyself_close_1')" style="display:none;"></a>
+    <div class="dAlertBoxCon2">
+        <h3 class="h3Tit">我的询价单</h3>
+        <div class="Con2Box">
+            <ul>
+                <li><span><b>*</b>采购产品</span><div class="alertIbox"><input name="proTitle" placeholder="请输入采购产品名称" type="text" maxLength='50'></div></li>
+                <li><span><b>*</b>联系电话</span><div class="alertIbox"><input name="buyerTel" placeholder="请输入手机号码" type="text"  maxLength='11' ></div></li>
+            </ul>
+            <div class="alertBtnBox3"><a type="submit" onMouseDown="return hcclick('?hcdetail_supply=supplyself_submit_1')"  id="inquirymit">立即提交</a></div>
+        </div>
+    </div>
+    <a class="closeBtn" data-close="2" id="closePageTwo" data-query="clearMask" onMouseDown="return hcclick('?hcdetail_supply=supplyself_close_2')" style="display:none;"></a>
+    <div class="dAlertBoxCon2" style="display:none;">
+        <div class="dSuccBox">
+            <dl>
+                <dt><em></em>恭喜您，提交成功！</dt>
+                <dd>完善以下询价单信息，可以为您找到更合适的供应商哦！</dd>
+            </dl>
+        </div>
+        <div class="freeConBox">
+            <ul>
+                <li>
+                    <span><b>*</b>采购产品：</span>
+                    <div class="fConRig xjIBox">
+                        <input type="text" id="secProductInput" class="telInput" placeholder="请输入采购产品名称" maxLength="50"/>
+                        <em class="warning" style="display: none;"><strong></strong>请输入产品名称</em>
+                    </div>
+                </li>
+                <li>
+                    <span><b>*</b>采购数量：</span>
+                    <div class="fConRig xjIBox">
+                        <input type="text" id="amountInputnum" class="telInput" maxlength="6" value="" />
+                        <em class="warning" style="display: none;"><strong></strong>请输入采购数量</em>
+                    </div>
+                </li>
+                <li>
+                    <span><b>*</b>采购截止日期：</span>
+                    <div class="fConRig xjIBox">
+                        <input type="text" id="buyToDate" class="telInput" readOnly="true" value="" />
+                        <em class="warning" style="display: none;"><strong></strong>请选择采购截止日期</em>
+                    </div>
+                </li>
+                <li>
+                    <span class="pTop15">更多描述：</span>
+                    <div class="fConRig">
+                        <textarea placeholder="方便更好的为您匹配供应商，如：采购写字楼所用的工作椅500把" maxLength="45"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <span><b>*</b>手机号：</span>
+                    <div class="fConRig xjIBox">
+                        <input id="telnumber" maxlength="11" name="PHONE" class="telInput" onkeyup="this.value=this.value.replace(/\D/g,'')" onkeypress="if(event.keyCode &lt; 48 || event.keyCode &gt; 57) event.returnValue = false;" type="text"></input>
+                        <em id="telnumberTip" class="warning" style="display: none;"><strong></strong>请输入正确的手机号码</em>
+                    </div>
+                </li>
+                <li>
+                    <span><b>*</b>验证码：</span>
+                    <div class="fConRig xjIBox hei70">
+                        <input type="text" tabindex="2" placeholder="请输入验证码" name="captcha" id="inquriycaptcha" class="codeInput w100" maxlength="4"/>
+                        <span class="codeImgNew"><img id="validate_img" title="验证码" src=""></span>
+                        <a class="codeLink" id="refresh_Img">看不清，换一张</a>
+                        <em class="warning" id="graphicCode_Tip" style="display: none"><strong></strong>请输入验证码</em>
+                    </div>
+                </li>
+                <li>
+                    <span><b>*</b>短信验证码：</span>
+                    <div class="fConRig xjIBox hei70">
+                        <input id="valid_Code" maxlength="6" placeholder="请输入验证码" name="VALIDCODE" class="codeInput" onkeyup="this.value=this.value.replace(/\D/g,'')" onkeypress="if(event.keyCode &lt; 48 || event.keyCode &gt; 57) event.returnValue = false;" type="text"></input>
+                        <button id="phoneGet_Code" type="button" class="codeBtnNew" onMouseDown="return hcclick('?hcdetail_supply=supplyself_check_2_3y')">免费获取验证码</button>
+                        <p class="codePromptNew">为了安全，请输入验证码，我们将优先处理您的需求！</p>
+                        <em class="warning" id="validCode_Tip" style="display: none;"><strong></strong>请输入验证码</em>
+                    </div>
+                </li>
+            </ul>
+            <div class="alertBtnBox2"><a type="submit" onMouseDown="return hcclick('?hcdetail_supply=supplyself_delivery_2')"  id="inquirysub">完善提交</a></div>
+        </div>
+    </div>
+    <a class="closeBtn" data-close="3" data-query="clearMask" onMouseDown="return hcclick('?hcdetail_supply=supplyself_close_3')" style="display:none;"></a>
+    <div class="dAlertBoxCon2" style="display:none;">
+        <div class="dSuccBoxStep3">
+            <dl>
+                <dt><em></em>发送成功！</dt>
+                <dd>慧聪已收到您的需求，我们会尽快通知卖家联系您，同时会派出采购专员1对1为您提供服务，请您耐心等待！</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+<div class="check-num-box" id="corMessageDialog" style="display:none;position: absolute; left: 320.5px; top: 357px; z-index: 120001;">
+    <div class="check-num ">
+        <div class="title">
+            <span class="t-left"></span>
+            让慧聪网撮合专家为您解决采购难题
+        </div>
+        <div class="word1 word2">
+            <div class="p num">
+                <span>您采购的产品：</span>
+                <a href="http://reg.hc360.com/reg/info/first.html?sourcetypeid=3664" class="posAb" target="_blank" style="display:none"></a>
+                <input id="inquiryTitle" class="text-num" autocomplete="off" maxlength="20" type="text" value="热销有屏金属外放mp3播放器 内置有屏mp3 低价外单 插卡">
+                <em class="c-red warning" style="background-color: rgb(255, 255, 255);"><strong></strong>请输入采购产品</em>
+            </div>
+            <div class="p num">
+                <span>您的手机号码：</span>
+                <a href="http://reg.hc360.com/reg/info/first.html?sourcetypeid=3664" class="posAb" target="_blank" style="display:none"></a>
+                <input id="InqueryMobile" class="text-num text-num2" rel="txtQuickMobile" autocomplete="off" maxlength="20" type="text" value="请输入11位手机号码">
+                <div class="button">
+                    <a href="javascript:void(0)" onclick="submitInquiryMobile(jQuery('#InqueryMobile'),this);" rel="btnSubmitMobile">马上提交</a>
+                </div>
+                <em class="c-red warning" style="background-color: rgb(255, 255, 255);"><strong></strong>请输入手机号码</em>
+            </div>
+        </div>
+
+        <div class="dAlertBoxCon2" id="sendSuccess2" style="display:none">
+            <div class="dSuccBox">
+                <dl>
+                    <dt><em></em>恭喜您，提交成功！</dt>
+                    <dd>完善以下询价单信息，可以为您找到更合适的供应商哦！</dd>
+                </dl>
+            </div>
+            <div class="freeConBox">
+                <ul>
+                    <li>
+                        <span><b>*</b>采购产品：</span>
+                        <div class="fConRig xjIBox">
+                            <input type="text" id="secProductInput1" class="telInput" placeholder="请输入采购产品名称" maxlength="50">
+                            <em class="warning" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请输入采购产品</em>
+                        </div>
+                    </li>
+                    <li>
+                        <span><b>*</b>采购数量：</span>
+                        <div class="fConRig xjIBox">
+                            <input type="text" class="telInput" id="amountInputnum1" maxlength="6">
+                            <em class="warning" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请输入采购数量</em>
+                        </div>
+                    </li>
+                    <li>
+                        <span><b>*</b>采购截止日期：</span>
+                        <div class="fConRig xjIBox">
+                            <input type="text" id="buyToDate1" class="telInput" readonly="true" value="">
+                            <em class="warning" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请选择采购截止日期</em>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="pTop15">更多描述：</span>
+                        <div class="fConRig">
+                            <textarea placeholder="方便更好的为您匹配供应商，如：采购写字楼所用的工作椅500把" maxlength="45"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <span><b>*</b>手机号：</span>
+                        <div class="fConRig xjIBox">
+                            <input id="telnumber1" maxlength="11" name="PHONE" class="telInput" onkeyup="this.value=this.value.replace(/\D/g,'')" onkeypress="if(event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" type="text">
+                            <em id="telnumberTip" class="warning" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请输入正确的手机号码</em>
+                        </div>
+                    </li>
+                    <li>
+                        <span><b>*</b>验证码：</span>
+                        <div class="fConRig xjIBox hei70">
+                            <input type="text" tabindex="2" placeholder="请输入验证码" name="captcha" id="inquriycaptcha1" class="codeInput w100" maxlength="4">
+                            <span class="codeImgNew"><img id="validate_img1" title="验证码" src=""></span>
+                            <a class="codeLink" id="refresh_Img1">看不清，换一张</a>
+                            <em class="warning" id="graphicCode_Tip1" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请输入验证码</em>
+                        </div>
+                    </li>
+                    <li>
+                        <span><b>*</b>短信验证码：</span>
+                        <div class="fConRig xjIBox hei70">
+                            <input id="valid_Code1" maxlength="6" placeholder="请输入验证码" name="VALIDCODE" class="codeInput" onkeyup="this.value=this.value.replace(/\D/g,'')" onkeypress="if(event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" type="text">
+                            <button id="phoneGet_Code1" type="button" class="codeBtnNew" onmousedown="return hcclick('?hcdetail_supply=supplyself_check_2')">免费获取验证码</button>
+                            <p class="codePromptNew">为了安全，请输入验证码，我们将优先处理您的需求！</p>
+                            <em class="warning" id="validCode_Tip1" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请输入验证码</em>
+                        </div>
+                    </li>
+                </ul>
+                <div class="alertBtnBox2"><a type="submit" onmousedown="return hcclick('?hcdetail_supply=supplyself_contact_delivery_2')" id="inquirysub1">完善提交</a></div>
+            </div>
+            <!--END-->
+        </div>
+
+        <div class="dAlertBoxCon2" id="sendSuccess3" style="display: none">
+            <div class="dSuccBoxStep3">
+                <dl>
+                    <dt><em></em>发送成功！</dt>
+                    <dd>慧聪已收到您的需求，我们会尽快通知卖家联系您，同时会派出采购专员1对1为您提供服务，请您耐心等待！</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="title">
+            <span class="t-left"></span>
+            公司名片
+            <span class="sent-me">
+				<em></em><a href="" data-query="sendMSGToMobile" onmousedown="return hcclick('?hcdetail_supply=supplyself_contact_send')">发送到我的手机</a>
+			</span>
+        </div>
+        <div class="word-box">
+            <div class="word1 part1" id="dialogCorMessage">
+
+                <div class="p tel2">
+                    <b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">手机号</span><em class="c-red">：13249886470</em>
+                    <a id="noAnswerBtn" href="javascript:void(0);" onmousedown="return hcclick('?hcdetail_supply=supplyself_contact_noanswer')" class="telRigLink">电话无人接听怎么办</a>
+                </div>
+                <div class="p tel1">
+                    <b></b><span style="letter-spacing:2em;margin-right:-2em;">电话</span><em>：86-0752-3102961 &nbsp;&nbsp; 15220088509 &nbsp;&nbsp; </em>
+                </div>
+                <div class="p name">
+                    <b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">联系人</span><em>：吴焕涛&nbsp;总经办</em>				</div>
+                <div class="p sate">
+                    <b></b><span>公司名称</span><em>：深圳市德泰天下科技有限公司</em>
+                </div>
+            </div>
+
+            <div class="word2 word3 part2" id="dialogSendMessage" style="display: none; top: -100px;">
+                <div class="p num">
+                    <span>手机号码</span><em style="float:left;">:</em>
+                    <input class="text-num" id="cellphoneNumber" maxlength="11" type="text">
+                    <p class="hide" id="cellPhoneNumError" style="display:none;">
+                        <strong></strong>手机号码格式错误，请重新输入！
+                    </p>
+                </div>
+                <div class="p num yanzm">
+                    <span style="letter-spacing:0.3em;">验证码</span><em style="float:left;">:</em>
+                    <input type="hidden" id="validate_name" name="LoginTicket" value="lt-f983534936c49b7d13622d7826cb84db">
+                    <input class="text-num" name="ValidKey" id="captcha" maxlength="4" type="text">
+                    <div class="yanzm-img">
+                        <img width="110" height="40" id="validate_map" title="验证码" src="http://wsdetail.b2b.hc360.com/ValidImage.jsp?Seed=0.8956258346771998">
+                    </div>
+                    <a href="javascript:;" onclick="return false" id="refresh" class="change-more">换一换                                                                                                                                                                                                            </a>
+                    <p class="hide" style="display:none;" id="validate_error">
+                        <strong></strong>请输入验证码
+                    </p>
+                </div>
+                <div class="button1">
+                    <a data-query="back1">取消</a>
+                </div>
+                <div class="button2">
+                    <a href="javascript:void(0);" onclick="msgDownloadAjax(2);">确认</a>
+                </div>
+            </div>
+
+            <div class="succBoxNew validatesucc" style="display:none">
+                <dl>
+                    <dt><em></em>发送成功！</dt>
+                    <dd>慧聪已向您发送了短信，请查收！您也可扫描右边二维码，关注公众号接收名片消息，并且使用名片夹功能慧聪已向您发送了短信，请查收！您也可扫描右边二维码，关注公众号接收名片消息，并且使用名片夹功能</dd>
+                </dl>
+                <div class="succCodeImg" id="wechatContainer">
+                    <img src="http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/sCodeImg.jpg">
+                    <p>慧聪采购公众号</p>
+                </div>
+            </div>
+            <div id="sendFail2" class="word1" style="display:none">
+                <div class="tcbx1">
+                    <p class="tcbx1-1 error_num num_tip_no">
+                        超过次数限制!
+                    </p>
+                    <p class="tcbx1-2 tc">
+                        您也可以<a rel="nofollow" href="http://my.b2b.hc360.com/my/turbine/template/buycenter,business,supplydetailedit.html">发布采购计划</a>，让卖家主动找您！
+                    </p>
+                </div>
+            </div>
+            <div id="sendFail3" class="word1" style="display:none">
+                <div class="tcbx1">
+                    <p class="tcbx1-1 error_num">
+                        超过次数限制!<em>未登录用户仅可免费使用5次。</em>
+                    </p>
+                    <p class="tcbx1-2 tc" id="returnUrlNav"><a href="http://sso.hc360.com/ssologin?logincode=3&amp;loginparam=supplyend_ssotop&amp;ReturnURL=http://b2b.hc360.com/viewPics/supplyself_pics/521792640.html">登录</a>或<a href="javascript:varifyIdentity(2);">验证身份</a>，获得更多的使用权限！</p>
+                    <script type="text/javascript">
+                        var url = window.location.href;
+                        var pHtml = '<a href="http://sso.hc360.com/ssologin?logincode=3&loginparam=supplyend_ssotop&ReturnURL='+url+'">登录</a>或<a href="javascript:varifyIdentity(2);">验证身份</a>，获得更多的使用权限！';
+                        document.getElementById("returnUrlNav").innerHTML=pHtml;
+                    </script>
+                </div>
+            </div>
+            <div id="cInfoListBox2" class="cInfoListBox2" style="display:none">
+                <ul>
+                    <li><p>请输入手机号码，我们将通知卖家尽快联系您，同时为你提供更多1对1采购服务！</p></li>
+                    <li>
+                        <span>您的手机号码：</span>
+                        <div class="rigIbox"><input id="noAnswerPhone" type="text" value=""><em class="warning" style="display: none; background-color: rgb(255, 255, 255);"><strong></strong>请输入手机号码</em></div>
+                    </li>
+                    <li>
+                        <div class="IngoBtnBox4">
+                            <button id="noAnswerBack" type="button" class="btnLeft">取消</button>
+                            <button id="noAnswerBtnSubmit" type="button" onmousedown="return hcclick('?hcdetail_supply=supplyself_contact_noanswer_ok')">确认发送</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="succBoxNew" id="succBoxNew" style="display:none">
+                <dl>
+                    <dt><em></em>发送成功！</dt>
+                    <dd>慧聪已收到您的需求，我们会尽快会通知卖家联系您，同时会派出采购专员1对1为您提供服务，请您耐心等待。</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="closeBtn" data-query="clearMask">
+        </div>
+    </div>
+</div>
+
+<!--<div class="dAlertBoxBg consultBg"></div>-->
+<script type="text/javascript" src="http://style.org.hc360.cn/js/build/source/core/hc.control.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- 搜索栏一 begin -->
+<div class="layout w600">
+	<div class="t-close"></div>
+    <div class="layout-title">编辑内容><span>搜索栏</span></div>
+    <div class="layout-con">
+        <div class="layout-info">
+            <h2>字体颜色</h2>
+            <div class="layout-info-con">
+                <div class="bgColor">
+                    颜色：<input type="text" data-node-name="fontColor" data-color="{{fontColor}}"><!-- <em data-node-name="fontColor" style="background:{{fontColor}}" data-color="{{fontColor}}"></em> -->
+                </div>
+            </div>
+        </div>
+        <div class="layout-info" node-name="crumbsList">
+            <h2>背景设置</h2>
+            <div class="layout-info-con" data-node-name="searchTab">
+                <span node-name="defaultBg" class="radioCon {{^bgType}}curRadioBox{{/bgType}}"><em></em><label>默认背景</label></span>
+                <span node-name="customBg" class="radioCon {{#bgType}}curRadioBox{{/bgType}}"><em></em><label>自定义</label></span>
+            </div>
+            <div class="layout-info-con paddTop30" data-node-name="customBgColorDiv" style="display: {{#bgType}}block{{/bgType}}{{^bgType}}none{{/bgType}}">
+                <div class="bgColor">
+                    背景颜色：<input type="text" data-node-name="bjColor" data-color="{{_background}}"><!-- <em data-node-name="bjColor" style="background:{{_background}}" data-color="{{_background}}"></em> -->
+                </div>
+            </div>
+        </div>
+        <div class="confirm">
+        	<button type="button" class="Save">保存</button>
+            <button type="button" class="Cancel">取消</button>
+        </div>
+    </div>
+</div>
+<!-- 搜索栏一 end -->

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>预览</title>
+    <link rel="stylesheet" type="text/css" id="lnkThemeStyle" />
+    <link rel="stylesheet" type="text/css" href="http://style.org.hc360.com/css/detail/mysite/siteconfig/newPro/mallBase.css" />
+</head>
+
+<body>
+    <script id="template_region_percent_25" type="x-tmpl-mustache">
+        <div style="float:{{#layout}}left{{/layout}}{{^layout}}right{{/layout}}" class="proBox25left">
+            <div class="columnbox">
+            	{{#showTitleAndBorder}}
+                <div class="Box25LeftTit">
+                    <h4>{{title}}</h4>
+                    <a href="http://tyc5010.b2b.hc360.com/shop/credit.html" target="_blank">更多&gt;</a>
+                </div>
+                {{/showTitleAndBorder}}
+                <div class="leftBoxCon zsBox">
+                    <ul>
+                        {{#data}}
+                        <li>
+                            <div class="zdImgBox zsBor{{type}}">
+                                <a title="{{title}}" href="{{link}}" target="_blank">
+                                    <img alt="{{title}}" src="{{pic}}">
+                                </a>
+                            </div>
+                            <p><a title="{{title}}" href="{{link}}" target="_blank">{{title}}</a></p>
+                        </li>
+                        {{/data}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="template_region_percent_75" type="x-tmpl-mustache">
+        <div style="float:{{#layout}}right{{/layout}}{{^layout}}left{{/layout}}" class="proBox75Rig">
+            <div class="columnbox">
+            	{{#showTitleAndBorder}}
+                <div class="Box25LeftTit">
+                    <h4>{{title}}</h4>
+                    <a href="http://tyc5010.b2b.hc360.com/shop/credit.html" target="_blank">更多&gt;</a>
+                </div>
+                {{/showTitleAndBorder}}
+                <div class="leftBoxCon zsBox">
+                    <ul>
+                        {{#data}}
+                        <li>
+                            <div class="zdImgBox zsBor{{type}}">
+                                <a title="{{title}}" href="{{link}}" target="_blank">
+                                    <img alt="{{title}}" src="{{pic}}">
+                                </a>
+                            </div>
+                            <p><a title="{{title}}" href="{{link}}" target="_blank">{{title}}</a></p>
+                        </li>
+                        {{/data}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+    <div class="newWrap">
+        <div class="proMainBox clearfix" data-wrap>
+        </div>
+    </div>
+</body>
+
+</html>

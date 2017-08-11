@@ -1,0 +1,302 @@
+<!--版式/布局-->
+[topOperation]
+<div class="editBoxCon" style="display: none" node-name="layout">
+    <div class="editBoxLeft">
+        <dl>
+            <dd class="ddCur">网站首页版式</dd>
+        </dl>
+    </div>
+    <div class="editBoxRight">
+        <div class="editFormat">
+            <div class="FormatBox">
+                <span class="Format2Img {{rightLayout}}"></span>
+                <p>侧栏在左</p>
+            </div>
+            <div class="FormatBox">
+                <span class="Format1Img {{leftLayout}}"></span>
+
+                <p>侧栏在右</p>
+            </div>
+            <p class="ForeatPrompt">注：侧栏在右的布局模式，仅在首页模板中生效</p>
+        </div>
+    </div>
+</div>
+
+<!--选择模板-->
+<div class="editBoxCon" style="display: none" node-name="templateWrap">
+    <div class="editBoxLeft">
+        <dl>
+            <dd class="ddCur">当前模板</dd>
+            <dd>全部模板</dd>
+            <dd>我的模板库</dd>
+        </dl>
+    </div>
+    <div class="editBoxRight">
+        <!--当前模板-->
+        <div class="editTemplate">
+            <div class="curTemplate">
+                <img src="{{thumbnail}}" alt="{{tplName}}">
+            </div>
+            <button type="button">恢复当前模板样式</button>
+        </div>
+        <!--全部模板-->
+        <div class="editTemplate" style="display: none">
+            <div class="TemplateColor">
+                <div class="hyClass">
+                    <a href="javascript:;">免费用户</a><em>|</em><a href="javascript:;">收费用户</a><em>|</em><a href="javascript:;">商营通用户</a>
+                </div>
+                <ul>
+                    <li class="tColor1"><em></em></li>
+                    <li class="tColor2"><em></em></li>
+                    <li class="tColor3"><em></em></li>
+                    <li class="tColor4"><em></em></li>
+                    <li class="tColor5"><em></em></li>
+                    <li class="tColor6"><em></em></li>
+                </ul>
+            </div>
+            <div class="TemplateImg">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <!--我的模板库-->
+        <div class="editTemplate" style="display: none">
+            <p class="TempPrompt">提示：您可设置满意的风格至我的模板库，以便将来继续使用</p>
+            <div class="TemplateImg">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!--风格设置-->
+<div class="editBoxCon" style="display: none" node-name="templateStyle">
+    <div class="editBoxLeft">
+        <dl>
+            <dd class="ddCur">设置内背景图</dd>
+            <dd>设置外背景图</dd>
+        </dl>
+    </div>
+    <div class="editBoxRight">
+        <!-- 设置内外背景图 -->
+        <div class="bgManageBox">
+            <!-- 设置内背景图 -->
+            <div class="bgManage" node-name="insidebackground">
+                <div class="bgImgBox" node-name="recommBg">
+                    <dl>
+                        <dt><em></em>推荐背景图：</dt>
+                        <dd>
+                            <ul node-name="insideBg" data-bglogo>
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="bgImgBox" node-name="uploadBg">
+                    <dl>
+                        <dt><em></em>上传背景图：</dt>
+                        <dd>
+                            <div class="updateImgBox"><span><img src=""></span></div>
+                            <div class="updateBtn">
+                                <a href="javascript:;" id="insideSelectBtn">选择文件</a>
+
+                                <p>请上传jpg、jpeg、gif、png格式，1M以内的图片</p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="bgImgBox" node-name="bgColor">
+                    <dl>
+                        <dt><em></em>选择背景色：</dt>
+                        <dd>
+                            <input type="text" class="bgColorBox" data-color=""><!-- <div class="bgColorBox" data-color=""></div> -->
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- 设置内背景图 END-->
+            <!-- 设置外背景图 -->
+            <div class="bgManage" style="display: none" node-name="outsidebackground">
+                <div class="bgImgBox" node-name="vipBg">
+                    <dl class="vipBgBox">
+                        <dt><em></em>使用VIP会员专用外背景图：
+                        <p>使用VIP背景图，更换模板后网站仍显示您选中的VIP外背景</p></dt>
+                        <dd>
+                            <ul node-name="outsideVipBg" data-bglogo>
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="bgImgBox" node-name="recommBg">
+                    <dl>
+                        <dt><em></em>推荐背景图：</dt>
+                        <dd>
+                            <ul node-name="outsideBg" data-bglogo>
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="bgImgBox" node-name="uploadBg">
+                    <dl>
+                        <dt><em></em>上传背景图：</dt>
+                        <dd>
+                            <div class="updateImgBox"><span><img src=""></span></div>
+                            <div class="updateBtn">
+                                <a href="javascript:;" id="outsideSelectBtn">选择文件</a>
+
+                                <p>请上传jpg、jpeg、gif、png格式，5M以内的图片</p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="bgImgBox" node-name="bgColor">
+                    <dl>
+                        <dt><em></em>选择背景色：</dt>
+                        <dd>
+                            <input type="text" class="bgColorBox" data-color=""><!-- <div class="bgColorBox" data-color=""></div> -->
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!--设置外背景图 END -->
+        </div>
+        <!-- 设置内外背景图 END-->
+        <!--效果示例-->
+        <div class="bgManageRig">
+            <h3>效果示例：</h3>
+
+            <div class="bgmImg"><img src="http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/zImg2.png"/>
+            </div>
+        </div>
+        <!--效果示例end-->
+    </div>
+</div>
+
+
+<!--导航管理-->
+<div class="editBoxCon" style="display: none" node-name="navManage">
+    <div class="editBoxLeft">
+        <dl>
+            <dd class="ddCur">导航管理</dd>
+        </dl>
+    </div>
+    <div class="editBoxRight">
+        <div class="navManage">
+            <div class="navTit">
+                <span class="w100">导航名称</span>
+                <span class="w100">显示状态</span>
+                <span class="w100">排序</span>
+                <span class="w100 padd30">操作</span>
+            </div>
+            <div class="navManageList">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="navManageRig">
+            <h3>效果示例：</h3>
+
+            <div class="navmImg"><img
+                    src="http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/zImg1.png"/></div>
+        </div>
+    </div>
+</div>
+[/topOperation]
+
+<!--全部模板-->
+<div style="display: none" node-name="allTempUl">
+    [allTempUl]
+    {{#publicTemData}}
+    <li templateEntity="{{getTemplateEntity}}">
+        <div class="mbName"><p></p><span>{{name}}</span></div>
+        <img src="{{thumbnail}}"/>
+
+        <div class="tImgPrompt">
+            <div class="tBg"></div>
+            <span><a href="javascript:;">应用到炫铺</a></span>
+        </div>
+    </li>
+    {{/publicTemData}}
+    [/allTempUl]
+</div>
+
+
+<!--自定义模板-->
+<div style="display: none" node-name="myTempUl">
+    [myTempUl]
+    <ul>
+        {{#myTemData}}
+        <li templateEntity="{{getTemplateEntity}}">
+            <div class="mbName"><p></p><span>{{name}}</span></div>
+            <img src="{{thumbnail}}"/>
+
+            <div class="tImgPrompt">
+                <div class="tBg"></div>
+                <span><a href="javascript:;" node-name="application">应用</a>|<a href="javascript:;"
+                                                                               node-name="named">命名</a>|<a
+                        href="javascript:;" node-name="del">删除</a></span></div>
+        </li>
+        {{/myTemData}}
+    </ul>
+    [/myTempUl]
+</div>
+
+
+<!--导航数据-->
+<div style="display: none" node-name="navUl">
+    [navUl]
+    {{#navData}}
+    <li navSetting="{{getSettings}}">
+        <span node-name="editname" style="display: none"><input type="text" value="{{name}}"/><em class="navEdit"></em></span>
+        <span node-name="showName"><p>{{name}}</p><em class="navEdit"></em></span>
+        <span node-name="showStatus"><em class="{{isShowNav}}"></em>显示</span>
+        <span node-name="orderEdit"><em class="nUp" style="display: {{upHide}}"></em><em class="nDown"
+                                                                                         style="display: {{doneHide}}"></em></span>
+        <span><a href="{{url}}" class="zxBtn" target="_blank">装修页面</a></span>
+    </li>
+    {{/navData}}
+    [/navUl]
+</div>
+
+<!--修改模板名称-->
+<div style="display: none" node-name="modifyTemp">
+    [modifyTemp]
+    <div class="layout w350">
+        <div class="layout-con">
+            <div class="layout-info">
+                <div class="custom-box mT10">
+                    自定义模板名称
+                    <input type="text" name="title" class="customInput" value="{{#templateName}}{{templateName}}{{/templateName}}">
+                    <span class="prompt" style="display: none"></span>
+                </div>
+            </div>
+            <div class="confirm">
+                <button type="button" class="Save">保存</button>
+                <button type="button" class="Cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    [/modifyTemp]
+</div>
+
+[guider]
+<div class="tasksBox">
+    <h1>建站常用功能<span class="close"></span></h1>
+    <div class="content2 cBg_2">
+        <p>尊敬的客户，您好！</p>
+        <p class="tinde">欢迎使用自助建站平台！如果您在使用中有任何操作问题，都可以找我解决。下面是一些建站常用功能，您可以点击进行学习！</p>
+        <div class="feaListsbx">
+            <iframe src="http://b2b.hc360.com/mmtTrade/xp3ShopHelp/taskListIframe.html" width="100%" height="280" allowtransparency="true" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="botLink">
+            <a href="http://bbs.hc360.com/forum-513-1.html" onmousedown="return hcclick('?hcdetail_enterpriselog=help_bbs')" target="_blank">进入论坛，分享操作经验</a>
+        </div>
+    </div>
+</div>
+[/guider]

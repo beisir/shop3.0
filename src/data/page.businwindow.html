@@ -1,0 +1,17 @@
+{{#prolist}}
+<li>
+    <div class="probox">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center" valign="middle">
+                    <a onclick="HC.UBA.sendUserlogsElement(&quot;UserBehavior_businwindow_llb_1_{{count}}?detailbcid={{bcid}}&quot;)" data-exposurelog="###gg_businwindow_llb_1_{{count}}?detailbcid={{bcid}}" title="{{title}}" href="{{url}}" target="_blank">
+                        <img alt="{{title}}" src="{{midPic}}" data-original="{{midPic}}" onload="resizeImg(this,135,135)" onerror="javascript:this.src=&quot;http://b2b.hc360.com/mmtTrade/images/nopic.jpg&quot;" width="135" style="display: inline;"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p class="pro_price"><span class="red">{{curPriceUnit}}</span></p>
+    <p class="pro_info"><a onclick="HC.UBA.sendUserlogsElement(&quot;UserBehavior_businwindow_llb_1_{{count}}?detailbcid={{bcid}}&quot;)" data-exposurelog="###gg_businwindow_llb_1_{{count}}?detailbcid={{bcid}}" title="{{title}}" href="{{url}}" target="_blank">{{title}}</a></p>
+    <p class="pro_ico">{{trade}}</p>
+</li>
+{{/prolist}}

@@ -1,0 +1,182 @@
+<div class="layout w600" node-name="navDialog">
+    <div class="t-close"></div>
+    <div class="layout-title">编辑内容><span>导航栏</span></div>
+    <div class="layout-con">
+        <div node-name="navBtnSet">
+            <h2>导航按钮设置</h2>
+            <div class="layout-info" node-name="btnCheck">
+                <span class="checked"><a href="javascript:;">选中</a></span>
+                <span class="unchecked"><a href="javascript:;">未选中</a></span>
+            </div>
+            <div node-name="navContainer">
+                <!--选中-->
+                <div node-name="checkBtnSet" class="layout-info">
+                    <div class="layout-info-con">
+                        <h4>字体设置</h4>
+                        <div class="line-b">
+                            <div class="selbox">
+                                <select name="wordType">
+                                    {{#fontType}}
+                                    {{{setSelectFontType}}}
+                                    {{/fontType}}
+                                </select>
+                            </div>
+                            <div class="selbox">
+                                <select name="wordSize">
+                                    {{#fontSize}}
+                                    {{{setSelectFontSize}}}
+                                    {{/fontSize}}
+                                </select>
+                            </div>
+                            <div class="chkwidth mL18">
+                                <span class="checkBox {{{setSelectFontBold}}}"><em></em><label>加粗</label></span>
+                                <span class="checkBox {{{setSelectFontStyle}}}"><em></em><label>斜体</label></span>
+                            </div>
+                            <div class="bgColor mT4" node-name="colorjoeWrap">
+                                <input type="text" node-name="fontCorlorJoe" data-color="{{selectedColor}}">
+                                <!-- <em style="background:{{selectedColor}}" node-name="fontCorlorJoe" data-color="{{selectedColor}}"></em> -->
+                            </div>
+                        </div>
+                        <h4>边框设置</h4>
+                        <div class="line-b">
+                            <div class="bgColor" node-name="colorjoeWrap">
+                                颜色：<input type="text" node-name="borderColorJoe" data-color="{{selectedBorderColor}}">
+                                <!-- <em style="background:{{selectedBorderColor}}" node-name="borderColorJoe" data-color="{{selectedBorderColor}}"></em> -->
+                            </div>
+                            <div class="selbox mL18">
+                                线框：
+                                <select name="borderStyle">
+                                    {{#borderType}}
+                                    {{{setSelectBorderType}}}
+                                    {{/borderType}}
+                                </select>
+                            </div>
+                        </div>
+                        <h4>背景设置</h4>
+                        <div class="radioBox">
+                            <span class="radioCon {{^selectBackground}}curRadioBox{{/selectBackground}}"><em></em><label>默认背景</label></span>
+                            <span class="radioCon {{#selectBackground}}curRadioBox{{/selectBackground}}"><em></em><label>自定义</label></span>
+                        </div>
+                        <!--自定义-->
+                        <div class="pic-box" style="display: {{#selectBackground}}block{{/selectBackground}}{{^selectBackground}}none{{/selectBackground}}">
+                            <div class="picUpdetaImg"><p>{{#selectBackground}}<img src="{{selectBackground}}">{{/selectBackground}}</p></div>
+                            <span class="uploadBtn" node-name="imgUpload"><a href="javascript:;">选择图片</a></span>
+                            请上传.jpg,jpeg,gif,png格式图片，100k以内的图片
+                        </div>
+                        <!--END-->
+                        <!--选择图片-->
+                        <div class="navimg-file-box" style="display: none">
+                            <a href="javascript:;" class="uploadBtn" id="checkImgUpload">选择文件</a><span class="txt">未选择任何文件</span>
+                            <p class="txt mT10"> 请上传.jpg,jpeg,gif,png格式图片，100k以内的图片</p>
+                            <div class="textR">
+                                <a href="javascript:;" class="uploadBtn" node-name="upload">上传</a>
+                                <a href="javascript:;" class="uploadBtn" node-name="undo">撤消</a>
+                            </div>
+                        </div>
+                        <!--END-->
+                    </div>
+                </div>
+                <!--选中END-->
+                <!--未选中-->
+                <div node-name="uncheckBtnSet" class="layout-info" style="display:none;">
+                    <div class="layout-info-con">
+                        <h4>字体设置</h4>
+                        <div class="line-b">
+                            <div class="selbox">
+                                <select name="wordType">
+                                    {{#fontType}}
+                                    {{{unSelectFontType}}}
+                                    {{/fontType}}
+                                </select>
+                            </div>
+                            <div class="selbox">
+                                <select name="wordSize">
+                                    {{#fontSize}}
+                                    {{{unSelectFontSize}}}
+                                    {{/fontSize}}
+                                </select>
+                            </div>
+                            <div class="chkwidth mL18">
+                                <span class="checkBox {{{unSelectFontBold}}}"><em></em><label>加粗</label></span>
+                                <span class="checkBox {{{unSelectFontStyle}}}"><em></em><label>斜体</label></span>
+                            </div>
+                            <div class="bgColor mT4" node-name="colorjoeWrap">
+                                <input type="text" node-name="fontCorlorJoe" data-color="{{unSelectedColor}}">
+                                <!-- <em style="background:{{unSelectedColor}}" node-name="fontCorlorJoe" data-color="{{unSelectedColor}}"></em> -->
+                            </div>
+                        </div>
+                        <h4>边框设置</h4>
+                        <div class="line-b">
+                            <div class="bgColor" node-name="colorjoeWrap">
+                                颜色：<input type="text" node-name="borderColorJoe" data-color="{{unSelectedBorderColor}}">
+                                <!-- <em style="background:{{unSelectedBorderColor}}" node-name="borderColorJoe" data-color="{{unSelectedBorderColor}}"></em> -->
+                            </div>
+                            <div class="selbox mL18">
+                                线框：
+                                <select name="borderStyle">
+                                    {{#borderType}}
+                                    {{{unSelectBorderType}}}
+                                    {{/borderType}}
+                                </select>
+                            </div>
+                        </div>
+                        <h4>背景设置</h4>
+                        <div class="radioBox">
+                            <span class="radioCon {{^unSelectBackground}}curRadioBox{{/unSelectBackground}}"><em></em><label>默认背景</label></span>
+                            <span class="radioCon {{#unSelectBackground}}curRadioBox{{/unSelectBackground}}"><em></em><label>自定义</label></span>
+                        </div>
+                        <!--自定义-->
+                        <div class="pic-box" style="display:{{#unSelectBackground}}block{{/unSelectBackground}}{{^unSelectBackground}}none{{/unSelectBackground}}">
+                            <div class="picUpdetaImg"><p>{{#unSelectBackground}}<img src="{{unSelectBackground}}">{{/unSelectBackground}}</p></div>
+                            <span class="uploadBtn" node-name="imgUpload"><a href="javascript:;">选择图片</a></span>
+                            请上传.jpg,jpeg,gif,png格式图片，100k以内的图片
+                        </div>
+                        <!--END-->
+                        <!--选择图片-->
+                        <div class="navimg-file-box" style="display: none">
+                            <a href="javascript:;" class="uploadBtn" id="unCheckImgUpload">选择文件</a><span class="txt">未选择任何文件</span>
+                            <p class="txt mT10"> 请上传.jpg,jpeg,gif,png格式图片，100k以内的图片</p>
+                            <div class="textR">
+                                <a href="javascript:;" class="uploadBtn" node-name="upload">上传</a>
+                                <a href="javascript:;" class="uploadBtn" node-name="undo">撤消</a>
+                            </div>
+                        </div>
+                        <!--END-->
+                    </div>
+                </div>
+                <!--未选中END-->
+            </div>
+        </div>
+        <div class="layout-info" node-name="navBgSet">
+            <h2>导航栏背景设置</h2>
+            <div class="layout-info-con">
+                <div class="radioBox">
+                    <span class="radioCon {{^navBackground}}{{^navBackgroundColor}}curRadioBox{{/navBackgroundColor}}{{/navBackground}}"><em></em><label>默认背景</label></span>
+                    <span class="radioCon {{#navBackgroundColor}}curRadioBox{{/navBackgroundColor}}"><em></em><label>背景颜色选择</label>&nbsp;<input type="text" node-name="bgColorJoe" data-color="{{navBackgroundColor}}"></span>
+                    <span class="radioCon {{#navBackground}}curRadioBox{{/navBackground}}"><em></em><label>自定义</label></span>
+                </div>
+                <!--自定义-->
+                <div class="pic-box" style="display:{{#navBackground}}block{{/navBackground}}{{^navBackground}}none{{/navBackground}};">
+                    <div class="picUpdetaImg"><p>{{#navBackground}}<img src="{{navBackground}}">{{/navBackground}}</p></div>
+                    <span class="uploadBtn" node-name="imgUpload"><a href="javascript:;">选择图片</a></span>
+                    请上传.jpg,jpeg,gif,png格式图片，100k以内的图片
+                </div>
+                <!--END-->
+                <!--选择图片-->
+                <div class="navimg-file-box" style="display: none">
+                    <a href="javascript:;" class="uploadBtn" id="navBgUpload">选择文件</a><span class="txt">未选择任何文件</span>
+                    <p class="txt mT10">请上传.jpg,jpeg,gif,png格式图片，100k以内的图片</p>
+                    <div class="textR">
+                        <a href="javascript:;" class="uploadBtn" node-name="upload">上传</a>
+                        <a href="javascript:;" class="uploadBtn" node-name="undo">撤消</a>
+                    </div>
+                </div>
+                <!--END-->
+            </div>
+        </div>
+        <div class="confirm">
+            <button type="button" class="Save">保存</button>
+            <button type="button" class="Cancel">取消</button>
+        </div>
+    </div>
+</div>

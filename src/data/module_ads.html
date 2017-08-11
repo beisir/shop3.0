@@ -1,0 +1,310 @@
+[editDialog]
+<div class="layout w750" node-name="editDialog">
+    <div class="t-close"></div>
+    <div class="layout-title">编辑内容&gt;<span>宽屏广告</span></div>
+    <div class="layout-con">
+        <div class="layout-info">
+            <h2>广告设置</h2>
+            <div class="radioBox">
+                <span class="mL30">广告形式：</span>
+                <span class="radioCon" data-type="pagePic"><em></em><label>翻页图片</label></span>
+                <span class="radioCon" data-type="loopPro"><em></em><label>产品轮播</label></span>
+            </div>
+        </div>
+
+        <div class="layout-info" data-name="pagePicDiv" style="display: none">
+            <div class="layout-info-con">
+                <h4>图片设置</h4>
+                <div class="line-b">
+                    <p class="gray">为保证显示效果请保持图片尺寸一致，建议宽度1440-1920像素，高度800-1080像素，主体内容居中，超出屏幕尺寸图片会被截断。</p>
+                    <div class="tab-tt"><span class="w320">图片地址</span><span class="w220">链接地址</span><span class="w110">操作</span></div>
+                    <div class="tab-list">
+                        <ul id="picList">
+                            <li>
+                                <div class="inputW220"><input type="text" disabled="true" name="title" value=""></div>
+                                <div class="gray-btn"><a href="javascript:;" data-class="custom_uploadBtn">选择</a></div>
+                                <div class="inputW210"><input type="text" name="title" value="" data-name="linkUrl"></div>
+                                <div class="arrow-box">
+                                    <span class="arrowGray-up" data-name="upBtn"><a href="javascript:;"></a></span>
+                                    <span class="arrowBlue-down" data-name="downBtn"><a href="javascript:;"></a></span>
+                                    <span class="tabClose" data-name="clearBtn"><a href="javascript:;"></a></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inputW220"><input type="text" disabled="true" name="title" value=""></div>
+                                <div class="gray-btn"><a href="javascript:;" data-class="custom_uploadBtn" >选择</a></div>
+                                <div class="inputW210"><input type="text" name="title" value="" data-name="linkUrl"></div>
+                                <div class="arrow-box">
+                                    <span class="arrowBlue-up" data-name="upBtn"><a href="javascript:;"></a></span>
+                                    <span class="arrowBlue-down" data-name="downBtn"><a href="javascript:;"></a></span>
+                                    <span class="tabClose" data-name="clearBtn"><a href="javascript:;"></a></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inputW220"><input type="text" disabled="true" name="title" value=""></div>
+                                <div class="gray-btn"><a href="javascript:;" data-class="custom_uploadBtn">选择</a></div>
+                                <div class="inputW210"><input type="text" name="title" value="" data-name="linkUrl"></div>
+                                <div class="arrow-box">
+                                    <span class="arrowBlue-up" data-name="upBtn"><a href="javascript:;"></a></span>
+                                    <span class="arrowBlue-down" data-name="downBtn"><a href="javascript:;"></a></span>
+                                    <span class="tabClose" data-name="clearBtn"><a href="javascript:;"></a></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inputW220"><input type="text" disabled="true" name="title" value=""></div>
+                                <div class="gray-btn"><a href="javascript:;" data-class="custom_uploadBtn">选择</a></div>
+                                <div class="inputW210"><input type="text" name="title" value="" data-name="linkUrl"></div>
+                                <div class="arrow-box">
+                                    <span class="arrowBlue-up" data-name="upBtn"><a href="javascript:;"></a></span>
+                                    <span class="arrowBlue-down" data-name="downBtn"><a href="javascript:;"></a></span>
+                                    <span class="tabClose" data-name="clearBtn"><a href="javascript:;"></a></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inputW220"><input type="text" disabled="true" name="title" value=""></div>
+                                <div class="gray-btn"><a href="javascript:;" data-class="custom_uploadBtn">选择</a></div>
+                                <div class="inputW210"><input type="text" name="title" value="" data-name="linkUrl"></div>
+                                <div class="arrow-box">
+                                    <span class="arrowBlue-up" data-name="upBtn"><a href="javascript:;"></a></span>
+                                    <span class="arrowGray-down" data-name="downBtn"><a href="javascript:;"></a></span>
+                                    <span class="tabClose" data-name="clearBtn"><a href="javascript:;"></a></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>效果设置</h4>
+                <div class="effect-set" id="transitionDiv">
+                    <span>切换效果：</span>
+                    <div class="selbox">
+                        <select name="">
+                            {{#transition}}
+                            <option value="{{value}}">{{key}}</option>
+                            {{/transition}}
+                        </select>
+                    </div>
+                </div>
+                <div class="effect-set" id="pauseDiv">
+                    <span>间隔时间：</span>
+                    <div class="selbox">
+                        <select name="">
+                            {{#interval}}
+                            <option value="{{pause}}">{{pause}}秒</option>
+                            {{/interval}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-info" data-name="loopProDiv" style="display: none">
+            <div class="layout-info-con">
+                <h4>内容设置
+                    <span>广告尺寸<em class="blue">1920×300</em></span>
+                    <span>可推荐<em class="blue">6个产品</em></span>
+                </h4>
+                <div class="select-pro padd0">
+                    选择产品：<a href="javascript:;" data-name="selectProBtn">选择产品</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirm">
+            <span class="set-red"><a href="javascript:;" id="previewBtn">预览效果</a></span>
+            <button type="button" class="Save">保存</button>
+            <button type="button" class="Cancel">取消</button>
+        </div>
+    </div>
+</div>
+[/editDialog]
+
+[modifyProDialog]
+<div class="layout w750" node-name="modifyProDialog" style="display: none">
+    <div class="t-close"></div>
+    <div class="layout-title">编辑内容&gt;<span>单张图片修改</span></div>
+    <div class="layout-con">
+        <div class="layout-info">
+            <h2>插入形式</h2>
+            <div class="ImgBtnBox" data-name="switchType">
+                <a href="javascript:;" class="changeImgBtn" data-name="singleModify">单张图片修改</a>
+                <a href="javascript:;" class="insertImgBtn" data-name="batchModify">批量插入产品</a>
+            </div>
+        </div>
+
+        <!--单张图片修改start-->
+        <div class="layout-info" data-name="singleModifyDiv">
+            <div class="ImgListBox">
+                <ul id="proListContainer">
+
+                </ul>
+            </div>
+        </div>
+        <div class="layout-info" data-name="singleModifyDiv">
+            <h2>上传图片</h2>
+            <div class="upImg">
+                <ul>
+                    <li>
+                        <span data-name="uploadType" class="radioImg curradioImg"><em></em><label>选择产品上传</label></span>
+                        <a href="javascript:;" class="uploadBtn" data-name="selectProUpload">上传</a>
+                    </li>
+                    <li data-flag="picModify" style="display:none">
+                        <span data-name="uploadType" class="radioImg"><em></em><label>上传本地图片</label></span>
+                        <a href="javascript:;" class="uploadBtn" data-name="locateUpload">上传</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="upImgbox" data-name="picCropperDiv" style="display: none">
+                <div class="upImg">
+                    <ul data-name="load_pic_type">
+                        <li>
+                            <span class="radioImg curradioImg" data-type="orginal"><em></em><label>原图方式上传</label></span>
+                        </li>
+                        <li>
+                            <span class="radioImg" data-type="cropper" style="display: none"><em></em><label>应用图片裁剪工具上传</label></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cutImg">
+                    <p></p>
+                </div>
+                <div class="scaling">
+                    <span>
+                        <a href="javascript:;" class="uploadBtn" id="locatePicSave">保存</a>
+                    </span>
+                </div>
+                <div class="textR">
+
+                </div>
+            </div>
+
+            <div class="picLink" style="display: none">图片链接至：<input id="linkUrlInput" type="text" name="" class="" value=""></div>
+        </div>
+        <!--单张图片修改end-->
+
+        <!--批量插入产品start-->
+        <div class="layout-info" data-name="batchModifyDiv" style="display: none">
+            <div class="ImgListBox">
+                <ul id="batchProListContainer">
+
+                </ul>
+            </div>
+            <div class="batchBtn"><a href="javascript:;" data-name="batchUploadProBtn">批量上传产品</a></div>
+        </div>
+        <!--批量插入产品end-->
+
+        <div class="confirm">
+            <button type="button" class="Save">保存</button>
+            <button type="button" class="Cancel">取消</button>
+        </div>
+    </div>
+</div>
+[/modifyProDialog]
+
+[proSingleDialog]
+<div class="layout w450" node-name="proSingleDialog" style="display: none">
+    <div class="t-close"></div>
+    <div class="layout-title">编辑内容&gt;<span>单张图片修改</span></div>
+    <div class="seleBox">
+        <div class="selePro">
+            <p>请选择要插入的产品：</p>
+            <div class="seleProSea"><input type="text" data-name="filterText" placeholder="请输入商机标题"><button type="submit" data-name="searchBtn">搜索</button></div>
+        </div>
+        <div class="seleList">
+            <dl>
+                <dt>
+                    <span class="seleTit1">产品信息</span>
+                    <span class="seleTit2">操作</span>
+                </dt>
+            </dl>
+            <div class="seleListCon">
+                <dl>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+[/proSingleDialog]
+
+[proBatchDialog]
+<div class="layout w750" node-name="proBatchDialog" style="display: none">
+    <div class="t-close"></div>
+    <div class="layout-title">扩展橱窗&gt;<span>插入产品</span></div>
+    <div class="seleBox2">
+        <div class="seleLeft">
+            <div class="selePro">
+                <p>请选择要插入的产品：</p>
+                <div class="seleProSea"><input type="text" placeholder="请输入商机标题" data-name="filterText"><button type="submit" data-name="searchBtn">搜索</button></div>
+            </div>
+            <div class="seleList">
+                <dl>
+                    <dt>
+                        <span class="seleTit1">产品信息</span>
+                        <span class="seleTit2">操作</span>
+                    </dt>
+                </dl>
+                <div class="seleListCon">
+                    <dl>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="seleRight">
+            <dl>
+                <dt>已选择产品：</dt>
+                <dd>您可以选择<span>8条</span>产品显示在扩展橱窗</dd>
+            </dl>
+            <p id="noProListTip" style="display: none">暂无推荐商机</p>
+            <div id="ProListDiv" class="seleRightCon" style="display: none">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="confirm seleBoxBtn">
+        <button type="button" class="Save">保存</button>
+        <button type="button" class="Cancel">取消</button>
+    </div>
+</div>
+[/proBatchDialog]
+
+[selectPro]
+    {{#prolist}}
+    <dd>
+        <div class="picbox"><a target="_blank"  href="http://b2b.hc360.com/supplyself/{{bcid}}.html"><img src="{{picurl}} {{^picurl}} http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPic.jpg {{/picurl}}"></a></div>
+        <div class="picboxTit"><a href="http://b2b.hc360.com/supplyself/{{bcid}}.html" target="_blank">{{bcname}}</a></div>
+        <div class="picboxBtn"><button type="submit" data-bcid="{{bcid}}"  class="{{#isSelect}}gBtn2{{/isSelect}}">{{#isSelect}}已{{/isSelect}}选择</button></div>
+    </dd>
+    {{/prolist}}
+[/selectPro]
+
+[isSelectPro]
+    {{#prolist}}
+    <li>
+        <div class="picbox"><a href="http://b2b.hc360.com/supplyself/{{bcid}}.html" target="_blank" ><img src="{{picurl}}"></a></div>
+        <div class="picboxTit"><a href="http://b2b.hc360.com/supplyself/{{bcid}}.html" target="_blank">{{bcname}}</a></div>
+        <em data-bcid="{{bcid}}"></em>
+    </li>
+    {{/prolist}}
+[/isSelectPro]
+
+[initSinglePro]
+    {{#prolist}}
+    <li>
+        <div class="picbox"><a href="javascript:;" data-href="{{linkurl}}" ><img src="{{picurl}}"></a></div>
+        <div class="changeImg"><a href="javascript:;" data-bcid="{{bcid}}">修改</a></div>
+    </li>
+    {{/prolist}}
+[/initSinglePro]
+
+[initBatchPro]
+    {{#prolist}}
+    <li>
+        <div class="picbox"><a href="javascript:;" data-href="{{linkurl}}" ><img src="{{picurl}}"></a></div>
+    </li>
+    {{/prolist}}
+[/initBatchPro]

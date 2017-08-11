@@ -1,0 +1,64 @@
+/*!
+ * 自定义 duagula 样式
+ */
+.gu-mirror { background-color: rgba(0, 0, 0, 0.2); transition: opacity 0.4s ease-in-out; }
+.gu-mirror { cursor: grabbing; cursor: -moz-grabbing; cursor: -webkit-grabbing; }
+.dragable { cursor: move; cursor: grab; cursor: -moz-grab; cursor: -webkit-grab; }
+.dragable .ex-moved { background-color: #e74c3c; }
+.dragable .ex-over { background-color: rgba(255, 255, 255, 0.3); }
+
+/*!
+ * 自定义 webuploader 样式
+ */
+.webuploader-container { width: 80px; padding: 0; position: relative; }
+.webuploader-pick { position: relative; display: inline-block; cursor: pointer; padding: 0; text-align: center; border-radius: 3px; overflow: hidden; width: 100%; height: 100% }
+
+/**
+  招牌和导航选择文件按钮背景颜色
+**/
+div[node-name="signDialog"] .webuploader-pick, div[node-name="navDialog"] .webuploader-pick { color: #333; background: #ececec; }
+
+/**
+  顶部操作区选择文件按钮背景颜色
+**/
+div[data-node-name="editBox"] .webuploader-pick { background: #2399fe; color: #fff; }
+div[data-node-name="editBox"] .webuploader-pick + div { width: 100% !important; height: 100% !important; }
+
+/*!
+ * 自定义 artdialog 样式
+ */
+.ui-dialog { border: 0 none; font: 400 16px/40px "Microsoft YaHei"; }
+.ui-dialog-body .layout { margin: 0px; border: none 0; }
+.ui-dialog-body .t-close { margin: 0px; display: none; }
+.ui-dialog-body .layout-title { display: none; }
+.ui-dialog-header { background: #f5f5f5; }
+.ui-dialog-title { font-weight: normal; }
+.ui-dialog-body { padding: 10px 20px; }
+.ui-dialog-loading { height: auto; top: 10px; }
+.ui-dialog { overflow: hidden; }
+
+/*!
+ * 自定义 取色器  样式
+ */
+.colorPicker .extras .colorFields input { width: 45px; }
+
+/*!
+ * 自定义 分页  样式
+ */
+.pageList { height: 30px; padding: 20px 0 0px; overflow: hidden; line-height: 30px; font-size: 12px; color: #666; margin: 0 auto; }
+.pageList .pagination { float: right; overflow: hidden; height: 30px; }
+.pageList .pagination a, .pageList .pagination span { float: left; display: block; width: 20px; height: 20px; text-align: center; line-height: 20px; font-size: 12px; border: 1px solid #ccc; color: #666; margin: 0 1px; text-decoration: none; }
+.pageList .pagination .current { border: 1px solid #575757; color: #fff; background: #575757; }
+.pageList .pagination .prev { width: 22px; height: 22px; background: url(http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proIco2.png) -302px 0; border: none; }
+.pageList .pagination .next { width: 22px; height: 22px; background: url(http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proIco2.png) -334px 0; border: none; }
+.pageList .total { margin-right: 5px; float: left; line-height: 20px; margin-top: 2px; }
+.pageList .page-next { float: left; height: 20px; line-height: 20px; }
+.pageList .page-next .intopage { border: 1px solid #ccc; width: 24px; height: 20px; line-height: 20px; text-align: center; color: #666; padding: 0; margin: 0 3px; }
+.pageList .page-next button { border: 1px solid #ccc; width: 35px; text-align: center; height: 22px; background: #fff; margin-left: 5px; color: #666; cursor: pointer; }
+
+/*!
+ * 自定义 取色器  样式
+ */
+.sp-replacer{padding: 0px;border: 0 none;background: none;}
+.sp-preview{border: 0 none;}
+.sp-dd{display: none;}
