@@ -51,6 +51,10 @@ compiler.plugin('compilation', function(compilation) {
 	});
 });
 
+app.use(bodyParser.urlencoded({
+	extended: false
+}))
+
 /**
  * [代理获取模块设置模板的请求]
  */
