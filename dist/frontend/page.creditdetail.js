@@ -1,1 +1,1 @@
-webpackJsonp([36],[function(n,w,a){var e=a(113),i=new e;window.pageEntity=i}]);
+webpackJsonp([36],[function(n,w,a){var e=a(115),i=new e;window.pageEntity=i}]);
