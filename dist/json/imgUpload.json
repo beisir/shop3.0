@@ -1,0 +1,12 @@
+{
+  "state": "true",
+  "result": {
+    "url":"",
+    "height":"200px",
+    "width":"",
+    "title":""
+  },
+  "error":{
+    "message":"解析加密文件出错"
+  }
+}

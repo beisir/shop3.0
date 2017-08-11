@@ -1,0 +1,26 @@
+{
+  "state": "1",
+  "message": "错误信息",
+  "data": [
+    {
+      "supercatid": "123456745",
+      "supercatname": "衣服",
+      "bccount": "15"
+    },
+    {
+      "supercatid": "765656788",
+      "supercatname": "鞋子",
+      "bccount": "28"
+    },
+    {
+      "supercatid": "09887787",
+      "supercatname": "户外充气床",
+      "bccount": "28"
+    },
+    {
+      "supercatid": "56576788",
+      "supercatname": "木材",
+      "bccount": "28"
+    }
+  ]
+}

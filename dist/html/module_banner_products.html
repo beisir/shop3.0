@@ -1,0 +1,161 @@
+<!-- 通栏产品弹框1 -->
+<div class="layout w600" node-name="banProduct">
+    <div class="t-close"></div>
+    <div class="layout-title">编辑内容><span>通栏产品</span></div>
+    <div class="layout-con">
+        <div class="layout-info">
+            <h2>标题设置</h2>
+
+            <div class="public-box">
+                <span class="mL30">标题名称<input type="text"  maxlength="5" node-name="moduleTitle" name="title" class="inputW120"
+                                              value="{{moduleData.title}}"></span>
+                <span class="chosen {{#isShowTitle}}curChosen{{/isShowTitle}}"><em></em><label>显示板块标题栏及边框</label></span>
+            </div>
+        </div>
+        <div class="layout-info">
+            <h2>内容设置</h2>
+
+            <div class="select-pro">
+                选择产品：<a href="javascript:;" node-name="selectPro">选择产品</a>
+                <span class="pLeft15">已选择<span class="proLen">{{totalLen}}</span>/20个产品</span>
+            </div>
+        </div>
+        <div class="layout-info">
+            <h2>显示设置</h2>
+
+            <div class="radioBoxNew" node-name="showType">
+                <span class="mL30">展示方式：</span>
+                <span class="radioCon {{isTile}}"><em></em><label>平铺展示</label></span>
+                <span class="radioCon {{isRolling}}"><em></em><label>滚动展示</label></span>
+            </div>
+            <div class="radioBoxNew" node-name="imgSize">
+                <span class="mL30">图片大小：</span>
+                <dl class="radioRig">
+                    <dd><span class="radioCon {{isBigImg}}"><em></em><label>大图（300x300）<b>最多显示12个产品</b></label></span>
+                    </dd>
+                    <dd><span
+                            class="radioCon {{isMiddleImg}}"><em></em><label>中图（210x210）<b>最多显示16个产品</b></label></span>
+                    </dd>
+                    <dd><span class="radioCon {{isSmallImg}}"><em></em><label>小图（170x170）<b>最多显示20个产品</b></label></span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="confirm">
+            <button type="button" class="Save">保存</button>
+            <button type="button" class="Cancel">取消</button>
+        </div>
+    </div>
+</div>
+<!-- 通栏产品END -->
+
+
+<!-- 选择产品 -->
+<div class="layout w750" node-name="selectProduct" style="display:none;">
+    [selectProduct]
+    <div class="t-close"></div>
+    <div class="layout-title">通栏产品><span>插入产品</span></div>
+    <div class="seleBox2">
+        <div class="seleLeft">
+            <div class="selePro">
+                <p>请选择要插入的产品：</p>
+
+                <div class="seleProSea"><input type="text" placeholder="请输入商机标题"/>
+                    <button type="submit" node-name="searchPro">搜索</button>
+                </div>
+            </div>
+            <div class="seleList">
+                <div  style="display: none" data-node-name="proListWrap">
+                    <p class="sLeftPrompt">商铺中暂无在售商品，<a href="#" target="_blank" data-node-name="Please">请补充</a></p>
+                </div>
+                <div  style="display: none" data-node-name="proListWrap">
+                    <p class="sLeftPrompt">未搜索到相关商品</p>
+                </div>
+                <div  style="display: none" data-node-name="proListWrap">
+                    <dl>
+                        <dt>
+                            <span class="seleTit1">产品信息</span>
+                            <span class="seleTit2">操作</span>
+                        </dt>
+                    </dl>
+
+                    <div class="seleListCon">
+                         <dl>
+
+                         </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seleRight">
+
+        </div>
+    </div>
+    <div class="confirm seleBoxBtn">
+        <button type="button" class="Save">保存</button>
+        <button type="button" class="Cancel">取消</button>
+    </div>
+    [/selectProduct]
+</div>
+<!--选择产品END-->
+
+
+
+<!---在售商机列表-->
+<div style="display: none" node-name="onlineProModule">
+    [onlineProModule]
+    {{#proList}}
+    <dd data-bcid="{{bcid}}">
+        <div class="picbox">
+            <a href="http://b2b.hc360.com/supplyself/{{bcid}}.html" target="_blank">
+                <img src="{{#picurl}}{{picurl}}{{/picurl}}{{^picurl}}http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPic.jpg{{/picurl}}" >
+            </a>
+        </div>
+        <div class="picboxTit"><a href="http://b2b.hc360.com/supplyself/{{bcid}}.html" target="_blank">{{bcname}}</a> </div>
+        <div class="picboxBtn">
+            <button type="submit" node-name="selectBtn" class="{{#isChoose}}gBtn2{{/isChoose}}">
+                {{#isChoose}}已{{/isChoose}}选择
+            </button>
+        </div>
+    </dd>
+    {{/proList}}
+    [/onlineProModule]
+</div>
+
+
+<!--已选择的商品--->
+
+<div node-name="selectProWrap" style="display: none">
+    [selectProWrap]
+    <dl>
+        <dt>已选择产品：</dt>
+        <dd>您已选择<span class="proLen">{{len}}</span>/20个产品</dd>
+    </dl>
+    <p node-name="noBusiness" style="display:{{#isShow}}none{{/isShow}}">暂无推荐商机</p>
+
+    <div class="seleRightCon" style="display:{{#isShow}}block{{/isShow}}">
+        <ul>
+            {{#proList}}
+            <li data-bcid="{{bcid}}">
+                <div class="picbox"><a href="{{linkurl}}" target="_blank"><img src="{{#picurl}}{{picurl}}{{/picurl}} {{^picurl}}http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPic.jpg{{/picurl}}"></a></div>
+                <div class="picboxTit"><a href="{{linkurl}}" target="_blank">{{bcname}}</a></div>
+                <em node-name="closePro"></em>
+            </li>
+            {{/proList}}
+        </ul>
+    </div>
+    [/selectProWrap]
+</div>
+
+
+
+<!----选择产品---->
+<div node-name="productHtml" style="display: none">
+    [productHtml]
+    <li data-bcid="{{bcid}}">
+        <div class="picbox"><a href="{{linkurl}}" target="_blank"><img src="{{picurl}}"></a></div>
+        <div class="picboxTit"><a href="{{linkurl}}" target="_blank">{{bcname}}</a></div>
+        <em node-name="closePro"></em>
+    </li>
+    [/productHtml]
+</div>

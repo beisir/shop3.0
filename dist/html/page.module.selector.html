@@ -1,0 +1,47 @@
+<div class="layout w750">
+    <div class="t-close" data-btn-close></div>
+    <div class="layout-title">添加模块&gt;<span>首页</span></div>
+    <div class="layoutAdd">
+        <div class="editBoxLeft">
+            <dl>
+                {{#levelList}}
+                <dd data-btn-level data-btn-val="{{val}}" class="{{isCurrentLevel}}">{{name}}</dd>
+                {{/levelList}}
+            </dl>
+        </div>
+        <div class="addRight">
+            <div class="addRigTop" data-module-relate-wrap>
+                {{#relateList}}
+                <span data-btn-relate data-btn-val="{{val}}" class="{{isCurrentRelate}}" data-entity="{{setDataEntity}}">{{name}}</span>
+                {{/relateList}}
+            </div>
+            <div class="addRigBot">
+                <ul data-module-wrap>
+                    {{#moduleList}}
+                    {{#isLimitScope}}
+                    {{#isLimitSimulatedLogin}}
+                    <li data-entity="{{setDataEntity}}">
+                        <em class="{{icon}}"></em>
+                        <div class="addRigList">
+                            <h5>{{name}}</h5>
+                            <p data-desc-wrap>{{description}}</p>
+                        </div>
+                        <button 
+                            type="button" 
+                            {{^isLimitMaximum}}disabled{{/isLimitMaximum}} {{^isLimitAuthority}}disabled{{/isLimitAuthority}}
+                            class="{{^isLimitMaximum}}disabled{{/isLimitMaximum}} {{^isLimitAuthority}}disabled{{/isLimitAuthority}}" 
+                            data-btn-act="append" 
+                            style="display: {{#isCancellable}}none{{/isCancellable}}{{^isCancellable}}block{{/isCancellable}}">添加</button>
+                        <button 
+                            type="button" 
+                            data-btn-act="cancel" 
+                            style="display: {{#isCancellable}}block{{/isCancellable}}{{^isCancellable}}none{{/isCancellable}};">撤销</button>
+                    </li>
+                    {{/isLimitSimulatedLogin}}
+                    {{/isLimitScope}}
+                    {{/moduleList}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

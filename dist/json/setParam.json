@@ -1,0 +1,72 @@
+{
+  "state": 1,
+  "message": "错误信息",
+  "data":[
+    {
+      "bcname": "新款充气睡袋1",
+      "price": "150",
+      "bcid":"12345678",
+      "origin": "广东",
+      "color": "白色",
+      "style": "蕾丝",
+      "SkirtLength": "短裙",
+      "clothesType":"韩版",
+      "pattern":"花朵"
+    },
+    {
+      "bcname": "新款充气睡袋2",
+      "price": "150",
+      "bcid":"23456789",
+      "origin": "山东",
+      "color": "卡其色",
+      "style": "棉类混纺",
+      "SkirtLength": "超短裙",
+      "clothesType":"复古",
+      "pattern":"条纹"
+    },
+    {
+      "bcname": "新款充气睡袋3",
+      "price": "150",
+      "bcid":"123123123",
+      "origin": "浙江",
+      "color": "棕色",
+      "style": "雪纺",
+      "SkirtLength": "中长裙",
+      "clothesType":"民族",
+      "pattern":"碎花"
+    },
+    {
+      "bcname": "新款充气睡袋4",
+      "price": "150",
+      "bcid":"5676788",
+      "origin": "河北",
+      "color": "紫色",
+      "style": "真丝",
+      "SkirtLength": "短裙",
+      "clothesType":"波西米亚",
+      "pattern":"印花"
+    },
+    {
+      "bcname": "新款充气睡袋5",
+      "price": "150",
+      "bcid":"787845656",
+      "origin": "河南",
+      "color": "粉色",
+      "style": "聚酯纤维",
+      "SkirtLength": "长裙",
+      "clothesType":"公主",
+      "pattern":"空白"
+    },
+    {
+      "bcname": "新款充气睡袋6",
+      "price": "150",
+      "bcid":"34567890",
+      "origin": "安徽",
+      "color": "橙色",
+      "style": "针织",
+      "SkirtLength": "中裙",
+      "clothesType":"洛丽塔",
+      "pattern":"纯色"
+    }
+  ]
+}

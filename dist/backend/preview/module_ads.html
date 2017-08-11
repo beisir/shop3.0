@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Ԥ��</title>
+    <link rel="stylesheet" type="text/css" href="http://style.org.hc360.com/css/detail/mysite/siteconfig/newPro/proStyle.css" />
+    <link rel="stylesheet" type="text/css" href="http://style.org.hc360.com/css/detail/mysite/siteconfig/newPro/mallBase.css" />
+<link href="http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/module_ads.css" rel="stylesheet"></head>
+
+<body>
+    <!--��ҳͼƬ-�����ֲ�-->
+    <script id="template_1_0" type="x-tmpl-mustache">
+        <div class="bannerBoxCon" data-carousel-wrap style="height:{{height}}">
+            <ul>
+                {{#piclist}}
+                <li style="background:url({{picurl}}) no-repeat center center;height:{{height}}">{{#linkurl}}<a href="{{linkurl}}"></a>{{/linkurl}}</li>
+                {{/piclist}}
+            </ul>
+            <div class="BannerArrowBox">
+                <a href="javascirpt:;" data-btn-prev class="bLeftArrow"></a>
+                <a href="javascirpt:;" data-btn-next class="bRightArrow"></a>
+                <div class="BtnimgList">
+                    {{#piclist}}
+                    <span><a href="{{#linkurl}}{{linkurl}}{{/linkurl}} {{^linkurl}}javascript:;{{/linkurl}}"> <img src="{{picurl}}" ></a></span>
+                    {{/piclist}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!--��ҳͼƬ-�����ֲ�-->
+    <script id="template_1_1" type="x-tmpl-mustache">
+        <div class="bannerBoxCon" data-carousel-wrap style="height:{{height}}">
+            <ul>
+                {{#piclist}}
+                <li style="background:url({{picurl}}) no-repeat center center;height:{{height}}">{{#linkurl}}<a href="{{linkurl}}"></a>{{/linkurl}}</li>
+                {{/piclist}}
+            </ul>
+            <div class="BannerArrowBox">
+                <a href="javascirpt:;" data-btn-prev class="bLeftArrow"></a>
+                <a href="javascirpt:;" data-btn-next class="bRightArrow"></a>
+                <div class="BtnimgList">
+                    {{#piclist}}
+                    <span><a href="{{#linkurl}}{{linkurl}}{{/linkurl}} {{^linkurl}}javascript:;{{/linkurl}}"> <img src="{{picurl}}" > </a></span>
+                    {{/piclist}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!--��ҳͼƬ-��Ҷ���ֲ�-->
+    <script id="template_1_2" type="x-tmpl-mustache">
+        <div class="bannerBoxCon" data-carousel-wrap>
+            <ul class='transitionEffectsSlider'>
+                {{#piclist}}
+                <li>
+                    <a href="{{linkurl}}" title=""><img src="{{picurl}}" alt="" /></a>
+                </li>
+                {{/piclist}}
+            </ul>
+        </div>
+    </script>
+
+    <!--��ҳͼƬ-��Ҷ���ֲ�-->
+    <script id="template_2_0" type="x-tmpl-mustache">
+        <div class="proCarousel">
+            <div class="proCarouselCon" data-carousel-wrap>
+                <ul>
+                    {{#prolist}}
+                    <li>
+                        <a href="{{linkurl}}"><img src="{{picurl}}" /></a>
+                    </li>
+                    {{/prolist}}
+                </ul>
+            </div>
+        </div>
+    </script>
+
+    <!--�ֲ�ͼƬ����Ԫ��-->
+    <div class="newProBox" data-wrap>
+
+    </div>
+<script type="text/javascript" src="http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/module_ads.js"></script></body>
+
+</html>

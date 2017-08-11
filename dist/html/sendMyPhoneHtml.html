@@ -1,0 +1,41 @@
+<div  class="word-box" id="sendMyPhoneDialog">
+    <div class="word2 word3" id ="dialogSendMessage" >
+        <div class="p num">
+            <span>手机号码</span>:
+            <input type="text" class="text-num" id="cellphoneNumber" onkeyup="testProductNum(this)" onblur="testOnblur(this)" maxlength="11"/>
+            <p class="hide" id="cellPhoneNumError" style="display:none;">手机号码格式错误，请重新输入！</p>
+        </div>
+        <div class="p num yanzm">
+            <span style="letter-spacing:0.5em;margin-right:-0.5em">验证码</span>:
+            <input type="hidden" id="validate_name" name="LoginTicket" value=""/>
+            <input class="text-num" type="text" name="ValidKey" id="captcha"  maxlength="4" onkeyup="testValidStr(this)" onblur="testValidOnblur(this)" onkeydown="jQuery('#validate_error').hide();"/>
+            <img width="80" height="30" id="validate_map"  title="验证码"  src=""/>
+            <a href="javascript:;" onclick="return false" id="refresh">换一换</a><p class="hide"  style="display:none;" id="validate_error"></p>
+        </div>
+        <div class="btn"><a href="javascript:void(0)" onclick="msgDownloadAjax(1);">提交</a></div>
+    </div>
+    <div id="sendSuccess" class="word1" style="display:none">
+        <div class="tcbx1">
+            <p class="tcbx1-1">发送成功！</p>
+            <p class="tcbx1-2">慧聪已向手机号码“13366548872”发送一条短信，请查收！由于使用人数较多，可能会有延迟，请耐心等待！</p>
+        </div>
+    </div>
+    <div id="sendFail2" class="word1" style="display:none">
+        <div class="tcbx1">
+            <p class="tcbx1-1 error_num num_tip_no">超过次数限制!</p>
+            <p class="tcbx1-2 tc">您也可以<a rel="nofollow" href="http://my.b2b.hc360.com/my/turbine/template/buycenter,business,supplydetailedit.html">发布采购计划</a>，让卖家主动找您！</p>
+        </div>
+    </div>
+    <div id="sendFail3" class="word1" style="display:none">
+        <div class="tcbx1">
+            <p class="tcbx1-1 error_num">超过次数限制!<em>未登录用户仅可免费使用5次。</em></p>
+            <p class="tcbx1-2 tc" id="returnUrlNav"></p>
+            <script type="text/javascript">
+                var url = window.location.href;
+                var pHtml = '<a href="http://sso.hc360.com/ssologin?logincode=3&loginparam=supplyend_ssotop&ReturnURL='+url+'">登录</a>或<a href="javascript:varifyIdentity(1);">验证身份</a>，获得更多的使用权限！';
+                document.getElementById("returnUrlNav").innerHTML=pHtml;
+            </script>
+        </div>
+    </div>
+    <div class="close_window"><a href="javascript:void(0);" onclick="jQuery('#sendMyPhoneDialog').toggle();" target="_self">×</a></div>
+</div>

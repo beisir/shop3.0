@@ -1,0 +1,42 @@
+{
+  "state": "1",
+  "message": "错误信息",
+  "data": [
+    {
+      "id": "123",
+      "name": "产地",
+      "fieldname": "origin",
+      "type": "1"
+    },
+    {
+      "id": "124",
+      "name": "颜色",
+      "fieldname": "color",
+      "type": "2"
+    },
+    {
+      "id": "125",
+      "name": "面料",
+      "fieldname": "style",
+      "type": "2"
+    },
+    {
+      "id": "126",
+      "name": "裙长",
+      "fieldname": "SkirtLength",
+      "type": "1"
+    },
+    {
+      "id": "127",
+      "name": "风格",
+      "fieldname": "clothesType",
+      "type": "1"
+    },
+    {
+      "id": "128",
+      "name": "图案",
+      "fieldname": "pattern",
+      "type": "1"
+    }
+  ]
+}

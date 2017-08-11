@@ -1,0 +1,319 @@
+{
+  "state": 1,
+  "message": "错误信息",
+  "data": {
+    "prolist": [
+      {
+        "bcid": 12345678,
+        "bcname": "有类目1",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "有类目2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "有类目3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "有类目4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "有类目5",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "有类目6",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "有类目7",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 3232543554,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 234546555,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12324438,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12345678,
+        "bcname": "商机标题1",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "商机标题2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "商机标题2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 3232543554,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 234546555,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12324438,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12345678,
+        "bcname": "商机标题1",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "商机标题2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "商机标题2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 3232543554,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 234546555,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12324438,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12345678,
+        "bcname": "商机标题1",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "商机标题2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 3232543554,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 234546555,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12324438,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12345678,
+        "bcname": "商机标题1",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 23456789,
+        "bcname": "商机标题2",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 123123123,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 34567890,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 1231231235,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 5676788,
+        "bcname": "商机标题3",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 787845656,
+        "bcname": "商机标题4",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 3232543554,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 234546555,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      },
+      {
+        "bcid": 12324438,
+        "bcname": "商机标题",
+        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+      }
+    ],
+    "procount": "120"
+  }
+}
