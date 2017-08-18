@@ -29,7 +29,8 @@ module_custom.prototype.render = function(html) {
 		 * [contentWrap 内容包裹元素]
 		 * @type {Object}
 		 */
-		_contentWrap = _this.moduleEntity.htmlEntity.find('.leftBoxCon');
+    _contentWrap = _this.moduleEntity.identifier == 'module_custom_video' ? _this.moduleEntity.htmlEntity.find('.videoBox') : _this.moduleEntity.htmlEntity.find('.leftBoxCon');
+		//_contentWrap = _this.moduleEntity.htmlEntity.find('.leftBoxCon');
 
 	/**
 	 * [判断是否有自定义模块内容参数]
@@ -51,7 +52,8 @@ module_custom.prototype.render = function(html) {
 				providerid: _this.moduleEntity.regionEntity.pageEntity.providerid,
 				area: _this.moduleEntity.regionEntity.identifier,
 				moduleid: _this.moduleEntity.dataEntity.moduleid,
-				windowtype: _this.moduleEntity.dataEntity.windowtype
+				windowtype: _this.moduleEntity.dataEntity.windowtype,
+        modulemark:_this.moduleEntity.identifier
 			}
 		})
 		.done(function(json) {
@@ -59,9 +61,12 @@ module_custom.prototype.render = function(html) {
 
 				if ($.trim(json.data).length === 0) {
 					_contentWrap.html('<div class="nInfoPro2">暂无相关信息！<a href="javascript:;">请添加</a></div>');
+          _contentWrap.siblings('p.videoPrompt').hide();
 				} else {
 					try {
-						_contentWrap.html(decodeURIComponent(json.data) || '');
+            _contentWrap.html(json.data || '');
+            _contentWrap.siblings('p.videoPrompt').show();
+						//_contentWrap.html(decodeURIComponent(json.data) || '');
 					} catch (err) {}
 
 				}
