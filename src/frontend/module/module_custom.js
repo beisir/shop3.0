@@ -1,5 +1,5 @@
 /**
- * [module_custom 自定义模块所见即所得渲染逻辑]
+ * [module_custom 自定义模块前端渲染逻辑]
  * @return {Object} [description]
  */
 function module_custom(moduleEntity) {
@@ -14,42 +14,37 @@ function module_custom(moduleEntity) {
      * [moduleEntity 模块业务对象]
      * @type {Object}
      */
-    moduleEntity: moduleEntity
-  });
-}
-
-/**
- * [render 渲染模块]
- * @param  {String} html [自定义模块内容]
- */
-module_custom.prototype.render = function(html) {
-  var _this = this,
+    moduleEntity: moduleEntity,
 
     /**
      * [contentWrap 内容包裹元素]
      * @type {Object}
      */
-    _contentWrap = _this.moduleEntity.identifier == 'module_custom_video' ? _this.moduleEntity.htmlEntity.find('.videoBox') : _this.moduleEntity.htmlEntity.find('.leftBoxCon');
-  //_contentWrap = _this.moduleEntity.htmlEntity.find('.leftBoxCon');
+    contentWrap: moduleEntity.identifier == 'module_custom_video' ? moduleEntity.htmlEntity.find('.videoBox') : moduleEntity.htmlEntity.find('.leftBoxCon')
+  });
 
   /**
-   * [判断是否有自定义模块内容参数]
+   * 初始化模块业务逻辑
    */
-  if (html) {
-    _contentWrap.html(html);
-    return;
-  }
+  module_custom.prototype.init.call(_this);
+}
+
+/**
+ * [init 初始化]
+ */
+module_custom.prototype.init = function() {
+  var _this = this;
+
   /**
    * [url 获取自定义内容数据]
    * @type {String}
    */
   $.ajax({
-    url: '/detail/turbine/action/GetCustomContentAction/eventsubmit_doGetcustomcontent/doGetcustomcontent',
+    url: 'http://detail.b2b.hc360.com/detail/turbine/action/GetCustomContentAction/eventsubmit_doGetcustomcontent/doGetcustomcontent',
     type: 'get',
     dataType: 'jsonp',
-    jsonp: 'callback',
     data: {
-      providerid: _this.moduleEntity.regionEntity.pageEntity.providerid,
+      providerid: window.scyps.sc.providerId,
       area: _this.moduleEntity.regionEntity.identifier,
       moduleid: _this.moduleEntity.dataEntity.moduleid,
       windowtype: _this.moduleEntity.dataEntity.windowtype,
@@ -57,20 +52,12 @@ module_custom.prototype.render = function(html) {
     }
   })
     .done(function(json) {
-      if (!!Number(json.state)) {
-
-        if ($.trim(json.data).length === 0) {
-          _contentWrap.html('<div class="nInfoPro2">暂无相关信息！<a href="javascript:;">请添加</a></div>');
-          _contentWrap.siblings('p.videoPrompt').hide();
-        } else {
-          try {
-            _contentWrap.html(json.data || '');
-            _contentWrap.siblings('p.videoPrompt').show();
-            //_contentWrap.html(decodeURIComponent(json.data) || '');
-          } catch (err) {}
-
-        }
-
+      if ($.trim(json.data).length == 0) {
+        _this.contentWrap.html('<div class="nInfoPro2">暂无相关信息！</div>');
+        _this.contentWrap.siblings('p.videoPrompt').hide();
+      } else {
+        _this.contentWrap.html(json.data || '');
+        _this.contentWrap.siblings('p.videoPrompt').show();
       }
     });
 };
