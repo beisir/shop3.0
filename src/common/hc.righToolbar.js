@@ -41,12 +41,12 @@ var rightSidebar = {
                 })
             ).done(function (res) {
                 flag=res.code=="200";
-                flag ? initHtml("http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif"):initHtml();
+                flag ? initHtml("http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif",flag):initHtml();
             }).fail(function () {
                 initHtml();
             });
 
-            function initHtml(imgSrc,wText,msgImgSrc) {
+            function initHtml(imgSrc,wText,msgImgSrc,isBind) {
 
                 /**
                  * 初始化页面Dom元素
@@ -63,7 +63,7 @@ var rightSidebar = {
                 /**
                  * 绑定操作事件
                  */
-                that.bindEvent();
+                that.bindEvent(isBind);
 
                 //绑定状态下5秒钟之后提示卖家微信在线
                 if(imgSrc && wText && msgImgSrc){
@@ -188,22 +188,16 @@ var rightSidebar = {
         /**
          * 绑定右侧工具条操作事件
          */
-        bindEvent: function() {
+        bindEvent: function(isBind) {
             var that = this;
+            //isBind = isBind ? true : false;
+            HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
 
-            /**
-             * 获取二维码接口和场景id接口
-             * @returns {*}
-             */
-            // function getChatCodeInfo() {
-            //     return  $.ajax({
-            //         url:"http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
-            //         type:"GET",
-            //         dataType:"jsonp",
-            //         jsonpCallback:'callback'
-            //     });
-            // }
+              $('#OnlineBtn').queryDialog({
+                isBindWX:isBind ? true : false
+              });
 
+            });
             /***
              * 点击在线咨询,弹出咨询弹层并且执行页面上的方法 （页面方法执行是刘淑珍和刘洪涛的需求 ）
              */
@@ -239,6 +233,8 @@ var rightSidebar = {
                 //that.onlineConsult();
 
             });
+
+
             /**点击立即留言,弹出立即留言弹层  执行页面上的方法（页面方法执行是刘淑珍和刘洪涛的需求 ）*/
             $('#proMessage').click(function() {
                 that.messageDialog();
@@ -408,84 +404,6 @@ var rightSidebar = {
                     that.loopGetMsgPer10s();
                 },10000);
 
-                /*var titleStr = [
-                 '<div class="mTitle">',
-                 '<div class="mTitLeft">',
-                 '<em></em>',
-                 '<span>小慧</span>',
-                 '<span class="borLeft">' + this.companyName + '</span>',
-                 '</div>',
-                 '<span class="mCloseBtn" ele-type="closeWindow">关闭</span>',
-                 '</div>'
-                 ];
-                 var contentInner = [
-                 '<div class="clTop" id="cInnerBox">',
-                 '<div class="clBoxLeft">',
-                 '<em class="clImg"></em>',
-                 '<div class="clImgRig">',
-                 '<p class="clTime">店经理  ' + this.getDateTime() + '</p>',
-                 '<div class="ConsulList">',
-                 '<em></em>',
-                 '<p>你好，欢迎光临' + this.companyName + '，请发送您要咨询的内容。</p>',
-                 '</div>',
-                 '</div>',
-                 '</div>',
-                 '</div>'
-                 ];
-                 var contentStr = [
-                 '<div class="clBot">',
-                 '<div class="clBotText">',
-                 '<textarea name="" placeholder="请在此直接输入您要采购的产品及其他需求" name="plantitle" data-node-name="area"></textarea>',
-                 '<p class="textareaLen" data-node-name="maxLen">还可以输入150字</p>',
-                 '<p class="ProhibitedTxt" data-promptInfo><strong></strong>内容含有违禁词</p>',
-                 '</div>',
-                 '</div>',
-                 '<div class="clBotInput">',
-                 '<span><em>*</em>您的手机号</span>',
-                 '<div class="bInputBox">',
-                 '<input type="text" style="color:#999999;" value="请输入手机号码" name="MP" data-node-name="MP"/>',
-                 '<em class="c-red warning isNull" data-promptInfo><strong></strong>手机号不能为空</em>',
-                 '<em class="c-red warning isError" data-promptInfo><strong></strong>请填写正确的手机号</em>',
-                 '</div>',
-                 '<button type="submit" data-node-name="subtn">发送</button>',
-                 '</div>'
-                 ];
-                 var weixinMessStr = [
-                 '<div class="ConsulRig">',
-                 '<dl>',
-                 '<dt><img style="width:185px;height:187px" src="http://style.org.hc360.com/images/detail/mysite/siteconfig/SY-shop/gCodeImg.jpg" /></dt>',
-                 '<dd>手机扫一扫，关注慧聪采购，移动购物方便快捷</dd>',
-                 '</dl>',
-                 '</div>'
-                 ];
-                 that.consultWrap.append(titleStr.join('')).append($("<div>", {
-                 "class": "ConsulCon"
-                 }));
-                 $('.ConsulCon').append($("<div>", {
-                 "class": "ConsulLeft"
-                 })).append(weixinMessStr.join(''));
-                 $('.ConsulLeft').append(contentInner.join('')).append(contentStr.join(''));*/
-
-                //===================此处已删除  产品:高松   开发：xyh ============================
-                /***
-                 * 弹出问候语您好，欢迎光临（公司名），。。”
-                 * 间隔1S展示“您好，这里是中国领先的B2B电。。。
-                 */
-                /*setTimeout(function() {
-                 var quickreplyStr = [
-                 '<div class="clBoxLeft">' +
-                 '<em class="clImg"></em>' +
-                 '<div class="clImgRig">' +
-                 '<p class="clTime">店经理 ' + that.getDateTime() + '</p>' +
-                 '<div class="ConsulList">' +
-                 '<em></em>' +
-                 '<p>您好，这里是中国领先的B2B电子商务平台—慧聪网，我是专业撮合客服，如果想要咨询厂家和产品信息请留下您的联系方式，慧聪网客服人员会跟进尽快解决您的问题。</p>' +
-                 '</div>' +
-                 '</div>' +
-                 '</div>'
-                 ];
-                 $('#cInnerBox').append(quickreplyStr.join(''));
-                 }, 1000);*/
                 that.onlineFormValidation();
                 $('[ele-type="closeWindow"]').click(function() { //在线咨询弹框
                     var codeUrl = $(this).attr('data-picUrl');

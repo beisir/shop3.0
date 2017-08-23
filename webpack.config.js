@@ -54,8 +54,13 @@ module.exports = {
 		'frontend/page.dealer_network': path.join(__dirname, 'src/frontend/page.dealer_network'), //经销网络
 		'frontend/page.credit': path.join(__dirname, 'src/frontend/page.credit'), //信用证书
 		'frontend/page.creditdetail': path.join(__dirname, 'src/frontend/page.creditdetail'), //企业资质详情页
-        'frontend/page.commodity': path.join(__dirname, 'src/frontend/page.commodity') //企业资质详情页
-	},
+    'frontend/page.commodity': path.join(__dirname, 'src/frontend/page.commodity'), //企业资质详情页
+
+    /**
+     * 右侧工具条在线咨询弹框公用插件 入口文件
+     */
+    'common/jquery-inqueryOnline.dialog':path.join(__dirname, 'src/common/jquery-inqueryOnline.dialog')
+  },
 
 	/**
 	 * [output 输出文件配置]

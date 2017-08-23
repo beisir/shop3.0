@@ -7,6 +7,10 @@ module.exports = {
 		html: false,
 		name: '底部'
 	},
+  'common/jquery-inqueryOnline.dialog':{
+    html: false,
+    name: '顶部'
+  },
 	'backend/page.index': {
 		html: false,
 		name: '首页',
