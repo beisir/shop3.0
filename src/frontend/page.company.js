@@ -124,6 +124,19 @@ page_contact_us.prototype = {
         });
 
         /**
+         * 初始化立即交谈按钮
+         */
+        HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+
+            $('#contactChat').queryDialog({
+              is3y:window.scyps.sc.is3y=="1" ? true : false,
+              companyName:window.infoname || '',
+              providerId:window.scyps.sc.providerId
+            });
+
+        });
+
+        /**
          * [显示企业档案模块的 商盈通 图标逻辑]
          */
         $.ajax({

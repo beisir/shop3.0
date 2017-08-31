@@ -181,11 +181,25 @@ SupplyProduct.prototype = {
 		$(".OnConsulting").hide();
 		$(".dProList ul").find("li").hover(function(){
 			var $this = $(this);
-			$this.find(".OnConsulting").show().on('click',function(){
+      $this.find(".OnConsulting").show();
+      /**
+       * 初始化在线咨询按钮
+       */
+      HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+
+        $this.find(".OnConsulting").queryDialog({
+          is3y:window.scyps.sc.is3y=="1" ? true : false,
+          companyName:window.infoname || '',
+          providerId:window.scyps.sc.providerId
+        });
+
+      });
+
+			/*$this.find(".OnConsulting").show().on('click',function(){
 				if(righToolbar){
 					righToolbar.onlineConsult();
 				}
-			});
+			});*/
 		},function(){
 			var $this = $(this);
 			$this.find(".OnConsulting").hide();

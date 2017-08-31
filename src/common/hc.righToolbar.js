@@ -41,12 +41,12 @@ var rightSidebar = {
                 })
             ).done(function (res) {
                 flag=res.code=="200";
-                flag ? initHtml("http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif",flag):initHtml();
+                flag ? initHtml("http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif"):initHtml();
             }).fail(function () {
                 initHtml();
             });
 
-            function initHtml(imgSrc,wText,msgImgSrc,isBind) {
+            function initHtml(imgSrc,wText,msgImgSrc) {
 
                 /**
                  * 初始化页面Dom元素
@@ -63,7 +63,7 @@ var rightSidebar = {
                 /**
                  * 绑定操作事件
                  */
-                that.bindEvent(isBind);
+                that.bindEvent();
 
                 //绑定状态下5秒钟之后提示卖家微信在线
                 if(imgSrc && wText && msgImgSrc){
@@ -188,20 +188,21 @@ var rightSidebar = {
         /**
          * 绑定右侧工具条操作事件
          */
-        bindEvent: function(isBind) {
+        bindEvent: function() {
             var that = this;
-            //isBind = isBind ? true : false;
             HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
 
               $('#OnlineBtn').queryDialog({
-                isBindWX:isBind ? true : false
+                is3y:window.scyps.sc.is3y=="1" ? true : false,
+                companyName:window.infoname || '',
+                providerId:window.scyps.sc.providerId
               });
 
             });
             /***
              * 点击在线咨询,弹出咨询弹层并且执行页面上的方法 （页面方法执行是刘淑珍和刘洪涛的需求 ）
              */
-            $('body').on('click','#OnlineBtn,#contactChat',function() {
+            /*$('body').on('click','#OnlineBtn,#contactChat',function() {
             // $('#OnlineBtn').parent().click(function() {
 
                 var $this = $(this);
@@ -232,7 +233,7 @@ var rightSidebar = {
 
                 //that.onlineConsult();
 
-            });
+            });*/
 
 
             /**点击立即留言,弹出立即留言弹层  执行页面上的方法（页面方法执行是刘淑珍和刘洪涛的需求 ）*/
@@ -896,6 +897,7 @@ var rightSidebar = {
                     }
                 });
             });
+
             that.consultWrap.find('[data-node-name="subtn"]').click(function() {
                 //that.submitFrom();
                 var $this = $(this);
@@ -1195,34 +1197,12 @@ var rightSidebar = {
                 '</div>' +
                 '</div>';
 
-            /*function dialoge() {
-                replyStr += '<div class="clBoxLeft">' +
-                    '<em class="clImg"></em>' +
-                    '<div class="clImgRig">' +
-                    '<p class="clTime">店经理 ' + that.getDateTime() + '</p>' +
-                    '<div class="ConsulList">' +
-                    '<em></em>' +
-                    '<p>扫码右方的二维码，可以微信随时接收我们的回复</p>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>';
-                $('#cInnerBox').append(replyStr);
-            }*/
-
             $('#cInnerBox').append(MessageStr);
             //清空输入框
             $('textarea[data-node-name="area"]').val('');
             $.each(that.elements, function(key, val) {
                 $(val.selector).css('color', 'gray');
             });
-            /*setTimeout(function() {
-                dialoge();
-                var innerHeight = $('.inputCount:last').height() + 108;
-                var sTop = $('#cInnerBox').scrollTop() + innerHeight;
-                $('#cInnerBox').scrollTop(sTop);
-                $('button[ele-type="subtn"]').removeClass('cGrayBtn');
-                $('button[ele-type="subtn"]').removeAttr("disabled");
-            }, 1000);*/
         },
         /***
          * 获得当前时间
