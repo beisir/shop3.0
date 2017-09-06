@@ -3,8 +3,8 @@
 * Copyright (C) 2006-${THISYEAR} kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @website http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @website //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 * @version ${VERSION}
 *******************************************************************************/
 

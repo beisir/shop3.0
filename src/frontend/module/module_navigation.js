@@ -31,14 +31,14 @@ module_navigation.prototype.init = function() {
     var _this = this;
 
     /**
-     * 针对 kqe666 用户，在导航后新增一个内容为 总成报价 的链接，该链接跳转到 http://www.gyjgzc.com
+     * 针对 kqe666 用户，在导航后新增一个内容为 总成报价 的链接，该链接跳转到 //www.gyjgzc.com
      * 
      * 该需求为产品人员 高松 提出的特殊需求
      */
     if (window.userName === 'kqe666') {
         $([
             '<td>',
-            '   <a href="http://www.gyjgzc.com" target="_blank">总成报价</a>',
+            '   <a href="//www.gyjgzc.com" target="_blank">总成报价</a>',
             '</td>'
         ].join('')).appendTo(_this.moduleEntity.htmlEntity.find('.navBoxCon tr'));
     }

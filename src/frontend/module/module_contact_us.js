@@ -55,7 +55,7 @@ module_contact_us.prototype.initQQFFMod=function(){
 		qqMonitor='onmousedown="HC.UBA.sendUserlogsElement(&quot;UserBehavior_detail_qq_float_free_1?detailuserid='+userId+'&quot;)"';
 	}
 	$.ajax({
-		url:"http://detail.b2b.hc360.com/detail/turbine/template/saleser,qqser.html?jsoncallback=?",
+		url:"//detail.b2b.hc360.com/detail/turbine/template/saleser,qqser.html?jsoncallback=?",
 		data:{
 			providerId: window.providerId
 		},
@@ -65,9 +65,9 @@ module_contact_us.prototype.initQQFFMod=function(){
 				qqHtml="";
 			if(qqlist.length>0){
 				var item=qqlist[0];
-				qqHtml='<a href="http://wpa.qq.com/msgrd?v=3&uin='+item.qq+'&site=qq&menu=yes" target="_blank" onclick="return hcclick(&quot;?hcdetail_enterpriselog=contact_qq&quot;);" class="leftqqIco"'+qqMonitor+'/></a>';
+				qqHtml='<a href="//wpa.qq.com/msgrd?v=3&uin='+item.qq+'&site=qq&menu=yes" target="_blank" onclick="return hcclick(&quot;?hcdetail_enterpriselog=contact_qq&quot;);" class="leftqqIco"'+qqMonitor+'/></a>';
 			}
-			qqHtml+='<a href="javascript:;" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(UserBehavior_detail_fafa_float_1?detailuserid='+userId+'),return hcclick(&quot;?hcdetail_enterpriselog=contact_weixin&quot;)"><img data-query="weixin" src="http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco2.png" /></a>'
+			qqHtml+='<a href="javascript:;" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(UserBehavior_detail_fafa_float_1?detailuserid='+userId+'),return hcclick(&quot;?hcdetail_enterpriselog=contact_weixin&quot;)"><img data-query="weixin" src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco2.png" /></a>'
 			$('[data-node-name="companyServiceMod"]').html(qqHtml);
 		}
 	});

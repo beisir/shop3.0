@@ -18,7 +18,7 @@
   "content_scripts":
   [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["//*/*", "//*/*"],
       "js": ["contentScript.js"],
       "run_at": "document_start"
     }
@@ -26,9 +26,9 @@
   "permissions":
   [
     "tabs", 
-    "http://*/*", 
-    "https://*/*",
-    "http://127.0.0.1/*",
-    "http://localhost/*"
+    "//*/*", 
+    "//*/*",
+    "//127.0.0.1/*",
+    "//localhost/*"
   ]
 }

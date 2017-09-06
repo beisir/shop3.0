@@ -50,7 +50,7 @@ POST参数
 	//成功时
 	{
 		"error" : 0,
-		"url" : "http://www.example.com/path/to/file.ext"
+		"url" : "//www.example.com/path/to/file.ext"
 	}
 	//失败时
 	{

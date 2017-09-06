@@ -5,12 +5,12 @@
 -----------------------------------------------------------------
 下载 KindEditor 最新版本，下载之后打开 examples/index.html 就可以看到演示。
 
-下载页面: http://www.kindsoft.net/down.php
+下载页面: //www.kindsoft.net/down.php
 
 2. 部署编辑器
 -----------------------------------------------------------------
 
-解压 kindeditor-x.x.x.zip 文件，将所有文件上传到您的网站程序目录里，例如：http://您的域名/editor/
+解压 kindeditor-x.x.x.zip 文件，将所有文件上传到您的网站程序目录里，例如：//您的域名/editor/
 
 .. note::
 

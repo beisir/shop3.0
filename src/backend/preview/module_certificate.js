@@ -46,7 +46,7 @@ preview.prototype.init = function() {
 	/**
 	 * 设置样式文件
 	 */
-	_this.styleElement.length && _this.styleElement.attr('href', (_this.params.style || 'http://style.org.hc360.com/css/detail/mysite/siteconfig/newPro/proStyle.css'));
+	_this.styleElement.length && _this.styleElement.attr('href', (_this.params.style || '//style.org.hc360.com/css/detail/mysite/siteconfig/newPro/proStyle.css'));
 
 	/**
 	 * [templateElement 获取模板元素及其HTML]

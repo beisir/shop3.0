@@ -7,7 +7,7 @@ function SmartWindow(container){
     this.switchBtn = container.find("#switchBtn");//智能橱窗换一换按钮
     this.showNum = 4;//展示的个数
     this.currentPage = 0;//默认当前页
-    this.ajaxUrl = 'http://detail.b2b.hc360.com/detail/turbine/action/ajax.SmartWinAjax/eventsubmit_doGet/doGet';//请求的接口
+    this.ajaxUrl = '//detail.b2b.hc360.com/detail/turbine/action/ajax.SmartWinAjax/eventsubmit_doGet/doGet';//请求的接口
 
     this.ajaxData = {
         username : userName,//取当前页全局变量username
@@ -107,7 +107,7 @@ SmartWindow.prototype = {
                             title = decodeURIComponent(title);
                         }
                         var ids = getId(obj.url);
-                        obj.imgUrl = (obj.imgUrl == "" ? "http://b2b.hc360.com/mmtTrade/images/nopic.jpg" : obj.imgUrl);
+                        obj.imgUrl = (obj.imgUrl == "" ? "//b2b.hc360.com/mmtTrade/images/nopic.jpg" : obj.imgUrl);
                         html = html + "<li><div class='wRepro'><table><tr><td>"
                             + "<a target='_blank1' data-exposurelog='" + _t.ajaxData.username + "," + ids + "' href='" + obj.url + "' title='" + title + "' onclick=\"return hcclick('?" + userLog.img + "');\">"
                             + "<img onerror='imgonerror(this)' onload='resizeImg(this,160,160)' src='" + obj.imgUrl + "' alt='" + title + "'/>"
@@ -154,7 +154,7 @@ SmartWindow.prototype = {
         }
 
         function imgonerror(img) {
-            var noneImg = "http://b2b.hc360.com/mmtTrade/images/nopic.jpg";
+            var noneImg = "//b2b.hc360.com/mmtTrade/images/nopic.jpg";
             img.src = noneImg;
             img.onerror = null;
         }

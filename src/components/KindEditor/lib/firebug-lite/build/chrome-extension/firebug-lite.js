@@ -6,7 +6,7 @@
  *
  *      Copyright (c) 2007, Parakey Inc.
  *      Released under BSD license.
- *      More information: http://getfirebug.com/firebuglite
+ *      More information: //getfirebug.com/firebuglite
  *
  **************************************************************/
 
@@ -16,7 +16,7 @@
  * Sizzle CSS Selector Engine - v1.0
  *  Copyright 2009, The Dojo Foundation
  *  Released under the MIT, BSD, and GPL Licenses.
- *  More information: http://sizzlejs.com/
+ *  More information: //sizzlejs.com/
  */
 
 /** @namespace describe lib */
@@ -30,7 +30,7 @@ var FBL = {};
 // ************************************************************************************************
 // Constants
 
-var productionDir = "http://getfirebug.com/releases/lite/";
+var productionDir = "//getfirebug.com/releases/lite/";
 var bookmarkletVersion = 4;
 
 // ************************************************************************************************
@@ -673,7 +673,7 @@ function arrayInsert(array, index, other)
 this.createStyleSheet = function(doc, url)
 {
     //TODO: xxxpedro
-    //var style = doc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+    //var style = doc.createElementNS("//www.w3.org/1999/xhtml", "style");
     var style = this.createElement("link");
     style.setAttribute("charset","utf-8");
     style.firebugIgnore = true;
@@ -708,7 +708,7 @@ this.appendStylesheet = function(doc, uri)
 
 this.addScript = function(doc, id, src)
 {
-    var element = doc.createElementNS("http://www.w3.org/1999/xhtml", "html:script");
+    var element = doc.createElementNS("//www.w3.org/1999/xhtml", "html:script");
     element.setAttribute("type", "text/javascript");
     element.setAttribute("id", id);
     if (!FBTrace.DBG_CONSOLE)
@@ -800,7 +800,7 @@ e(0xa9, 'copy', text, editor);
 e(0xae, 'reg', text, editor);
 e(0x2122, 'trade', text, editor);
 
-// See http://en.wikipedia.org/wiki/Dash
+// See //en.wikipedia.org/wiki/Dash
 e(0x2012, '#8210', attr, text, editor); // figure dash
 e(0x2013, 'ndash', attr, text, editor); // en dash
 e(0x2014, 'mdash', attr, text, editor); // em dash
@@ -1174,8 +1174,8 @@ this.isVisible = function(elt)
     return this.getStyle(elt, "visibility") != "hidden" &&
         ( elt.offsetWidth > 0 || elt.offsetHeight > 0
         || elt.tagName in invisibleTags
-        || elt.namespaceURI == "http://www.w3.org/2000/svg"
-        || elt.namespaceURI == "http://www.w3.org/1998/Math/MathML" );
+        || elt.namespaceURI == "//www.w3.org/2000/svg"
+        || elt.namespaceURI == "//www.w3.org/1998/Math/MathML" );
 };
 
 this.collapse = function(elt, collapsed)
@@ -1730,7 +1730,7 @@ this.getElementCSSSelector = function(element)
 
 this.getURLForStyleSheet= function(styleSheet)
 {
-    //http://www.w3.org/TR/DOM-Level-2-Style/stylesheets.html#StyleSheets-StyleSheet. For inline style sheets, the value of this attribute is null.
+    ////www.w3.org/TR/DOM-Level-2-Style/stylesheets.html#StyleSheets-StyleSheet. For inline style sheets, the value of this attribute is null.
     return (styleSheet.href ? styleSheet.href : styleSheet.ownerNode.ownerDocument.URL);
 };
 
@@ -1813,12 +1813,12 @@ var isElementXHTML = this.isElementXHTML = function(node)
 
 var isElementMathML = this.isElementMathML = function(node)
 {
-    return node.namespaceURI == 'http://www.w3.org/1998/Math/MathML';
+    return node.namespaceURI == '//www.w3.org/1998/Math/MathML';
 }
 
 var isElementSVG = this.isElementSVG = function(node)
 {
-    return node.namespaceURI == 'http://www.w3.org/2000/svg';
+    return node.namespaceURI == '//www.w3.org/2000/svg';
 }
 
 var isElementXUL = this.isElementXUL = function(node)
@@ -3081,7 +3081,7 @@ this.parseURLEncodedText = function(text)
     var params = [];
 
     // Unescape '+' characters that are used to encode a space.
-    // See section 2.2.in RFC 3986: http://www.ietf.org/rfc/rfc3986.txt
+    // See section 2.2.in RFC 3986: //www.ietf.org/rfc/rfc3986.txt
     text = text.replace(/\+/g, " ");
 
     var args = text.split("&");
@@ -3140,7 +3140,7 @@ this.parseURLEncodedTextArray = function(text)
     var params = [];
 
     // Unescape '+' characters that are used to encode a space.
-    // See section 2.2.in RFC 3986: http://www.ietf.org/rfc/rfc3986.txt
+    // See section 2.2.in RFC 3986: //www.ietf.org/rfc/rfc3986.txt
     text = text.replace(/\+/g, " ");
 
     var args = text.split("&");
@@ -5546,7 +5546,7 @@ this.innerEditableTags =
 };
 
 this.selfClosingTags =
-{ // End tags for void elements are forbidden http://wiki.whatwg.org/wiki/HTML_vs._XHTML
+{ // End tags for void elements are forbidden //wiki.whatwg.org/wiki/HTML_vs._XHTML
     "meta": 1,
     "link": 1,
     "area": 1,
@@ -5915,7 +5915,7 @@ this.Ajax =
 
 
 // ************************************************************************************************
-// Cookie, from http://www.quirksmode.org/js/cookies.html
+// Cookie, from //www.quirksmode.org/js/cookies.html
 
 this.createCookie = function(name,value,days)
 {
@@ -5959,7 +5959,7 @@ this.removeCookie = function(name)
 
 
 // ************************************************************************************************
-// http://www.mister-pixel.com/#Content__state=is_that_simple
+// //www.mister-pixel.com/#Content__state=is_that_simple
 var fixIE6BackgroundImageCache = function(doc)
 {
     doc = doc || document;
@@ -9620,7 +9620,7 @@ var getChromeTemplate = function(isPopup)
     var tpl = FirebugChrome.Skin;
     var r = [], i = -1;
 
-    r[++i] = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/DTD/strict.dtd">';
+    r[++i] = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "//www.w3.org/TR/html4/DTD/strict.dtd">';
     r[++i] = '<html><head><title>';
     r[++i] = Firebug.version;
 
@@ -9817,17 +9817,17 @@ append(ChromeBase,
 
             visitWebsite: function()
             {
-                this.visit("http://getfirebug.com/lite.html");
+                this.visit("//getfirebug.com/lite.html");
             },
 
             visitDiscussionGroup: function()
             {
-                this.visit("http://groups.google.com/group/firebug");
+                this.visit("//groups.google.com/group/firebug");
             },
 
             visitIssueTracker: function()
             {
-                this.visit("http://code.google.com/p/fbug/issues/list");
+                this.visit("//code.google.com/p/fbug/issues/list");
             },
 
             visit: function(url)
@@ -10046,7 +10046,7 @@ append(ChromeBase,
         if (Env.bookmarkletOutdated)
             Firebug.Console.logFormatted([
                   "A new bookmarklet version is available. " +
-                  "Please visit http://getfirebug.com/firebuglite#Install and update it."
+                  "Please visit //getfirebug.com/firebuglite#Install and update it."
                 ], Firebug.context, "warn");
 
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -11669,7 +11669,7 @@ Firebug.Lite.Proxy =
      */
     YQL: function(url, callback)
     {
-        var yql = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22" +
+        var yql = "//query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22" +
                 encodeURIComponent(url) + "%22&format=xml";
 
         this.loadJSONP(yql, function(data)
@@ -11774,7 +11774,7 @@ FBL.ns( /**@scope ns-selector*/ function() { with (FBL) {
  * Sizzle CSS Selector Engine - v1.0
  *  Copyright 2009, The Dojo Foundation
  *  Released under the MIT, BSD, and GPL Licenses.
- *  More information: http://sizzlejs.com/
+ *  More information: //sizzlejs.com/
  */
 
 var chunker = /((?:\((?:\([^()]+\)|[^()]+)+\)|\[(?:\[[^[\]]*\]|['"][^'"]*['"]|[^[\]'"]+)+\]|\\.|[^ >+~,(\[\\]+)+|[>+~])(\s*,\s*)?((?:.|\r|\n)*)/g,
@@ -14554,7 +14554,7 @@ this.Arr = domplate(Firebug.Rep,
         return this.isArray(object);
     },
 
-    // http://code.google.com/p/fbug/issues/detail?id=874
+    // //code.google.com/p/fbug/issues/detail?id=874
     // BEGIN Yahoo BSD Source (modified here)  YAHOO.lang.isArray, YUI 2.2.2 June 2007
     isArray: function(obj) {
         try {
@@ -15725,13 +15725,13 @@ this.ApplicationCache = domplate(Firebug.Rep,
         }
         catch(exc)
         {
-            return "https://bugzilla.mozilla.org/show_bug.cgi?id=422264";
+            return "//bugzilla.mozilla.org/show_bug.cgi?id=422264";
         }
     },
 
     showApplicationCache: function(event)
     {
-        openNewTab("https://bugzilla.mozilla.org/show_bug.cgi?id=422264");
+        openNewTab("//bugzilla.mozilla.org/show_bug.cgi?id=422264");
     },
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -15756,7 +15756,7 @@ this.Storage = domplate(Firebug.Rep,
     },
     show: function(storage)
     {
-        openNewTab("http://dev.w3.org/html5/webstorage/#storage-0");
+        openNewTab("//dev.w3.org/html5/webstorage/#storage-0");
     },
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -15802,7 +15802,7 @@ Firebug.setDefaultReps(this.Func, this.Obj);
 
 // ************************************************************************************************
 /*
- * The following is http://developer.yahoo.com/yui/license.txt and applies to only code labeled "Yahoo BSD Source"
+ * The following is //developer.yahoo.com/yui/license.txt and applies to only code labeled "Yahoo BSD Source"
  * in only this file reps.js.  John J. Barton June 2007.
  *
 Software License Agreement (BSD License)
@@ -21729,7 +21729,7 @@ Firebug.NetMonitor.NetInfoPostData = domplate(Firebug.Rep, /*new Firebug.Listene
     {
         ///var text = Utils.getPostText(file, context);
         var text = file.responseText;
-        ///var data = parseJSONString(text, "http://" + file.request.originalURI.host);
+        ///var data = parseJSONString(text, "//" + file.request.originalURI.host);
         var data = parseJSONString(text);
         if (!data)
             return;
@@ -23023,7 +23023,7 @@ Firebug.JSONViewerModel = extend(Firebug.Module,
     parseJSON: function(file)
     {
         var jsonString = new String(file.responseText);
-        ///return parseJSONString(jsonString, "http://" + file.request.originalURI.host);
+        ///return parseJSONString(jsonString, "//" + file.request.originalURI.host);
         return parseJSONString(jsonString);
     }
 });
@@ -23150,7 +23150,7 @@ Firebug.XMLViewerModel = extend(Firebug.Module,
         var root = doc.documentElement;
 
         // Error handling
-        var nsURI = "http://www.mozilla.org/newlayout/xml/parsererror.xml";
+        var nsURI = "//www.mozilla.org/newlayout/xml/parsererror.xml";
         if (root.namespaceURI == nsURI && root.nodeName == "parsererror")
         {
             this.ParseError.tag.replace({error: {
@@ -24916,7 +24916,7 @@ var getCSSRuleSpecificity = function(selector)
 //const nsISelectionDisplay = Ci.nsISelectionDisplay;
 //const nsISelectionController = Ci.nsISelectionController;
 
-// See: http://mxr.mozilla.org/mozilla1.9.2/source/content/events/public/nsIEventStateManager.h#153
+// See: //mxr.mozilla.org/mozilla1.9.2/source/content/events/public/nsIEventStateManager.h#153
 //const STATE_ACTIVE  = 0x01;
 //const STATE_FOCUS   = 0x02;
 //const STATE_HOVER   = 0x04;
@@ -25077,7 +25077,7 @@ var styleGroups =
         "display",
         "visibility",
         "z-index",
-        "overflow-x",  // http://www.w3.org/TR/2002/WD-css3-box-20021024/#overflow
+        "overflow-x",  // //www.w3.org/TR/2002/WD-css3-box-20021024/#overflow
         "overflow-y",
         "overflow-clip",
         "white-space",
@@ -25122,12 +25122,12 @@ Firebug.CSSModule = extend(Firebug.Module,
             url.spec = styleSheet.href;
 
             var editStyleSheet = ownerNode.ownerDocument.createElementNS(
-                "http://www.w3.org/1999/xhtml",
+                "//www.w3.org/1999/xhtml",
                 "style");
             unwrapObject(editStyleSheet).firebugIgnore = true;
             editStyleSheet.setAttribute("type", "text/css");
             editStyleSheet.setAttributeNS(
-                "http://www.w3.org/XML/1998/namespace",
+                "//www.w3.org/XML/1998/namespace",
                 "base",
                 url.directory);
             if (ownerNode.hasAttribute("media"))
@@ -25234,8 +25234,8 @@ Firebug.CSSModule = extend(Firebug.Module,
         // Firefox to regenerate it's CSS hierarchy.
         //
         // WARN: This behavior was determined anecdotally.
-        // See http://code.google.com/p/fbug/issues/detail?id=2440
-        var style = doc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+        // See //code.google.com/p/fbug/issues/detail?id=2440
+        var style = doc.createElementNS("//www.w3.org/1999/xhtml", "style");
         style.setAttribute("charset","utf-8");
         unwrapObject(style).firebugIgnore = true;
         style.setAttribute("type", "text/css");
@@ -25243,7 +25243,7 @@ Firebug.CSSModule = extend(Firebug.Module,
         addStyleSheet(doc, style);
         style.parentNode.removeChild(style);
 
-        // https://bugzilla.mozilla.org/show_bug.cgi?id=500365
+        // //bugzilla.mozilla.org/show_bug.cgi?id=500365
         // This voodoo touches each style sheet to force some Firefox internal change to allow edits.
         var styleSheets = getAllStyleSheets(context);
         for(var i = 0; i < styleSheets.length; i++)
@@ -25905,7 +25905,7 @@ Firebug.CSSStyleSheetPanel.prototype = extend(Firebug.SourceBoxPanel,
             externalStyleSheetWarning.tag.append({
                 object: "The stylesheet could not be loaded due to access restrictions. ",
                 link: "more...",
-                href: "http://getfirebug.com/wiki/index.php/Firebug_Lite_FAQ#I_keep_seeing_.22Access_to_restricted_URI_denied.22"
+                href: "//getfirebug.com/wiki/index.php/Firebug_Lite_FAQ#I_keep_seeing_.22Access_to_restricted_URI_denied.22"
             }, this.panelNode);
 
             return;
@@ -26352,7 +26352,7 @@ CSSElementPanel.prototype = extend(Firebug.CSSStyleSheetPanel.prototype,
                 object: "The results here may be inaccurate because some " +
                         "stylesheets could not be loaded due to access restrictions. ",
                 link: "more...",
-                href: "http://getfirebug.com/wiki/index.php/Firebug_Lite_FAQ#I_keep_seeing_.22This_element_has_no_style_rules.22"
+                href: "//getfirebug.com/wiki/index.php/Firebug_Lite_FAQ#I_keep_seeing_.22This_element_has_no_style_rules.22"
             }, this.panelNode);
     },
 
@@ -26416,7 +26416,7 @@ CSSElementPanel.prototype = extend(Firebug.CSSStyleSheetPanel.prototype,
                     continue;
 
                 if (!href)
-                    href = element.ownerDocument.location.href; // http://code.google.com/p/fbug/issues/detail?id=452
+                    href = element.ownerDocument.location.href; // //code.google.com/p/fbug/issues/detail?id=452
 
                 var props = this.getRuleProperties(this.context, rule, inheritMode);
                 if (inheritMode && !props.length)
@@ -26467,7 +26467,7 @@ CSSElementPanel.prototype = extend(Firebug.CSSStyleSheetPanel.prototype,
                 if (!Firebug.showUserAgentCSS && isSystemSheet) // This removes user agent rules
                     continue;
                 if (!href)
-                    href = element.ownerDocument.location.href; // http://code.google.com/p/fbug/issues/detail?id=452
+                    href = element.ownerDocument.location.href; // //code.google.com/p/fbug/issues/detail?id=452
 
                 var props = this.getRuleProperties(this.context, rule, inheritMode);
                 if (inheritMode && !props.length)
@@ -26990,7 +26990,7 @@ CSSRuleEditor.prototype = domplate(Firebug.InlineEditor.prototype,
 
         // Firefox does not follow the spec for the update selector text case.
         // When attempting to update the value, firefox will silently fail.
-        // See https://bugzilla.mozilla.org/show_bug.cgi?id=37468 for the quite
+        // See //bugzilla.mozilla.org/show_bug.cgi?id=37468 for the quite
         // old discussion of this bug.
         // As a result we need to recreate the style every time the selector
         // changes.

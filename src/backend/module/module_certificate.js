@@ -194,7 +194,7 @@ certificate.prototype.bindEvent = function() {
          * [previewUrl 预览页面地址]
          * @type {String}
          */
-        var previewUrl = 'http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/module_certificate.html?params={{params}}',
+        var previewUrl = '//style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/module_certificate.html?params={{params}}',
 
             /**
              * [params 传递到预览页的参数]

@@ -1,128 +1,128 @@
 {
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.album.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.album.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.album.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.album.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.module.setting.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.module.setting.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.module.setting.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.module.setting.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/mustache/mustache.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/mustache/mustache.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/mustache/mustache.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/mustache/mustache.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.pagination.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.pagination.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.pagination.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.pagination.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/OwlCarousel/OwlCarousel.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/OwlCarousel/OwlCarousel.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/OwlCarousel/OwlCarousel.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/OwlCarousel/OwlCarousel.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/Jcrop/Jcrop.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/Jcrop/Jcrop.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/Jcrop/Jcrop.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/Jcrop/Jcrop.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/jquery_imgLiquid.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/jquery_imgLiquid.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/jquery_imgLiquid.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/jquery_imgLiquid.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/colorjoe/colorjoe.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/colorjoe/colorjoe.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/colorjoe/colorjoe.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/colorjoe/colorjoe.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/kindeditor/kindeditor.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/kindeditor/kindeditor.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/kindeditor/kindeditor.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/kindeditor/kindeditor.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist//backend/page.module.selector.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist//backend/page.module.selector.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist//backend/page.module.selector.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist//backend/page.module.selector.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/common/hc.IELowVersionPrompt.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/common/hc.IELowVersionPrompt.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/common/hc.IELowVersionPrompt.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/common/hc.IELowVersionPrompt.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.businwindow.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.businwindow.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.businwindow.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.businwindow.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.busnote.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.busnote.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.busnote.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.busnote.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.company.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.company.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.company.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.company.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.credit.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.credit.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.credit.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.credit.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.index.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.index.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.index.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.index.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.info.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.info.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.info.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.info.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.mmtdocs.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.mmtdocs.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.mmtdocs.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.mmtdocs.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.show.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.show.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.show.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.show.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.userdefinechannel.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/page.userdefinechannel.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.userdefinechannel.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/page.userdefinechannel.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/preview.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/preview.fa8a85ab4f63d9a1f29e.js",
-		"css": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/preview.css"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/preview.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/preview.fa8a85ab4f63d9a1f29e.js",
+		"css": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/preview.css"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.fullScreenSlider.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.fullScreenSlider.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.fullScreenSlider.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/jquery.fullScreenSlider.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/msclass/msclass.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/msclass/msclass.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/msclass/msclass.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/msclass/msclass.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/common/page.bottom.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/common/page.bottom.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/common/page.bottom.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/common/page.bottom.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/common/page.top.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/common/page.top.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/common/page.top.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/common/page.top.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.album.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.album.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.album.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.album.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/components/slick.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/components/slick.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/components/slick.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/components/slick.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/common/hc.righToolbar.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/common/hc.righToolbar.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/common/hc.righToolbar.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/common/hc.righToolbar.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/common/smartWindow.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/common/smartWindow.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/common/smartWindow.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/common/smartWindow.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.businwindow.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.businwindow.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.businwindow.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.businwindow.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.busnote.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.busnote.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.busnote.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.busnote.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.company.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.company.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.company.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.company.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.credit.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.credit.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.credit.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.credit.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.index.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.index.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.index.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.index.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.info.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.info.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.info.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.info.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.mmtdocs.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.mmtdocs.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.mmtdocs.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.mmtdocs.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.show.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.show.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.show.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.show.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.userdefinechannel.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.userdefinechannel.fa8a85ab4f63d9a1f29e.js"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.userdefinechannel.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/page.userdefinechannel.fa8a85ab4f63d9a1f29e.js"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/backend/combo.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/combo.fa8a85ab4f63d9a1f29e.js",
-		"css": "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/combo.css"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/backend/combo.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/combo.fa8a85ab4f63d9a1f29e.js",
+		"css": "//style.org.hc360.cn/js/module/shop3.0/dist/backend/combo.css"
 	},
-	"http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/combo.js": {
-		"js": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/combo.fa8a85ab4f63d9a1f29e.js",
-		"css": "http://style.org.hc360.cn/js/module/shop3.0/dist/frontend/combo.css"
+	"//style.org.hc360.cn/js/module/shop3.0/dist/frontend/combo.js": {
+		"js": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/combo.fa8a85ab4f63d9a1f29e.js",
+		"css": "//style.org.hc360.cn/js/module/shop3.0/dist/frontend/combo.css"
 	}
 }

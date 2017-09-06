@@ -99,7 +99,7 @@ var tempStyle = function(config, that) {
      * 风格设置的内外背景，如果用户没有上传图片，用无图的图片
      * @type {string}
      */
-    this.noPicAddress = 'http://style.org.hc360.com/images/detail/mysite/default/noPicAddress.jpg';
+    this.noPicAddress = '//style.org.hc360.com/images/detail/mysite/default/noPicAddress.jpg';
     /***
      * 初始化内外背景
      */
@@ -141,32 +141,32 @@ tempStyle.prototype = {
          */
         this.backObject = {
             insideBg: [
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_1.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_2.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_3.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_4.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_5.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_6.jpg'
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_1.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_2.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_3.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_4.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_5.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_1_6.jpg'
             ],
             outsideBg: [
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_1.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_2.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_3.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_4.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_5.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_6.jpg'
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_1.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_2.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_3.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_4.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_5.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_2_6.jpg'
             ],
             outsideVipBg: [
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_1.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_2.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_3.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_4.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_5.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_6.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_7.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_8.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_9.jpg',
-                'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_10.jpg'
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_1.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_2.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_3.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_4.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_5.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_6.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_7.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_8.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_9.jpg',
+                '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/within/pic_3_10.jpg'
             ]
         };
 
@@ -176,9 +176,9 @@ tempStyle.prototype = {
          */
         that.webuploaderConfig = $.extend({}, {
             // swf文件路径
-            swf: 'http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf',
+            swf: '//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf',
             // 文件接收服务端。
-            server: 'http://imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd',
+            server: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd',
             // 选择文件的按钮。可选。
             pick: {
                 id: that.uploadBtn,

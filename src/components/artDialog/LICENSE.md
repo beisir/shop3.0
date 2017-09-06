@@ -2,7 +2,7 @@
 
 ##	LGPL
 
-artDialog 采用 [LGPL](http://www.gnu.org/licenses/lgpl-2.1.html) 开源协议：
+artDialog 采用 [LGPL](//www.gnu.org/licenses/lgpl-2.1.html) 开源协议：
 
 *	基于 GPL 的软件允许商业化销售，但不允许封闭源代码。
 *	如果您对遵循 GPL 的软件进行任何改动和/或再次开发并予以发布，则您的产品必须继承 GPL 协议，不允许封闭源代码。

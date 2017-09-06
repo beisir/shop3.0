@@ -39,8 +39,8 @@ var FullAdsUtil = function(settions, html, options) {
      * @type {{swf: string, server: string, formData: {operType: string, picstr: (*|string)}, fileVal: string, threads: number, crop: boolean, fileSingleSizeLimit: number, accept: {title: string, extensions: string, mimeTypes: string}, duplicate: boolean, auto: boolean}}
      */
     _this.webuploderObj = {
-        swf: 'http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf?t=' + Math.random(),
-        server: 'http://imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd', //上传文件服务接口地址
+        swf: '//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf?t=' + Math.random(),
+        server: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd', //上传文件服务接口地址
         formData: {
             /**
              * [operType 操作类型设置为上传图片]
@@ -463,7 +463,7 @@ FullAdsUtil.prototype = {
                 }
             }
             var param = encodeURIComponent(JSON.stringify(result));
-            var previewUrl = "http://style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/module_ads.html?" + param;
+            var previewUrl = "//style.org.hc360.cn/js/module/shop3.0/dist/backend/preview/module_ads.html?" + param;
             //预览...
             $this.attr("target", "_blank");
             $this.attr("href", previewUrl);
@@ -793,7 +793,7 @@ FullAdsUtil.prototype = {
                     };
                     $.ajax({
                         type: "GET",
-                        url: 'http://imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd', //用于文件上传的服务器端请求地址
+                        url: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd', //用于文件上传的服务器端请求地址
                         dataType: 'jsonp',
                         jsonp: 'callback',
                         data: cropData,
@@ -1138,7 +1138,7 @@ FullAdsUtil.prototype = {
         //不够6张用空对象占位
         while (count < 6) {
             moduleData.data['prolist'].push({
-                'picurl': "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPicImg.jpg",
+                'picurl': "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPicImg.jpg",
                 'linkurl': "javascript:;"
             });
             count++;
@@ -1340,7 +1340,7 @@ FullAdsUtil.prototype = {
                     wrap.find(".seleList").html('<p class="sLeftPrompt">未搜索到相关商品</p>');
 
                 } else { //初始化无结果
-                    wrap.find(".seleList").html('<p class="sLeftPrompt">商铺中暂无在售商品，<a href="http://my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cbusinonsale.html" target="_blank">请补充</a></p>')
+                    wrap.find(".seleList").html('<p class="sLeftPrompt">商铺中暂无在售商品，<a href="//my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cbusinonsale.html" target="_blank">请补充</a></p>')
                 }
             }
 
@@ -1363,7 +1363,7 @@ FullAdsUtil.prototype = {
                 var title = $this.parent().siblings('.picboxTit').text(); //选择的产品标题
                 var imgSrc = $this.parent().siblings('.picbox').find('img').attr('src'); //选择的产品图片链接
                 var bcid = $this.attr('data-bcid');
-                var linkUrl = 'http://b2b.hc360.com/supplyself/' + bcid + '.html';
+                var linkUrl = '//b2b.hc360.com/supplyself/' + bcid + '.html';
 
                 //产品轮播图片数据列表
                 var proList_update = {
@@ -1517,7 +1517,7 @@ FullAdsUtil.prototype = {
             //不够6张用空对象占位
             while (count < 6) {
                 moduleData.data['prolist'].push({
-                    'picurl': "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPicImg.jpg",
+                    'picurl': "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPicImg.jpg",
                     'linkurl': "javascript:;"
                 });
                 count++;

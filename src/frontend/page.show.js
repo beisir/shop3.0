@@ -143,7 +143,7 @@ $(function () {
      */
     $.ajax({
       type: "get",
-      url: "http://order.b2b.hc360.com/brandneworder/checkbuslinks.html",
+      url: "//order.b2b.hc360.com/brandneworder/checkbuslinks.html",
       data: {
         providerid: window.providerId
       },

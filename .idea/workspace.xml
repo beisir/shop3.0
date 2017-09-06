@@ -245,7 +245,7 @@
       <find>bindEvent</find>
       <find>doChatingpicid</find>
       <find>doWechatpicid</find>
-      <find>http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg</find>
+      <find>//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg</find>
       <find>imid</find>
     </findStrings>
     <dirStrings>

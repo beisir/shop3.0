@@ -129,8 +129,8 @@ _extend(KEvent, {
 				- OPERA : 47
 
 			Reference:
-			https://developer.mozilla.org/en/DOM/Event/UIEvent/KeyEvent
-			http://msdn.microsoft.com/en-us/library/ms536940(v=VS.85).aspx
+			//developer.mozilla.org/en/DOM/Event/UIEvent/KeyEvent
+			//msdn.microsoft.com/en-us/library/ms536940(v=VS.85).aspx
 		*/
 		switch (self.which) {
 		case 186 :
@@ -372,8 +372,8 @@ function _ready(fn) {
 	Note:
 	发现绑定dbclick事件后移除element会有内存泄漏，以下代码也不起作用。
 	Reference:
-	http://isaacschlueter.com/2006/10/msie-memory-leaks/
-	http://msdn.microsoft.com/en-us/library/bb250448.aspx
+	//isaacschlueter.com/2006/10/msie-memory-leaks/
+	//msdn.microsoft.com/en-us/library/bb250448.aspx
 */
 if (window.attachEvent) {
 	window.attachEvent('onunload', function() {

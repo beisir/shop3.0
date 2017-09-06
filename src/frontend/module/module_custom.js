@@ -40,7 +40,7 @@ module_custom.prototype.init = function() {
    * @type {String}
    */
   $.ajax({
-    url: 'http://detail.b2b.hc360.com/detail/turbine/action/GetCustomContentAction/eventsubmit_doGetcustomcontent/doGetcustomcontent',
+    url: '//detail.b2b.hc360.com/detail/turbine/action/GetCustomContentAction/eventsubmit_doGetcustomcontent/doGetcustomcontent',
     type: 'get',
     dataType: 'jsonp',
     data: {

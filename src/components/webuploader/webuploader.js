@@ -2,7 +2,7 @@
 
 
 /**
- * @fileOverview 让内部各个部件的代码可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模块定义方式组织起来。
+ * @fileOverview 让内部各个部件的代码可以用[amd](//github.com/amdjs/amdjs-api/wiki/AMD)模块定义方式组织起来。
  *
  * AMD API 内部的简单不完全实现，请忽略。只有当WebUploader被合并成一个文件的时候才会引入。
  */
@@ -10,7 +10,7 @@
     var modules = {},
 
         // 内部require, 简单不完全实现。
-        // https://github.com/amdjs/amdjs-api/wiki/require
+        // //github.com/amdjs/amdjs-api/wiki/require
         _require = function( deps, callback ) {
             var args, len, i;
 
@@ -187,7 +187,7 @@
     /**
      * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`WebUploader`这个变量中访问到。
      *
-     * As you know, Web Uploader的每个文件都是用过[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每个Module都会有个module id.
+     * As you know, Web Uploader的每个文件都是用过[AMD](//github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每个Module都会有个module id.
      * 默认module id为该文件的路径，而此路径将会转化成名字空间存放在WebUploader中。如：
      *
      * * module `base`：WebUploader.Base
@@ -208,7 +208,7 @@
         var noop = function() {},
             call = Function.call;
     
-        // http://jsperf.com/uncurrythis
+        // //jsperf.com/uncurrythis
         // 反科里化
         function uncurryThis( fn ) {
             return function() {
@@ -432,7 +432,7 @@
             })(),
     
             /**
-             * 被[uncurrythis](http://www.2ality.com/2011/11/uncurrying-this.html)的数组slice方法。
+             * 被[uncurrythis](//www.2ality.com/2011/11/uncurrying-this.html)的数组slice方法。
              * 将用来将非数组对象转化成数组对象。
              * @grammar Base.slice( target, start[, end] ) => Array
              * @method slice
@@ -2416,7 +2416,7 @@
             this.size = source.size || 0;
     
             /**
-             * 文件MIMETYPE类型，与文件类型的对应关系请参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
+             * 文件MIMETYPE类型，与文件类型的对应关系请参考[//t.cn/z8ZnFny](//t.cn/z8ZnFny)
              * @property type
              * @type {string}
              * @default 'application/octet-stream'
@@ -5215,7 +5215,7 @@
         return api;
     });
     /**
-     * 代码来自于：https://github.com/blueimp/JavaScript-Load-Image
+     * 代码来自于：//github.com/blueimp/JavaScript-Load-Image
      * 暂时项目中只用了orientation.
      *
      * 去除了 Exif Sub IFD Pointer, GPS Info IFD Pointer, Exif Thumbnail.
@@ -6620,7 +6620,7 @@
                 }
             },
     
-            // https://github.com/stomita/ios-imagefile-megapixel/
+            // //github.com/stomita/ios-imagefile-megapixel/
             // blob/master/src/megapix-image.js
             _renderImageToCanvas: (function() {
     
@@ -6672,7 +6672,7 @@
                 }
     
                 // fix ie7 bug
-                // http://stackoverflow.com/questions/11929099/
+                // //stackoverflow.com/questions/11929099/
                 // html5-canvas-drawimage-ratio-bug-ios
                 if ( Base.os.ios >= 7 ) {
                     return function( canvas, img, x, y, w, h ) {
@@ -6825,7 +6825,7 @@
     
                     // android直接发送blob会导致服务端接收到的是空文件。
                     // bug详情。
-                    // https://code.google.com/p/android/issues/detail?id=39882
+                    // //code.google.com/p/android/issues/detail?id=39882
                     // 所以先用fileReader读取出来再通过arraybuffer的方式发送。
                     if ( Base.os.android ) {
                         fr = new FileReader();
@@ -6949,8 +6949,8 @@
          * Fastest md5 implementation around (JKM md5)
          * Credits: Joseph Myers
          *
-         * @see http://www.myersdaily.org/joseph/javascript/md5-text.html
-         * @see http://jsperf.com/md5-shootout/7
+         * @see //www.myersdaily.org/joseph/javascript/md5-text.html
+         * @see //jsperf.com/md5-shootout/7
          */
     
         /* this function is much faster,
@@ -7155,7 +7155,7 @@
             // Not sure if it is a bug, however IE10 will always produce a sub array of length 1
             // containing the last element of the parent array if the sub array specified starts
             // beyond the length of the parent array - weird.
-            // https://connect.microsoft.com/IE/feedback/details/771452/typed-array-subarray-issue
+            // //connect.microsoft.com/IE/feedback/details/771452/typed-array-subarray-issue
             a = (i - 64) < n ? a.subarray(i - 64) : new Uint8Array(0);
     
             length = a.length;
@@ -8068,7 +8068,7 @@
         'widgets/widget'
     ], function( Base, Uploader ) {
         var $ = Base.$,
-            logUrl = ' http://static.tieba.baidu.com/tb/pms/img/st.gif??',
+            logUrl = ' //static.tieba.baidu.com/tb/pms/img/st.gif??',
             product = (location.hostname || location.host || 'protected').toLowerCase(),
     
             // 只针对 baidu 内部产品用户做统计功能。

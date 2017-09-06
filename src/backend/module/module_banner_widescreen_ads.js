@@ -34,7 +34,7 @@ function bannerAd(moduleEntity, html, options) {
          * @type {Object}
          */
         webuploader: {
-            server: 'http://imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd', //上传文件服务接口地址
+            server: '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd', //上传文件服务接口地址
             formData: {
 
                 /**
@@ -80,8 +80,8 @@ function bannerAd(moduleEntity, html, options) {
             threads: 1,
             compress: false, //是否启用图片压缩
             /** 360安全浏览器限制了跨域flash文件的访问权限，所以如果要兼容该浏览器，需要将swf文件放置到页面所在域] */
-            swf: 'http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf?t=' + Math.random(),
-            // swf: 'http://b2b.hc360.com/components/webuploader/webuploader.swf?t=' + Math.random(),
+            swf: '//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf?t=' + Math.random(),
+            // swf: '//b2b.hc360.com/components/webuploader/webuploader.swf?t=' + Math.random(),
             disableGlobalDnd: true, // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
             fileSizeLimit: 5 * 1024 * 1024, // 验证文件总大小是否超出限制（此处设置为5M）
             duplicate: true, //是否可以上传重复文件，默认为false
@@ -571,7 +571,7 @@ bannerAd.prototype.detectBrowserSupport = function() {
                     delete window['expressinstallcallback'];
                 };
 
-                var swf = 'http://style.org.hc360.cn/js/build/source/widgets/jqwebuploader/expressInstall.swf';
+                var swf = '//style.org.hc360.cn/js/build/source/widgets/jqwebuploader/expressInstall.swf';
                 var html = '<object type="application/' +
                     'x-shockwave-flash" data="' + swf + '" ';
 
@@ -595,7 +595,7 @@ bannerAd.prototype.detectBrowserSupport = function() {
              * @param  {String} $('<a href          [description]
              * @return {[type]}       [description]
              */
-            _this.btnSelect.replaceWith($('<a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="http://style.org.hc360.cn/js/build/source/widgets/jqwebuploader/getFlashPlayer.jpg" /></a>'));
+            _this.btnSelect.replaceWith($('<a href="//www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="//style.org.hc360.cn/js/build/source/widgets/jqwebuploader/getFlashPlayer.jpg" /></a>'));
         }
         return false;
     } else if (!webuploader.Uploader.support()) {

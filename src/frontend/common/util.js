@@ -48,9 +48,9 @@ var util = {
             _regExp = new RegExp('^(' + _protocols.join('|') + ')\:\/\/', 'ig');
 
         /**
-         * [若url地址不包含协议，则默认在url地址起始位置添加 http:// ]
+         * [若url地址不包含协议，则默认在url地址起始位置添加 // ]
          */
-        (!_regExp.test(url)) && (_url = 'http://' + _url);
+        (!_regExp.test(url)) && (_url = '//' + _url);
 
         /**
          * [根据url地址创建链接元素并解析链接属性]

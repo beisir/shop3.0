@@ -47,7 +47,7 @@ function _formatCss(css) {
 
 function _formatUrl(url, mode, host, pathname) {
 	mode = _undef(mode, '').toLowerCase();
-	// 移除连续斜线，比如，http://localhost/upload/file/201205//maincus.swf
+	// 移除连续斜线，比如，//localhost/upload/file/201205//maincus.swf
 	// base64 data 除外
 	if (url.substr(0, 5) != 'data:') {
 		url = url.replace(/([^:])\/\//g, '$1/');
@@ -141,12 +141,12 @@ function _formatHtml(html, htmlTags, urlType, wellFormatted, indentChar) {
 	// &reg;
 	html = html.replace(/\u00AE/g, '&reg;');
 	// Bugfix:
-	// https://github.com/kindsoft/kindeditor/issues/147
+	// //github.com/kindsoft/kindeditor/issues/147
 	html = html.replace(/\u2003/g, '&emsp;');
 	html = html.replace(/\u3000/g, '&emsp;');
 	// Bugfix:
-	// https://github.com/kindsoft/kindeditor/issues/116
-	// https://github.com/kindsoft/kindeditor/issues/145
+	// //github.com/kindsoft/kindeditor/issues/116
+	// //github.com/kindsoft/kindeditor/issues/145
 	html = html.replace(/<[^>]+/g, function($0) {
 		return $0.replace(/\s+/g, ' ');
 	});
@@ -395,8 +395,8 @@ function _mediaImg(blankPath, attrs) {
 }
 
 // Simple JavaScript Templating
-// John Resig - http://ejohn.org/ - MIT Licensed
-// http://ejohn.org/blog/javascript-micro-templating/
+// John Resig - //ejohn.org/ - MIT Licensed
+// //ejohn.org/blog/javascript-micro-templating/
 function _tmpl(str, data) {
 	// Figure out if we're getting a template, or if we need to
 	// load the template - and be sure to cache the result.

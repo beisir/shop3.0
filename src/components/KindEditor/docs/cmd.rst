@@ -188,7 +188,7 @@ Determines whether the given command has been executed on the current selection.
 
 .. note::
 
-	Reference: https://developer.mozilla.org/en/Midas
+	Reference: //developer.mozilla.org/en/Midas
 
 示例:
 

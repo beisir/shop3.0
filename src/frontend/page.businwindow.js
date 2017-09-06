@@ -60,13 +60,13 @@ $(function() {
 				 * [service 数据服务地址]
 				 * @type {String}
 				 */
-				service: 'http://flow.org.hc360.com/flowtreasure/flowTreasureFP',
+				service: '//flow.org.hc360.com/flowtreasure/flowTreasureFP',
 
 				/**
 				 * [template 模板服务地址]
 				 * @type {String}
 				 */
-				template: 'http://detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=page.businwindow'
+				template: '//detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=page.businwindow'
 			},
 
 			/**
@@ -185,7 +185,7 @@ SupplyProduct.prototype = {
       /**
        * 初始化在线咨询按钮
        */
-      HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+      HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
 
         $this.find(".OnConsulting").queryDialog({
           is3y:window.scyps.sc.is3y=="1" ? true : false,
@@ -210,7 +210,7 @@ SupplyProduct.prototype = {
      */
       $.ajax({
         type: "get",
-        url: "http://order.b2b.hc360.com/brandneworder/checkbuslinks.html",
+        url: "//order.b2b.hc360.com/brandneworder/checkbuslinks.html",
         data: {
           providerid: window.providerId
         },

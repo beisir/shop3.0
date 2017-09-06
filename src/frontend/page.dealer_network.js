@@ -29,8 +29,8 @@ var showIndex = 0,
 (function($) {
 	$(function() {
 		var ajaxurl = {
-			province: "http://detail.b2b.hc360.com/detail/turbine/template/fxb,initprovice.html",
-			agent: "http://detail.b2b.hc360.com/detail/turbine/template/fxb,getdealersells.html"
+			province: "//detail.b2b.hc360.com/detail/turbine/template/fxb,initprovice.html",
+			agent: "//detail.b2b.hc360.com/detail/turbine/template/fxb,getdealersells.html"
 		};
 		var agentArr = [],
 			underCityArr = ['北京', '上海', '天津', '重庆'],
@@ -207,7 +207,7 @@ var showIndex = 0,
 				for (var i = 0; i < list.length; i++) {
 					var obj = list[i];
 					var title = obj.nameType ? '公司名称' : '商铺名称';
-					str.push("  <li> <p class='itemtt'><span>" + title + "：</span><em><a href='http://" + obj.sellname + ".b2b.hc360.com' target='_blank' title='" + decodeURIComponent(obj.name) + "'>" + decodeURIComponent(obj.name) + "</a></em></p> ");
+					str.push("  <li> <p class='itemtt'><span>" + title + "：</span><em><a href='//" + obj.sellname + ".b2b.hc360.com' target='_blank' title='" + decodeURIComponent(obj.name) + "'>" + decodeURIComponent(obj.name) + "</a></em></p> ");
 					str.push("  <p class='itemtt'><span>联系电话：</span><em>" + obj.telephone + "</em></p> ");
 					str.push("  <p class='itemtt'><span>地址：</span><em title='" + obj.address + "'>" + obj.address + "</em></p></li> ");
 				}
@@ -279,7 +279,7 @@ ComplexCustomOverlay.prototype.initialize = function(map) {
 	var that = this;
 
 	var arrow = this._arrow = document.createElement("div");
-	arrow.style.background = "url(http://map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
+	arrow.style.background = "url(//map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
 	arrow.style.position = "absolute";
 	arrow.style.width = "11px";
 	arrow.style.height = "10px";

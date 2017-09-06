@@ -399,7 +399,7 @@ KEditor.prototype = {
 		// 还没加载相关plugin，动态加载
 		_plugins[name] = 'loading';
 		_loadScript(self.pluginsPath + name + '/' + name + '.js?ver=' + encodeURIComponent(K.DEBUG ? _TIME : _VERSION), function() {
-			// Fix bug: https://github.com/kindsoft/kindeditor/issues/105
+			// Fix bug: //github.com/kindsoft/kindeditor/issues/105
 			setTimeout(function() {
 				if (_plugins[name]) {
 					self.loadPlugin(name, fn);
@@ -760,7 +760,7 @@ KEditor.prototype = {
 			return self.isCreated ? self.edit.html() : _elementVal(self.srcElement);
 		}
 		self.isCreated ? self.edit.html(val) : _elementVal(self.srcElement, val);
-		// Bugfix: http://www.kindsoft.net/view.php?bbsid=4&postid=6703&pagenum=1
+		// Bugfix: //www.kindsoft.net/view.php?bbsid=4&postid=6703&pagenum=1
 		if (self.isCreated) {
 			self.cmd.selection();
 		}
@@ -1171,7 +1171,7 @@ _plugin('core', function(K) {
 			self.toolbar.disableAll(false);
 			self.edit.design(true);
 			self.toolbar.unselect('source');
-			// Bugfix: http://www.kindsoft.net/view.php?bbsid=4&postid=7061&pagenum=1
+			// Bugfix: //www.kindsoft.net/view.php?bbsid=4&postid=7061&pagenum=1
 			if (_GECKO) {
 				setTimeout(function() {
 					self.cmd.selection();
@@ -1320,7 +1320,7 @@ _plugin('core', function(K) {
 	self.clickToolbar('about', function() {
 		var html = '<div style="margin:20px;">' +
 			'<div>KindEditor ' + _VERSION + '</div>' +
-			'<div>Copyright &copy; <a href="http://www.kindsoft.net/" target="_blank">kindsoft.net</a> All rights reserved.</div>' +
+			'<div>Copyright &copy; <a href="//www.kindsoft.net/" target="_blank">kindsoft.net</a> All rights reserved.</div>' +
 			'</div>';
 		self.createDialog({
 			name : 'about',
@@ -1427,7 +1427,7 @@ _plugin('core', function(K) {
 				});
 				K('span.Apple-style-span', div).remove(true);
 				K('span.Apple-tab-span', div).remove(true);
-				// Bugfix: https://github.com/kindsoft/kindeditor/issues/8
+				// Bugfix: //github.com/kindsoft/kindeditor/issues/8
 				K('span[style]', div).each(function() {
 					if (K(this).css('white-space') == 'nowrap') {
 						K(this).remove(true);
@@ -1517,12 +1517,12 @@ _plugin('core', function(K) {
 	});
 	// 取得HTML前执行
 	self.beforeGetHtml(function(html) {
-		// Bugifx : https://github.com/kindsoft/kindeditor/issues/66
+		// Bugifx : //github.com/kindsoft/kindeditor/issues/66
 		if (_IE && _V <= 8) {
 			html = html.replace(/<div\s+[^>]*data-ke-input-tag="([^"]*)"[^>]*>([\s\S]*?)<\/div>/ig, function(full, tag) {
 				return unescape(tag);
 			});
-			// Bugfix: https://github.com/kindsoft/kindeditor/issues/88
+			// Bugfix: //github.com/kindsoft/kindeditor/issues/88
 			html = html.replace(/(<input)((?:\s+[^>]*)?>)/ig, function($0, $1, $2) {
 				if (!/\s+type="[^"]+"/i.test($0)) {
 					return $1 + ' type="text"' + $2;
@@ -1572,7 +1572,7 @@ _plugin('core', function(K) {
 	});
 	// 设置HTML前执行
 	self.beforeSetHtml(function(html) {
-		// Bugifx : https://github.com/kindsoft/kindeditor/issues/66
+		// Bugifx : //github.com/kindsoft/kindeditor/issues/66
 		if (_IE && _V <= 8) {
 			html = html.replace(/<input[^>]*>|<(select|button)[^>]*>[\s\S]*?<\/\1>/ig, function(full) {
 				var attrs = _getAttrList(full);

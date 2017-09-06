@@ -50,7 +50,7 @@ if (window.isPreview) {
 /***
  *  引入加载头部导航
  */
-$.getScript('http://style.org.hc360.cn/js/build/source/widgets/flowconfig/hc.flowconfig.min.js', function() {
+$.getScript('//style.org.hc360.cn/js/build/source/widgets/flowconfig/hc.flowconfig.min.js', function() {
     HC.W.load('topnav', function() {
         var topNavList = $('.webTopNav');
         if (topNavList && topNavList.length > 0) {
@@ -86,7 +86,7 @@ HC.W.load('searchModule', function() {
  * 引入右侧工具条,预览页面不加载右侧滚动条
  */
 if (!window.isPreview) {
-    HC.HUB.addCss('http://style.org.hc360.com/css/detail/mysite/siteconfig/new_product/detaiAlert.css', function() {
+    HC.HUB.addCss('//style.org.hc360.com/css/detail/mysite/siteconfig/new_product/detaiAlert.css', function() {
         require.ensure([], function(require) {
             window.righToolbar = require('../common/hc.righToolbar');
             window.righToolbar.init(scyps.sc);
@@ -98,7 +98,7 @@ if (!window.isPreview) {
  */
 if (typeof window.systemname !== "undefined" && window.systemname === "detail") {
     $.ajax({
-        url: 'http://detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=WeChatHtml',
+        url: '//detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=WeChatHtml',
         dataType: 'jsonp',
         success: function(dialogHtml) {
             $('body').append(dialogHtml);
@@ -106,7 +106,7 @@ if (typeof window.systemname !== "undefined" && window.systemname === "detail") 
              * 兼容ffOff-lineMessage.min.js里面，判断微信是否在线ajax的data参数，data参数取得是company_username，3.0商铺名称初始化的变量是userName
              */
             window.company_username = window.userName || "";
-            jQuery.getScript('http://style.org.hc360.cn/js/module/detail/ffOff-lineMessage.min.js');
+            jQuery.getScript('//style.org.hc360.cn/js/module/detail/ffOff-lineMessage.min.js');
         }
     });
 }
@@ -130,12 +130,12 @@ $.browser = {
 if ($("#popLogin").length === 0) {
     $('<div id="popLogin" style="display:none"></div>').appendTo($('body'));
 }
-$.getScript('http://style.org.hc360.cn/js/module/detail/hc.login.pop.min.js');
+$.getScript('//style.org.hc360.cn/js/module/detail/hc.login.pop.min.js');
 
 /**
  * [加载新买家卖家活动注册专题、买家找货工具条项目相关脚本 201603]
  */
-$.getScript('http://style.org.hc360.cn/js/module/detail/hc.detail.welfare.toolbar.min.js');
+$.getScript('//style.org.hc360.cn/js/module/detail/hc.detail.welfare.toolbar.min.js');
 
 /**
  * 导入低版本浏览器提示模块
@@ -190,8 +190,8 @@ if (lazyloadImages.length > 0) {
 var badWordUrl = "";
 if (window.checkon) {
     $.ajax({
-        //url: 'http://detail.b2b.hc360.com/detail/turbine/action/ajax.CheckAjax/eventsubmit_doCheckword/doCheckword',
-        url: 'http://wsdetail.b2b.hc360.com/checkAjax',
+        //url: '//detail.b2b.hc360.com/detail/turbine/action/ajax.CheckAjax/eventsubmit_doCheckword/doCheckword',
+        url: '//wsdetail.b2b.hc360.com/checkAjax',
         data: $.extend({
             providerid: window.providerId
         }, (window.checkpage ? {
@@ -202,7 +202,7 @@ if (window.checkon) {
         jsonp: "jsoncallback",
         success: function(data) {
             if (data.success) {
-                window.location.href = "http://detail.b2b.hc360.com/detail/turbine/template/screenkeyword.html";
+                window.location.href = "//detail.b2b.hc360.com/detail/turbine/template/screenkeyword.html";
             }
         }
     });
@@ -215,7 +215,7 @@ if (window.checkon) {
 window.hcclick = function(param) {
     if (document.images) {
         var rannumber = Math.round(Math.random() * 10000);
-        (new Image()).src = "http://log.info.hc360.com/click.htm" + param + "&rannumber=" + rannumber;
+        (new Image()).src = "//log.info.hc360.com/click.htm" + param + "&rannumber=" + rannumber;
     }
     return true;
 };
@@ -226,7 +226,7 @@ window.hcclick = function(param) {
  * @return {[type]}     [description]
  */
 window.imgonerror = function(img) {
-    img.src = 'http://b2b.hc360.com/mmtTrade/images/nopic.jpg';
+    img.src = '//b2b.hc360.com/mmtTrade/images/nopic.jpg';
     img.onerror = null;
 };
 

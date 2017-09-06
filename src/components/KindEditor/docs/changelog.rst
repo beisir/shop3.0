@@ -6,7 +6,7 @@
 
 ver 4.1.11 (2016-03-31)
 -----------------------------------------------------------------
-* 新增: 俄语语言包，感谢Valery Votintsev (http://codersclub.org/)。
+* 新增: 俄语语言包，感谢Valery Votintsev (//codersclub.org/)。
 * 改善: 语言包文件名标准化，zh_CN -> zh-CN, zh_TW -> zh-TW。
 * Bugfix: [IE6] 当前页面设置了document.domain，销毁编辑器会报错。
 * Bugfix: 行首全角空格被过滤。
@@ -150,7 +150,7 @@ ver 4.1 (2012-05-12)
 -----------------------------------------------------------------
 * 新增: 批量图片上传功能（multiimage）。
 * 新增：地图默认用百度地图（baidumap）。
-* 新增: QQ邮箱风格（贡献者：https://github.com/fisker）。
+* 新增: QQ邮箱风格（贡献者：//github.com/fisker）。
 * 新增: formatUploadUrl初始化参数，false时不会自动格式化上传后的URL。
 * 新增: fullscreenShortcut初始化参数，false时禁用ESC全屏快捷键。
 * 改善: uploadbutton新增form、target参数，上传图片时可提交其它控件。

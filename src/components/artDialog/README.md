@@ -1,31 +1,31 @@
 #	artDialog
 
 artDialog——经典、优雅的网页对话框控件。
-文档与示例：<http://aui.github.io/artDialog/doc/index.html>
+文档与示例：<//aui.github.io/artDialog/doc/index.html>
 
-AngularJS 版本：<https://github.com/aui/angular-popups>
+AngularJS 版本：<//github.com/aui/angular-popups>
 
 ##	成功案例
 
 超过 40 万网站在使用 artDialog，其中不乏国内顶尖的产品：
 
-*	[QQ空间 v8（腾讯）](http://qzone.qq.com)
-*	[Phpcms（盛大）](http://www.phpcms.cn)
-*	[极路由](http://www.hiwifi.com)
+*	[QQ空间 v8（腾讯）](//qzone.qq.com)
+*	[Phpcms（盛大）](//www.phpcms.cn)
+*	[极路由](//www.hiwifi.com)
 *	...
 
 ##	更新历史
 
 6.0.4
 
-1. ``content()``方法传入隐藏元素并显示，并且``remove()``的时候会将元素插入到``body``避免被销毁 [#103](https://github.com/aui/artDialog/issues/103) [#126](https://github.com/aui/artDialog/issues/126)
+1. ``content()``方法传入隐藏元素并显示，并且``remove()``的时候会将元素插入到``body``避免被销毁 [#103](//github.com/aui/artDialog/issues/103) [#126](//github.com/aui/artDialog/issues/126)
 2. 修复``button``方法可能会多次绑定事件的问题
-3. 模态对话框可以避免 shift + tab 将焦点移出对话框 [#67](https://github.com/aui/artDialog/issues/67)
+3. 模态对话框可以避免 shift + tab 将焦点移出对话框 [#67](//github.com/aui/artDialog/issues/67)
 
 6.0.3
 
 1. 修复``button``方法直接传入 html 不显示的问题
-2. 修复版本管理导致[#78](https://github.com/aui/artDialog/issues/78)重现问题
+2. 修复版本管理导致[#78](//github.com/aui/artDialog/issues/78)重现问题
 
 6.0.2
 
@@ -34,9 +34,9 @@ AngularJS 版本：<https://github.com/aui/angular-popups>
 
 6.0.1
 
-1. 进一步完善焦点管理，避免抢夺开发者自己设置的焦点[#67](https://github.com/aui/artDialog/issues/67)
-2. 修复对话框内容使用 html5 data-id 属性冲突的问题[#78](https://github.com/aui/artDialog/issues/78)
-3. 改善 Esc 快捷键与 cancel 的问题[#36](https://github.com/aui/artDialog/issues/36)
+1. 进一步完善焦点管理，避免抢夺开发者自己设置的焦点[#67](//github.com/aui/artDialog/issues/67)
+2. 修复对话框内容使用 html5 data-id 属性冲突的问题[#78](//github.com/aui/artDialog/issues/78)
+3. 改善 Esc 快捷键与 cancel 的问题[#36](//github.com/aui/artDialog/issues/36)
 
 6.0.0
 

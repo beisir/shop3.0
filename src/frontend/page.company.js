@@ -41,7 +41,7 @@ page_contact_us.prototype = {
      */
     initContactIcon:function () {
         $.when($.ajax({
-                url: "http://madata.hc360.com/mobileweb/m/get/bindstatus",
+                url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
                 dataType:"jsonp",
                 data:{"imid":window.userName||window.welfarename}
             })
@@ -86,7 +86,7 @@ page_contact_us.prototype = {
             window.righToolbar && window.righToolbar.messageDialog && window.righToolbar.messageDialog();
         });
         /***
-         * 添加我我商业伙伴 href链接http://my.b2b.hc360.com/my/turbine/template/corcenter,businfriend,busin_friends_invitemsg.html?traceaction=businfriend&chkProviderid=100021625044
+         * 添加我我商业伙伴 href链接//my.b2b.hc360.com/my/turbine/template/corcenter,businfriend,busin_friends_invitemsg.html?traceaction=businfriend&chkProviderid=100021625044
          */
 
         /***
@@ -95,7 +95,7 @@ page_contact_us.prototype = {
         that.sendPhoneBtn.click(function () {
             if(that.sendMyPhoneHtml){
                 if(!that.msgDownload){
-                    $.getScript('http://style.org.hc360.cn/js/detail/scripts/contact_msgDownload.min.js',function(){
+                    $.getScript('//style.org.hc360.cn/js/detail/scripts/contact_msgDownload.min.js',function(){
                         that.msgDownload=true;
                         resetCorMessage();
                     });
@@ -108,13 +108,13 @@ page_contact_us.prototype = {
              * 获取发送手机html
              */
             $.ajax({
-                url: 'http://detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=sendMyPhoneHtml',
+                url: '//detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=sendMyPhoneHtml',
                 dataType: 'jsonp',
                 success: function (data) {
                     that.sendMyPhoneHtml = data;
                     $('.contact3Btn').append(data);
                     if(!that.msgDownload){
-                        $.getScript('http://style.org.hc360.cn/js/detail/scripts/contact_msgDownload.min.js',function(){
+                        $.getScript('//style.org.hc360.cn/js/detail/scripts/contact_msgDownload.min.js',function(){
                             that.msgDownload=true;
                             resetCorMessage();
                         });
@@ -126,7 +126,7 @@ page_contact_us.prototype = {
         /**
          * 初始化立即交谈按钮
          */
-        HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+        HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
 
             $('#contactChat').queryDialog({
               is3y:window.scyps.sc.is3y=="1" ? true : false,
@@ -141,7 +141,7 @@ page_contact_us.prototype = {
          */
         $.ajax({
           type: "get",
-          url: "http://order.b2b.hc360.com/brandneworder/checkbuslinks.html",
+          url: "//order.b2b.hc360.com/brandneworder/checkbuslinks.html",
           data: {
             providerid: window.providerId
           },

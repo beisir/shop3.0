@@ -1,13 +1,13 @@
 /*!
  * jQuery JavaScript Library v1.9.1
- * http://jquery.com/
+ * //jquery.com/
  *
  * Includes Sizzle.js
- * http://sizzlejs.com/
+ * //sizzlejs.com/
  *
  * Copyright 2005, 2012 jQuery Foundation, Inc. and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * //jquery.org/license
  *
  * Date: 2013-2-4
  */
@@ -552,7 +552,7 @@
 
 				if (data) {
 					// Make sure the incoming data is actual JSON
-					// Logic borrowed from http://json.org/json2.js
+					// Logic borrowed from //json.org/json2.js
 					if (rvalidchars.test(data.replace(rvalidescape, "@")
 							.replace(rvalidtokens, "]")
 							.replace(rvalidbraces, ""))) {
@@ -593,7 +593,7 @@
 
 		// Evaluates a script in a global context
 		// Workarounds based on findings by Jim Driscoll
-		// http://weblogs.java.net/blog/driscoll/archive/2009/09/08/eval-javascript-global-context
+		// //weblogs.java.net/blog/driscoll/archive/2009/09/08/eval-javascript-global-context
 		globalEval: function(data) {
 			if (data && jQuery.trim(data)) {
 				// We use execScript on Internet Explorer
@@ -889,7 +889,7 @@
 
 			// Catch cases where $(document).ready() is called after the browser event has already occurred.
 			// we once tried to use readyState "interactive" here, but it caused issues like the one
-			// discovered by ChrisS here: http://bugs.jquery.com/ticket/12282#comment:15
+			// discovered by ChrisS here: //bugs.jquery.com/ticket/12282#comment:15
 			if (document.readyState === "complete") {
 				// Handle it asynchronously to allow scripts the opportunity to delay ready
 				setTimeout(jQuery.ready);
@@ -924,7 +924,7 @@
 
 							try {
 								// Use the trick by Diego Perini
-								// http://javascript.nwbox.com/IEContentLoaded/
+								// //javascript.nwbox.com/IEContentLoaded/
 								top.doScroll("left");
 							} catch (e) {
 								return setTimeout(doScrollCheck, 50);
@@ -1439,7 +1439,7 @@
 		}
 
 		// Support: IE<9 (lack submit/change bubble), Firefox 17+ (lack focusin event)
-		// Beware of CSP restrictions (https://developer.mozilla.org/en/Security/CSP), test/csp.php
+		// Beware of CSP restrictions (//developer.mozilla.org/en/Security/CSP), test/csp.php
 		for (i in {
 				submit: true,
 				change: true,
@@ -1991,7 +1991,7 @@
 			});
 		},
 		// Based off of the plugin by Clint Helfers, with permission.
-		// http://blindsignals.com/index.php/2009/07/jquery-delay/
+		// //blindsignals.com/index.php/2009/07/jquery-delay/
 		delay: function(time, type) {
 			time = jQuery.fx ? jQuery.fx.speeds[time] || time : time;
 			type = type || "fx";
@@ -2483,7 +2483,7 @@
 			tabIndex: {
 				get: function(elem) {
 					// elem.tabIndex doesn't always return the correct value when it hasn't been explicitly set
-					// http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
+					// //fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 					var attributeNode = elem.getAttributeNode("tabindex");
 
 					return attributeNode && attributeNode.specified ?
@@ -2618,7 +2618,7 @@
 
 
 	// Some attributes require a special call on IE
-	// http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
+	// //msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
 	if (!jQuery.support.hrefNormalized) {
 		jQuery.each(["href", "src", "width", "height"], function(i, name) {
 			jQuery.attrHooks[name] = jQuery.extend(jQuery.attrHooks[name], {
@@ -3373,7 +3373,7 @@
 	};
 
 	// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-	// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+	// //www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 	jQuery.Event.prototype = {
 		isDefaultPrevented: returnFalse,
 		isPropagationStopped: returnFalse,
@@ -3701,7 +3701,7 @@
 	 * Sizzle CSS Selector Engine
 	 * Copyright 2012 jQuery Foundation and other contributors
 	 * Released under the MIT license
-	 * http://sizzlejs.com/
+	 * //sizzlejs.com/
 	 */
 	(function(window, undefined) {
 
@@ -3759,17 +3759,17 @@
 
 			// Regular expressions
 
-			// Whitespace characters http://www.w3.org/TR/css3-selectors/#whitespace
+			// Whitespace characters //www.w3.org/TR/css3-selectors/#whitespace
 			whitespace = "[\\x20\\t\\r\\n\\f]",
-			// http://www.w3.org/TR/css3-syntax/#characters
+			// //www.w3.org/TR/css3-syntax/#characters
 			characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
 
 			// Loosely modeled on CSS identifier characters
-			// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
-			// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+			// An unquoted value should be a CSS identifier //www.w3.org/TR/css3-selectors/#attribute-selectors
+			// Proper syntax: //www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 			identifier = characterEncoding.replace("w", "w#"),
 
-			// Acceptable operators http://www.w3.org/TR/selectors/#attribute-selectors
+			// Acceptable operators //www.w3.org/TR/selectors/#attribute-selectors
 			operators = "([*^$|!~]?=)",
 			attributes = "\\[" + whitespace + "*(" + characterEncoding + ")" + whitespace +
 			"*(?:" + operators + whitespace + "*(?:(['\"])((?:\\\\.|[^\\\\])*?)\\3|(" + identifier + ")|)|)" + whitespace + "*\\]",
@@ -3819,7 +3819,7 @@
 			rescape = /'|\\/g,
 			rattributeQuotes = /\=[\x20\t\r\n\f]*([^'"\]]*)[\x20\t\r\n\f]*\]/g,
 
-			// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+			// CSS escapes //www.w3.org/TR/CSS21/syndata.html#escaped-characters
 			runescape = /\\([\da-fA-F]{1,6}[\x20\t\r\n\f]?|.)/g,
 			funescape = function(_, escaped) {
 				var high = "0x" + escaped - 0x10000;
@@ -4199,7 +4199,7 @@
 					// This is to test IE's treatment of not explictly
 					// setting a boolean content attribute,
 					// since its presence should be enough
-					// http://bugs.jquery.com/ticket/12359
+					// //bugs.jquery.com/ticket/12359
 					div.innerHTML = "<select><option selected=''></option></select>";
 
 					// IE8 - Some boolean attributes are not treated correctly
@@ -4208,7 +4208,7 @@
 					}
 
 					// Webkit/Opera - :checked should return selected option elements
-					// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+					// //www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 					// IE8 throws error here and will not see later tests
 					if (!div.querySelectorAll(":checked").length) {
 						rbuggyQSA.push(":checked");
@@ -4792,7 +4792,7 @@
 
 				"PSEUDO": function(pseudo, argument) {
 					// pseudo-class names are case-insensitive
-					// http://www.w3.org/TR/selectors/#pseudo-classes
+					// //www.w3.org/TR/selectors/#pseudo-classes
 					// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
 					// Remember that setFilters inherits from pseudos
 					var args,
@@ -4876,7 +4876,7 @@
 				// or beginning with the identifier C immediately followed by "-".
 				// The matching of C against the element's language value is performed case-insensitively.
 				// The identifier C does not have to be a valid language name."
-				// http://www.w3.org/TR/selectors/#lang-pseudo
+				// //www.w3.org/TR/selectors/#lang-pseudo
 				"lang": markFunction(function(lang) {
 					// lang value must be a valid identifider
 					if (!ridentifier.test(lang || "")) {
@@ -4923,7 +4923,7 @@
 
 				"checked": function(elem) {
 					// In CSS3, :checked should return both checked and selected elements
-					// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+					// //www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 					var nodeName = elem.nodeName.toLowerCase();
 					return (nodeName === "input" && !!elem.checked) || (nodeName === "option" && !!elem.selected);
 				},
@@ -4940,7 +4940,7 @@
 
 				// Contents
 				"empty": function(elem) {
-					// http://www.w3.org/TR/selectors/#empty-pseudo
+					// //www.w3.org/TR/selectors/#empty-pseudo
 					// :empty is only affected by element nodes and content nodes(including text(3), cdata(4)),
 					//   not comment, processing instructions, or others
 					// Thanks to Diego Perini for the nodeName shortcut
@@ -6435,7 +6435,7 @@
 			if ((!jQuery.support.noCloneEvent || !jQuery.support.noCloneChecked) &&
 				(elem.nodeType === 1 || elem.nodeType === 11) && !jQuery.isXMLDoc(elem)) {
 
-				// We eschew Sizzle here for performance reasons: http://jsperf.com/getall-vs-sizzle/2
+				// We eschew Sizzle here for performance reasons: //jsperf.com/getall-vs-sizzle/2
 				destElements = getAll(clone);
 				srcElements = getAll(elem);
 
@@ -6662,7 +6662,7 @@
 		ropacity = /opacity\s*=\s*([^)]*)/,
 		rposition = /^(top|right|bottom|left)$/,
 		// swappable if display is none or starts with table except "table", "table-cell", or "table-caption"
-		// see here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
+		// see here for display values: //developer.mozilla.org/en-US/docs/CSS/display
 		rdisplayswap = /^(none|table(?!-c[ea]).+)/,
 		rmargin = /^margin/,
 		rnumsplit = new RegExp("^(" + core_pnum + ")(.*)$", "i"),
@@ -6992,7 +6992,7 @@
 				// A tribute to the "awesome hack by Dean Edwards"
 				// Chrome < 17 and Safari 5.0 uses "computed value" instead of "used value" for margin-right
 				// Safari 5.1.7 (at least) returns percentage for a larger set of values, but width seems to be reliably pixels
-				// this is against the CSSOM draft spec: http://dev.w3.org/csswg/cssom/#resolved-values
+				// this is against the CSSOM draft spec: //dev.w3.org/csswg/cssom/#resolved-values
 				if (rnumnonpx.test(ret) && rmargin.test(name)) {
 
 					// Remember the original values
@@ -7031,7 +7031,7 @@
 			}
 
 			// From the awesome hack by Dean Edwards
-			// http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
+			// //erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
 
 			// If we're not dealing with a regular pixel number
 			// but a number that has a weird ending, we need to convert it to pixels
@@ -7118,8 +7118,8 @@
 			isBorderBox = jQuery.support.boxSizing && jQuery.css(elem, "boxSizing", false, styles) === "border-box";
 
 		// some non-html elements return undefined for offsetWidth, so check for null/undefined
-		// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
-		// MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
+		// svg - //bugzilla.mozilla.org/show_bug.cgi?id=649285
+		// MathML - //bugzilla.mozilla.org/show_bug.cgi?id=491668
 		if (val <= 0 || val == null) {
 			// Fall back to computed then uncomputed css if necessary
 			val = curCSS(elem, name, styles);
@@ -7283,7 +7283,7 @@
 			};
 		}
 
-		// Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
+		// Webkit bug: //bugs.webkit.org/show_bug.cgi?id=29084
 		// getComputedStyle returns percent when specified for top/left/bottom/right
 		// rather than make the css module depend on the offset module, we just check for it here
 		if (!jQuery.support.pixelPosition && jQuery.fn.position) {
@@ -8597,7 +8597,7 @@
 
 							// Firefox throws exceptions when accessing properties
 							// of an xhr when a network error occurred
-							// http://helpful.knobs-dials.com/index.php/Component_returned_failure_code:_0x80040111_(NS_ERROR_NOT_AVAILABLE)
+							// //helpful.knobs-dials.com/index.php/Component_returned_failure_code:_0x80040111_(NS_ERROR_NOT_AVAILABLE)
 							try {
 
 								// Was never called and is aborted or complete
@@ -9639,7 +9639,7 @@
 					if (jQuery.isWindow(elem)) {
 						// As of 5/8/2012 this will yield incorrect results for Mobile Safari, but there
 						// isn't a whole lot we can do. See pull request at this URL for discussion:
-						// https://github.com/jquery/jquery/pull/764
+						// //github.com/jquery/jquery/pull/764
 						return elem.document.documentElement["client" + name];
 					}
 

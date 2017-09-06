@@ -25,7 +25,7 @@ K.range(mixed)
 
 .. note::
 
-	DOM Level 2 Range Reference: http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html
+	DOM Level 2 Range Reference: //www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html
 
 .. index:: START_TO_START
 
