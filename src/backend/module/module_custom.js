@@ -107,7 +107,7 @@ custom.prototype.initData = function() {
         'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
         'insertunorderedlist', 'link', 'unlink'
       ],
-      cssPath: ['http://style.org.hc360.com/css/detail/mysite/siteconfig/newPro/mallBase.css'],
+      cssPath: ['//style.org.hc360.com/css/detail/mysite/siteconfig/newPro/mallBase.css'],
       afterChange: function() {
 
         /**

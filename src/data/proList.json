@@ -5,39 +5,39 @@
      "prolist":[{
         "bcid": 1,
         "bcname":"title1",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 2,
         "bcname":"title2",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 3,
         "bcname":"title3",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 4,
         "bcname":"title4",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 5,
         "bcname":"title5",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 6,
         "bcname":"title6",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 7,
         "bcname":"title7",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 8,
         "bcname":"title8",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
       },{
         "bcid": 9,
         "bcname":"title9",
-        "picurl": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
+        "picurl": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg"
      }],
     "procount":100
 }

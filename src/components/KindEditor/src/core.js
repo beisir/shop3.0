@@ -165,7 +165,7 @@ function _extend(child, parent, proto) {
 	child.parent = parent ? parent.prototype : null;
 }
 
-//From http://www.json.org/json2.js
+//From //www.json.org/json2.js
 function _json(text) {
 	var match;
 	if ((match = /\{[\s\S]*\}|\[[\s\S]*\]/.exec(text))) {

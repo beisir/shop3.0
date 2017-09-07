@@ -276,7 +276,7 @@ _extend(KCmd, {
 			rng = range.get(true);
 			sel.removeAllRanges();
 			sel.addRange(rng);
-			// Bugfix: https://github.com/kindsoft/kindeditor/issues/54
+			// Bugfix: //github.com/kindsoft/kindeditor/issues/54
 			if (doc !== document) {
 				var pos = K(rng.endContainer).pos();
 				win.scrollTo(pos.x, pos.y);
@@ -800,7 +800,7 @@ _extend(KCmd, {
 				K(node).removeAttr('target');
 			}
 		}
-		// Bugfix: https://github.com/kindsoft/kindeditor/issues/117
+		// Bugfix: //github.com/kindsoft/kindeditor/issues/117
 		// [IE] 当两个A标签并排在一起中间没有别的内容，修改后面的链接地址时，前面的链接地址也被改掉。
 		var sc = range.startContainer, so = range.startOffset,
 			ec = range.endContainer, eo = range.endOffset;

@@ -77,7 +77,7 @@ app.use(devMiddleware);
 // compilation error display
 app.use(hotMiddleware);
 
-var uri = 'http://localhost:' + config.port + config.index;
+var uri = '//localhost:' + config.port + config.index;
 
 devMiddleware.waitUntilValid(function() {
 	console.log('> Listening at ' + uri + '\n');

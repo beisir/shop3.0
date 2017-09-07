@@ -415,8 +415,8 @@ URL添加GET参数，拼接时自动判断连接字符(&或?)。
 
 .. sourcecode:: js
 
-	url = K.addParam('http://www.example.com/test.php', 'abc=123');
-	url = K.addParam('http://www.example.com/test.php?cde=456', 'abc=123');
+	url = K.addParam('//www.example.com/test.php', 'abc=123');
+	url = K.addParam('//www.example.com/test.php?cde=456', 'abc=123');
 
 .. index:: extend
 

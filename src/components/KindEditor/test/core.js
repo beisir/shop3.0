@@ -131,10 +131,10 @@ test('undef', function() {
 });
 
 test('invalidUrl', function() {
-	ok(K.invalidUrl('http://www.kindsoft.net/') === false);
-	ok(K.invalidUrl('http://www.kindsoft.net/<br>') === true);
-	ok(K.invalidUrl('http://www.kindsoft.net/"abcd"') === true);
-	ok(K.invalidUrl('http://www.kindsoft.net/<b>abcd</b>') === true);
+	ok(K.invalidUrl('//www.kindsoft.net/') === false);
+	ok(K.invalidUrl('//www.kindsoft.net/<br>') === true);
+	ok(K.invalidUrl('//www.kindsoft.net/"abcd"') === true);
+	ok(K.invalidUrl('//www.kindsoft.net/<b>abcd</b>') === true);
 });
 
 test('addParam', function() {

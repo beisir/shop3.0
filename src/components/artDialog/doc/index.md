@@ -1,6 +1,6 @@
 #	artDialog
 
-[首页](http://aui.github.io/artDialog/) &gt; [文档与示例](http://aui.github.io/artDialog/doc/index.html)
+[首页](//aui.github.io/artDialog/) &gt; [文档与示例](//aui.github.io/artDialog/doc/index.html)
 
 ============================
 
@@ -1007,19 +1007,19 @@ d.show();
 
 ###	[源码构建](id:other-grunt)
 
-使用 [GruntJS](http://gruntjs.cn) 在 artDialog 源码根目录执行即可。
+使用 [GruntJS](//gruntjs.cn) 在 artDialog 源码根目录执行即可。
 
 ###	[artDialog v5 升级 v6 参考](id:other-upgrade)
 
-<https://github.com/aui/artDialog/wiki/artDialog-v5升级v6参考>
+<//github.com/aui/artDialog/wiki/artDialog-v5升级v6参考>
 
 ###	[支持](id:other-support)
 
-artDialog 是基于 [LGPL](https://github.com/aui/artDialog/blob/master/LICENSE.md) 协议免费开源的程序，问题反馈可在 [Github issues](https://github.com/aui/artDialog/issues?state=open) 上进行（为了保证效率，请务必描述清楚你的问题，例如包含 artDialog 版本号、浏览器版本等必要信息，有 demo 甚佳。不合格问题将可能会被关闭）。
+artDialog 是基于 [LGPL](//github.com/aui/artDialog/blob/master/LICENSE.md) 协议免费开源的程序，问题反馈可在 [Github issues](//github.com/aui/artDialog/issues?state=open) 上进行（为了保证效率，请务必描述清楚你的问题，例如包含 artDialog 版本号、浏览器版本等必要信息，有 demo 甚佳。不合格问题将可能会被关闭）。
 
 =======================
 
-[artDialog 商业授权](https://github.com/aui/artDialog/blob/master/LICENSE.md)
+[artDialog 商业授权](//github.com/aui/artDialog/blob/master/LICENSE.md)
 
 <script src="../lib/jquery-1.10.2.js"></script>
 

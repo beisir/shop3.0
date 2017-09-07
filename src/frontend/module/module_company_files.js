@@ -142,18 +142,18 @@ enterpriseArchives.prototype = {
          * 拉取二维码js
          */
         if (!$.fn.hcQrcode) {
-            $.getScript('http://style.org.hc360.cn/js/build/source/widgets/qrcode/hc.qrcode.min.js', function() {
+            $.getScript('//style.org.hc360.cn/js/build/source/widgets/qrcode/hc.qrcode.min.js', function() {
                 $('[data-node-name="' + wrapName + '"]').hcQrcode({
                     width: _width,
                     height: _height,
-                    text: "http://app.hc360.com/m.html?uid=" + shopName + ",a=x"
+                    text: "//app.hc360.com/m.html?uid=" + shopName + ",a=x"
                 });
             });
         } else {
             $('[data-node-name="' + wrapName + '"]').hcQrcode({
                 width: _width,
                 height: _height,
-                text: "http://app.hc360.com/m.html?uid=" + shopName + ",a=x"
+                text: "//app.hc360.com/m.html?uid=" + shopName + ",a=x"
             });
         }
     },
@@ -162,7 +162,7 @@ enterpriseArchives.prototype = {
      * @constructor
      */
     Ajaxshoucang: function() {
-        var url = "http://my.b2b.hc360.com/my/turbine/action/favorites.FavoritesAction/eventsubmit_doAddinfonew/doAddinfonew?";
+        var url = "//my.b2b.hc360.com/my/turbine/action/favorites.FavoritesAction/eventsubmit_doAddinfonew/doAddinfonew?";
         $.ajax({
             type: "get",
             url: url,
@@ -220,7 +220,7 @@ enterpriseArchives.prototype = {
             collectionHtml = $("#update-shoucang");
         if (collectionHtml.length == 0) {
             $.ajax({
-                url: 'http://detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=collectionHtml',
+                url: '//detail.b2b.hc360.com/detail/turbine/action/GetModuleEditBoxAction/eventsubmit_doGet/doGet?filename=collectionHtml',
                 dataType: 'jsonp',
                 success: function(dialogHtml) {
                     $('body').append(dialogHtml);

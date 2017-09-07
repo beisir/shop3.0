@@ -19,9 +19,9 @@ window.pageEntity = pageEntity;
 
 
 var ajaxUrl = {
-        likeMod: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.SearchSupplyDetailAjaxAction/eventsubmit_doProdbysupply/doProdbysupply",
-        fillShopMod: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.DetailHomePageFillAjaxAction/eventsubmit_doNewsupply/doNewsupply",
-        includedMod: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.SearchSupplyDetailAjaxAction/eventsubmit_doRelawordbysupply/doRelawordbysupply"
+        likeMod: "//detail.b2b.hc360.com/detail/turbine/action/ajax.SearchSupplyDetailAjaxAction/eventsubmit_doProdbysupply/doProdbysupply",
+        fillShopMod: "//detail.b2b.hc360.com/detail/turbine/action/ajax.DetailHomePageFillAjaxAction/eventsubmit_doNewsupply/doNewsupply",
+        includedMod: "//detail.b2b.hc360.com/detail/turbine/action/ajax.SearchSupplyDetailAjaxAction/eventsubmit_doRelawordbysupply/doRelawordbysupply"
     },
     showNum = {
         likeMod: 15,
@@ -261,7 +261,7 @@ function fillShopInit() {
     var data = getData(url, param);
     data.done(function (dataArr) {
         var keyword = dataArr.keyword;
-        fillShopNode.find(".more a").attr("href", "http://s.hc360.com/?w=" + keyword + "&ql=3&qh=5&SP=1&t=1&v=6");
+        fillShopNode.find(".more a").attr("href", "//s.hc360.com/?w=" + keyword + "&ql=3&qh=5&SP=1&t=1&v=6");
         if (dataArr && dataArr.success == "1") { //获得数据成功
             var list = dataArr.productList,
                 str = new Array();
@@ -359,7 +359,7 @@ function pageHandler() {
     /***
      * 初始化优惠券
      */
-    HC.HUB.addScript('http://style.org.hc360.cn/js/detail/scripts/coupon/jq_moveXY.js', function () {
+    HC.HUB.addScript('//style.org.hc360.cn/js/detail/scripts/coupon/jq_moveXY.js', function () {
         $("#pic_roll").moveXY({
             effect: "buttonClick"
         });
@@ -428,7 +428,7 @@ function getId(href) {
  * @param img
  */
 function imgonerror(img) {
-    var noneImg = "http://b2b.hc360.com/mmtTrade/images/nopic.jpg";
+    var noneImg = "//b2b.hc360.com/mmtTrade/images/nopic.jpg";
     img.src = noneImg;
     img.onerror = null;
 }
@@ -440,7 +440,7 @@ function imgonerror(img) {
 (function () {
   $.ajax({
     type: "get",
-    url: "http://order.b2b.hc360.com/brandneworder/checkbuslinks.html",
+    url: "//order.b2b.hc360.com/brandneworder/checkbuslinks.html",
     data: {
       providerid: window.providerId
     },

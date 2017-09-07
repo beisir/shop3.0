@@ -37,7 +37,7 @@ var loadFirebug = function()
 
     // TODO: xxxpedro - change to XHR when Issue 41024 is solved
     // Issue 41024: XHR using file: and chrome-extension: protocols not working.
-    // http://code.google.com/p/chromium/issues/detail?id=41024
+    // //code.google.com/p/chromium/issues/detail?id=41024
     injectFirebugScript();
 }
 

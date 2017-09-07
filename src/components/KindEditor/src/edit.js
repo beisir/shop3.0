@@ -85,7 +85,7 @@ function _elementVal(knode, val) {
 		if (val === undefined) {
 			var html = knode.val();
 			// 去除内容为空的p标签
-			// https://github.com/kindsoft/kindeditor/pull/52
+			// //github.com/kindsoft/kindeditor/pull/52
 			html = html.replace(/(<(?:p|p\s[^>]*)>) *(<\/p>)/ig, '');
 			return html;
 		}
@@ -162,7 +162,7 @@ _extend(KEdit, KWidget, {
 				});
 			}
 			if (_IE) {
-				// Fix bug: https://github.com/kindsoft/kindeditor/issues/53
+				// Fix bug: //github.com/kindsoft/kindeditor/issues/53
 				self._mousedownHandler = function() {
 					var newRange = cmd.range.cloneRange();
 					newRange.shrink();
@@ -274,7 +274,7 @@ _extend(KEdit, KWidget, {
 			if (self.beforeSetHtml) {
 				val = self.beforeSetHtml(val);
 			}
-			// IE9 Bugfix: https://github.com/kindsoft/kindeditor/issues/62
+			// IE9 Bugfix: //github.com/kindsoft/kindeditor/issues/62
 			if (_IE && _V >= 9) {
 				val = val.replace(/(<.*?checked=")checked(".*>)/ig, '$1$2');
 			}

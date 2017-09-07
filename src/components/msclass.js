@@ -8,7 +8,7 @@ function Marquee() {
     c.$ = function(d) {
         return document.getElementById(d)
     };
-    // c.t = (c.F = ["MSClass 2.9.120108", "Class Of Marquee Scroll", "General Uninterrupted Scrolling(JS)", "http://www.popub.net/script/MSClass.html", "Yongxiang Cui(333) zhadan007@21cn.com"]).join("\n");
+    // c.t = (c.F = ["MSClass 2.9.120108", "Class Of Marquee Scroll", "General Uninterrupted Scrolling(JS)", "//www.popub.net/script/MSClass.html", "Yongxiang Cui(333) zhadan007@21cn.com"]).join("\n");
     if (!((c.c = typeof(c.a = b[0]["MSClass"] || b[0] || b[0][0]) == "object" ? c.$(c.a[0]) || c.$(c.a.MSClassID) : c.$(c.a)))) {
         (window.console && window.console.log("The [" + (c.a.MSClassID || c.a[0] || c.a) + "] initialization error!")) || (c.c = -1)
         return;

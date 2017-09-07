@@ -3,8 +3,8 @@
 * Copyright (C) 2006-2016 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @website http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @website //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 * @version 4.1.11 (2016-05-26)
 *******************************************************************************/
 (function (window, undefined) {
@@ -156,7 +156,8 @@ function _extend(child, parent, proto) {
 	child.prototype = childProto;
 	child.parent = parent ? parent.prototype : null;
 }
-
+
+
 function _json(text) {
 	var match;
 	if ((match = /\{[\s\S]*\}|\[[\s\S]*\]/.exec(text))) {
@@ -316,9 +317,12 @@ K.options = {
 
 
 var _useCapture = false;
-
-var _INPUT_KEY_MAP = _toMap('8,9,13,32,46,48..57,59,61,65..90,106,109..111,188,190..192,219..222');
-var _CURSORMOVE_KEY_MAP = _toMap('33..40');
+
+
+var _INPUT_KEY_MAP = _toMap('8,9,13,32,46,48..57,59,61,65..90,106,109..111,188,190..192,219..222');
+
+var _CURSORMOVE_KEY_MAP = _toMap('33..40');
+
 var _CHANGE_KEY_MAP = {};
 _each(_INPUT_KEY_MAP, function(key, val) {
 	_CHANGE_KEY_MAP[key] = val;
@@ -326,14 +330,16 @@ _each(_INPUT_KEY_MAP, function(key, val) {
 _each(_CURSORMOVE_KEY_MAP, function(key, val) {
 	_CHANGE_KEY_MAP[key] = val;
 });
-
+
+
 function _bindEvent(el, type, fn) {
 	if (el.addEventListener){
 		el.addEventListener(type, fn, _useCapture);
 	} else if (el.attachEvent){
 		el.attachEvent('on' + type, fn);
 	}
-}
+}
+
 function _unbindEvent(el, type, fn) {
 	if (el.removeEventListener){
 		el.removeEventListener(type, fn, _useCapture);
@@ -344,7 +350,8 @@ function _unbindEvent(el, type, fn) {
 var _EVENT_PROPS = ('altKey,attrChange,attrName,bubbles,button,cancelable,charCode,clientX,clientY,ctrlKey,currentTarget,' +
 	'data,detail,eventPhase,fromElement,handler,keyCode,metaKey,newValue,offsetX,offsetY,originalTarget,pageX,' +
 	'pageY,prevValue,relatedNode,relatedTarget,screenX,screenY,shiftKey,srcElement,target,toElement,view,wheelDelta,which').split(',');
-
+
+
 function KEvent(el, event) {
 	this.init(el, event);
 }
@@ -901,7 +908,8 @@ function _formatHtml(html, htmlTags, urlType, wellFormatted, indentChar) {
 	html = html.replace(/\n\s*\n/g, '\n');
 	html = html.replace(/<span id="__kindeditor_pre_newline__">\n/g, '\n');
 	return _trim(html);
-}
+}
+
 function _clearMsWord(html, htmlTags) {
 	html = html.replace(/<meta[\s\S]*?>/ig, '')
 		.replace(/<![\s\S]*?>/ig, '')
@@ -914,7 +922,8 @@ function _clearMsWord(html, htmlTags) {
 			return full.replace(/border-bottom:([#\w\s]+)/ig, 'border:$1');
 		});
 	return _formatHtml(html, htmlTags);
-}
+}
+
 function _mediaType(src) {
 	if (/\.(rm|rmvb)(\?|$)/i.test(src)) {
 		return 'audio/x-pn-realaudio-plugin';
@@ -923,7 +932,8 @@ function _mediaType(src) {
 		return 'application/x-shockwave-flash';
 	}
 	return 'video/x-ms-asf-plugin';
-}
+}
+
 function _mediaClass(type) {
 	if (/realaudio/i.test(type)) {
 		return 'ke-rm';
@@ -967,7 +977,10 @@ function _mediaImg(blankPath, attrs) {
 	html += 'data-ke-tag="' + escape(srcTag) + '" alt="" />';
 	return html;
 }
-
+
+
+
+
 function _tmpl(str, data) {
 	var fn = new Function("obj",
 		"var p=[],print=function(){p.push.apply(p,arguments);};" +
@@ -1304,7 +1317,8 @@ function _getScrollPos(doc) {
 	}
 	return {x : x, y : y};
 }
-
+
+
 function KNode(node) {
 	this.init(node);
 }
@@ -1940,7 +1954,8 @@ function _copyAndDelete(range, isCopy, isDelete) {
 		}
 	}
 	return isCopy ? frag : range;
-}
+}
+
 function _moveToElementText(range, el) {
 	var node = el;
 	while (node) {
@@ -1953,7 +1968,8 @@ function _moveToElementText(range, el) {
 	try {
 		range.moveToElementText(el);
 	} catch(e) {}
-}
+}
+
 function _getStartEnd(rng, isStart) {
 	var doc = rng.parentElement().ownerDocument,
 		pointRange = rng.duplicate();
@@ -2018,7 +2034,8 @@ function _getStartEnd(rng, isStart) {
 		}
 	}
 	return {node: startNode, offset: startPos};
-}
+}
+
 function _getEndRange(node, offset) {
 	var doc = node.ownerDocument || node,
 		range = doc.body.createTextRange();
@@ -2075,7 +2092,8 @@ function _getEndRange(node, offset) {
 	range.moveStart('character', offset);
 	K(dummy).remove();
 	return range;
-}
+}
+
 function _toRange(rng) {
 	var doc, range;
 	function tr2td(start) {
@@ -2108,7 +2126,8 @@ function _toRange(rng) {
 	range.setEnd(rng.endContainer, rng.endOffset);
 	return range;
 }
-
+
+
 function KRange(doc) {
 	this.init(doc);
 }
@@ -2526,12 +2545,14 @@ K.START_TO_END = _START_TO_END;
 K.END_TO_END = _END_TO_END;
 K.END_TO_START = _END_TO_START;
 
-
+
+
 function _nativeCommand(doc, key, val) {
 	try {
 		doc.execCommand(key, false, val);
 	} catch(e) {}
-}
+}
+
 function _nativeCommandValue(doc, key) {
 	var val = '';
 	try {
@@ -2541,11 +2562,13 @@ function _nativeCommandValue(doc, key) {
 		val = '';
 	}
 	return val;
-}
+}
+
 function _getSel(doc) {
 	var win = _getWin(doc);
 	return _IERANGE ? doc.selection : win.getSelection();
-}
+}
+
 function _getRng(doc) {
 	var sel = _getSel(doc), rng;
 	try {
@@ -2559,7 +2582,8 @@ function _getRng(doc) {
 		return null;
 	}
 	return rng;
-}
+}
+
 function _singleKeyMap(map) {
 	var newMap = {}, arr, v;
 	_each(map, function(key, val) {
@@ -2570,7 +2594,8 @@ function _singleKeyMap(map) {
 		}
 	});
 	return newMap;
-}
+}
+
 function _hasAttrOrCss(knode, map) {
 	return _hasAttrOrCssByKey(knode, map, '*') || _hasAttrOrCssByKey(knode, map);
 }
@@ -2601,7 +2626,8 @@ function _hasAttrOrCssByKey(knode, map, mapKey) {
 		}
 	}
 	return false;
-}
+}
+
 function _removeAttrOrCss(knode, map) {
 	if (knode.type != 1) {
 		return;
@@ -2639,20 +2665,26 @@ function _removeAttrOrCssByKey(knode, map, mapKey) {
 	if (allFlag) {
 		knode.remove(true);
 	}
-}
+}
+
 function _getInnerNode(knode) {
 	var inner = knode;
 	while (inner.first()) {
 		inner = inner.first();
 	}
 	return inner;
-}
+}
+
 function _isEmptyNode(knode) {
 	if (knode.type != 1 || knode.isSingle()) {
 		return false;
 	}
 	return knode.html().replace(/<[^>]+>/g, '') === '';
-}
+}
+
+
+
+
 function _mergeWrapper(a, b) {
 	a = a.clone(true);
 	var lastA = _getInnerNode(a), childA = a, merged = false;
@@ -2671,7 +2703,8 @@ function _mergeWrapper(a, b) {
 		b = b.first();
 	}
 	return a;
-}
+}
+
 function _wrapNode(knode, wrapper) {
 	wrapper = wrapper.clone(true);
 	if (knode.type == 3) {
@@ -2695,7 +2728,8 @@ function _wrapNode(knode, wrapper) {
 	}
 	nodeWrapper.replaceWith(wrapper);
 	return wrapper;
-}
+}
+
 function _mergeAttrs(knode, attrs, styles) {
 	_each(attrs, function(key, val) {
 		if (key !== 'style') {
@@ -2705,7 +2739,8 @@ function _mergeAttrs(knode, attrs, styles) {
 	_each(styles, function(key, val) {
 		knode.css(key, val);
 	});
-}
+}
+
 function _inPreElement(knode) {
 	while (knode && knode.name != 'body') {
 		if (_PRE_TAG_MAP[knode.name] || knode.name == 'div' && knode.hasClass('ke-script')) {
@@ -2714,7 +2749,8 @@ function _inPreElement(knode) {
 		knode = knode.parent();
 	}
 	return false;
-}
+}
+
 function KCmd(range) {
 	this.init(range);
 }
@@ -3398,7 +3434,8 @@ function _drag(options) {
 		}
 	});
 }
-
+
+
 function KWidget(options) {
 	this.init(options);
 }
@@ -3638,7 +3675,8 @@ function _elementVal(knode, val) {
 	}
 	return knode.html(val);
 }
-
+
+
 function KEdit(options) {
 	this.init(options);
 }
@@ -3899,7 +3937,8 @@ function _selectToolbar(name, fn) {
 		fn(knode);
 	}
 }
-
+
+
 function KToolbar(options) {
 	this.init(options);
 }
@@ -4019,7 +4058,8 @@ function _toolbar(options) {
 K.ToolbarClass = KToolbar;
 K.toolbar = _toolbar;
 
-
+
+
 function KMenu(options) {
 	this.init(options);
 }
@@ -4102,7 +4142,8 @@ function _menu(options) {
 K.MenuClass = KMenu;
 K.menu = _menu;
 
-
+
+
 function KColorPicker(options) {
 	this.init(options);
 }
@@ -4284,7 +4325,8 @@ function _createButton(arg) {
 	span.append(btn);
 	return span;
 }
-
+
+
 function KDialog(options) {
 	this.init(options);
 }
@@ -4483,7 +4525,8 @@ function _loadScript(url, fn) {
 		}
 	};
 }
-
+
+
 function _chopQuery(url) {
 	var index = url.indexOf('?');
 	return index > 0 ? url.substr(0, index) : url;
@@ -4579,7 +4622,8 @@ function _lang(mixed, langType) {
 		_language[langType][obj.ns][obj.key] = val;
 	});
 }
-
+
+
 function _getImageFromRange(range, fn) {
 	if (range.collapsed) {
 		return;
@@ -4790,7 +4834,9 @@ function _addBookmarkToStack(stack, bookmark) {
 		stack.push(bookmark);
 	}
 }
-
+
+
+
 function _undoToRedo(fromStack, toStack) {
 	var self = this, edit = self.edit,
 		body = edit.doc.body,
@@ -5549,7 +5595,8 @@ K.appendHtml = function(expr, val) {
 		this.appendHtml(val);
 	});
 };
-
+
+
 if (_IE && _V < 7) {
 	_nativeCommand(document, 'BackgroundImageCache', true);
 }
@@ -5559,7 +5606,8 @@ K.create = _create;
 K.instances = _instances;
 K.plugin = _plugin;
 K.lang = _lang;
-
+
+
 _plugin('core', function(K) {
 	var self = this,
 		shortcutKeys = {
@@ -5746,7 +5794,7 @@ _plugin('core', function(K) {
 	self.clickToolbar('about', function() {
 		var html = '<div style="margin:20px;">' +
 			'<div>KindEditor ' + _VERSION + '</div>' +
-			'<div>Copyright &copy; <a href="http://www.kindsoft.net/" target="_blank">kindsoft.net</a> All rights reserved.</div>' +
+			'<div>Copyright &copy; <a href="//www.kindsoft.net/" target="_blank">kindsoft.net</a> All rights reserved.</div>' +
 			'</div>';
 		self.createDialog({
 			name : 'about',
@@ -6040,8 +6088,8 @@ _plugin('core', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.lang({
 	source : 'HTML代码',
@@ -6276,8 +6324,8 @@ KindEditor.options.langType = 'zh-CN';
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('anchor', function(K) {
 	var self = this, name = 'anchor', lang = self.lang(name + '.');
@@ -6322,8 +6370,8 @@ KindEditor.plugin('anchor', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('autoheight', function(K) {
 	var self = this;
@@ -6368,8 +6416,8 @@ KindEditor.plugin('autoheight', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('baidumap', function(K) {
 	var self = this, name = 'baidumap', lang = self.lang(name + '.');
@@ -6403,7 +6451,7 @@ KindEditor.plugin('baidumap', function(K) {
 					var centerObj = map.getCenter();
 					var center = centerObj.lng + ',' + centerObj.lat;
 					var zoom = map.getZoom();
-					var url = [checkbox[0].checked ? self.pluginsPath + 'baidumap/index.html' : 'http://api.map.baidu.com/staticimage',
+					var url = [checkbox[0].checked ? self.pluginsPath + 'baidumap/index.html' : '//api.map.baidu.com/staticimage',
 						'?center=' + encodeURIComponent(center),
 						'&zoom=' + encodeURIComponent(zoom),
 						'&width=' + mapWidth,
@@ -6456,10 +6504,11 @@ KindEditor.plugin('baidumap', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
-
+
+
 KindEditor.plugin('map', function(K) {
 	var self = this, name = 'map', lang = self.lang(name + '.');
 	self.clickToolbar(name, function() {
@@ -6485,7 +6534,7 @@ KindEditor.plugin('map', function(K) {
 						center = map.getCenter().lat() + ',' + map.getCenter().lng(),
 						zoom = map.getZoom(),
 						maptype = map.getMapTypeId(),
-						url = 'http://maps.googleapis.com/maps/api/staticmap';
+						url = '//maps.googleapis.com/maps/api/staticmap';
 						url += '?center=' + encodeURIComponent(center);
 						url += '&zoom=' + encodeURIComponent(zoom);
 						url += '&size=558x360';
@@ -6515,7 +6564,7 @@ KindEditor.plugin('map', function(K) {
 			'	body { height: 100%; margin: 0; padding: 0; background-color: #FFF }',
 			'	#map_canvas { height: 100% }',
 			'</style>',
-			'<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=' + self.langType + '"></script>',
+			'<script src="//maps.googleapis.com/maps/api/js?sensor=false&language=' + self.langType + '"></script>',
 			'<script>',
 			'var map, geocoder;',
 			'function initialize() {',
@@ -6587,8 +6636,8 @@ KindEditor.plugin('map', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('clearhtml', function(K) {
 	var self = this, name = 'clearhtml';
@@ -6616,10 +6665,12 @@ KindEditor.plugin('clearhtml', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
-
+
+
+
 KindEditor.plugin('code', function(K) {
 	var self = this, name = 'code';
 	self.clickToolbar(name, function() {
@@ -6676,8 +6727,8 @@ KindEditor.plugin('code', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('emoticons', function(K) {
 	var self = this, name = 'emoticons',
@@ -6805,8 +6856,8 @@ KindEditor.plugin('emoticons', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('filemanager', function(K) {
 	var self = this, name = 'filemanager',
@@ -6987,8 +7038,8 @@ KindEditor.plugin('filemanager', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('flash', function(K) {
 	var self = this, name = 'flash', lang = self.lang(name + '.'),
@@ -7031,7 +7082,7 @@ KindEditor.plugin('flash', function(K) {
 						var url = K.trim(urlBox.val()),
 							width = widthBox.val(),
 							height = heightBox.val();
-						if (url == 'http://' || K.invalidUrl(url)) {
+						if (url == '//' || K.invalidUrl(url)) {
 							alert(self.lang('invalidUrl'));
 							urlBox[0].focus();
 							return;
@@ -7062,7 +7113,7 @@ KindEditor.plugin('flash', function(K) {
 			viewServerBtn = K('[name="viewServer"]', div),
 			widthBox = K('[name="width"]', div),
 			heightBox = K('[name="height"]', div);
-			urlBox.val('http://');
+			urlBox.val('//');
 			if (allowFlashUpload) {
 				var uploadbutton = K.uploadbutton({
 					button : K('.ke-upload-button', div)[0],
@@ -7141,8 +7192,8 @@ KindEditor.plugin('flash', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('image', function(K) {
 	var self = this, name = 'image',
@@ -7248,7 +7299,7 @@ KindEditor.plugin('image', function(K) {
 							return false;
 						}
 					});
-					if (url == 'http://' || K.invalidUrl(url)) {
+					if (url == '//' || K.invalidUrl(url)) {
 						alert(self.lang('invalidUrl'));
 						urlBox[0].focus();
 						return;
@@ -7407,7 +7458,7 @@ KindEditor.plugin('image', function(K) {
 		edit : function() {
 			var img = self.plugin.getSelectedImage();
 			self.plugin.imageDialog({
-				imageUrl : img ? img.attr('data-ke-src') : 'http://',
+				imageUrl : img ? img.attr('data-ke-src') : '//',
 				imageWidth : img ? img.width() : '',
 				imageHeight : img ? img.height() : '',
 				imageTitle : img ? img.attr('title') : '',
@@ -7450,8 +7501,8 @@ KindEditor.plugin('image', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('insertfile', function(K) {
 	var self = this, name = 'insertfile',
@@ -7463,7 +7514,7 @@ KindEditor.plugin('insertfile', function(K) {
 		filePostName = K.undef(self.filePostName, 'imgFile'),
 		lang = self.lang(name + '.');
 	self.plugin.fileDialog = function(options) {
-		var fileUrl = K.undef(options.fileUrl, 'http://'),
+		var fileUrl = K.undef(options.fileUrl, '//'),
 			fileTitle = K.undef(options.fileTitle, ''),
 			clickFn = options.clickFn;
 		var html = [
@@ -7493,7 +7544,7 @@ KindEditor.plugin('insertfile', function(K) {
 				click : function(e) {
 					var url = K.trim(urlBox.val()),
 						title = titleBox.val();
-					if (url == 'http://' || K.invalidUrl(url)) {
+					if (url == '//' || K.invalidUrl(url)) {
 						alert(self.lang('invalidUrl'));
 						urlBox[0].focus();
 						return;
@@ -7584,8 +7635,8 @@ KindEditor.plugin('insertfile', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('lineheight', function(K) {
 	var self = this, name = 'lineheight', lang = self.lang(name + '.');
@@ -7622,8 +7673,8 @@ KindEditor.plugin('lineheight', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('link', function(K) {
 	var self = this, name = 'link';
@@ -7648,7 +7699,7 @@ KindEditor.plugin('link', function(K) {
 						name : self.lang('yes'),
 						click : function(e) {
 							var url = K.trim(urlBox.val());
-							if (url == 'http://' || K.invalidUrl(url)) {
+							if (url == '//' || K.invalidUrl(url)) {
 								alert(self.lang('invalidUrl'));
 								urlBox[0].focus();
 								return;
@@ -7660,7 +7711,7 @@ KindEditor.plugin('link', function(K) {
 				div = dialog.div,
 				urlBox = K('input[name="url"]', div),
 				typeBox = K('select[name="type"]', div);
-			urlBox.val('http://');
+			urlBox.val('//');
 			typeBox[0].options[0] = new Option(lang.newWindow, '_blank');
 			typeBox[0].options[1] = new Option(lang.selfWindow, '');
 			self.cmd.selection();
@@ -7686,8 +7737,8 @@ KindEditor.plugin('link', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('media', function(K) {
 	var self = this, name = 'media', lang = self.lang(name + '.'),
@@ -7735,7 +7786,7 @@ KindEditor.plugin('media', function(K) {
 						var url = K.trim(urlBox.val()),
 							width = widthBox.val(),
 							height = heightBox.val();
-						if (url == 'http://' || K.invalidUrl(url)) {
+						if (url == '//' || K.invalidUrl(url)) {
 							alert(self.lang('invalidUrl'));
 							urlBox[0].focus();
 							return;
@@ -7768,7 +7819,7 @@ KindEditor.plugin('media', function(K) {
 			widthBox = K('[name="width"]', div),
 			heightBox = K('[name="height"]', div),
 			autostartBox = K('[name="autostart"]', div);
-			urlBox.val('http://');
+			urlBox.val('//');
 			if (allowMediaUpload) {
 				var uploadbutton = K.uploadbutton({
 					button : K('.ke-upload-button', div)[0],
@@ -7848,8 +7899,8 @@ KindEditor.plugin('media', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 (function(K) {
 function KSWFUpload(options) {
@@ -8888,8 +8939,8 @@ if (typeof(SWFUpload) === "function") {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('pagebreak', function(K) {
 	var self = this;
@@ -8914,8 +8965,8 @@ KindEditor.plugin('pagebreak', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('plainpaste', function(K) {
 	var self = this, name = 'plainpaste';
@@ -8955,8 +9006,8 @@ KindEditor.plugin('plainpaste', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('preview', function(K) {
 	var self = this, name = 'preview', undefined;
@@ -8986,8 +9037,8 @@ KindEditor.plugin('preview', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('quickformat', function(K) {
 	var self = this, name = 'quickformat',
@@ -9042,8 +9093,8 @@ KindEditor.plugin('quickformat', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('table', function(K) {
 	var self = this, name = 'table', lang = self.lang(name + '.'), zeroborder = 'ke-zeroborder';
@@ -9717,8 +9768,8 @@ KindEditor.plugin('table', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('template', function(K) {
 	var self = this, name = 'template', lang = self.lang(name + '.'),
@@ -9773,8 +9824,8 @@ KindEditor.plugin('template', function(K) {
 * Copyright (C) 2006-2011 kindsoft.net
 *
 * @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
+* @site //www.kindsoft.net/
+* @licence //www.kindsoft.net/license.php
 *******************************************************************************/
 KindEditor.plugin('wordpaste', function(K) {
 	var self = this, name = 'wordpaste';

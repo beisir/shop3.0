@@ -7,22 +7,22 @@ die('{"contents":"ERROR: Firebug Lite Proxy plugin is not enabled."}');
 //
 // *Version: 1.6, Last updated: 1/24/2009*
 // 
-// Project Home - http://benalman.com/projects/php-simple-proxy/
-// GitHub       - http://github.com/cowboy/php-simple-proxy/
-// Source       - http://github.com/cowboy/php-simple-proxy/raw/master/ba-simple-proxy.php
+// Project Home - //benalman.com/projects/php-simple-proxy/
+// GitHub       - //github.com/cowboy/php-simple-proxy/
+// Source       - //github.com/cowboy/php-simple-proxy/raw/master/ba-simple-proxy.php
 // 
 // About: License
 // 
 // Copyright (c) 2010 "Cowboy" Ben Alman,
 // Dual licensed under the MIT and GPL licenses.
-// http://benalman.com/about/license/
+// //benalman.com/about/license/
 // 
 // About: Examples
 // 
 // This working example, complete with fully commented code, illustrates one way
 // in which this PHP script can be used.
 // 
-// Simple - http://benalman.com/code/projects/php-simple-proxy/examples/simple/
+// Simple - //benalman.com/code/projects/php-simple-proxy/examples/simple/
 // 
 // About: Release History
 // 
@@ -70,7 +70,7 @@ die('{"contents":"ERROR: Firebug Lite Proxy plugin is not enabled."}');
 // 
 // Request:
 // 
-// > ba-simple-proxy.php?url=http://example.com/
+// > ba-simple-proxy.php?url=//example.com/
 // 
 // Response:
 // 
@@ -90,7 +90,7 @@ die('{"contents":"ERROR: Firebug Lite Proxy plugin is not enabled."}');
 // 
 // Request:
 // 
-// > ba-simple-proxy.php?url=http://example.com/&callback=foo
+// > ba-simple-proxy.php?url=//example.com/&callback=foo
 // 
 // Response:
 // 
@@ -111,7 +111,7 @@ die('{"contents":"ERROR: Firebug Lite Proxy plugin is not enabled."}');
 // 
 // Request:
 // 
-// > ba-simple-proxy.php?url=http://example.com/&mode=native
+// > ba-simple-proxy.php?url=//example.com/&mode=native
 // 
 // Response:
 // 

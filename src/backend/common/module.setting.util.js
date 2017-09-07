@@ -23,8 +23,8 @@ var tool = {
         return obj;
     },
     /***
-     * background:url(http://www.hc360.com/1.jpg)
-     * 获取http://www.hc360.com/1.jpg图片路径，返回一个图片地址
+     * background:url(//www.hc360.com/1.jpg)
+     * 获取//www.hc360.com/1.jpg图片路径，返回一个图片地址
      * @returns {string}
      */
     getBgUrl: function(url) {
@@ -46,7 +46,7 @@ var tool = {
                 _imgSrc = $.trim(_img.attr('src')),
                 newImg = $('<img>').attr('src', _imgSrc);
             newImg.error(function() {
-                _img.attr('src', 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPic.jpg');
+                _img.attr('src', '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/nPic.jpg');
                 newImg.onerror = null;
             });
         });

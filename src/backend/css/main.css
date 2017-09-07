@@ -49,8 +49,8 @@ div[data-node-name="editBox"] .webuploader-pick + div { width: 100% !important; 
 .pageList .pagination { float: right; overflow: hidden; height: 30px; }
 .pageList .pagination a, .pageList .pagination span { float: left; display: block; width: 20px; height: 20px; text-align: center; line-height: 20px; font-size: 12px; border: 1px solid #ccc; color: #666; margin: 0 1px; text-decoration: none; }
 .pageList .pagination .current { border: 1px solid #575757; color: #fff; background: #575757; }
-.pageList .pagination .prev { width: 22px; height: 22px; background: url(http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proIco2.png) -302px 0; border: none; }
-.pageList .pagination .next { width: 22px; height: 22px; background: url(http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proIco2.png) -334px 0; border: none; }
+.pageList .pagination .prev { width: 22px; height: 22px; background: url(//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proIco2.png) -302px 0; border: none; }
+.pageList .pagination .next { width: 22px; height: 22px; background: url(//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proIco2.png) -334px 0; border: none; }
 .pageList .total { margin-right: 5px; float: left; line-height: 20px; margin-top: 2px; }
 .pageList .page-next { float: left; height: 20px; line-height: 20px; }
 .pageList .page-next .intopage { border: 1px solid #ccc; width: 24px; height: 20px; line-height: 20px; text-align: center; color: #666; padding: 0; margin: 0 3px; }

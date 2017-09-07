@@ -237,7 +237,7 @@ ExtendWindowUtil.prototype = {
                     wrap.find(".seleList").html('<p class="sLeftPrompt">未搜索到相关商品</p>');
 
                 }else{//初始化无结果
-                    wrap.find(".seleList").html('<p class="sLeftPrompt">商铺中暂无在售商品，<a href="http://my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cstepsupplyfirst.html" target="_blank">请补充</a></p>');
+                    wrap.find(".seleList").html('<p class="sLeftPrompt">商铺中暂无在售商品，<a href="//my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cstepsupplyfirst.html" target="_blank">请补充</a></p>');
                 }
             }
 

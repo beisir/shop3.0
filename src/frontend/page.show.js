@@ -69,18 +69,6 @@ $(function () {
             fieldBot.css('height','108px');
         }
 
-        //鼠标移入标识区域显示，移出隐藏
-        /*fieldDiv.parent().parent().hover(function(){
-            if(fieldDiv.find('li').length>1){
-                //如果标识超过5个（即两行）就要控制高度为108
-                if(fieldBot.find(".fieldLink a").length > 5){
-                    fieldBot.css('height','108px');
-                }
-                fieldBot.show();
-            }
-        },function(){
-            fieldBot.hide();
-        });*/
 
         //初始化owlCarousel
         fieldDiv.owlCarousel({
@@ -143,7 +131,7 @@ $(function () {
      */
     $.ajax({
       type: "get",
-      url: "http://order.b2b.hc360.com/brandneworder/checkbuslinks.html",
+      url: "//order.b2b.hc360.com/brandneworder/checkbuslinks.html",
       data: {
         providerid: window.providerId
       },

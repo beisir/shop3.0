@@ -5,42 +5,42 @@
     {
       "id": 1,
       "name": "模板1",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 2,
       "name": "模板2",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 3,
       "name": "模板3",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 4,
       "name": "模板4",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 5,
       "name": "模板5",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 6,
       "name": "模板6",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 7,
       "name": "模板7",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     },
     {
       "id": 8,
       "name": "模板8",
-      "thumbnail": "http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
+      "thumbnail": "//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/tImg.png"
     }
   ]
 }

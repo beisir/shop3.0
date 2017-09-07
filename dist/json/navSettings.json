@@ -4,56 +4,56 @@
     "id": "show",
     "name": "公司介绍",
     "order": 1,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,show.html?websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,show.html?websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "0",
     "id": "businwindow",
     "name": "供应产品",
     "order": 2,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,businwindow.html?websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,businwindow.html?websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "1",
     "id": "album",
     "name": "公司相册",
     "order": 3,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,album.html?websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,album.html?websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "1",
     "id": "info",
     "name": "公司动态",
     "order": 4,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,info.html?websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,info.html?websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "1",
     "id": "busnote",
     "name": "客户反馈",
     "order": 5,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,busnote.html?websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,busnote.html?websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "0",
     "id": "company",
     "name": "联系我们",
     "order": 6,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,company.html?websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,company.html?websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "1",
     "id": "userdefinechannel_1",
     "name": "新频道一",
     "order": 7,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,userdefinechannel.html?type=1&websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,userdefinechannel.html?type=1&websiteedit=1",
     "visible": "1"
   }, {
     "enabled": "1",
     "id": "userdefinechannel_2",
     "name": "新频道二",
     "order": 8,
-    "url": "http://detail.b2b.hc360.com/detail/turbine/template/shop,userdefinechannel.html?type=2&websiteedit=1",
+    "url": "//detail.b2b.hc360.com/detail/turbine/template/shop,userdefinechannel.html?type=2&websiteedit=1",
     "visible": "1"
   }],
   "message": "获取列表成功！",

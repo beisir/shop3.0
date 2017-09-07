@@ -35,7 +35,7 @@ K.query(expr [, root])
 	* E F: an F element descendant of an E element
 	* E > F: an F element child of an E element
 
-参考文档: http://www.w3.org/TR/css3-selectors/
+参考文档: //www.w3.org/TR/css3-selectors/
 
 .. index:: queryAll
 

@@ -5,7 +5,7 @@
   $.fn.queryDialog = function (options) {
 
     if (typeof $.cookie != "function") {
-      $.getScript('http://style.org.hc360.cn/js/build/source/widgets/jquery.cookie.js');
+      $.getScript('//style.org.hc360.cn/js/build/source/widgets/jquery.cookie.js');
     }
 
     return this.each(function (idx,_this) {
@@ -53,7 +53,7 @@
      */
     bindStatusDef:function () {
       return $.ajax({
-        url: "http://madata.hc360.com/mobileweb/m/get/bindstatus",
+        url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
         dataType:"jsonp",
         data:{"imid":window.company_username || window.welfarename || window.userName }
       })
@@ -65,7 +65,7 @@
     getMsgContent:function () {
       var _this = this;
       return $.ajax({
-        url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
+        url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
         type:'GET',
         timeout:5000,
         data:{
@@ -86,7 +86,7 @@
     getCodeUrlBySceneid:function (sceneid) {
 
       return $.ajax({
-        url:'http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dochatingpicid/doChatingpicid',
+        url:'//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dochatingpicid/doChatingpicid',
         type:'GET',
         data:{
           senceid:sceneid,
@@ -155,10 +155,9 @@
             $('#validcodeCon').show().find('.clCodeImg').trigger('click');
             $('#validcodeCon').find('[data-node-name="validCodeInput"]').val("");
             $('#validcodeCon').find('em.warning').hide();
-            ("#mobilephoneCon").hide();
           }else{
             $('#validcodeCon').hide();
-            ("#mobilephoneCon").show();
+            //$("#mobilephoneCon").show();
           }
 
           //用旧的场景id获取旧的二维码
@@ -170,15 +169,15 @@
                 codeUrlDom.attr('src',res.weChatPic);
               }else{
                 //还用默认的二维码
-                codeUrlDom.attr('src','http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg');
+                codeUrlDom.attr('src','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg');
               }
 
             }).fail(function () {
               //获取失败时，还用默认的二维码
-              codeUrlDom.attr('src','http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg');
+              codeUrlDom.attr('src','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg');
             })
           }else{
-            codeUrlDom.attr('src','http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg');
+            codeUrlDom.attr('src','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg');
           }
 
 
@@ -203,7 +202,7 @@
      */
     getChatWXDef:function () {
       return $.ajax({
-        url:"http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
+        url:"//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
         type:"GET",
         dataType:"jsonp",
         jsonpCallback:'callback',
@@ -216,7 +215,7 @@
      */
     getBindStatusDef:function () {
       return $.ajax({
-        url: "http://madata.hc360.com/mobileweb/m/get/bindstatus",
+        url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
         dataType:"jsonp",
         data:{"imid":window.company_username||window.welfarename || window.userName }
       })
@@ -232,7 +231,7 @@
 
       _this.defaultOptions.element.on('click',function () {
 
-        var $this = $(this),sceneid='',codeUrl='http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg';
+        var $this = $(this),sceneid='',codeUrl='//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg';
 
         //防止重复提交
         if($this.attr('isopen')){
@@ -322,7 +321,7 @@
                 '<input type="text" class="w210" style="color:#999999;"maxLength="4" value="验证码" data-node-name="validCodeInput">',
                 '<em class="c-red warning isNull" style="display: none;"><strong></strong>验证码不为空</em>',
                 '<em class="c-red warning isError" style="display: none;"><strong></strong>验证码错误</em>',
-                '<span class="clCodeImg"><img src="http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="></span>',
+                '<span class="clCodeImg"><img src="//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="></span>',
                 '</div>',
                 '</div>',
                 '<button type="submit" data-node-name="subtn" isappear="true" data-sceneid="'+ sceneid+'">发送</button>',
@@ -433,7 +432,7 @@
                       '<input type="text" class="w210" style="color:#999999;"maxLength="4" value="验证码" data-node-name="validCodeInput">',
                       '<em class="c-red warning isNull" style="display: none;"><strong></strong>验证码不为空</em>',
                       '<em class="c-red warning isError" style="display: none;"><strong></strong>验证码错误</em>',
-                      '<span class="clCodeImg"><img src="http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="></span>',
+                      '<span class="clCodeImg"><img src="//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="></span>',
                       '</div>',
                       '</div>',
                       '<button type="submit" data-node-name="subtn" isappear="true" data-sceneid="'+ sceneid+'">发送</button>',
@@ -446,7 +445,7 @@
                       '<div class="rigIphone" node-name="friendlyTip">',
                       '<div class="rigCodeBox">',
                       '<dl>',
-                      '<dt><img src="http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg"></dt>',
+                      '<dt><img src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg"></dt>',
                       '<dd>关注慧聪采购<br>找好货，更方便</dd>',
                       '</dl>',
                       '</div>',
@@ -623,7 +622,7 @@
         var minMsgId = $(this).next('div').attr('data-id') || $(this).next('div.moreHistory').children(':first').attr('data-id');//最早的消息id
 
         $.ajax({
-          url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
+          url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
           type:"GET",
           timeout:3000,
           data:{
@@ -692,7 +691,7 @@
        * 验证码点击图片换一换
        */
       wrap.on('click','.clCodeImg',function () {
-        $(this).find('img').attr('src','http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime());
+        $(this).find('img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime());
       });
 
       /**
@@ -759,21 +758,12 @@
 
       if(flag){
 
-        var isAppear = wrap.find('[data-node-name="subtn"]').attr("isappear");
-        if(isAppear){
-          /**
-           * 友情提示框闪现
-           */
-          wrap.find('[node-name="friendlyTip"]').addClass('left530');
-        }
-
-
         if(validCodeZone.is(':visible')){
           //验证码区域可见才校验验证码，否则直接发送聊天请求
           //验证通过之后向后台发送请求校验验证码是否正确，验证码正确之后，再发送聊天请求
           $.ajax({
             type: "GET",
-            url: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
+            url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
             dataType: "jsonp",
             data:{
               picCode:$.trim($(elements.validCode.selector).val())
@@ -787,7 +777,7 @@
                 //错误信息提示
                 validCodeZone.find('.clCode em.isError').show();
                 //验证码图片更换
-                validCodeZone.find('.clCodeImg img').attr('src','http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
+                validCodeZone.find('.clCodeImg img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
                 //发送按钮置为可用状态
                 $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }
@@ -807,7 +797,7 @@
 
       function sendMessage() {
         $.ajax({
-          url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
+          url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
           type:"GET",
           timeout:5000,
           data:{
@@ -830,6 +820,14 @@
                 alert("发送失败，稍后重试！");
                 wrap.find('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }else if(res.code == 1){
+
+                var isAppear = wrap.find('[data-node-name="subtn"]').attr("isappear");
+                if(isAppear){
+                  /**
+                   * 友情提示框闪现
+                   */
+                  wrap.find('[node-name="friendlyTip"]').addClass('left530');
+                }
 
                 if(res.cntADay > 0){
                   //首次之后手机号不用再输
@@ -883,6 +881,7 @@
                 wrap.find('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }else{
                 alert("留言次数超限，稍后重试！");
+                wrap.find('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }
 
             }
@@ -930,7 +929,7 @@
 
       var _this = this;
       $.ajax({
-        url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
+        url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
         type:'GET',
         timeout:5000,
         data:{

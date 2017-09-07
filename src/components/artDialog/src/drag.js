@@ -1,11 +1,11 @@
 /*!
  * drag.js
  * Date: 2013-12-06
- * https://github.com/aui/artDialog
- * (c) 2009-2014 TangBin, http://www.planeArt.cn
+ * //github.com/aui/artDialog
+ * (c) 2009-2014 TangBin, //www.planeArt.cn
  *
  * This is licensed under the GNU LGPL, version 2.1 or later.
- * For details, see: http://www.gnu.org/licenses/lgpl-2.1.html
+ * For details, see: //www.gnu.org/licenses/lgpl-2.1.html
  */
 define(function (require) {
 

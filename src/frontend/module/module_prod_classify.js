@@ -55,7 +55,7 @@ productCate.prototype={
             paramData=JSON.parse(_h4.attr('data-category'));
         if(wrap.html() == ""){
            return $.ajax({
-               url:"http://detail.b2b.hc360.com/detail/turbine/action/ajax.ProSeriesAjaxAction/eventsubmit_doloadsubproseries/doLoadsubproseries",
+               url:"//detail.b2b.hc360.com/detail/turbine/action/ajax.ProSeriesAjaxAction/eventsubmit_doloadsubproseries/doLoadsubproseries",
                dataType:'jsonp',
                jsonp:'callback',
                data:paramData

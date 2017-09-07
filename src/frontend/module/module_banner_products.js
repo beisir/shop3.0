@@ -12,7 +12,7 @@ banProduct = function (moduleEntity) {
      * 获取商机图片列表接口
      * @type {string}
      */
-    this.getProImgList = 'http://detail.b2b.hc360.com/detail/turbine/action/GetBusinPicListAction/eventsubmit_doGetpiclist/eventsubmit_doGetpiclist';
+    this.getProImgList = '//detail.b2b.hc360.com/detail/turbine/action/GetBusinPicListAction/eventsubmit_doGetpiclist/eventsubmit_doGetpiclist';
     /**
      * 通栏产品的滚动类型，2是滚动展示
      */

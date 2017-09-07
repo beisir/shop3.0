@@ -126,9 +126,9 @@ var page_index_config_set = {
 					'modulemark': 'module_sign',
 					'regionmark': 'region_sign_navigation',
 					'data': {
-						'logourl': 'http://www.hc360.com/1.jpg', //公司LOGO地址
+						'logourl': '//www.hc360.com/1.jpg', //公司LOGO地址
 						'companyname': 'display:none;font-family:黑体;font-size:14;font-weight:bold;font-style:italic;color:#565643;', //公司名称
-						'backgroundurl': 'background:url(http://www.hc360.com/1.jpg)' //背景图片地址
+						'backgroundurl': 'background:url(//www.hc360.com/1.jpg)' //背景图片地址
 					}
 				}
 			}
@@ -152,10 +152,10 @@ var page_index_config_set = {
 					'regionmark': 'region_sign_navigation',
 					'data': {
 						'button': {
-							'selected': 'font-family:黑体;font-size:12px;font-weight:bold;font-style:italic;color:#588995;border-color:#a966f3;border:1px dashed;background:url(http://www.hc360.com/1.jpg);',
+							'selected': 'font-family:黑体;font-size:12px;font-weight:bold;font-style:italic;color:#588995;border-color:#a966f3;border:1px dashed;background:url(//www.hc360.com/1.jpg);',
 							'unselected': 'font-family:黑体;font-size:14px;font-weight:bold;font-style:italic;color:#a966f3;border-color:#0dc9a8;border:1px dashed;'
 						},
-						'background': 'background:url(http://www.hc360.com/1.jpg)' //背景图片地址
+						'background': 'background:url(//www.hc360.com/1.jpg)' //背景图片地址
 					}
 				}
 			}
@@ -181,38 +181,38 @@ var page_index_config_set = {
 					'data': {
 						'type': 2, //广告形式，1：翻页图片，当前只显示一张图片，每次滚动一张；2：产品轮播，按照模块区域宽度显示图片，不间歇滚动；
 						'piclist': [{ //翻页图片数据列表，翻页图片配置
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
-							'linkurl': 'http://www.hc360.com'
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
+							'linkurl': '//www.hc360.com'
 						}, {
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
-							'linkurl': 'http://www.hc360.com'
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
+							'linkurl': '//www.hc360.com'
 						}, {
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
-							'linkurl': 'http://www.hc360.com'
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
+							'linkurl': '//www.hc360.com'
 						}],
 						'prolist': [{ //产品轮播图片数据列表
 							'bcid': 1, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						},{ //产品轮播图片数据列表
 							'bcid': 2, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						},{ //产品轮播图片数据列表
 							'bcid': 3, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						},{ //产品轮播图片数据列表
 							'bcid': 3, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						}],
 						'transition': 2, //过渡效果类型
@@ -241,38 +241,38 @@ var page_index_config_set = {
 					'data': {
 						'type': 2, //广告形式，1：翻页图片，当前只显示一张图片，每次滚动一张；2：产品轮播，按照模块区域宽度显示图片，不间歇滚动；
 						'piclist': [{ //翻页图片数据列表，翻页图片配置
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
-							'linkurl': 'http://www.hc360.com'
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
+							'linkurl': '//www.hc360.com'
 						}, {
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
-							'linkurl': 'http://www.hc360.com'
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
+							'linkurl': '//www.hc360.com'
 						}, {
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
-							'linkurl': 'http://www.hc360.com'
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/banner.jpg',
+							'linkurl': '//www.hc360.com'
 						}],
 						'prolist': [{ //产品轮播图片数据列表
 							'bcid': 1, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						},{ //产品轮播图片数据列表
 							'bcid': 2, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						},{ //产品轮播图片数据列表
 							'bcid': 3, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						},{ //产品轮播图片数据列表
 							'bcid': 3, //商机编号
 							'bcname': 'title1', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/bImg1.png',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						}],
 						'transition': 2, //过渡效果类型
@@ -300,8 +300,8 @@ var page_index_config_set = {
 					'modulemark': 'module_banner_ads',
 					'regionmark': 'region_bottom_banner',
 					'data': {
-						'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/pImg1.png', //图片地址
-						'linkurl': 'http://www.hc360.com' //链接地址
+						'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/pImg1.png', //图片地址
+						'linkurl': '//www.hc360.com' //链接地址
 					}
 				}
 			}
@@ -330,8 +330,8 @@ var page_index_config_set = {
 						'prolist': [{ //产品图片数据列表
 							'bcid': 34567890, //商机编号
 							'bcname': '商机标题', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						}],
 						'picsize': 3 //1：大图（300x300）最多显示12个产品，2：中图（210x210）最多显示16个产品，3：小图（170x170）最多显示20个产品
@@ -361,15 +361,15 @@ var page_index_config_set = {
 						'showTitleAndBorder': true, //是否显示标题和边框
 						'prolist': [{ //产品图片数据列表
 							'bcid': 1, //商机编号
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
 							'bcname': 'title1',
-							'linkurl': 'http://www.hc360.com',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						}, { //产品图片数据列表
 							'bcid': 2, //商机编号
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
 							'bcname': 'title2',
-							'linkurl': 'http://www.hc360.com',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						}]
 					}
@@ -400,8 +400,8 @@ var page_index_config_set = {
 						'prolist': [{ //产品图片数据列表
 							'bcid': 1234, //商机编号
 							'bcname': '商机标题', //商机标题
-							'picurl': 'http://style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
-							'linkurl': 'http://www.hc360.com',
+							'picurl': '//style.org.hc360.com/images/detail/mysite/siteconfig/newPro/proImg.jpg',
+							'linkurl': '//www.hc360.com',
 							'deleted': 0 //用于判断该商品是否已删除,0：未删除，1：已删除
 						}],
 						'paramlist': [ //参数列表
@@ -991,7 +991,7 @@ var page_column_config_set = {
 			attributes: {
 				'data-manageable': true,
 				'data-module': {
-					'href':'http://www.hc360.com'
+					'href':'//www.hc360.com'
 				}
 			}
 		},
@@ -1004,7 +1004,7 @@ var page_column_config_set = {
 			attributes: {
 				'data-manageable': true,
 				'data-module': {
-					'href':'http://agent.hc360.com'
+					'href':'//agent.hc360.com'
 				}
 			}
 		}

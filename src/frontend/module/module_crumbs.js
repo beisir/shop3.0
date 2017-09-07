@@ -73,7 +73,7 @@ module_crumbs.prototype.init = function() {
                     },
                     'product': function() {
                         this.form.attr({
-                            action: 'http://s.hc360.com/?w=' + encodeURIComponent(this.txtKeyword.val()) + '&mc=seller',
+                            action: '//s.hc360.com/?w=' + encodeURIComponent(this.txtKeyword.val()) + '&mc=seller',
                             target: '_blank'
                         });
                     }

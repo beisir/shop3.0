@@ -11,7 +11,7 @@ var signature = function(data, html, obj) {
     /***
      * 图片上传地址
      */
-    this.uploadUrl = 'http://imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd';
+    this.uploadUrl = '//imgup.b2b.hc360.com/imgup/turbine/action/imgup.PicManagementAction/eventsubmit_doPerform/ddd';
     /**
      * 模块数据
      */
@@ -350,7 +350,7 @@ signature.prototype = {
          */
         var webuploderObj = {
             // swf文件路径
-            swf: 'http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf',
+            swf: '//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf',
             // 文件接收服务端。
             server: that.uploadUrl,
             // 选择文件的按钮。可选。
@@ -467,7 +467,7 @@ signature.prototype = {
          */
         var webuploderObj = {
             // swf文件路径
-            swf: 'http://style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf',
+            swf: '//style.org.hc360.cn/js/module/shop3.0/dist/components/webuploader/webuploader.swf',
             // 文件接收服务端。
             server: that.uploadUrl,
             // 选择文件的按钮。可选。

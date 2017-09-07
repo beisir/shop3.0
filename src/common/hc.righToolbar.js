@@ -7,7 +7,7 @@
  * 加载cookie
  */
 if (typeof $.cookie != "function") {
-    $.getScript('http://style.org.hc360.cn/js/build/source/widgets/jquery.cookie.js');
+    $.getScript('//style.org.hc360.cn/js/build/source/widgets/jquery.cookie.js');
 }
 /**
  * 定义默认参数
@@ -35,13 +35,13 @@ var rightSidebar = {
 
             var flag;
             $.when($.ajax({
-                    url: "http://madata.hc360.com/mobileweb/m/get/bindstatus",
+                    url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
                     dataType:"jsonp",
                     data:{"imid":window.company_username||window.welfarename || window.userName }
                 })
             ).done(function (res) {
                 flag=res.code=="200";
-                flag ? initHtml("http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif"):initHtml();
+                flag ? initHtml("//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif"):initHtml();
             }).fail(function () {
                 initHtml();
             });
@@ -79,9 +79,9 @@ var rightSidebar = {
         createSidebarHtml: function(imgSrc,wText,msgImgSrc) {
 
             if(!imgSrc && !wText && !msgImgSrc){
-                imgSrc = "http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_1.gif";
+                imgSrc = "//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_1.gif";
                 wText = "在线咨询";
-                msgImgSrc = "http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_2.gif";
+                msgImgSrc = "//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_2.gif";
             }
 
             /**
@@ -157,7 +157,7 @@ var rightSidebar = {
             var returnTop = [
                 '<div class="every top"  id="gotoTop" style="display: none">',
                 '<a href="#"' + backtopWbt + ' class="every-a">',
-                '<img class="icon" src="http://style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/p-top.png" height="37" width="43" alt="">',
+                '<img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/p-top.png" height="37" width="43" alt="">',
                 '<span class="border-none">返回顶部</span>',
                 '</a>',
                 '</div>'
@@ -168,7 +168,7 @@ var rightSidebar = {
              */
             var fixRightTwo = [
                 '<div class="R-top">',
-                '<a href="http://my.b2b.hc360.com/my/turbine/template/firstview,reg_first.html?sourcetypeid=3731"' + openShopWbt + ' target="_blank"><img class="icon" src="http://style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/R-top.png" alt="" height="64" width="73"></a>',
+                '<a href="//my.b2b.hc360.com/my/turbine/template/firstview,reg_first.html?sourcetypeid=3731"' + openShopWbt + ' target="_blank"><img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/R-top.png" alt="" height="64" width="73"></a>',
                 '</div>'
             ];
             /***
@@ -190,7 +190,7 @@ var rightSidebar = {
          */
         bindEvent: function() {
             var that = this;
-            HC.HUB.addScript('http://style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+            HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
 
               $('#OnlineBtn').queryDialog({
                 is3y:window.scyps.sc.is3y=="1" ? true : false,
@@ -223,11 +223,11 @@ var rightSidebar = {
                 //     if(res && res.senceid){
                 //         that.onlineConsult(res.senceid,res.weChatPic);
                 //     }else{
-                //         that.onlineConsult('','http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
+                //         that.onlineConsult('','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
                 //     }
                 //     $this.removeAttr('isopen');
                 // }).fail(function () {
-                //     that.onlineConsult('','http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
+                //     that.onlineConsult('','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
                 //     $this.removeAttr('isopen');
                 // });
 
@@ -274,13 +274,13 @@ var rightSidebar = {
             var that = this,
                 downWrap = $('.dAlertBoxBg'),
                 sceneid='',
-                codeUrl='http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png',
+                codeUrl='//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png',
                 deffer=$.Deferred();
             /***
              * 获取二维码图片地址
              */
             $.ajax({
-                url:"http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
+                url:"//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
                 type:"GET",
                 dataType:"jsonp",
                 jsonpCallback:'callback'
@@ -363,7 +363,7 @@ var rightSidebar = {
                     '<em class="c-red warning isNull" data-promptInfo><strong></strong>验证码不为空</em>',
                     '<em class="c-red warning isError" data-promptInfo><strong></strong>验证码错误</em>',
                     '<span class="clCodeImg">',
-                    '<img src="http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime() +'">' +
+                    '<img src="//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime() +'">' +
                     '</span>',
                     '</div>',
                     '</div>',
@@ -454,7 +454,7 @@ var rightSidebar = {
                     var minMsgId = $(this).next('div').attr('data-id') || $(this).next('div.moreHistory').children(':first').attr('data-id');//最早的消息id
 
                     $.ajax({
-                        url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
+                        url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
                         type:"GET",
                         timeout:3000,
                         data:{
@@ -522,7 +522,7 @@ var rightSidebar = {
                 //验证码点击图片换一换
                 $('[data-starttime]').on('click','.clCodeImg',function () {
                     var $this = $(this);
-                    $(this).find('img').attr('src','http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime());
+                    $(this).find('img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime());
                 });
 
 
@@ -537,7 +537,7 @@ var rightSidebar = {
         getMsgContent:function () {
             var _this = this;
             return $.ajax({
-                url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
+                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
                 type:'GET',
                 timeout:3000,
                 data:{
@@ -592,7 +592,7 @@ var rightSidebar = {
         getCodeUrlBySceneid:function (sceneid) {
 
             return $.ajax({
-                url:'http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dochatingpicid/doChatingpicid',
+                url:'//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dochatingpicid/doChatingpicid',
                 type:'GET',
                 data:{
                     senceid:sceneid
@@ -663,7 +663,7 @@ var rightSidebar = {
                         codeUrlDom.attr('data-picurl',res.weChatPic);
                     }).fail(function () {
                         //获取失败时，还用默认的二维码
-                        codeUrlDom.attr('data-picurl','http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
+                        codeUrlDom.attr('data-picurl','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
                     })
                 }
 
@@ -688,7 +688,7 @@ var rightSidebar = {
 
             var _this = this;
             $.ajax({
-                url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
+                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
                 type:'GET',
                 timeout:5000,
                 data:{
@@ -963,7 +963,7 @@ var rightSidebar = {
                     //验证通过之后向后台发送请求校验验证码是否正确，验证码正确之后，再发送聊天请求
                     $.ajax({
                         type: "GET",
-                        url: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
+                        url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
                         dataType: "jsonp",
                         data:{
                             picCode:$.trim($(_this.elements.validCode.selector).val())
@@ -977,7 +977,7 @@ var rightSidebar = {
                                 //错误信息提示
                                 validCodeZone.find('.clCode em.isError').show();
                                 //验证码图片更换
-                                validCodeZone.find('.clCodeImg img').attr('src','http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
+                                validCodeZone.find('.clCodeImg img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
                                 //发送按钮置为可用状态
                                 $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
                             }
@@ -997,7 +997,7 @@ var rightSidebar = {
 
             function sendMessage() {
                 $.ajax({
-                    url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
+                    url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
                     type:"GET",
                     timeout:5000,
                     data:{
@@ -1108,7 +1108,7 @@ var rightSidebar = {
                      */
                     //获取微信场景id和微信二维码图片链接
                     $.ajax({
-                        url:"http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
+                        url:"//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
                         type:"GET",
                         dataType:"jsonp",
                         jsonpCallback:'callback',
@@ -1132,7 +1132,7 @@ var rightSidebar = {
              */
             function doPeformAjax(isGetSenceid,url) {
                 $.ajax({
-                    url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                    url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                     type: "GET",
                     data: {
                         plantitle: encodeURIComponent(contentWrap.val())
@@ -1144,7 +1144,7 @@ var rightSidebar = {
                         } else {
                             $.extend(that.formDatas,{qrcodeid:isGetSenceid || ''});
                             $.ajax({
-                                url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
+                                url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
                                 data: that.formDatas,
                                 dataType: "jsonp",
                                 jsonpCallback: 'callback',
@@ -1321,7 +1321,7 @@ var rightSidebar = {
                     '<input id="validCode" data-node-name="validCode" maxlen="4" type="text" maxlength="4">',
                     '<em class="c-red warning focValidCode"><strong></strong>请正确输入</em>',
                     '<a href="javascript:;" data-id="validateCodeImg">',
-                    '<img src="http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime() +'>',
+                    '<img src="//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime() +'>',
                     '</a>',
                     '</div>',
                     '</div>',
@@ -1350,7 +1350,7 @@ var rightSidebar = {
                     '<em></em>',
                     '<p class="mSuccPrompt">关注后，卖家反馈会通过<span>微信公众号</span>发送到您的手机！</p>',
                     '<div class="mCodeImg" id="wechatContainer">',
-                    '<img src="http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/mCodeImg.png" />',
+                    '<img src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/mCodeImg.png" />',
                     '<p>扫描二维码</p>',
                     '</div>',
                     // '<p class="codePrompt">关注后，报价结果会通过<span>微信公众号</span>发送到您的手机！</p>',
@@ -1441,7 +1441,7 @@ var rightSidebar = {
              * 验证码图片换一换
              */
             codeImgChange.on('click',function () {
-                $(this).find('img').attr('src',"http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="+new Date().getTime());
+                $(this).find('img').attr('src',"//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="+new Date().getTime());
             });
 
             /***
@@ -1531,7 +1531,7 @@ var rightSidebar = {
                 //验证码校验正确性
                 jQuery.ajax({
                     type: "GET",
-                    url: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
+                    url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
                     dataType: "jsonp",
                     data:{
                         picCode:$.trim(validCodeVal)
@@ -1571,7 +1571,7 @@ var rightSidebar = {
                  * 辛彦绘和张帆的发版，增加获取微信场景id和微信二维码图片链接
                  */
                 $.ajax({
-                    url: "http://detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
+                    url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
                     type: "GET",
                     dataType: "jsonp",
                     jsonpCallback: 'callback',
@@ -1600,7 +1600,7 @@ var rightSidebar = {
                 /** 关闭按钮 **/
                 closeMessageBtn = that.messageWrap.find('.mCloseBtn');
             $.ajax({
-                url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                 type: "GET",
                 data: {
                     plantitle: encodeURIComponent(textareaVal) //留言详情内容
@@ -1614,7 +1614,7 @@ var rightSidebar = {
                         messageTextarea.parent().find('em.banned').show();
                     } else {
                         $.ajax({
-                            url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
+                            url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
                             data: _data,
                             dataType: "jsonp",
                             jsonpCallback: 'callback',
@@ -1674,17 +1674,17 @@ var rightSidebar = {
                     } else {
                         origin = company_username;
                     }
-                    newurl = "http://" + origin + ".b2b.hc360.com/shop/businwindow.html";
+                    newurl = "//" + origin + ".b2b.hc360.com/shop/businwindow.html";
                 } else {
                     //获取地址前缀判断用哪个对象存在，再拼接成供应产品的地址
                     if (typeof company_username === 'undefined' || company_username === null || company_username === '') {
                         if (typeof userName === 'undefined' || userName === null || userName === '') {
                             newurl = businUrl;
                         } else {
-                            newurl = "http://" + userName + ".b2b.hc360.com/shop/businwindow.html";
+                            newurl = "//" + userName + ".b2b.hc360.com/shop/businwindow.html";
                         }
                     } else {
-                        newurl = "http://" + company_username + ".b2b.hc360.com/shop/businwindow.html";
+                        newurl = "//" + company_username + ".b2b.hc360.com/shop/businwindow.html";
                     }
                 }
                 window.open(newurl);
@@ -1781,11 +1781,11 @@ var rightSidebar = {
          */
         initQQToll: function() {
             var that = this;
-           // var qqSrc = flag ? "http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/qqIco.gif" :"http://style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/p-qq.png";
+           // var qqSrc = flag ? "//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/qqIco.gif" :"//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/p-qq.png";
             var qq = [
                     '<div class="every qq" node-name="qqList">',
                     '<a href="#" class="every-a">',
-                    '<img class="icon" src="http://style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/qqIco.gif" height="37" width="43" alt="">',
+                    '<img class="icon" src="//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/qqIco.gif" height="37" width="43" alt="">',
                     '<span>QQ</span>',
                     '</a>',
                     '<div class="qq-tk">',
@@ -1806,7 +1806,7 @@ var rightSidebar = {
                         supercatid: window['lastClassId'] || 0,
                         IsAliHot: window['IsAliHot'] || ''
                     },
-                    _url = 'http://b2b.hc360.com/qqser/' + username + '.html';
+                    _url = '//b2b.hc360.com/qqser/' + username + '.html';
 
             } else {
                 /**
@@ -1815,7 +1815,7 @@ var rightSidebar = {
                 var param = {
                         providerId: this.option.providerId
                     },
-                    _url = 'http://detail.b2b.hc360.com/detail/turbine/template/saleser,qqser.html';
+                    _url = '//detail.b2b.hc360.com/detail/turbine/template/saleser,qqser.html';
             }
             $.ajax({
                 url: _url,
@@ -1834,12 +1834,12 @@ var rightSidebar = {
                     var qqListHtml = '<ul>';
                     if (that.qqlist && that.qqlist.length > 0) {
                         if (that.is3y) {
-                            $qqTalkA.attr("href", 'http://wpa.qq.com/msgrd?v=3&uin=' + that.qqlist[0].qq + '&site=qq&menu=yes');
-                            $qqTalkImg.attr("src", "http://wpa.qq.com/pa?p=2:" + that.qqlist[0].qq + ":51");
+                            $qqTalkA.attr("href", '//wpa.qq.com/msgrd?v=3&uin=' + that.qqlist[0].qq + '&site=qq&menu=yes');
+                            $qqTalkImg.attr("src", "//wpa.qq.com/pa?p=2:" + that.qqlist[0].qq + ":51");
                         }
                         $('div[node-id="weix"]').after(qq.join(''));
                         $.each(that.qqlist, function(index, item) {
-                            qqListHtml += "<li><a href='http://wpa.qq.com/msgrd?v=3&uin=" + item.qq + "&site=qq&menu=yes' target='_blank' onmousedown=\"HC.UBA.sendUserlogsElement('" + that.getUserLog("qq", index + 1) + "')\"><img border='0' src='http://wpa.qq.com/pa?p=2:" + item.qq + ":51' title='" + item.qqalias + "'/></a></li>";
+                            qqListHtml += "<li><a href='//wpa.qq.com/msgrd?v=3&uin=" + item.qq + "&site=qq&menu=yes' target='_blank' onmousedown=\"HC.UBA.sendUserlogsElement('" + that.getUserLog("qq", index + 1) + "')\"><img border='0' src='//wpa.qq.com/pa?p=2:" + item.qq + ":51' title='" + item.qqalias + "'/></a></li>";
                         });
                     }
                     qqListHtml += '</ul>';

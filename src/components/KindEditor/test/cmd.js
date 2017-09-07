@@ -563,7 +563,7 @@ test('cmd.insertimage', function() {
 	var img = K('img', div);
 	range.selectNode(img[0]);
 	cmd = K.cmd(range);
-	var url = 'http://www.kindsoft.net/images/logo.png';
+	var url = '//www.kindsoft.net/images/logo.png';
 	cmd.insertimage(url);
 	equals(K('img', div).attr('src'), url);
 	div.remove();

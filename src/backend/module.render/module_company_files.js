@@ -25,18 +25,18 @@ enterpriseArchives.prototype = {
          * 拉取二维码js
          */
         if (!$.fn.hcQrcode) {
-            $.getScript('http://style.org.hc360.cn/js/build/source/widgets/qrcode/hc.qrcode.min.js', function () {
+            $.getScript('//style.org.hc360.cn/js/build/source/widgets/qrcode/hc.qrcode.min.js', function () {
                 $('[data-node-name="' + wrapName + '"]').hcQrcode({
                     width: _width,
                     height: _height,
-                    text: "http://app.hc360.com/m.html?uid=" + shopName + ",a=x"
+                    text: "//app.hc360.com/m.html?uid=" + shopName + ",a=x"
                 });
             });
         } else {
             $('[data-node-name="' + wrapName + '"]').hcQrcode({
                 width: _width,
                 height: _height,
-                text: "http://app.hc360.com/m.html?uid=" + shopName + ",a=x"
+                text: "//app.hc360.com/m.html?uid=" + shopName + ",a=x"
             });
         }
     },

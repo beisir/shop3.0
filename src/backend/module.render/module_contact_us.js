@@ -22,9 +22,9 @@ module_contact_us.prototype = {
                     qqHtml="";
                 if(qqlist.length>0){
                     var item=qqlist[0];
-                    qqHtml='<a href="http://wpa.qq.com/msgrd?v=3&uin='+item.qq+'&site=qq&menu=yes" target="_blank" onclick="window.qqAction();" class="leftqqIco" onmousedown="HC.UBA.sendUserlogsElement(&quot;UserBehavior_detail_qq_float_1?detailuserid='+window.providerId+'&quot;)" /></a>';
+                    qqHtml='<a href="//wpa.qq.com/msgrd?v=3&uin='+item.qq+'&site=qq&menu=yes" target="_blank" onclick="window.qqAction();" class="leftqqIco" onmousedown="HC.UBA.sendUserlogsElement(&quot;UserBehavior_detail_qq_float_1?detailuserid='+window.providerId+'&quot;)" /></a>';
                 }
-                qqHtml+='<a href="" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(&quot;UserBehavior_detail_fafa_float_1?detailuserid='+window.providerId+'&quot;)" ><img data-query="weixin" src="http://style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco2.png" /></a>';
+                qqHtml+='<a href="" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(&quot;UserBehavior_detail_fafa_float_1?detailuserid='+window.providerId+'&quot;)" ><img data-query="weixin" src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco2.png" /></a>';
                 $('[data-node-name="companyServiceMod"]').html(qqHtml);
             }
         });

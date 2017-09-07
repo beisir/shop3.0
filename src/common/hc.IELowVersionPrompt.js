@@ -7,7 +7,7 @@ module.exports = function() {
 	var ie6UpgradeVersionPrompt = HC.util.cookie.get(ie6UpgradeVersionPromptCookieKey);
 	if (HC.env.ie && (HC.env.ie < 7) && (HC.util.isPageInFrame() === 0) && (!ie6UpgradeVersionPrompt)) {
 		HC.util.addEventListener(window, 'load', function() {
-			HC.util.addCss('http://style.org.hc360.cn/css/IE6/style.css', function() {
+			HC.util.addCss('//style.org.hc360.cn/css/IE6/style.css', function() {
 				var htmlEntity = jQuery([
 					'<div class="ie6UpgradeVersionPrompt">',
 					'<div class="ie6Box">',
@@ -28,7 +28,7 @@ module.exports = function() {
 					'</p>',
 					'</div>',
 					'<div class="ie6BoxIco">',
-					'<a href="http://www.google.cn/chrome/browser/desktop/index.html" class="chrome" target="_blank">chrome</a> <a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" class="IE" target="_blank">IE</a> <a href="http://se.360.cn/" class="l360" target="_blank">360安全</a> <a href="http://www.firefox.com.cn/" class="huohu" target="_blank">火狐</a> <a href="http://ie.sogou.com/" class="sougou" target="_blank">搜狗</a> <a href="http://browser.qq.com/" class="LQQ" target="_blank">QQ</a>',
+					'<a href="//www.google.cn/chrome/browser/desktop/index.html" class="chrome" target="_blank">chrome</a> <a href="//windows.microsoft.com/zh-cn/internet-explorer/download-ie" class="IE" target="_blank">IE</a> <a href="//se.360.cn/" class="l360" target="_blank">360安全</a> <a href="//www.firefox.com.cn/" class="huohu" target="_blank">火狐</a> <a href="//ie.sogou.com/" class="sougou" target="_blank">搜狗</a> <a href="//browser.qq.com/" class="LQQ" target="_blank">QQ</a>',
 					'</div>',
 					'</div>',
 					'</div>',

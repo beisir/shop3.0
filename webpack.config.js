@@ -71,8 +71,8 @@ module.exports = {
 		filename: '[name].js',
 		// filename: '[name].[hash].js',//根据compilation对象计算所得
 		// filename: '[name].[chunkhash].js',//根据具体模块文件的内容计算所得
-		publicPath: 'http://style.org.hc360.cn/js/module/shop3.0/dist/',
-		 // publicPath: 'http://localhost:8080/',
+		publicPath: '//style.org.hc360.cn/js/module/shop3.0/dist/',
+		 // publicPath: '//localhost:8080/',
 		// chunkFilename: '[name].[hash].js',//根据compilation对象计算所得
 		// chunkFilename: '[name].[chunkhash].js',//根据具体模块文件的内容计算所得
 		chunkFilename: '[name].js'
@@ -165,7 +165,7 @@ module.exports = {
 			//  * 数据文件映射配置
 			//  */
 			// '/json': {
-			// 	target: 'http://localhost:8080/json',
+			// 	target: '//localhost:8080/json',
 			// 	secure: false,
 			// 	pathRewrite: {
 			// 		'^/json/(.*)': '$1.json'
@@ -176,7 +176,7 @@ module.exports = {
 			//  * html文件映射配置
 			//  */
 			// '/html': {
-			// 	target: 'http://localhost:8080/html',
+			// 	target: '//localhost:8080/html',
 			// 	secure: false,
 			// 	pathRewrite: {
 			// 		'^/html/(.*)': '$1.html'
@@ -456,7 +456,7 @@ module.exports = {
 
 		// 		// 修改属性名，将入口文件名替换成生产环境地址
 		// 		for (var asset in assets) {
-		// 			assets['http://style.org.hc360.cn/js/module/shop3.0/dist/' + asset + '.js'] = assets[asset];
+		// 			assets['//style.org.hc360.cn/js/module/shop3.0/dist/' + asset + '.js'] = assets[asset];
 		// 			delete assets[asset];
 		// 		}
 
