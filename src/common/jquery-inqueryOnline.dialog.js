@@ -151,6 +151,16 @@
             $("#cInnerBox").prepend('<p class="moreList"><a href="javascript:;">点击查看更多</a></p>');
           }
 
+          if((res.length)%5 == 0){//默认验证码不显示，模5需要输入验证码
+            $('#validcodeCon').show().find('.clCodeImg').trigger('click');
+            $('#validcodeCon').find('[data-node-name="validCodeInput"]').val("");
+            $('#validcodeCon').find('em.warning').hide();
+            ("#mobilephoneCon").hide();
+          }else{
+            $('#validcodeCon').hide();
+            ("#mobilephoneCon").show();
+          }
+
           //用旧的场景id获取旧的二维码
           var codeUrlDom = $('[node-name="friendlyTip"]').find('dl dt img');
 
@@ -334,36 +344,8 @@
 
               consultWrap.append(fixStr.join(''));
 
-              if(_this.defaultOptions.isBindWX){
-                //获取聊天记录
-                _this.getHistoryMsg(function () {
-                  /**
-                   * 聊天窗口只要一打开，有无聊天记录都在后面添加一句问候语
-                   * @type {[*]}
-                   */
-                  var hiMsg = [
-                    '<div class="clBoxLeft">',
-                    '<em class="clImg"></em>',
-                    '<div class="clImgRig">',
-                    '<p class="clTime">店经理  '+_this.getDateTime(true)+'</p>',
-                    '<div class="ConsulList">',
-                    '<em></em>',
-                    '<p>你好，欢迎光临'+_this.defaultOptions.companyName+'，请发送您要咨询的内容。</p>',
-                    '</div>',
-                    '</div>',
-                    '</div>'
-                  ];
-                  $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
-                });
-
-                /**
-                 * 每隔10s请求获取聊天记录接口
-                 * @type {number}
-                 */
-                _this.defaultOptions.interval = setInterval(function () {
-                  _this.loopGetMsgPer10s(consultWrap);
-                },10000);
-              }else{
+              //获取聊天记录
+              _this.getHistoryMsg(function () {
                 /**
                  * 聊天窗口只要一打开，有无聊天记录都在后面添加一句问候语
                  * @type {[*]}
@@ -381,6 +363,17 @@
                   '</div>'
                 ];
                 $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
+              });
+
+              if(_this.defaultOptions.isBindWX){
+
+                /**
+                 * 每隔10s请求获取聊天记录接口
+                 * @type {number}
+                 */
+                _this.defaultOptions.interval = setInterval(function () {
+                  _this.loopGetMsgPer10s(consultWrap);
+                },10000);
               }
 
               _this.bindEvent(consultWrap);
@@ -462,10 +455,11 @@
 
                     consultWrap.append(fixStr.join(''));
 
-                    /**
-                    * 聊天窗口只要一打开，有无聊天记录都在后面添加一句问候语
-                      * @type {[*]}
-                    */
+                    _this.getHistoryMsg(function () {
+                      /**
+                       * 聊天窗口只要一打开，有无聊天记录都在后面添加一句问候语
+                       * @type {[*]}
+                       */
                       var hiMsg = [
                         '<div class="clBoxLeft">',
                         '<em class="clImg"></em>',
@@ -479,6 +473,7 @@
                         '</div>'
                       ];
                       $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
+                    });
 
                     _this.bindEvent(consultWrap);
 
@@ -817,7 +812,7 @@
           timeout:5000,
           data:{
             isLogon : $.cookie('LoginID') ? "1":"0",
-            buyid: $.cookie('LoginID') ? ($.cookie("newhcproviderid") || $.cookie('hc360_userid')) : ($.cookie("HC_anonyBuyerId") || $.cookie("hc360analyid") || ''),
+            buyid: $.cookie('LoginID') ? ($.cookie("newhcproviderid") || $.cookie('hc360_userid')) : ($.cookie("HC_anonyBuyerId")  || ''),
             spid:_this.defaultOptions.providerId,
             MP:encodeURIComponent(mpWrap.val()),
             plantitle:encodeURIComponent(contentWrap.val()),
@@ -863,7 +858,7 @@
                       '<p class="clTime">店经理  '+_this.getDateTime(true)+'</p>',
                       '<div class="ConsulList">',
                       '<em></em>',
-                      '<p>保持电话畅通，商家回电话联系您。关注慧聪采购，找好货更方便！</p>',
+                      '<p>保持电话畅通，商家会电话联系您。关注慧聪采购，找好货更方便！</p>',
                       '</div>',
                       '</div>',
                       '</div>'
