@@ -151,14 +151,14 @@
             $("#cInnerBox").prepend('<p class="moreList"><a href="javascript:;">点击查看更多</a></p>');
           }
 
-          if((res.length)%5 == 0){//默认验证码不显示，模5需要输入验证码
+          /*if((res.length)%5 == 0){//默认验证码不显示，模5需要输入验证码
             $('#validcodeCon').show().find('.clCodeImg').trigger('click');
             $('#validcodeCon').find('[data-node-name="validCodeInput"]').val("");
             $('#validcodeCon').find('em.warning').hide();
           }else{
             $('#validcodeCon').hide();
             //$("#mobilephoneCon").show();
-          }
+          }*/
 
           //用旧的场景id获取旧的二维码
           var codeUrlDom = $('[node-name="friendlyTip"]').find('dl dt img');
@@ -315,13 +315,13 @@
                 '<em class="c-red warning isError" style="display: none;"><strong></strong>请填写正确的手机号</em>',
                 '</div>',
                 '</div>',
-                '<div id="validcodeCon" style="display:none;">',
+                '<div id="validcodeCon">',
                 '<span><em>*</em>验证码</span>',
                 '<div class="clCode">',
                 '<input type="text" class="w210" style="color:#999999;"maxLength="4" value="验证码" data-node-name="validCodeInput">',
                 '<em class="c-red warning isNull" style="display: none;"><strong></strong>验证码不为空</em>',
                 '<em class="c-red warning isError" style="display: none;"><strong></strong>验证码错误</em>',
-                '<span class="clCodeImg"><img src="//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="></span>',
+                '<span class="clCodeImg"><img src=""></span>',
                 '</div>',
                 '</div>',
                 '<button type="submit" data-node-name="subtn" isappear="true" data-sceneid="'+ sceneid+'">发送</button>',
@@ -362,6 +362,8 @@
                   '</div>'
                 ];
                 $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
+                var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
+                $("#validcodeCon").find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
               });
 
               if(_this.defaultOptions.isBindWX){
@@ -426,13 +428,13 @@
                       '<em class="c-red warning isError" style="display: none;"><strong></strong>请填写正确的手机号</em>',
                       '</div>',
                       '</div>',
-                      '<div id="validcodeCon" style="display:none;">',
+                      '<div id="validcodeCon">',
                       '<span><em>*</em>验证码</span>',
                       '<div class="clCode">',
                       '<input type="text" class="w210" style="color:#999999;"maxLength="4" value="验证码" data-node-name="validCodeInput">',
                       '<em class="c-red warning isNull" style="display: none;"><strong></strong>验证码不为空</em>',
                       '<em class="c-red warning isError" style="display: none;"><strong></strong>验证码错误</em>',
-                      '<span class="clCodeImg"><img src="//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="></span>',
+                      '<span class="clCodeImg"><img src=""></span>',
                       '</div>',
                       '</div>',
                       '<button type="submit" data-node-name="subtn" isappear="true" data-sceneid="'+ sceneid+'">发送</button>',
@@ -472,6 +474,8 @@
                         '</div>'
                       ];
                       $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
+                      var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
+                      $("#validcodeCon").find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
                     });
 
                     _this.bindEvent(consultWrap);
@@ -495,6 +499,8 @@
           focusColor = '#333333',
           blurColor = '#a2a2a2';
 
+      wrap.find('.clCodeImg').trigger('click');
+
       /**
        * 校验textarea、电话号码、验证码
        * @type {{MP: {selector: string, defaultValue: string, reg: RegExp, notInput: RegExp, maxLen: number}, contentArea: {selector: string, defaultValue: string, notInput: RegExp, maxLen: number}, validCode: {selector: string, defaultValue: string, notInput: RegExp, maxLen: number, isMast: boolean}}}
@@ -516,7 +522,7 @@
         },
         validCode:{
           selector:'input[data-node-name="validCodeInput"]',
-          defaultValue:'请输入验证码',
+          defaultValue:'验证码',
           notInput:/\D+/g,
           maxLen: 4,
           isMast:true
@@ -691,7 +697,8 @@
        * 验证码点击图片换一换
        */
       wrap.on('click','.clCodeImg',function () {
-        $(this).find('img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime());
+        var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || '';
+        $(this).find('img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
       });
 
       /**
@@ -732,7 +739,7 @@
        */
       if($.trim(contentWrap.val()) == ""){
         //验证码换一换
-        wrap.find('.clCodeImg').trigger('click');
+        //wrap.find('.clCodeImg').trigger('click');
         alert('请输入聊天内容！');
         flag = false;
       }
@@ -757,8 +764,8 @@
       }
 
       if(flag){
-
-        if(validCodeZone.is(':visible')){
+        sendMessage();
+        /*if(validCodeZone.is(':visible')){
           //验证码区域可见才校验验证码，否则直接发送聊天请求
           //验证通过之后向后台发送请求校验验证码是否正确，验证码正确之后，再发送聊天请求
           $.ajax({
@@ -777,7 +784,7 @@
                 //错误信息提示
                 validCodeZone.find('.clCode em.isError').show();
                 //验证码图片更换
-                validCodeZone.find('.clCodeImg img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
+                validCodeZone.find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
                 //发送按钮置为可用状态
                 $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }
@@ -788,7 +795,7 @@
           });
         }else{
           sendMessage();
-        }
+        }*/
 
       }else{//有警告信息时，再将发送按钮置为可用状态
 
@@ -809,7 +816,8 @@
             contacter:encodeURIComponent(contacter),
             introduce:encodeURIComponent(contentWrap.val()),
             comeUrl:window.location.href,
-            qrcodeid:sceneid
+            qrcodeid:sceneid,
+            picCode:$.trim($(elements.validCode.selector).val()) == "验证码" ? '' :$.trim($(elements.validCode.selector).val())
           },
           dataType:"jsonp",
           jsonpCallback:'callback',
@@ -879,7 +887,24 @@
               }else if(res.code == 3){
                 alert("您不能给自己发留言！");
                 wrap.find('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
-              }else{
+              }else if(res.code == 5){
+
+                /*if((res.cntADay)%5 == 0){//默认验证码不显示，模5需要输入验证码
+                  validCodeZone.show().find('.clCodeImg').trigger('click');
+                  validCodeZone.find('[data-node-name="validCodeInput"]').val("");
+                  validCodeZone.find('em.warning').hide();
+                }else{
+                  validCodeZone.hide();
+                }*/
+                //错误信息提示
+                validCodeZone.find('.clCode em.isError').show();
+                //验证码图片更换
+                var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
+                validCodeZone.find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
+                //发送按钮置为可用状态
+                $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
+              }
+              else{
                 alert("留言次数超限，稍后重试！");
                 wrap.find('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }
