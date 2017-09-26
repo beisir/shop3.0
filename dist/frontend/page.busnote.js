@@ -1,1 +1,52 @@
-webpackJsonp([33],[function(e,n,o){var s=o(117),c=new s;$(function(){$.ajax({type:"get",url:"//order.b2b.hc360.com/brandneworder/checkbuslinks.html",data:{providerid:window.providerId},timeout:3e3,dataType:"jsonp",jsonp:"jsoncallback",success:function(e){e&&($("#sytico").length>0?$("#sytico").show():$("#service-message").length>0&&$("#service-message").show())},error:function(e){}})}),window.pageEntity=c}]);
+webpackJsonp([35],[
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var page = __webpack_require__(117);
+
+	/**
+	 * [page_data_analog 导入模拟数据模块，并模拟页面数据]
+	 * @type {Object}
+	 */
+	// require('./template/page.data')();
+
+	/**
+	 * 实例化页面业务对象
+	 */
+	var pageEntity = new page();
+
+	$(function () {
+	  /**
+	   * [显示企业档案模块的 商盈通 图标逻辑]
+	   */
+	  $.ajax({
+	    type: "get",
+	    url: "//order.b2b.hc360.com/brandneworder/checkbuslinks.html",
+	    data: {
+	      providerid: window.providerId
+	    },
+	    timeout: 3000,
+	    dataType: "jsonp",
+	    jsonp: "jsoncallback",
+	    success: function(result) {
+	      if (result) {
+	        if ($("#sytico").length > 0) {
+	          $("#sytico").show();
+	        } else if ($("#service-message").length > 0) {
+	          $("#service-message").show();
+	        }
+	      }
+	    },
+	    error: function(e) {}
+	  });
+	});
+
+	/**
+	 * [pageEntity 将页面业务对象暴露到全局]
+	 * @type {Object}
+	 */
+	window.pageEntity = pageEntity;
+
+
+/***/ })
+]);
