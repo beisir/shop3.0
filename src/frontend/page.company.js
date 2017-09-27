@@ -86,7 +86,7 @@ page_contact_us.prototype = {
             window.righToolbar && window.righToolbar.messageDialog && window.righToolbar.messageDialog();
         });
         /***
-         * 添加我我商业伙伴 href链接//my.b2b.hc360.com/my/turbine/template/corcenter,businfriend,busin_friends_invitemsg.html?traceaction=businfriend&chkProviderid=100021625044
+         * 添加我我商业伙伴 href链接http://my.b2b.hc360.com/my/turbine/template/corcenter,businfriend,busin_friends_invitemsg.html?traceaction=businfriend&chkProviderid=100021625044
          */
 
         /***

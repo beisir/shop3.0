@@ -313,7 +313,7 @@ banProduct.prototype = {
                 that.proListDialog.close().remove();
             });
             /*** 修改请补充链接地址 ***/
-            that.proListWrap.find('[data-node-name="Please"]').attr('href', '//my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cbusinonsale.html');
+            that.proListWrap.find('[data-node-name="Please"]').attr('href', 'http://my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cbusinonsale.html');
 
             /** 选择产品 **/
             that.chooseProduct();

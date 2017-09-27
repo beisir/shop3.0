@@ -67,8 +67,8 @@ gulp.task('upload', function() {
 			base: '.',
 			buffer: false
 		})
-		.pipe(conn.newer('/Cancer/Project/xuanpu/style/js/module/shop3.0/')) // only upload newer files
-		.pipe(conn.dest('/Cancer/Project/xuanpu/style/js/module/shop3.0/'));
+		.pipe(conn.newer('/Aries/Project/20170928-shop30/style/js/module/shop3.0/')) // only upload newer files
+		.pipe(conn.dest('/Aries/Project/20170928-shop30/style/js/module/shop3.0/'));
 });
 
 /**
