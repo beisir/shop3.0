@@ -65,10 +65,9 @@
         /**
          * 登录与否区分手机号，登录显示全手机号，非登录手机号隐藏中间四位（如156****4123）
          */
-        var originalPhone = _this.defaultOptions.contactInfo.mp;
-        var mobilephone = _this.defaultOptions.isLogin ? originalPhone : originalPhone.replace(/^(\d{3})\d{4}(\d+)/,'$1****$2');
-
-
+        var phones = _this.seriesTelphone(_this.defaultOptions.contactInfo.mp);
+        var mobilephone = phones[1];
+        _this.defaultOptions.showTelephone = phones[0];
         /**
          * 登录之后显示二维码，非登录验证手机号
          */
@@ -109,7 +108,7 @@
             '<div class="cardBox" node-name="cardBox">',
             '<div class="cardBoxList">',
             '<div class="pListNew tel2">',
-            '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">手机号</span><em class="c-red" node-name="sellername">：'+ mobilephone +'</em>',
+            '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">电话</span><em class="c-red" node-name="sellername">：'+ mobilephone +'</em>',
             '</div>',
             '<div class="pListNew name">',
             '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">联系人</span><em>：'+ _this.defaultOptions.contactInfo.contactor +'</em>',
@@ -158,10 +157,6 @@
 
       if(phoneNumber && phoneNumber.length>0){
         data.telPhone = phoneNumber;
-      }
-      //临时的数据
-      if(data.telPhone == ''){
-        data.telPhone = '13611111111';
       }
 
       $.when(_this.getweChatDef()).done(function (res) {
@@ -257,7 +252,7 @@
           /**显示二维码*/
           wrapper.find('[node-name="noLoginBox"]').replaceWith(res);
           /**手机号显示全*/
-          wrapper.find('[node-name="sellername"]').text("："+_this.defaultOptions.contactInfo.mp);
+          wrapper.find('[node-name="sellername"]').text("："+_this.defaultOptions.showTelephone);
           /**发送到我的手机显示*/
           wrapper.find('[node-name="titleBox"]').append('<span class="sent-me"><em></em><a href="javascript:void(0)" node-name="sendMyPhoneBtn">发送到我手机</a></span>');
           /**电话无人接听显示*/
@@ -278,6 +273,8 @@
         /**发送到我手机弹层显示*/
         if(wrapper.find('[node-name="pageOneBox"] [node-name="sendMyPhoneBox"]').length>0){
           wrapper.find('[node-name="sendMyPhoneBox"]').show();
+          wrapper.find('[node-name="sendMyPhoneBox"]').children(':eq(0)').show();
+          wrapper.find('[node-name="sendMyPhoneBox"]').children(':gt(0)').hide();
 
           /**初始化弹层内容*/
           wrapper.find('[node-name="telText"],[node-name="validCodeText"]').val('');
@@ -393,13 +390,13 @@
         '<li>',
         '<span class="pTop15">更多描述：</span>',
         '<div class="fConRig">',
-        '<textarea placeholder="方便更好的为您匹配供应商，如：采购写字楼所用的工作椅500把"></textarea>',
+        '<textarea placeholder="方便更好的为您匹配供应商，如：采购写字楼所用的工作椅500把" node-name="moreDesc"></textarea>',
         '</div>',
         '</li>',
         '<li>',
         '<span><b>*</b>手机号：</span>',
         '<div class="fConRig xjIBox">',
-        '<input type="text" class="telInput" node-name="detailMP">',
+        '<input type="text" class="telInput" node-name="detailMP" maxlength="11">',
         '<em class="warning" style="display: none;"><strong></strong>请输入正确的手机号码</em>',
         '</div>',
         '</li>',
@@ -415,15 +412,15 @@
         '<li>',
         '<span><b>*</b>短信验证码：</span>',
         '<div class="fConRig xjIBox hei70">',
-        '<input type="text" class="codeInput" value="请输入验证码">',
-        '<button type="submit" class="codeBtnNew" style="display:none;">获取验证码</button>',
-        '<button type="submit" class="codeBtnGray">获取验证码</button>',
+        '<input type="text" class="codeInput" placeholder="请输入验证码" node-name="msgcodeInput" maxlength="6">',
+        '<button type="submit" class="codeBtnNew" id="phoneGetCode">获取验证码</button>',
+        '<button type="submit" class="codeBtnGray" style="display: none">获取验证码</button>',
         '<p class="codePromptNew">为了安全，请输入验证码，我们将优先处理您的需求！</p>',
-        '<em class="warning" style="display: none;"><strong></strong>请输入验证码</em>',
+        '<em class="warning" node-name="msgCodeTip" style="display: none;"><strong></strong>请输入验证码</em>',
         '</div>',
         '</li>',
         '</ul>',
-        '<div class="alertBtnBox2"><button type="submit">确定发送</button></div>',
+        '<div class="alertBtnBox2"><button type="submit" node-name="submitAllBtn">确定发送</button></div>',
         '</div>',
         '</div>',
         '</div>'
@@ -587,7 +584,7 @@
      * 绑定发送到我手机弹层中事件
      * @param sendMyPhoneWrap [发送到我手机弹层的wrap]
      */
-    bindSendMyPhoneEvent:function (sendMyPhoneWrap) {
+    bindSendMyPhoneEvent:function (sendMyPhoneWrap,wrap) {
       var _this = this;
 
       var telText = sendMyPhoneWrap.find('[node-name="telText"]');
@@ -688,14 +685,16 @@
               _this.refreshValidcode(sendMyPhoneWrap);
               sendMyPhoneWrap.find('[node-name="confirmBtn"]').removeAttr('disabled');
             } else if (result.tip == "1") {
-              _this.createMyPhoneSuccessHtml(wrap.find('[node-name="pageOneContactBox"] .codeImgNew img').attr('src'));
+              sendMyPhoneWrap.children(":eq(0)").hide();
+              sendMyPhoneWrap.append(_this.createMyPhoneSuccessHtml(wrap.find('[node-name="pageOneContactBox"] .codeImgNew img').attr('src')));
+              sendMyPhoneWrap.find('[node-name="confirmBtn"]').removeAttr('disabled');
             } else if (result.tip == "2") {
-              _this.siblings('[node-name="myPhone-success"],[node-name="myPhone-code"],[node-name="myPhone-fail3"]').hide();
-              _this.createMyPhoneFailHtml(2);
+              sendMyPhoneWrap.children('[node-name="myPhone-success"],[node-name="myPhone-code"],[node-name="myPhone-fail3"]').hide();
+              sendMyPhoneWrap.append(_this.createMyPhoneFailHtml(2));
               sendMyPhoneWrap.find('[node-name="confirmBtn"]').removeAttr('disabled');
             } else if (result.tip == "3") {
-              _this.siblings('[node-name="myPhone-success"],[node-name="myPhone-code"],[node-name="myPhone-fail2"]').hide();
-              _this.createMyPhoneFailHtml(3);
+              sendMyPhoneWrap.children('[node-name="myPhone-success"],[node-name="myPhone-code"],[node-name="myPhone-fail2"]').hide();
+              sendMyPhoneWrap.append(_this.createMyPhoneFailHtml(3));
               sendMyPhoneWrap.find('[node-name="confirmBtn"]').removeAttr('disabled');
             }
           },
@@ -844,6 +843,7 @@
       }
 
       /**初始化日期控件*/
+      var buyToDate = twoWrap.find('[node-name="buyToDate"]');
       HC.W.load('datepicker', function() {
         $.datepicker.regional['zh-CN'] = {
           monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
@@ -862,21 +862,23 @@
         var tom1 = new Date();
         tom1.setDate(tom1.getDate() + 1);
 
-        twoWrap.find('[node-name="buyToDate"]').datepicker({
+        buyToDate.datepicker({
           minDate: tom1
         });
 
       });
 
       /**采购产品blur事件，不为空校验*/
-      twoWrap.find('[node-name="buyProduct"]').on('blur',function () {
+      var buyProduct  = twoWrap.find('[node-name="buyProduct"]');
+      buyProduct.on('blur',function () {
         if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
           $(this).siblings("em.warning").show();
         }
       });
 
       /**采购数量校验不为空且限制输入大于0 的数字*/
-      twoWrap.find('[node-name="buyAmount"]').on('keyup', function() {
+      var buyAmount = twoWrap.find('[node-name="buyAmount"]');
+      buyAmount.on('keyup', function() {
         var parnt = /^[1-9]\d*(\.\d+)?$/;
         if (!parnt.exec(this.value)) {
           this.value = "";
@@ -888,7 +890,8 @@
       });
 
       /**手机号校验*/
-      twoWrap.find('[node-name="detailMP"]').keyup(function () {
+      var detailMP = twoWrap.find('[node-name="detailMP"]');
+      detailMP.keyup(function () {
         this.value=this.value.replace(/\D/g,'')
       }).blur(function () {
         if(this.value == ""){
@@ -900,19 +903,296 @@
         }
       });
 
-      /**
-       * 更多描述不允许输入特殊字符
-       */
-      secDesc.on('keyup', function() {
+      /**更多描述不允许输入特殊字符*/
+      var moreDesc = twoWrap.find('[node-name="moreDesc"]');
+      moreDesc.on('keyup', function() {
         var v = $.trim(this.value.replace(/[§〃〓○△▲◎☆★◇◆□■▽▼㊣★]/g, ""));
         this.value = v;
       });
+
+      /**验证码校验,限制输入数字，失去焦点不为空*/
+      var validcodeInput = twoWrap.find('[node-name="validate_input"]')
+      validcodeInput.on('keyup', function() {
+        this.value=this.value.replace(/\D/g,'')
+      }).blur(function () {
+        if(this.value == ""){
+          $(this).siblings('em.warning').show();
+        }
+      });
+
+      /**短信验证码校验，失去焦点不为空*/
+      var msgcodeInput = twoWrap.find('[node-name="msgcodeInput"]');
+      msgcodeInput.blur(function () {
+        if(this.value == ""){
+          $(this).siblings('em.warning').show();
+        }
+      });
+
+      /**错误提示点击事件*/
+      twoWrap.find('em.warning').on('click',function () {
+        $(this).hide().siblings('input[node-name]').focus();
+      });
+
+      /**验证码换一换*/
+      var refreshImg = twoWrap.find('#refresh_Img');
+      refreshImg.on('click',function () {
+        var $this = $(this);
+        $this.siblings('.codeImgNew').find('img').attr("src", "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date=" + new Date().getTime());
+      });
+
+      /**获取短信验证码事件*/
+      var sendMsgCodeBtn = twoWrap.find('#phoneGetCode');
+      sendMsgCodeBtn.on('click',function () {
+        if($.trim(validcodeInput.val()) == ''){
+          validcodeInput.siblings('em.warning').show();
+        }else{
+          _this.checkValidCode(twoWrap,$.trim(validcodeInput.val()))
+        }
+      });
+
+      /**完善提交按钮事件*/
+      var submitAllBtn = twoWrap.find('[node-name="submitAllBtn"]');
+      submitAllBtn.on('click',function () {
+
+        /**采购产品不为空*/
+        if($.trim(buyProduct.val()) == '' || buyProduct.val().length<1){
+          buyProduct.siblings('em.warning').show();
+          return false;
+        }
+
+        /**采购数量不为空*/
+        if($.trim(buyAmount.val()) == '' || buyAmount.val().length<1){
+          buyAmount.siblings('em.warning').show();
+          return false;
+        }
+
+        /**采购截止日期不为空*/
+        if($.trim(buyToDate.val()) == '' || buyToDate.val().length<1){
+          buyToDate.siblings('em.warning').show();
+          return false;
+        }
+
+        /**手机号不为空*/
+        if($.trim(detailMP.val()) == '' || detailMP.val().length<1){
+          detailMP.siblings('em.warning').show();
+          return false;
+        }
+
+        /**验证码不为空*/
+        if($.trim(validcodeInput.val()) == '' || validcodeInput.val().length<1){
+          validcodeInput.siblings('em.warning').show();
+          return false;
+        }
+
+        /**短信验证码不为空*/
+        if($.trim(msgcodeInput.val()) == '' || msgcodeInput.val().length<1){
+          msgcodeInput.siblings('em.warning').show();
+          return false;
+        }
+
+        /**若有错误提示显示，不提交*/
+        if (twoWrap.find('em.warning').is(':visible')) {
+          return false;
+        }
+
+        $.when(_this.checkMsgCode(twoWrap,$.trim(msgcodeInput.val()),$.trim(detailMP.val()))).done(function (res) {
+          if(res.code == 1){
+            msgcodeInput.siblings('em.warning').hide().html("<strong></strong>请输入验证码");
+
+            var sendData = {
+              areaName: "",
+              areaid: window.inquiryParamVO.areaid,
+              businId: window.inquiryParamVO.businId,
+              businTitle: encodeURIComponent($.trim(buyProduct.val())),
+              comeUrl: window.location.href,
+              companyName: "",
+              isbusin: "",
+              sellerProviderId: window.companyJson.providerId,
+              supcatId: window.inquiryParamVO.supcatId,
+              supcatName: "",
+              sysFlag: "",
+              telPhone: '1368154564545'/*$.trim(detailMP.val())*/,
+              purchaseInfo:encodeURIComponent(moreDesc.val()),
+              inquiryNum:$.trim(buyAmount.val()),
+              deadline:$.trim(buyToDate.val()),
+              product:encodeURIComponent(buyProduct.val()),
+              type: 1,
+              buyerSourceId: 'detail_short_inquiry',
+              charset: 'utf8'
+            };
+            _this.submitData(twoWrap,sendData);
+          }else if(res.code == 2){
+            msgcodeInput.siblings('em.warning').show().html("<strong></strong>验证失败");
+          }else if(res.code == 3){
+            msgcodeInput.siblings('em.warning').show().html("<strong></strong>验证码错误");
+          }else if(res.code == 4){
+            msgcodeInput.siblings('em.warning').show().html("<strong></strong>验证失败已过期");
+          }
+        }).fail(function () {
+          alert('网络异常，请稍后重试！')
+        });
+
+
+      })
+
 
 
 
 
     },
 
+    /**
+     * 提交数据
+     */
+    submitData:function (wrap,data) {
+      $.ajax({
+        type: "GET",
+        url: "//my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
+        dataType: "jsonp",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: data,
+        jsonp: "callback",
+        success: function(res) {
+          if (res && res.code == "yes") {
+          var sendSuccessHtml = [
+            '<div class="dSuccBoxStep3">',
+              '<dl>',
+              '<dt><em></em>发送成功！</dt>',
+            '<dd>慧聪已收到您的需求，我们会尽快通知卖家联系您，同时会派出采购专员1对1为您提供服务，请您耐心等待！</dd>',
+            '</dl>',
+            '</div>'].join('');
+            wrap.find('.dAlertBoxCon2').html(sendSuccessHtml);
+          } else if (res && res.code == "self") {
+            alert("您不能给自己发询价单！");
+          } else {
+            alert("网络异常，请稍后重试！");
+          }
+        },
+        error: function() {
+          alert("网络异常，请稍后重试！");
+        }
+      })
+    },
+
+    /**
+     * 校验短信验证码是否正确
+     * @param wrap
+     * @param msgCodeVal
+     * @param mp
+     */
+    checkMsgCode:function (wrap,msgCodeVal,mp) {
+      return $.ajax({
+        type: "GET",
+        url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doValidcode/doValidcode?callback=?",
+        dataType: "jsonp",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+          code: msgCodeVal,
+          phone: mp
+        },
+        timeout: 2000
+      })
+    },
+
+    /**
+     * 校验图形验证码
+     * @param wrap
+     * @param validCodeVal
+     */
+    checkValidCode:function (wrap,validCodeVal) {
+      var _this = this;
+      jQuery.ajax({
+        type: "GET",
+        url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
+        dataType: "jsonp",
+        data: {
+          picCode: validCodeVal
+        },
+        timeout: 2000,
+        async: false,
+        success: function(res) {
+
+          if (res.code == 0) {
+            //验证成功
+            wrap.find('[node-name="validate_input"]').siblings("em.warning").hide().html("<strong></strong>请输入验证码");
+            //发送验证码,先校验手机号不为空
+            if ($.trim(wrap.find('[node-name="detailMP"]').val()) == "") {
+              wrap.find('[node-name="detailMP"]').siblings("em.warning").show();
+            } else {
+              _this.sendPhoneValiCode(wrap,$.trim(wrap.find('[node-name="validate_input"]').val()),$.trim(wrap.find('[node-name="detailMP"]').val()));
+            }
+          } else {
+            //验证失败
+            wrap.find('[node-name="validate_input"]').siblings("em.warning").show().html("<strong></strong>验证码错误");
+          }
+
+        },
+        error: function() {
+          alert("网络异常，请重试");
+        }
+      });
+    },
+
+    /**
+     * 发送短信验证码
+     * @param wrap
+     * @param validCodeVal 图形验证码
+     * @param mp 手机号
+     */
+    sendPhoneValiCode:function (wrap,validCodeVal,mp) {
+      var _this = this, timer;
+      $.ajax({
+        type: "GET",
+        url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doSendyzm/doSendyzm?callback=?",
+        dataType: "jsonp",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        jsonp: "callback",
+        data: {
+          picCode: validCodeVal,
+          phone: mp
+        },
+        timeout: 2000,
+        async: false,
+        success: function(res) {
+          var msgCodeTip = wrap.find('#msgCodeTip');
+          if (res.code == 1) { //发送手机验证码成功
+            //按钮置灰，60秒后恢复
+            wrap.find('#phoneGetCode').removeClass("codeBtnNew").addClass("codeBtnGray").attr("disabled");
+            settime(wrap.find('#phoneGetCode'), 60); //发送按钮点击成功后置灰设置倒计时
+          } else if (res.code == 2) {
+            msgCodeTip.show().html("<strong></strong>每天发送次数超过上限");
+          } else if (res.code == 3) {
+            msgCodeTip.show().html("<strong></strong>发送验证码失败");
+          } else if (res.code == 4) {
+            msgCodeTip.show().html("<strong></strong>验证码失败，请重新获取");
+          } else { //res==5
+            msgCodeTip.show().html("<strong></strong>图形验证码不正确");
+          }
+        },
+        error: function() {
+          alert("网络异常，请重试");
+        }
+      });
+
+
+      //按钮发送倒计时
+      function settime(val, count) {
+        if (count == 0) {
+          val.removeAttr("disabled");
+          val.html("免费获取验证码");
+          wrap.find('#phoneGetCode').removeClass("codeBtnGray").addClass("codeBtnNew");
+          count = 60;
+          clearTimeout(timer);
+          return false;
+        } else {
+          val.html("重新发送(" + count + ")");
+          count--;
+        }
+        timer = setTimeout(function() {
+          settime(val, count);
+        }, 1000);
+      }
+    },
 
     /**
      * 获取场景id和二维码
@@ -924,6 +1204,9 @@
         url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
         type: "GET",
         dataType: "jsonp",
+        data:{
+          imid:'test-wsc'//测试环境“test-wsc”,正式环境“hc360-hfb”
+        },
         jsonpCallback: 'callback'
       });
 
@@ -960,6 +1243,37 @@
         "top": (winH - selfH) / 2 + hScroll + "px",
         "z-index": 1000001
       })
+    },
+
+    /**
+     * 解析手机号
+     * @param mp
+     * @param telphone
+     * @param telphone400
+     * @param telOther
+     */
+    seriesTelphone:function (phones) {
+      var showPhone='',
+        hidePhone='';
+
+      for(var i=0;i<phones.length;i++){
+        if(phones[i]){
+          //手机号正则
+          var mpreg = /^1\d{10}$/;
+          //固话正则
+          if(mpreg.test(phones[i])){//手机号
+            showPhone = phones[i];
+            hidePhone = phones[i].replace(/^(\d{3})\d{4}(\d+)/,'$1****$2');
+          }else{//非手机号
+            //re = /^0\d{2,3}-?\d{7,8}$/;
+            showPhone = phones[i];
+            hidePhone = phones[i].replace(/^(\d{3,4})(-?)\d{4}(\d+)/,'$1$2****$3');
+          }
+          break;
+        }
+      }
+
+      return [showPhone,hidePhone];
     }
 
 

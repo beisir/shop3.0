@@ -135,7 +135,47 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             /**
              * 查看联系方式
              */
-            _this.toFindContact();
+            if(parseInt(window.memTypeId) < 4){
+
+              $.ajax({
+                type: "GET",
+                url: "//wsdetail.b2b.hc360.com//youker/single/"+window.scyps.providerId,
+                dataType: "jsonp",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                jsonp: "callback",
+                success:function (res) {
+                  if(res){
+                    /**
+                     * 初始化“查看联系方式”弹层
+                     */
+                    HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-detail-contactInfo.dialog.js',function () {
+
+                      $('[data-query="contactBtn"]').contactDialogDetail({
+                        is3y:false,
+                        isLogin:window.iflogin || false,
+                        contactInfo:{
+                          mp:[res.mp,res.telephone,res.telephone400,res.otherTelephone],//卖家电话集合
+                          contactor:(res.contactor ||'') +' '+(res.duty||''),
+                          companyname:res.name||''
+                        },
+                        inquiryTitle:$.trim($("#inquiryTitle").val()),
+                        isbusin:2//区分是否首页，首页是1，非首页是2
+                      });
+
+                    });
+                  }
+
+                },
+                error:function () {
+                  alert('网络异常，请稍后重试！')
+                }
+              });
+
+
+            }else{
+              _this.toFindContact();
+            }
+
 
             /**
              * 我的浏览记录模块

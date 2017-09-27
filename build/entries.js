@@ -17,10 +17,6 @@ module.exports = {
     name: '顶部'
   },
 
-  'common/jquery-contactInfo.dialog':{
-    html: false,
-    name: '顶部'
-  },
 	'backend/page.index': {
 		html: false,
 		name: '首页',
