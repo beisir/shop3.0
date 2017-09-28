@@ -159,7 +159,8 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                           companyname:res.name||''
                         },
                         inquiryTitle:$.trim($("#inquiryTitle").val()),
-                        isbusin:2//区分是否首页，首页是1，非首页是2
+                        isbusin:2,//区分是否首页，首页是1，非首页是2,
+                        providerId:window.scyps.providerId
                       });
 
                     });

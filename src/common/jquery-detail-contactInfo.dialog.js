@@ -41,7 +41,9 @@
       isbusin:2,
 
       /**是否是相册大图页，默认不是*/
-      isAlbum:false
+      isAlbum:false,
+
+      providerId:''
     };
 
     $.extend(this.defaultOptions,options);
@@ -143,7 +145,7 @@
         deffer = $.Deferred(),
         codeHtml = '';
 
-      inquiryParamVO.businTitle = inquiryParamVO.businTitle.length < 1 ? encodeURIComponent(_this.defaultOptions.inquiryTitle) : inquiryParamVO.businTitle;
+      inquiryParamVO.businTitle = inquiryParamVO.businTitle ? (inquiryParamVO.businTitle.length < 1 ? encodeURIComponent(_this.defaultOptions.inquiryTitle) : inquiryParamVO.businTitle) : encodeURIComponent(_this.defaultOptions.inquiryTitle);
       var data = inquiryParamVO;
       data.contact = encodeURIComponent(window.companyContactor||'');
       data.CompanyName = encodeURIComponent(window.infoname || '');
@@ -1007,11 +1009,11 @@
               comeUrl: window.location.href,
               companyName: "",
               isbusin: "",
-              sellerProviderId: window.companyJson.providerId,
+              sellerProviderId: _this.defaultOptions.providerId,
               supcatId: window.inquiryParamVO.supcatId,
               supcatName: "",
               sysFlag: "",
-              telPhone: '1368154564545'/*$.trim(detailMP.val())*/,
+              telPhone: $.trim(detailMP.val()),
               purchaseInfo:encodeURIComponent(moreDesc.val()),
               inquiryNum:$.trim(buyAmount.val()),
               deadline:$.trim(buyToDate.val()),
