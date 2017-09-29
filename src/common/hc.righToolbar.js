@@ -168,7 +168,7 @@ var rightSidebar = {
              */
             var fixRightTwo = [
                 '<div class="R-top">',
-                '<a href="//my.b2b.hc360.com/my/turbine/template/firstview,reg_first.html?sourcetypeid=3731"' + openShopWbt + ' target="_blank"><img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/R-top.png" alt="" height="64" width="73"></a>',
+                '<a href="http://my.b2b.hc360.com/my/turbine/template/firstview,reg_first.html?sourcetypeid=3731"' + openShopWbt + ' target="_blank"><img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/R-top.png" alt="" height="64" width="73"></a>',
                 '</div>'
             ];
             /***
@@ -454,7 +454,7 @@ var rightSidebar = {
                     var minMsgId = $(this).next('div').attr('data-id') || $(this).next('div.moreHistory').children(':first').attr('data-id');//最早的消息id
 
                     $.ajax({
-                        url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
+                        url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
                         type:"GET",
                         timeout:3000,
                         data:{
@@ -537,7 +537,7 @@ var rightSidebar = {
         getMsgContent:function () {
             var _this = this;
             return $.ajax({
-                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
+                url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
                 type:'GET',
                 timeout:3000,
                 data:{
@@ -688,7 +688,7 @@ var rightSidebar = {
 
             var _this = this;
             $.ajax({
-                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
+                url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
                 type:'GET',
                 timeout:5000,
                 data:{
@@ -997,7 +997,7 @@ var rightSidebar = {
 
             function sendMessage() {
                 $.ajax({
-                    url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
+                    url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
                     type:"GET",
                     timeout:5000,
                     data:{
@@ -1132,7 +1132,7 @@ var rightSidebar = {
              */
             function doPeformAjax(isGetSenceid,url) {
                 $.ajax({
-                    url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                    url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                     type: "GET",
                     data: {
                         plantitle: encodeURIComponent(contentWrap.val())
@@ -1144,7 +1144,7 @@ var rightSidebar = {
                         } else {
                             $.extend(that.formDatas,{qrcodeid:isGetSenceid || ''});
                             $.ajax({
-                                url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
+                                url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
                                 data: that.formDatas,
                                 dataType: "jsonp",
                                 jsonpCallback: 'callback',
@@ -1600,7 +1600,7 @@ var rightSidebar = {
                 /** 关闭按钮 **/
                 closeMessageBtn = that.messageWrap.find('.mCloseBtn');
             $.ajax({
-                url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                 type: "GET",
                 data: {
                     plantitle: encodeURIComponent(textareaVal) //留言详情内容
@@ -1614,7 +1614,7 @@ var rightSidebar = {
                         messageTextarea.parent().find('em.banned').show();
                     } else {
                         $.ajax({
-                            url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
+                            url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
                             data: _data,
                             dataType: "jsonp",
                             jsonpCallback: 'callback',

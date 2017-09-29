@@ -70,6 +70,7 @@
         var phones = _this.seriesTelphone(_this.defaultOptions.contactInfo.mp);
         var mobilephone = phones[1];
         _this.defaultOptions.showTelephone = phones[0];
+        _this.defaultOptions.showText = phones[2];
         /**
          * 登录之后显示二维码，非登录验证手机号
          */
@@ -85,7 +86,7 @@
             '<dt>请验证您的手机号码，即刻<b>获取公司名片</b>，并获得更多<b>实力商家报价</b>！</dt>',
             '<dd>',
             '<input type="text" maxlength="11" node-name="phoneText" placeholder="请输入您的手机号码"><button type="submit" id="checkMobilePhone">验证</button>',
-            '<em class="warning"><strong></strong>请输入手机号码</em>',
+            '<em class="warning"><strong></strong>请输入正确的手机号码</em>',
             '</dd>',
             '</dl>',
             '</div>'].join(''));
@@ -110,7 +111,7 @@
             '<div class="cardBox" node-name="cardBox">',
             '<div class="cardBoxList">',
             '<div class="pListNew tel2">',
-            '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">电话</span><em class="c-red" node-name="sellername">：'+ mobilephone +'</em>',
+            '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">'+ _this.defaultOptions.showText +'</span><em class="c-red" node-name="sellername">：'+ mobilephone +'</em>',
             '</div>',
             '<div class="pListNew name">',
             '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">联系人</span><em>：'+ _this.defaultOptions.contactInfo.contactor +'</em>',
@@ -243,10 +244,12 @@
 
         if($.trim(phoneText.val()) == ''){
           $this.siblings('em.warning').show();
+          $this.removeAttr('disabled');
           return false;
         }
 
         if($this.siblings('em.warning').is(':visible')){
+          $this.removeAttr('disabled');
           return false;
         }
 
@@ -452,7 +455,7 @@
         '<div class="yanzm-img">',
         '<img width="110" node-name="validCodeImg" height="40" id="validate_map" title="验证码" src="//detail.b2b.hc360.com/detail/ValidImage.jsp?Seed=0.29667985887426007">',
         '</div>',
-        '<a href="javascript:;" class="change-more">换一换</a>',
+        '<a href="javascript:;" class="change-more" node-name="changeImg">换一换</a>',
         '<p class="hide" style="display:none;">',
         '<strong></strong>请输入正确的验证码',
         '</p>',
@@ -478,7 +481,7 @@
         '<div class="contactBoxNew" node-name="noReplyBox">',
         '<div class="cInfoListBox2">',
         '<ul>',
-        '<li><p>请输入手机号码，我们将通知卖家尽快联系您，同时为你提供更多1对1采购服务！</p></li>',
+        '<li><p>请输入手机号码，我们将通知卖家尽快联系您，同时为您提供更多1对1采购服务！</p></li>',
         '<li>',
         '<span>您的手机号码：</span>',
         '<div class="rigIbox"><input type="text" maxlength="11" node-name="mpText"><em class="warning" style="display: none;"><strong></strong>请输入正确手机号码</em></div>',
@@ -621,6 +624,11 @@
       sendMyPhoneWrap.find('[node-name="cancelBtn"]').on('click',function () {
         sendMyPhoneWrap.hide();
         sendMyPhoneWrap.siblings('[node-name="pageOneContactBox"]').show();
+      });
+
+      /**换一换事件*/
+      sendMyPhoneWrap.find('[node-name="changeImg"]').on('click',function () {
+        _this.refreshValidcode(sendMyPhoneWrap);
       });
 
       /**确认按钮事件*/
@@ -793,7 +801,7 @@
                   '<div class="contactSucc" node-name="noReply-success">',
                   '<div class="tcbx1">',
                   '<p class="tcbx1-1"> <span></span>发送成功！</p>',
-                  '<p class="tcbx1-2">慧聪已收到您的需求，我们会尽快会通知卖家联系您，同时会派出采购专员1对1为您提供服务，请您耐心等待。</p>',
+                  '<p class="tcbx1-2">慧聪已收到您的需求，我们会尽快通知卖家联系您，同时会派出采购专员1对1为您提供服务，请您耐心等待。</p>',
                   '</div>',
                   '</div>',
                   '<div class="cardBoxBot2" node-name="noReply-code">',
@@ -1256,7 +1264,8 @@
      */
     seriesTelphone:function (phones) {
       var showPhone='',
-        hidePhone='';
+        hidePhone='',
+        showText='手机号';
 
       for(var i=0;i<phones.length;i++){
         if(phones[i]){
@@ -1270,12 +1279,13 @@
             //re = /^0\d{2,3}-?\d{7,8}$/;
             showPhone = phones[i];
             hidePhone = phones[i].replace(/^(\d{3,4})(-?)\d{4}(\d+)/,'$1$2****$3');
+            showText = '电话';
           }
           break;
         }
       }
 
-      return [showPhone,hidePhone];
+      return [showPhone,hidePhone,showText];
     }
 
 

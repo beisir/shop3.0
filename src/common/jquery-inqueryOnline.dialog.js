@@ -65,7 +65,7 @@
     getMsgContent:function () {
       var _this = this;
       return $.ajax({
-        url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
+        url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
         type:'GET',
         timeout:5000,
         data:{
@@ -363,7 +363,7 @@
                 ];
                 $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
                 var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
-                $("#validcodeCon").find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
+                $("#validcodeCon").find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
               });
 
               if(_this.defaultOptions.isBindWX){
@@ -475,7 +475,7 @@
                       ];
                       $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
                       var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
-                      $("#validcodeCon").find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
+                      $("#validcodeCon").find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
                     });
 
                     _this.bindEvent(consultWrap);
@@ -628,7 +628,7 @@
         var minMsgId = $(this).next('div').attr('data-id') || $(this).next('div.moreHistory').children(':first').attr('data-id');//最早的消息id
 
         $.ajax({
-          url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
+          url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
           type:"GET",
           timeout:3000,
           data:{
@@ -698,7 +698,7 @@
        */
       wrap.on('click','.clCodeImg',function () {
         var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || '';
-        $(this).find('img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
+        $(this).find('img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
       });
 
       /**
@@ -784,7 +784,7 @@
                 //错误信息提示
                 validCodeZone.find('.clCode em.isError').show();
                 //验证码图片更换
-                validCodeZone.find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
+                validCodeZone.find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
                 //发送按钮置为可用状态
                 $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }
@@ -804,7 +804,7 @@
 
       function sendMessage() {
         $.ajax({
-          url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
+          url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
           type:"GET",
           timeout:5000,
           data:{
@@ -900,7 +900,7 @@
                 validCodeZone.find('.clCode em.isError').show();
                 //验证码图片更换
                 var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
-                validCodeZone.find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
+                validCodeZone.find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
                 //发送按钮置为可用状态
                 $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }
@@ -954,7 +954,7 @@
 
       var _this = this;
       $.ajax({
-        url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
+        url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
         type:'GET',
         timeout:5000,
         data:{

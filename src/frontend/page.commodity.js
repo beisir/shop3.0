@@ -920,7 +920,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             function sendPageData(pageData) {
                 $.ajax({
                     type: "GET",
-                    url: "//my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
+                    url: "http://my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
                     dataType: "jsonp",
                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                     data: pageData,
@@ -958,7 +958,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                     flag = false;
                 } else { //过滤关键词
                     $.ajax({
-                        url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                        url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                         type: "GET",
                         data: {
                             plantitle: encodeURIComponent(loc1.val())
@@ -1112,7 +1112,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                 } else {
                     jQuery("button[rel=btnSubmitMobile]").removeAttr("disabled");
                 }
-                var url = "//my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?";
+                var url = "http://my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?";
 
                 var $textarea = jQuery("#inquiryTitle");
 
@@ -1120,7 +1120,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                     checkTitleError()
                 } else {
                     jQuery.ajax({
-                        url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                        url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                         type: "GET",
                         data: {
                             plantitle: encodeURIComponent($textarea.val())
@@ -1463,7 +1463,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                             function sendPageData1(pageData, flag) {
                                 $.ajax({
                                     type: "GET",
-                                    url: "//my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
+                                    url: "http://my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
                                     dataType: "jsonp",
                                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                                     data: pageData,
@@ -1561,7 +1561,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                         buyerSourceId: "u_ff_msg_cj"
                     };
                     $.ajax({
-                        url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
+                        url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
                         data: noAnswerData,
                         dataType: "jsonp",
                         jsonpCallback: 'callback',

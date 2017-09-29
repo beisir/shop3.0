@@ -162,7 +162,7 @@ enterpriseArchives.prototype = {
      * @constructor
      */
     Ajaxshoucang: function() {
-        var url = "//my.b2b.hc360.com/my/turbine/action/favorites.FavoritesAction/eventsubmit_doAddinfonew/doAddinfonew?";
+        var url = "http://my.b2b.hc360.com/my/turbine/action/favorites.FavoritesAction/eventsubmit_doAddinfonew/doAddinfonew?";
         $.ajax({
             type: "get",
             url: url,

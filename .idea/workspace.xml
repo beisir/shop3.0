@@ -4,10 +4,54 @@
     <list default="true" id="4895f71c-0a61-477f-8672-4e160204ffb8" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/dist/common/jquery-contactInfo.dialog.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/backend/page.module.setting.js" afterPath="$PROJECT_DIR$/dist/backend/page.module.setting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/common/hc.righToolbar.js" afterPath="$PROJECT_DIR$/dist/common/hc.righToolbar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/common/jquery-detail-contactInfo.dialog.js" afterPath="$PROJECT_DIR$/dist/common/jquery-detail-contactInfo.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/common/jquery-inqueryOnline.dialog.js" afterPath="$PROJECT_DIR$/dist/common/jquery-inqueryOnline.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/frontend/combo.js" afterPath="$PROJECT_DIR$/dist/frontend/combo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/frontend/page.commodity.js" afterPath="$PROJECT_DIR$/dist/frontend/page.commodity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/collectionHtml.html" afterPath="$PROJECT_DIR$/dist/html/collectionHtml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_album_window.html" afterPath="$PROJECT_DIR$/dist/html/module_album_window.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_certificate.html" afterPath="$PROJECT_DIR$/dist/html/module_certificate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_company_album.html" afterPath="$PROJECT_DIR$/dist/html/module_company_album.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_company_dynamic.html" afterPath="$PROJECT_DIR$/dist/html/module_company_dynamic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_company_intro.html" afterPath="$PROJECT_DIR$/dist/html/module_company_intro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_contact_us.html" afterPath="$PROJECT_DIR$/dist/html/module_contact_us.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_feedback.html" afterPath="$PROJECT_DIR$/dist/html/module_feedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_friendship_link.html" afterPath="$PROJECT_DIR$/dist/html/module_friendship_link.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_latest_supply.html" afterPath="$PROJECT_DIR$/dist/html/module_latest_supply.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_mmt_archives.html" afterPath="$PROJECT_DIR$/dist/html/module_mmt_archives.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_prod_classify.html" afterPath="$PROJECT_DIR$/dist/html/module_prod_classify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_prod_window.html" afterPath="$PROJECT_DIR$/dist/html/module_prod_window.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/sendMyPhoneHtml.html" afterPath="$PROJECT_DIR$/dist/html/sendMyPhoneHtml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_ads.js" afterPath="$PROJECT_DIR$/src/backend/module/module_ads.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_banner_products.js" afterPath="$PROJECT_DIR$/src/backend/module/module_banner_products.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_extend_window.js" afterPath="$PROJECT_DIR$/src/backend/module/module_extend_window.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_prof_window.js" afterPath="$PROJECT_DIR$/src/backend/module/module_prof_window.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/template/page.index.html" afterPath="$PROJECT_DIR$/src/backend/template/page.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/hc.righToolbar.js" afterPath="$PROJECT_DIR$/src/common/hc.righToolbar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" afterPath="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js" afterPath="$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/collectionHtml.html" afterPath="$PROJECT_DIR$/src/data/collectionHtml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_album_window.html" afterPath="$PROJECT_DIR$/src/data/module_album_window.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_certificate.html" afterPath="$PROJECT_DIR$/src/data/module_certificate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_company_album.html" afterPath="$PROJECT_DIR$/src/data/module_company_album.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_company_dynamic.html" afterPath="$PROJECT_DIR$/src/data/module_company_dynamic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_company_intro.html" afterPath="$PROJECT_DIR$/src/data/module_company_intro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_contact_us.html" afterPath="$PROJECT_DIR$/src/data/module_contact_us.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_feedback.html" afterPath="$PROJECT_DIR$/src/data/module_feedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_friendship_link.html" afterPath="$PROJECT_DIR$/src/data/module_friendship_link.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_latest_supply.html" afterPath="$PROJECT_DIR$/src/data/module_latest_supply.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_mmt_archives.html" afterPath="$PROJECT_DIR$/src/data/module_mmt_archives.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_prod_classify.html" afterPath="$PROJECT_DIR$/src/data/module_prod_classify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_prod_window.html" afterPath="$PROJECT_DIR$/src/data/module_prod_window.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/sendMyPhoneHtml.html" afterPath="$PROJECT_DIR$/src/data/sendMyPhoneHtml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/module/module_company_files.js" afterPath="$PROJECT_DIR$/src/frontend/module/module_company_files.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/page.commodity.js" afterPath="$PROJECT_DIR$/src/frontend/page.commodity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/page.company.js" afterPath="$PROJECT_DIR$/src/frontend/page.company.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/template/page.commodity.html" afterPath="$PROJECT_DIR$/src/frontend/template/page.commodity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/template/page.index.html" afterPath="$PROJECT_DIR$/src/frontend/template/page.index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,41 +75,41 @@
       <file leaf-file-name="jquery-detail-contactInfo.dialog.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="667" column="23" lean-forward="false" selection-start-line="667" selection-start-column="13" selection-end-line="667" selection-end-column="23" />
+            <state relative-caret-position="4617">
+              <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="22" />
               <folding>
-                <element signature="e#7747#8692#0" expanded="false" />
-                <element signature="e#8796#9645#0" expanded="false" />
-                <element signature="e#9768#10044#0" expanded="false" />
-                <element signature="e#13739#15133#0" expanded="false" />
-                <element signature="e#15206#16032#0" expanded="false" />
-                <element signature="e#16168#16701#0" expanded="false" />
-                <element signature="e#16828#17973#0" expanded="false" />
-                <element signature="e#18053#18825#0" expanded="false" />
-                <element signature="e#23461#27218#0" expanded="false" />
-                <element signature="e#27344#34282#0" expanded="false" />
-                <element signature="e#28901#29028#0" expanded="false" />
-                <element signature="e#34349#35301#0" expanded="false" />
-                <element signature="e#35447#35839#0" expanded="false" />
-                <element signature="e#35967#37146#0" expanded="false" />
-                <element signature="e#37307#39106#0" expanded="false" />
-                <element signature="e#38653#39100#0" expanded="false" />
-                <element signature="e#39192#39526#0" expanded="false" />
-                <element signature="e#39584#39814#0" expanded="false" />
-                <element signature="e#39896#40309#0" expanded="false" />
-                <marker date="1506563672289" expanded="true" signature="2681:2721" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="2897:2937" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="10939:10953" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="11222:11236" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="11566:11580" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="12092:12106" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="12731:12783" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="13204:13217" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="13360:13374" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="14040:14053" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="14195:14235" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="14718:14731" ph="..." />
-                <marker date="1506563672289" expanded="true" signature="15574:15588" ph="..." />
+                <element signature="e#7914#8859#0" expanded="false" />
+                <element signature="e#8963#9812#0" expanded="false" />
+                <element signature="e#9935#10211#0" expanded="false" />
+                <element signature="e#10543#13829#0" expanded="false" />
+                <element signature="e#16357#16890#0" expanded="false" />
+                <element signature="e#17017#18162#0" expanded="false" />
+                <element signature="e#18242#19014#0" expanded="false" />
+                <element signature="e#19157#23675#0" expanded="false" />
+                <element signature="e#23806#27562#0" expanded="false" />
+                <element signature="e#27688#34626#0" expanded="false" />
+                <element signature="e#29245#29372#0" expanded="false" />
+                <element signature="e#34693#35645#0" expanded="false" />
+                <element signature="e#35791#36183#0" expanded="false" />
+                <element signature="e#36311#37490#0" expanded="false" />
+                <element signature="e#37651#39450#0" expanded="false" />
+                <element signature="e#38997#39444#0" expanded="false" />
+                <element signature="e#39536#39870#0" expanded="false" />
+                <element signature="e#39928#40158#0" expanded="false" />
+                <element signature="e#40240#40653#0" expanded="false" />
+                <marker date="1506581820586" expanded="true" signature="2735:2775" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="2984:3024" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="11106:11120" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="11389:11403" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="11733:11747" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="12259:12273" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="12898:12950" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="13371:13384" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="13527:13541" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="14207:14220" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="14362:14402" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="14907:14920" ph="..." />
+                <marker date="1506581820586" expanded="true" signature="15763:15777" ph="..." />
               </folding>
             </state>
           </provider>
@@ -94,52 +138,59 @@
       <file leaf-file-name="page.commodity.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/frontend/page.commodity.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
+            <state relative-caret-position="4374">
               <caret line="162" column="58" lean-forward="false" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="58" />
               <folding>
-                <element signature="e#68178#71415#0" expanded="false" />
-                <element signature="e#95571#183169#0" expanded="false" />
-                <marker date="1506563480927" expanded="true" signature="87211:87227" ph="..." />
-                <marker date="1506563480927" expanded="true" signature="88016:88022" ph=" " />
+                <element signature="e#68203#71445#0" expanded="false" />
+                <element signature="e#95601#183199#0" expanded="false" />
+                <marker date="1506564300762" expanded="true" signature="87241:87257" ph="..." />
+                <marker date="1506564300762" expanded="true" signature="88046:88052" ph=" " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.prod.conf.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="webpack.prod.conf.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/webpack.prod.conf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="106" column="22" lean-forward="false" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+            <state relative-caret-position="2943">
+              <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-inqueryOnline.dialog.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="module_ads.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/backend/template/preview/module_ads.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-inqueryOnline.dialog.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2484">
-              <caret line="92" column="58" lean-forward="false" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="58" />
+            <state relative-caret-position="514">
+              <caret line="884" column="17" lean-forward="true" selection-start-line="884" selection-start-column="17" selection-end-line="884" selection-end-column="17" />
               <folding>
-                <element signature="e#2353#5740#0" expanded="false" />
-                <element signature="e#5812#6120#0" expanded="false" />
-                <element signature="e#6192#6404#0" expanded="false" />
-                <element signature="e#6473#17442#0" expanded="false" />
-                <marker date="1506061176880" expanded="true" signature="8957:8971" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="9279:9305" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="9428:9442" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="9534:9548" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="9821:9835" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="9954:9968" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="10059:10073" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="13854:13868" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="14218:14244" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="14373:14387" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="14485:14499" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="14808:14822" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="14947:14961" ph="..." />
-                <marker date="1506061176880" expanded="true" signature="15058:15072" ph="..." />
+                <element signature="e#29667#30392#0" expanded="false" />
+                <marker date="1506564300575" expanded="true" signature="8962:8976" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="9284:9310" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="9433:9447" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="9539:9553" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="9826:9840" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="9959:9973" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="10064:10078" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="13864:13878" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="14228:14254" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="14383:14397" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="14495:14509" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="14818:14832" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="14957:14971" ph="..." />
+                <marker date="1506564300575" expanded="true" signature="15068:15082" ph="..." />
               </folding>
             </state>
           </provider>
@@ -157,10 +208,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>infoname</find>
-      <find>inquiryTitle</find>
-      <find>createNoReplyHtml</find>
-      <find>bindNoReplyEvent</find>
       <find>disabled</find>
       <find>validCode-seed</find>
       <find>my.b2b</find>
@@ -174,12 +221,9 @@
       <find>sendPhoneValiCode</find>
       <find>createPageTwoHtml</find>
       <find>doWechatpicid</find>
-      <find>imid</find>
-      <find>bindSendMyPhoneEvent</find>
       <find>sendMyPhoneBox</find>
       <find>createMyPhoneSuccessHtml</find>
       <find>myPhone-code</find>
-      <find>createSendMyPhoneHtml</find>
       <find>bindPageTwoEvent</find>
       <find>请输入验证码</find>
       <find>defaultOptions.contactInfo.mp</find>
@@ -187,12 +231,19 @@
       <find>seriesTelphone</find>
       <find>toFindContact</find>
       <find>providerId</find>
+      <find>createSendMyPhoneHtml</find>
+      <find>bindSendMyPhoneEvent</find>
+      <find>1对1</find>
+      <find>template</find>
+      <find>send</find>
+      <find>imid</find>
+      <find>getweChatDef</find>
     </findStrings>
     <dirStrings>
-      <dir>D:\git-project\shop3.0</dir>
       <dir>D:\git-project\shop3.0\build</dir>
       <dir>D:\git-project\shop3.0\src\backend</dir>
       <dir>D:\git-project\shop3.0\src</dir>
+      <dir>D:\git-project\shop3.0</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -234,8 +285,8 @@
         <option value="$PROJECT_DIR$/src/backend/template/preview/module_certificate.html" />
         <option value="$PROJECT_DIR$/build/entries.js" />
         <option value="$PROJECT_DIR$/src/frontend/page.commodity.js" />
-        <option value="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" />
         <option value="$PROJECT_DIR$/build/webpack.prod.conf.js" />
+        <option value="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" />
       </list>
     </option>
   </component>
@@ -256,8 +307,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="46" />
+    <option name="y" value="15" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -276,8 +327,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,6 +387,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,15 +519,21 @@
       <workItem from="1506303270382" duration="17893000" />
       <workItem from="1506393366834" duration="14358000" />
       <workItem from="1506491083272" duration="13755000" />
-      <workItem from="1506562002693" duration="2212000" />
+      <workItem from="1506562002693" duration="5547000" />
+      <workItem from="1506580114670" duration="594000" />
+      <workItem from="1506581717013" duration="531000" />
+      <workItem from="1506586947634" duration="1250000" />
+      <workItem from="1506589371924" duration="1199000" />
+      <workItem from="1506594851857" duration="1587000" />
+      <workItem from="1506664819989" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289545000" />
+    <option name="totallyTimeSpent" value="298051000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="46" y="15" width="1936" height="1056" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -485,13 +542,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20043337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20043337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3531961" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,9 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504754998759" expanded="true" signature="2499:2529" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -753,13 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/backend/template/preview/module_ads.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -822,93 +869,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="92" column="58" lean-forward="false" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="58" />
-          <folding>
-            <element signature="e#2353#5740#0" expanded="false" />
-            <element signature="e#5812#6120#0" expanded="false" />
-            <element signature="e#6192#6404#0" expanded="false" />
-            <element signature="e#6473#17442#0" expanded="false" />
-            <marker date="1506061176880" expanded="true" signature="8957:8971" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="9279:9305" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="9428:9442" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="9534:9548" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="9821:9835" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="9954:9968" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="10059:10073" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="13854:13868" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="14218:14244" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="14373:14387" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="14485:14499" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="14808:14822" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="14947:14961" ph="..." />
-            <marker date="1506061176880" expanded="true" signature="15058:15072" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/jquery-contactInfo.dialog.js" />
-    <entry file="file://$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="667" column="23" lean-forward="false" selection-start-line="667" selection-start-column="13" selection-end-line="667" selection-end-column="23" />
-          <folding>
-            <element signature="e#7747#8692#0" expanded="false" />
-            <element signature="e#8796#9645#0" expanded="false" />
-            <element signature="e#9768#10044#0" expanded="false" />
-            <element signature="e#13739#15133#0" expanded="false" />
-            <element signature="e#15206#16032#0" expanded="false" />
-            <element signature="e#16168#16701#0" expanded="false" />
-            <element signature="e#16828#17973#0" expanded="false" />
-            <element signature="e#18053#18825#0" expanded="false" />
-            <element signature="e#23461#27218#0" expanded="false" />
-            <element signature="e#27344#34282#0" expanded="false" />
-            <element signature="e#28901#29028#0" expanded="false" />
-            <element signature="e#34349#35301#0" expanded="false" />
-            <element signature="e#35447#35839#0" expanded="false" />
-            <element signature="e#35967#37146#0" expanded="false" />
-            <element signature="e#37307#39106#0" expanded="false" />
-            <element signature="e#38653#39100#0" expanded="false" />
-            <element signature="e#39192#39526#0" expanded="false" />
-            <element signature="e#39584#39814#0" expanded="false" />
-            <element signature="e#39896#40309#0" expanded="false" />
-            <marker date="1506563672289" expanded="true" signature="2681:2721" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="2897:2937" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="10939:10953" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="11222:11236" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="11566:11580" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="12092:12106" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="12731:12783" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="13204:13217" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="13360:13374" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="14040:14053" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="14195:14235" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="14718:14731" ph="..." />
-            <marker date="1506563672289" expanded="true" signature="15574:15588" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/frontend/page.commodity.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="4374">
           <caret line="162" column="58" lean-forward="false" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="58" />
           <folding>
-            <element signature="e#68178#71415#0" expanded="false" />
-            <element signature="e#95571#183169#0" expanded="false" />
-            <marker date="1506563480927" expanded="true" signature="87211:87227" ph="..." />
-            <marker date="1506563480927" expanded="true" signature="88016:88022" ph=" " />
+            <element signature="e#68203#71445#0" expanded="false" />
+            <element signature="e#95601#183199#0" expanded="false" />
+            <marker date="1506564300762" expanded="true" signature="87241:87257" ph="..." />
+            <marker date="1506564300762" expanded="true" signature="88046:88052" ph=" " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/backend/template/preview/module_ads.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/webpack.prod.conf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="106" column="22" lean-forward="false" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+        <state relative-caret-position="2943">
+          <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4617">
+          <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="22" />
+          <folding>
+            <element signature="e#7914#8859#0" expanded="false" />
+            <element signature="e#8963#9812#0" expanded="false" />
+            <element signature="e#9935#10211#0" expanded="false" />
+            <element signature="e#10543#13829#0" expanded="false" />
+            <element signature="e#16357#16890#0" expanded="false" />
+            <element signature="e#17017#18162#0" expanded="false" />
+            <element signature="e#18242#19014#0" expanded="false" />
+            <element signature="e#19157#23675#0" expanded="false" />
+            <element signature="e#23806#27562#0" expanded="false" />
+            <element signature="e#27688#34626#0" expanded="false" />
+            <element signature="e#29245#29372#0" expanded="false" />
+            <element signature="e#34693#35645#0" expanded="false" />
+            <element signature="e#35791#36183#0" expanded="false" />
+            <element signature="e#36311#37490#0" expanded="false" />
+            <element signature="e#37651#39450#0" expanded="false" />
+            <element signature="e#38997#39444#0" expanded="false" />
+            <element signature="e#39536#39870#0" expanded="false" />
+            <element signature="e#39928#40158#0" expanded="false" />
+            <element signature="e#40240#40653#0" expanded="false" />
+            <marker date="1506581820586" expanded="true" signature="2735:2775" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="2984:3024" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="11106:11120" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="11389:11403" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="11733:11747" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="12259:12273" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="12898:12950" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="13371:13384" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="13527:13541" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="14207:14220" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="14362:14402" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="14907:14920" ph="..." />
+            <marker date="1506581820586" expanded="true" signature="15763:15777" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="884" column="17" lean-forward="true" selection-start-line="884" selection-start-column="17" selection-end-line="884" selection-end-column="17" />
+          <folding>
+            <element signature="e#29667#30392#0" expanded="false" />
+            <marker date="1506564300575" expanded="true" signature="8962:8976" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="9284:9310" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="9433:9447" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="9539:9553" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="9826:9840" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="9959:9973" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="10064:10078" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="13864:13878" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="14228:14254" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="14383:14397" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="14495:14509" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="14818:14832" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="14957:14971" ph="..." />
+            <marker date="1506564300575" expanded="true" signature="15068:15082" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
