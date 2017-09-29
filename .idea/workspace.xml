@@ -4,54 +4,8 @@
     <list default="true" id="4895f71c-0a61-477f-8672-4e160204ffb8" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/dist/common/jquery-contactInfo.dialog.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/backend/page.module.setting.js" afterPath="$PROJECT_DIR$/dist/backend/page.module.setting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/common/hc.righToolbar.js" afterPath="$PROJECT_DIR$/dist/common/hc.righToolbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/common/jquery-detail-contactInfo.dialog.js" afterPath="$PROJECT_DIR$/dist/common/jquery-detail-contactInfo.dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/common/jquery-inqueryOnline.dialog.js" afterPath="$PROJECT_DIR$/dist/common/jquery-inqueryOnline.dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/frontend/combo.js" afterPath="$PROJECT_DIR$/dist/frontend/combo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/frontend/page.commodity.js" afterPath="$PROJECT_DIR$/dist/frontend/page.commodity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/collectionHtml.html" afterPath="$PROJECT_DIR$/dist/html/collectionHtml.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_album_window.html" afterPath="$PROJECT_DIR$/dist/html/module_album_window.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_certificate.html" afterPath="$PROJECT_DIR$/dist/html/module_certificate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_company_album.html" afterPath="$PROJECT_DIR$/dist/html/module_company_album.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_company_dynamic.html" afterPath="$PROJECT_DIR$/dist/html/module_company_dynamic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_company_intro.html" afterPath="$PROJECT_DIR$/dist/html/module_company_intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_contact_us.html" afterPath="$PROJECT_DIR$/dist/html/module_contact_us.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_feedback.html" afterPath="$PROJECT_DIR$/dist/html/module_feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_friendship_link.html" afterPath="$PROJECT_DIR$/dist/html/module_friendship_link.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_latest_supply.html" afterPath="$PROJECT_DIR$/dist/html/module_latest_supply.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_mmt_archives.html" afterPath="$PROJECT_DIR$/dist/html/module_mmt_archives.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_prod_classify.html" afterPath="$PROJECT_DIR$/dist/html/module_prod_classify.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/module_prod_window.html" afterPath="$PROJECT_DIR$/dist/html/module_prod_window.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/sendMyPhoneHtml.html" afterPath="$PROJECT_DIR$/dist/html/sendMyPhoneHtml.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_ads.js" afterPath="$PROJECT_DIR$/src/backend/module/module_ads.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_banner_products.js" afterPath="$PROJECT_DIR$/src/backend/module/module_banner_products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_extend_window.js" afterPath="$PROJECT_DIR$/src/backend/module/module_extend_window.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/module/module_prof_window.js" afterPath="$PROJECT_DIR$/src/backend/module/module_prof_window.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/template/page.index.html" afterPath="$PROJECT_DIR$/src/backend/template/page.index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/hc.righToolbar.js" afterPath="$PROJECT_DIR$/src/common/hc.righToolbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" afterPath="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js" afterPath="$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/collectionHtml.html" afterPath="$PROJECT_DIR$/src/data/collectionHtml.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_album_window.html" afterPath="$PROJECT_DIR$/src/data/module_album_window.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_certificate.html" afterPath="$PROJECT_DIR$/src/data/module_certificate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_company_album.html" afterPath="$PROJECT_DIR$/src/data/module_company_album.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_company_dynamic.html" afterPath="$PROJECT_DIR$/src/data/module_company_dynamic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_company_intro.html" afterPath="$PROJECT_DIR$/src/data/module_company_intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_contact_us.html" afterPath="$PROJECT_DIR$/src/data/module_contact_us.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_feedback.html" afterPath="$PROJECT_DIR$/src/data/module_feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_friendship_link.html" afterPath="$PROJECT_DIR$/src/data/module_friendship_link.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_latest_supply.html" afterPath="$PROJECT_DIR$/src/data/module_latest_supply.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_mmt_archives.html" afterPath="$PROJECT_DIR$/src/data/module_mmt_archives.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_prod_classify.html" afterPath="$PROJECT_DIR$/src/data/module_prod_classify.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/module_prod_window.html" afterPath="$PROJECT_DIR$/src/data/module_prod_window.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/sendMyPhoneHtml.html" afterPath="$PROJECT_DIR$/src/data/sendMyPhoneHtml.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/module/module_company_files.js" afterPath="$PROJECT_DIR$/src/frontend/module/module_company_files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/page.commodity.js" afterPath="$PROJECT_DIR$/src/frontend/page.commodity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/page.company.js" afterPath="$PROJECT_DIR$/src/frontend/page.company.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/template/page.commodity.html" afterPath="$PROJECT_DIR$/src/frontend/template/page.commodity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/template/page.index.html" afterPath="$PROJECT_DIR$/src/frontend/template/page.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/backend/preview/module_ads.html" afterPath="$PROJECT_DIR$/dist/backend/preview/module_ads.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/backend/template/preview/module_ads.html" afterPath="$PROJECT_DIR$/src/backend/template/preview/module_ads.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -163,18 +117,28 @@
       <file leaf-file-name="module_ads.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/backend/template/preview/module_ads.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+            <state relative-caret-position="243">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-inqueryOnline.dialog.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="module_ads.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dist/backend/preview/module_ads.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-inqueryOnline.dialog.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="514">
-              <caret line="884" column="17" lean-forward="true" selection-start-line="884" selection-start-column="17" selection-end-line="884" selection-end-column="17" />
+              <caret line="884" column="17" lean-forward="false" selection-start-line="884" selection-start-column="17" selection-end-line="884" selection-end-column="17" />
               <folding>
                 <element signature="e#29667#30392#0" expanded="false" />
                 <marker date="1506564300575" expanded="true" signature="8962:8976" ph="..." />
@@ -281,12 +245,12 @@
         <option value="$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js" />
         <option value="$PROJECT_DIR$/a.html" />
         <option value="$PROJECT_DIR$/src/common/jquery-contactInfo.dialog.js" />
-        <option value="$PROJECT_DIR$/src/backend/template/preview/module_ads.html" />
         <option value="$PROJECT_DIR$/src/backend/template/preview/module_certificate.html" />
         <option value="$PROJECT_DIR$/build/entries.js" />
         <option value="$PROJECT_DIR$/src/frontend/page.commodity.js" />
         <option value="$PROJECT_DIR$/build/webpack.prod.conf.js" />
         <option value="$PROJECT_DIR$/src/common/jquery-detail-contactInfo.dialog.js" />
+        <option value="$PROJECT_DIR$/src/backend/template/preview/module_ads.html" />
       </list>
     </option>
   </component>
@@ -307,8 +271,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
-    <option name="y" value="15" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -368,6 +332,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop3.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop3.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop3.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop3.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="preview" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop3.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop3.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -525,16 +543,16 @@
       <workItem from="1506586947634" duration="1250000" />
       <workItem from="1506589371924" duration="1199000" />
       <workItem from="1506594851857" duration="1587000" />
-      <workItem from="1506664819989" duration="10000" />
+      <workItem from="1506664819989" duration="656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298051000" />
+    <option name="totallyTimeSpent" value="298697000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="15" width="1936" height="1056" extended-state="1" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17597471" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -543,7 +561,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20043337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20043337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -564,13 +582,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/f2eNew/branches/frontendsource/style.org/js/module/detail/ffOff-lineMessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/f2eNew/branches/frontendsource/style.org/js/detail/scripts/hc.photography.gallery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -883,14 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/backend/template/preview/module_ads.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/webpack.prod.conf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2943">
@@ -943,7 +946,7 @@
     <entry file="file://$PROJECT_DIR$/src/common/jquery-inqueryOnline.dialog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
-          <caret line="884" column="17" lean-forward="true" selection-start-line="884" selection-start-column="17" selection-end-line="884" selection-end-column="17" />
+          <caret line="884" column="17" lean-forward="false" selection-start-line="884" selection-start-column="17" selection-end-line="884" selection-end-column="17" />
           <folding>
             <element signature="e#29667#30392#0" expanded="false" />
             <marker date="1506564300575" expanded="true" signature="8962:8976" ph="..." />
@@ -961,6 +964,22 @@
             <marker date="1506564300575" expanded="true" signature="14957:14971" ph="..." />
             <marker date="1506564300575" expanded="true" signature="15068:15082" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/backend/template/preview/module_ads.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/backend/preview/module_ads.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
