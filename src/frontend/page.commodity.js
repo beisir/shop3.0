@@ -1052,6 +1052,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             var _this = this,
                 $contactBox = $("#corMessageDialog"),
                 $sendMsgBox = $("#dialogSendMessage"),
+                $warning = $(".warning"),
                 $phone = $("#InqueryMobile"),
                 $cellphoneNumber = $("#cellphoneNumber"), //发送名片，手机号
                 $captcha = $("#captcha"), //验证码
@@ -1066,6 +1067,11 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                 _this.initDialogBox($contactBox);
                 _this.createMask();
                 $contactBox.show();
+            });
+
+            $warning.on("click", function(evt) {
+              $(this).hide();
+              $(this).closest("div").find("input").focus();
             });
 
             $('#subtnonce').on('click', function() {

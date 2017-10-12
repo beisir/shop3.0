@@ -1,5 +1,5 @@
 var page = require('./page');
-
+require('./common/topbar');
 /**
  * [page_data_analog 导入模拟数据模块，并模拟页面数据]
  * @type {Object}
@@ -350,7 +350,7 @@ page_contact_us.prototype = {
       type: "GET",
       dataType: "jsonp",
       data:{
-        imid:'test-wsc'//测试环境“test-wsc”,正式环境“hc360-hfb”
+        imid:'hc360-hfb'//测试环境“test-wsc”,正式环境“hc360-hfb”
       },
       jsonpCallback: 'callback'
     });

@@ -270,14 +270,16 @@
         }
 
         $.when(_this.getQRcodeByLogin(phoneText.val())).done(function (res) {
-          /**显示二维码*/
-          wrapper.find('[node-name="noLoginBox"]').replaceWith(res);
-          /**手机号显示全*/
-          wrapper.find('[node-name="sellername"]').text("："+_this.defaultOptions.showTelephone);
-          /**发送到我的手机显示*/
-          wrapper.find('[node-name="titleBox"]').append('<span class="sent-me"><em></em><a href="javascript:void(0)" node-name="sendMyPhoneBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.sendPhoneClick+_this.defaultOptions.businessId +'\');">发送到我手机</a></span>');
-          /**电话无人接听显示*/
-          wrapper.find('[node-name="cardBox"]').prepend('<a href="javascript:void(0)" class="telRigLinkNew" node-name="noReplyBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.noAnswerClick+_this.defaultOptions.businessId +'\');">电话无人接听怎么办？</a>');
+          if(res && res.length>0){
+            /**显示二维码*/
+            wrapper.find('[node-name="noLoginBox"]').replaceWith(res);
+            /**手机号显示全*/
+            wrapper.find('[node-name="sellername"]').text("："+_this.defaultOptions.showTelephone);
+            /**发送到我的手机显示*/
+            wrapper.find('[node-name="titleBox"]').append('<span class="sent-me"><em></em><a href="javascript:void(0)" node-name="sendMyPhoneBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.sendPhoneClick+_this.defaultOptions.businessId +'\');">发送到我手机</a></span>');
+            /**电话无人接听显示*/
+            wrapper.find('[node-name="cardBox"]').prepend('<a href="javascript:void(0)" class="telRigLinkNew" node-name="noReplyBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.noAnswerClick+_this.defaultOptions.businessId +'\');">电话无人接听怎么办？</a>');
+          }
           /**按钮可用*/
           $this.removeAttr('disabled');
         });
@@ -1263,7 +1265,7 @@
         type: "GET",
         dataType: "jsonp",
         data:{
-          imid:'test-wsc'//测试环境“test-wsc”,正式环境“hc360-hfb”
+          imid:'hc360-hfb'//测试环境“test-wsc”,正式环境“hc360-hfb”
         },
         jsonpCallback: 'callback'
       });
