@@ -250,13 +250,16 @@
           /**
            * 先创建遮罩
            */
-          if (downWrap.length == 0) {
+          $('<div>', {
+            'class': 'dAlertBoxBg consultBg'
+          }).appendTo("body").show();
+          /*if (downWrap.length == 0) {
             downWrap = $('<div>', {
               'class': 'dAlertBoxBg consultBg'
             }).appendTo("body").show();
           } else {
             downWrap.show();
-          }
+          }*/
 
           /**
            * 再创建弹层内容
@@ -597,7 +600,8 @@
        * 弹框的关闭
        */
       wrap.find('[data-node-nane="closeInqueryDialog"]').on('click',function () {
-        wrap.siblings('.dAlertBoxBg').hide();
+        //wrap.siblings('.dAlertBoxBg').hide();
+        wrap.siblings('.dAlertBoxBg').remove();
         wrap.remove();
 
         /**

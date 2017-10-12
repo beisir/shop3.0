@@ -160,7 +160,201 @@ page_contact_us.prototype = {
           error: function(e) {}
         });
 
+        /*if(window.iflogin){
+          $('#checkMobilePhoneBox').children('dl:eq(0)').hide();
+          $.when(that.getQRcodeByLogin()).done(function (res) {
+            $('#checkMobilePhoneBox').append(res[0]);
+          })
+
+        }else{*/
+          that.checkMobilePhone();
+       /* }*/
+
+    },
+
+    /**
+     * 校验手机号
+     */
+    checkMobilePhone:function () {
+        var _this = this,
+          checkCon = $('#checkMobilePhoneBox'),
+          phoneInput = checkCon.find('input'),
+          checkBtn = checkCon.find('[node-name="checkBtn"]');
+
+      /**
+       * 手机号校验
+       */
+      phoneInput.keyup(function () {
+          this.value=this.value.replace(/\D/g,'')
+        }).blur(function () {
+          if(this.value == ""){
+            $(this).siblings('em.warning').show();
+          }else{
+            if(!(/^1(3|5|7|8)\d{9}$/.test(this.value))){
+              $(this).siblings('em.warning').show();
+            }
+          }
+        });
+
+      phoneInput.siblings('em.warning').on('click',function () {
+        var $this = $(this);
+        $this.hide();
+        $this.siblings('input').focus();
+      });
+
+
+      checkBtn.on('click',function () {
+        var $this = $(this);
+        if($this.attr('disabled')){
+          return false;
+        }
+        //防止重复提交
+        $this.attr('disabled',true);
+
+        if($.trim(phoneInput.val()) == ''){
+          $this.siblings('em.warning').show();
+          $this.removeAttr('disabled');
+          return false;
+        }
+
+        if($this.siblings('em.warning').is(':visible')){
+          $this.removeAttr('disabled');
+          return false;
+        }
+
+        $.when(_this.getQRcodeByLogin(phoneInput.val())).done(function (res) {
+
+          /**验证手机号隐藏*/
+          checkCon.children(":eq(0)").hide();
+          /**显示二维码*/
+          checkCon.append(res[0]);
+
+          /**电话显示全*/
+          if($("input#telephone_id") && $("input#telephone_id").length>0){
+            var telephoneVal = $.trim($("input#telephone_id").val());
+            checkCon.siblings('.ContacCon3').find('[node-name="telephone"]').text(telephoneVal);
+          }
+
+          /**手机号显示全*/
+          if($("input#mp_id") && $("input#mp_id").length>0){
+            var mpVal = $.trim($("input#mp_id").val());
+            checkCon.siblings('.ContacCon3').find('[node-name="mp"]').text(mpVal);
+          }
+
+          /**其他电话显示全*/
+          if($("input#otherTelephone_id") && $("input#otherTelephone_id").length>0){
+            var otherTelVal = $.trim($("input#otherTelephone_id").val());
+            checkCon.siblings('.ContacCon3').find('[node-name="otherTelephone"]').text(otherTelVal);
+          }
+
+          /**传真显示全*/
+          if($("input#fax_id") && $("input#fax_id").length>0){
+            var faxVal = $.trim($("input#fax_id").val());
+            checkCon.siblings('.ContacCon3').find('[node-name="fax"]').text(faxVal);
+          }
+
+          /**显示扫码发送名片至手机*/
+
+          var _html = ['<div class="sendCon" id="sendCardToPhone">扫码发送名片至手机',
+          '<div class="sendCodeImg" style="display: none"><img src="'+ res[1]+'"/></div>',
+          '</div>'].join('');
+          checkCon.siblings('.ContacCon3').find('li:eq(0)').append(_html);
+
+          $('#sendCardToPhone').hover(function () {
+            var $this = $(this);
+            $this.children().show();
+          },function () {
+            var $this = $(this);
+            $this.children().hide();
+          })
+
+        });
+
+      })
+
+
+
+    },
+
+
+  /**
+   * 获取登陆之后的html延迟对象
+   * @param phoneNumber
+   * @returns {*}
+   */
+  getQRcodeByLogin:function (phoneNumber) {
+    var _this = this,
+      deffer = $.Deferred(),
+      codeHtml = '';
+
+    var data = inquiryParamVO;
+    data.contact = encodeURIComponent(window.companyContactor||'');
+    data.CompanyName = encodeURIComponent(window.infoname || '');
+    data.comeUrl = window.location.href;
+    data.type = 27;
+    data.buyerSourceId =  "detail_information_shop_company";
+    data.isbusin = 2;
+    data.businTitle = encodeURIComponent(inquiryParamVO.areaName||'');
+    if(phoneNumber && phoneNumber.length>0){
+      data.telPhone = phoneNumber;
     }
+
+    $.when(_this.getweChatDef()).done(function (res) {
+
+      if(res && res.senceid){
+
+        $.extend(data, { qrcodeid: res.senceid });
+
+        $.ajax({
+          type: "get",
+          url: "//my.b2b.hc360.com/my/turbine/action/favorites.Favorite_PurchaseAction/eventsubmit_doPerform/doPerform?",
+          data: data,
+          dataType: 'jsonp',
+          jsonp: "jsoncallback",
+          timeout: 3000,
+          success: function(result) {
+            if (result.code == "yes") {
+
+              codeHtml = ['<dl>',
+              '<dt>扫描下方二维码，发送<b>公司名片</b>至手机，并实时接收<b>卖家回复！</b><span class="bounce"><img src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/handIco.png"></span></dt>',
+                '<dd><div class="codeImgNew2"><img src="'+ res.weChatPic +'"></div></dd>',
+              '</dl>'].join('');
+              var ress = [codeHtml,res.weChatPic];
+              deffer.resolve(ress);
+            }else{
+              deffer.resolve('');
+            }
+          },
+          error: function() {
+            alert("网络异常，请稍后重试！");
+            deffer.resolve('');
+          }
+        });
+      }else{
+        $('#checkMobilePhoneBox').find('[node-name="checkBtn"]').removeAttr('disabled');
+      }
+    }).fail(function () {
+      console.warn('Failed to get data,Please try again!');
+      deffer.resolve('');
+    });
+    return deffer;
+  },
+
+  /**
+   * 获取场景二维码延迟对象
+   * @returns {*}
+   */
+  getweChatDef:function () {
+    return $.ajax({
+      url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
+      type: "GET",
+      dataType: "jsonp",
+      data:{
+        imid:'test-wsc'//测试环境“test-wsc”,正式环境“hc360-hfb”
+      },
+      jsonpCallback: 'callback'
+    });
+  }
 
 };
 /***

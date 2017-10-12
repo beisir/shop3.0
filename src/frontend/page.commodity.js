@@ -93,7 +93,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
     }
 })(jQuery);
 
-(function() {
+(function($) {
 
     var Commodity = function Commodity() {
 
@@ -139,7 +139,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
 
               $.ajax({
                 type: "GET",
-                url: "//wsdetail.b2b.hc360.com//youker/single/"+window.scyps.providerId,
+                url: "//wsdetail.b2b.hc360.com//youker/single/"+(window.scyps || {}).sc.providerId,
                 dataType: "jsonp",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 jsonp: "callback",
@@ -160,7 +160,17 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                         },
                         inquiryTitle:$.trim($("#inquiryTitle").val()),
                         isbusin:2,//区分是否首页，首页是1，非首页是2,
-                        providerId:window.scyps.providerId
+                        providerId:window.scyps.sc.providerId,
+                        /**商机id*/
+                        businessId:window.supplyBcId,
+                        /**验证手机号监测点值*/
+                        checkMPClick:'UserBehavior_detail_contact_mobileverify_pics_free?detailbcid=',
+                        /**电话无人接听按钮监测点值*/
+                        noAnswerClick:'UserBehavior_detail_contact_noanswer_pics_free?detailbcid=',
+                        /**发送到我手机按钮监测点值*/
+                        sendPhoneClick:'UserBehavior_detail_contact_sendtomobile_pics_free?detailbcid=',
+                        /**完善提交按钮监测点值*/
+                        submitAllClick:'UserBehavior_detail_contact_detailedpurchase_pics_free?detailbcid='
                       });
 
                     });
@@ -2269,4 +2279,4 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
         HC.HUB.addScript('//style.org.hc360.cn/js/detail/scripts/contact_msgDownload.min.js'); //发送手机功能js
 
     })
-})();
+})(jQuery);

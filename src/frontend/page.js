@@ -189,7 +189,7 @@ if (lazyloadImages.length > 0) {
     /**
      * 主动触发屏幕滚动事件，以显示已经处于可见区域的待加载图片
      */
-    $(window).trigger("scroll");
+    //$(window).trigger("scroll");
 }
 
 /**
@@ -241,6 +241,39 @@ window.hcclick = function(param) {
 window.imgonerror = function(img) {
     img.src = '//b2b.hc360.com/mmtTrade/images/nopic.jpg';
     img.onerror = null;
+};
+
+
+/**
+ * 自适应图片大小
+ * @param img
+ * @param oAW
+ * @param oAH
+ */
+window.resizeImg = function(img, oAW, oAH) {
+  var oimgW = img.width,
+    oimgH = img.height,
+    oimg = img,
+    oY = (oimgH / oimgW).toFixed(2),
+    oX = (oimgW / oimgH).toFixed(2);
+  if (oimgW <= oAW && oimgH <= oAH) {//图片高和宽比指定的宽高都小
+    oimg.style.height = oimgH + 'px';
+    oimg.style.width = oimgW + 'px';
+  } else if (oimgW >= oAW && oimgH >= oAH) {//图片高和宽比指定的宽高都大
+    if (oY * oAW >= oAH) { //图片高比宽大
+      oimg.style.height = oAH + 'px';
+      oimg.style.width = oX * oAH + 'px';
+    } else { //图片高比宽小
+      oimg.style.height = oY * oAH + 'px';
+      oimg.style.width = oAW + 'px';
+    }
+  } else if (oimgW > oAW && oimgH < oAH) {//图片宽比指定宽大，高比指定的小
+    oimg.style.height = oY * oAW + 'px';
+    oimg.style.width = oAW + 'px';
+  } else if (oimgW < oAW && oimgH > oAH) {//图片宽比指定宽小，高比指定的大
+    oimg.style.height = oAH + 'px';
+    oimg.style.width = oX * oAH + 'px';
+  }
 };
 
 /**

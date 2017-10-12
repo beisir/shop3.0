@@ -303,14 +303,14 @@ topTemplate.prototype = {
              */
             if (that.ismmt == false && templateEntity.usertype == 1) {
                 tool.createDialog('此模板是收费用户模板需升级为买卖通收费会员使用。');
-            } else if(!that.isCommercialVal&&templateEntity.usertype == 3){
-             /** 不是商营通用户，点击商营通模板**/
+            }/* else if(!that.isCommercialVal&&templateEntity.usertype == 3){
+             /!** 不是商营通用户，点击商营通模板**!/
                 that.isCommercialVal = that.pageEntity.issyt;
                 if (that.isCommercialVal != true) {
                     tool.createDialog('此模板是商营通用户模板需升级为商营通用户会员使用。');
 
                 }
-            }else {
+            }*/else {
                 var imageDiaLog = dialog({ //缩率图弹框
                         content: dialogHtml.join("")
                     }).showModal(),
@@ -328,23 +328,35 @@ topTemplate.prototype = {
                  * 应用模板
                  */
                 application.click(function () {
+
+                  if(!that.isCommercialVal&&templateEntity.usertype == 3){
+                    /** 不是商营通用户，点击商营通模板**/
+                    that.isCommercialVal = that.pageEntity.issyt;
+                    if (that.isCommercialVal != true) {
+                      that.dialog('此模板是商营通用户模板需升级为商营通用户会员使用。','//b2b.hc360.com/bw/syt/index.html');
+
+                    }
+                  }else{
+
                     that.dialog('您确定使用新的网站模板吗？',
-                        function () {
-                            that.templateOperaAjax(_data, function () {
-                                /**
-                                 * 应用成功后关闭弹层
-                                 */
-                                imageDiaLog.close().remove();
-                                /**
-                                 * 刷新当前页面
-                                 */
-                                window.location.reload();
-                            });
-                        },
-                        function () {
-                            imageDiaLog.close().remove();
-                        }
+                      function () {
+                        that.templateOperaAjax(_data, function () {
+                          /**
+                           * 应用成功后关闭弹层
+                           */
+                          imageDiaLog.close().remove();
+                          /**
+                           * 刷新当前页面
+                           */
+                          window.location.reload();
+                        });
+                      },
+                      function () {
+                        imageDiaLog.close().remove();
+                      }
                     );
+                  }
+
                 });
                 /***
                  * 关闭
@@ -657,20 +669,32 @@ topTemplate.prototype = {
      * @param error  失败的回调
      */
     dialog: function (info, success, error) {
-        dialog({
-            title: '提示',
-            content: info,
-            okValue: '确定',
-            ok: function () {
-                this.close().remove();
-                success && success();
-            },
+
+       var configData = {
+         title: '提示',
+         content: info,
+         okValue: typeof success == 'string' ? '立即申请': '确定',
+         ok: function () {
+           if(typeof success == 'string'){
+             location.href = success;
+           }else{
+             success && success();
+           }
+           this.close().remove();
+         }
+       };
+
+       if(typeof success != 'string'){
+         configData = $.extend(true,configData,{
             cancelValue: '取消',
             cancel: function () {
-                this.close().remove();
-                error && error();
+              this.close().remove();
+              error && error();
             }
-        }).showModal();
+         })
+       }
+
+        dialog(configData).showModal();
     }
 
 };

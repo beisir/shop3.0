@@ -43,7 +43,22 @@
       /**是否是相册大图页，默认不是*/
       isAlbum:false,
 
-      providerId:''
+      providerId:'',
+
+      /**商机id*/
+      businessId:'',
+
+      /**验证手机号监测点值*/
+      checkMPClick:'',
+
+      /**电话无人接听按钮监测点值*/
+      noAnswerClick:'',
+
+      /**发送到我手机按钮监测点值*/
+      sendPhoneClick:'',
+
+      /**完善提交按钮监测点值*/
+      submitAllClick:''
     };
 
     $.extend(this.defaultOptions,options);
@@ -85,7 +100,7 @@
             '<dl>',
             '<dt>请验证您的手机号码，即刻<b>获取公司名片</b>，并获得更多<b>实力商家报价</b>！</dt>',
             '<dd>',
-            '<input type="text" maxlength="11" node-name="phoneText" placeholder="请输入您的手机号码"><button type="submit" id="checkMobilePhone">验证</button>',
+            '<input type="text" maxlength="11" node-name="phoneText" placeholder="请输入您的手机号码"><button type="submit" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.checkMPClick+_this.defaultOptions.businessId +'\');" id="checkMobilePhone">验证</button>',
             '<em class="warning"><strong></strong>请输入正确的手机号码</em>',
             '</dd>',
             '</dl>',
@@ -102,16 +117,17 @@
         });
 
         $deff.done(function (html) {
+          var mpTextStyle = _this.defaultOptions.showText.length>2 ? 'letter-spacing:0.5em;margin-right:-0.5em': 'letter-spacing: 2em;margin-right:-0.5em;';
           var pageOneStr = [
 
             '<div class="check-num" node-name="pageOneBox">',
-            '<div class="title" node-name="titleBox"><span class="t-left"></span>公司名片</div>',
+            '<div class="title" node-name="titleBox"><span class="t-left"></span>公司名片'+ (_this.defaultOptions.isLogin ? '<span class="sent-me"><em></em><a href="javascript:void(0)" node-name="sendMyPhoneBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.sendPhoneClick+_this.defaultOptions.businessId +'\');">发送到我手机</a></span> ' : '' )+'</div>',
             '<a class="closeBtn"></a>',
             '<div class="contactBoxNew" node-name="pageOneContactBox">',
-            '<div class="cardBox" node-name="cardBox">',
+            '<div class="cardBox" node-name="cardBox">'+ (_this.defaultOptions.isLogin ? '<a href="javascript:void(0)" class="telRigLinkNew" node-name="noReplyBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.noAnswerClick+_this.defaultOptions.businessId +'\');">电话无人接听怎么办？</a>':''),
             '<div class="cardBoxList">',
             '<div class="pListNew tel2">',
-            '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">'+ _this.defaultOptions.showText +'</span><em class="c-red" node-name="sellername">：'+ mobilephone +'</em>',
+            '<b></b><span style="'+ mpTextStyle +'">'+ _this.defaultOptions.showText +'</span><em class="c-red" node-name="sellername"> <s>：</s>'+ (_this.defaultOptions.isLogin ? _this.defaultOptions.showTelephone : mobilephone) +'</em>',
             '</div>',
             '<div class="pListNew name">',
             '<b></b><span style="letter-spacing:0.5em;margin-right:-0.5em">联系人</span><em>：'+ _this.defaultOptions.contactInfo.contactor +'</em>',
@@ -152,8 +168,8 @@
       data.CompanyName = encodeURIComponent(window.infoname || '');
       data.comeUrl = window.location.href;
       data.isbusin = _this.defaultOptions.isbusin ;
-      data.type = 15;
-      data.buyerSourceId = _this.defaultOptions.is3y ? "u_ff_msg_cj_3y" : "u_ff_msg_cj";
+      data.type = 2;
+      data.buyerSourceId = 'detail_information';
       if (_this.defaultOptions.isbusin == 2) {
         data.supcatName = encodeURIComponent(window.lastClass);
       }
@@ -176,7 +192,7 @@
             jsonp: "jsoncallback",
             timeout: 3000,
             success: function(result) {
-              if (result.code == "yes") {
+              //if (result.code == "yes") {
                 codeHtml = ['<div class="cardBoxBot2">',
                   '<dl>',
                   '<dt>扫描下方二维码，发送<b>公司名片</b>至手机，并实时接收<b>卖家回复</b>！</dt>',
@@ -184,9 +200,9 @@
                   '</dl>',
                   '</div>'].join('');
                 deffer.resolve(codeHtml);
-              }else{
+              /*}else{
                 deffer.resolve('');
-              }
+              }*/
             },
             error: function() {
               alert("网络异常，请稍后重试！");
@@ -259,9 +275,9 @@
           /**手机号显示全*/
           wrapper.find('[node-name="sellername"]').text("："+_this.defaultOptions.showTelephone);
           /**发送到我的手机显示*/
-          wrapper.find('[node-name="titleBox"]').append('<span class="sent-me"><em></em><a href="javascript:void(0)" node-name="sendMyPhoneBtn">发送到我手机</a></span>');
+          wrapper.find('[node-name="titleBox"]').append('<span class="sent-me"><em></em><a href="javascript:void(0)" node-name="sendMyPhoneBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.sendPhoneClick+_this.defaultOptions.businessId +'\');">发送到我手机</a></span>');
           /**电话无人接听显示*/
-          wrapper.find('[node-name="cardBox"]').prepend('<a href="javascript:void(0)" class="telRigLinkNew" node-name="noReplyBtn">电话无人接听怎么办？</a>');
+          wrapper.find('[node-name="cardBox"]').prepend('<a href="javascript:void(0)" class="telRigLinkNew" node-name="noReplyBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.noAnswerClick+_this.defaultOptions.businessId +'\');">电话无人接听怎么办？</a>');
           /**按钮可用*/
           $this.removeAttr('disabled');
         });
@@ -357,6 +373,7 @@
      * @returns {string}
      */
     createPageTwoHtml:function () {
+      var _this = this;
 
       var twoHtml = [
         '<div class="check-num" node-name="pageTwoBox">',
@@ -425,7 +442,7 @@
         '</div>',
         '</li>',
         '</ul>',
-        '<div class="alertBtnBox2"><button type="submit" node-name="submitAllBtn">确定发送</button></div>',
+        '<div class="alertBtnBox2"><button type="submit" node-name="submitAllBtn" onclick="HC.UBA.sendUserlogsElement(\''+_this.defaultOptions.submitAllClick+_this.defaultOptions.businessId +'\');">确定发送</button></div>',
         '</div>',
         '</div>',
         '</div>'
@@ -697,6 +714,7 @@
             } else if (result.tip == "1") {
               sendMyPhoneWrap.children(":eq(0)").hide();
               sendMyPhoneWrap.append(_this.createMyPhoneSuccessHtml(wrap.find('[node-name="pageOneContactBox"] .codeImgNew img').attr('src')));
+              purchaseFun();
               sendMyPhoneWrap.find('[node-name="confirmBtn"]').removeAttr('disabled');
             } else if (result.tip == "2") {
               sendMyPhoneWrap.children('[node-name="myPhone-success"],[node-name="myPhone-code"],[node-name="myPhone-fail3"]').hide();
@@ -713,6 +731,36 @@
             sendMyPhoneWrap.find('[node-name="confirmBtn"]').removeAttr('disabled');
           }
         })
+
+
+        function purchaseFun() {
+          inquiryParamVO.businTitle = inquiryParamVO.businTitle ? (inquiryParamVO.businTitle.length < 1 ? encodeURIComponent(_this.defaultOptions.inquiryTitle) : inquiryParamVO.businTitle) : encodeURIComponent(_this.defaultOptions.inquiryTitle);
+          var data = inquiryParamVO;
+          data.contact = encodeURIComponent(window.companyContactor||'');
+          data.CompanyName = encodeURIComponent(window.infoname || '');
+          data.comeUrl = window.location.href;
+          data.isbusin = _this.defaultOptions.isbusin ;
+          data.type = 15;
+          data.buyerSourceId = _this.defaultOptions.is3y ? "u_ff_msg_cj_3y" : "u_ff_msg_cj";
+          data.telPhone = $.trim(telText.val());
+          if (_this.defaultOptions.isbusin == 2) {
+            data.supcatName = encodeURIComponent(window.lastClass);
+          }
+          $.ajax({
+            type: "get",
+            url: "//my.b2b.hc360.com/my/turbine/action/favorites.Favorite_PurchaseAction/eventsubmit_doPerform/doPerform?",
+            data: data,
+            dataType: 'jsonp',
+            jsonp: "jsoncallback",
+            timeout: 3000,
+            success: function(res) {
+
+            },
+            error: function() {
+              alert("网络异常，请稍后重试！");
+            }
+          });
+        }
 
 
       });
