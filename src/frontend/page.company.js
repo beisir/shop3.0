@@ -1,5 +1,5 @@
 var page = require('./page');
-
+require('./common/topbar');
 /**
  * [page_data_analog 导入模拟数据模块，并模拟页面数据]
  * @type {Object}
