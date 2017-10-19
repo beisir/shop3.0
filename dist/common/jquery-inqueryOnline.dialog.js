@@ -111,7 +111,7 @@
 	    getMsgContent:function () {
 	      var _this = this;
 	      return $.ajax({
-	        url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
+	        url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
 	        type:'GET',
 	        timeout:5000,
 	        data:{
@@ -678,7 +678,7 @@
 	        var minMsgId = $(this).next('div').attr('data-id') || $(this).next('div.moreHistory').children(':first').attr('data-id');//最早的消息id
 
 	        $.ajax({
-	          url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
+	          url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
 	          type:"GET",
 	          timeout:3000,
 	          data:{
@@ -854,7 +854,7 @@
 
 	      function sendMessage() {
 	        $.ajax({
-	          url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
+	          url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
 	          type:"GET",
 	          timeout:5000,
 	          data:{
@@ -1004,7 +1004,7 @@
 
 	      var _this = this;
 	      $.ajax({
-	        url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
+	        url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
 	        type:'GET',
 	        timeout:5000,
 	        data:{

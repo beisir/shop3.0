@@ -228,6 +228,10 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
              */
             _this.queryPrice();
 
+            /**
+             * 为十九大准备屏蔽含有敏感词的百度联盟广告
+             */
+            _this.hideSpecWordFor19($("#inquiryTitle").val());
 
         },
 
@@ -930,7 +934,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             function sendPageData(pageData) {
                 $.ajax({
                     type: "GET",
-                    url: "http://my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
+                    url: "//my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
                     dataType: "jsonp",
                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                     data: pageData,
@@ -968,7 +972,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                     flag = false;
                 } else { //过滤关键词
                     $.ajax({
-                        url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                        url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                         type: "GET",
                         data: {
                             plantitle: encodeURIComponent(loc1.val())
@@ -1136,7 +1140,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                     checkTitleError()
                 } else {
                     jQuery.ajax({
-                        url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+                        url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
                         type: "GET",
                         data: {
                             plantitle: encodeURIComponent($textarea.val())
@@ -1479,7 +1483,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                             function sendPageData1(pageData, flag) {
                                 $.ajax({
                                     type: "GET",
-                                    url: "http://my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
+                                    url: "//my.b2b.hc360.com/my/turbine/action/inquiry.InquiryAction/eventsubmit_doPerform/doperform?callback=?",
                                     dataType: "jsonp",
                                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                                     data: pageData,
@@ -1577,7 +1581,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                         buyerSourceId: "u_ff_msg_cj"
                     };
                     $.ajax({
-                        url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
+                        url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
                         data: noAnswerData,
                         dataType: "jsonp",
                         jsonpCallback: 'callback',
@@ -2273,6 +2277,20 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                 $(this).attr("href","//z.hc360.com/p4psearch/search.html?key=" + icon );
 
             });
+        },
+
+        /**
+         * 该方法是为19大准备，商机标题含有敏感词，屏蔽百度联盟广告
+         * @param businTitle 商机标题
+         */
+        hideSpecWordFor19:function (businTitle) {
+          var specWord = ['女性', '男性', '成人', '充气', '慰', '情趣', '人体', '男用', '乳房', '情趣', '阳具', '贞操', '全硅胶非半实体', '假胸', '娃娃', '快乐器', '飞机杯'];
+          for(var i =0;i<specWord.length;i++){
+            if(businTitle.indexOf(specWord[i]) > 0 || businTitle.indexOf(specWord[i]) == 0){
+              $('[data-hide="nineteen"]').hide();
+              break;
+            }
+          }
         }
 
     };

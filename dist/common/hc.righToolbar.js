@@ -459,7 +459,7 @@ webpackJsonp([31],{
 	                    var minMsgId = $(this).next('div').attr('data-id') || $(this).next('div.moreHistory').children(':first').attr('data-id');//最早的消息id
 
 	                    $.ajax({
-	                        url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
+	                        url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg",
 	                        type:"GET",
 	                        timeout:3000,
 	                        data:{
@@ -542,7 +542,7 @@ webpackJsonp([31],{
 	        getMsgContent:function () {
 	            var _this = this;
 	            return $.ajax({
-	                url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
+	                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
 	                type:'GET',
 	                timeout:3000,
 	                data:{
@@ -693,7 +693,7 @@ webpackJsonp([31],{
 
 	            var _this = this;
 	            $.ajax({
-	                url:'http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
+	                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
 	                type:'GET',
 	                timeout:5000,
 	                data:{
@@ -1002,7 +1002,7 @@ webpackJsonp([31],{
 
 	            function sendMessage() {
 	                $.ajax({
-	                    url:"http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
+	                    url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
 	                    type:"GET",
 	                    timeout:5000,
 	                    data:{
@@ -1137,7 +1137,7 @@ webpackJsonp([31],{
 	             */
 	            function doPeformAjax(isGetSenceid,url) {
 	                $.ajax({
-	                    url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+	                    url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
 	                    type: "GET",
 	                    data: {
 	                        plantitle: encodeURIComponent(contentWrap.val())
@@ -1149,7 +1149,7 @@ webpackJsonp([31],{
 	                        } else {
 	                            $.extend(that.formDatas,{qrcodeid:isGetSenceid || ''});
 	                            $.ajax({
-	                                url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
+	                                url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
 	                                data: that.formDatas,
 	                                dataType: "jsonp",
 	                                jsonpCallback: 'callback',
@@ -1605,7 +1605,7 @@ webpackJsonp([31],{
 	                /** 关闭按钮 **/
 	                closeMessageBtn = that.messageWrap.find('.mCloseBtn');
 	            $.ajax({
-	                url: "http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
+	                url: "//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
 	                type: "GET",
 	                data: {
 	                    plantitle: encodeURIComponent(textareaVal) //留言详情内容
@@ -1619,7 +1619,7 @@ webpackJsonp([31],{
 	                        messageTextarea.parent().find('em.banned').show();
 	                    } else {
 	                        $.ajax({
-	                            url: 'http://my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
+	                            url: '//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform',
 	                            data: _data,
 	                            dataType: "jsonp",
 	                            jsonpCallback: 'callback',

@@ -6581,7 +6581,13 @@ webpackJsonp([2],{
 	            var customBox = $(this).parent('.radioBox').next('.pic-box');
 	            var selectePicBox = customBox.next('.navimg-file-box');
 	            $(this).addClass('curRadioBox').siblings().removeClass('curRadioBox');
-	            if ($(this).index() == 2) {
+	            var index = 1;
+	            customBox.hide();
+	            if($(this).closest('div[node-name="navBgSet"]').length>0){
+	              index = 2;
+	            }
+
+	            if ($(this).index() == index) {
 	                customBox.show();
 	            } else {
 	                customBox.hide();
@@ -6889,6 +6895,7 @@ webpackJsonp([2],{
 	    }
 	};
 	module.exports = navigation;
+
 
 /***/ }),
 

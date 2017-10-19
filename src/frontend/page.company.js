@@ -32,7 +32,6 @@ var page_contact_us = function () {
      * 绑定事件
      */
     this.bindEvent();
-
 };
 page_contact_us.prototype = {
 
@@ -40,6 +39,7 @@ page_contact_us.prototype = {
      * 初始化联系我们微信图标
      */
     initContactIcon:function () {
+
         $.when($.ajax({
                 url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
                 dataType:"jsonp",
@@ -285,7 +285,22 @@ page_contact_us.prototype = {
   getQRcodeByLogin:function (phoneNumber) {
     var _this = this,
       deffer = $.Deferred(),
-      codeHtml = '';
+      codeHtml = '',businTitle = '';
+
+    /**
+     * 商机标题选取规则
+     * 先取最近搜索词，没有取该用户最近浏览商机标题，再没有取该商铺主营行业
+     */
+    if(HC.util.cookie.get('searchWord') && HC.util.cookie.get('searchWord').length>0){
+      var arr = (HC.util.cookie.get('searchWord') || '').split(',');
+      businTitle = arr[arr.length-1];
+    }else{
+      if(_this.getLatestBrowseBusTitle() != '' && _this.getLatestBrowseBusTitle().length>0){
+        businTitle = _this.getLatestBrowseBusTitle();
+      }else{
+        businTitle = (inquiryParamVO.areaName ||'').split(',')[0] ||''
+      }
+    }
 
     var data = inquiryParamVO;
     data.contact = encodeURIComponent(window.companyContactor||'');
@@ -294,7 +309,7 @@ page_contact_us.prototype = {
     data.type = 27;
     data.buyerSourceId =  "detail_information_shop_company";
     data.isbusin = 2;
-    data.businTitle = encodeURIComponent(inquiryParamVO.areaName||'');
+    data.businTitle = encodeURIComponent(businTitle);
     if(phoneNumber && phoneNumber.length>0){
       data.telPhone = phoneNumber;
     }
@@ -338,6 +353,39 @@ page_contact_us.prototype = {
       deffer.resolve('');
     });
     return deffer;
+  },
+
+  /**
+   * 获取最新浏览的商机标题
+   * @returns {string}
+   */
+  getLatestBrowseBusTitle:function () {
+    var str = '',_this=this,latestBusTitle = '';
+    str=_this.getCookie('productHistory');
+    if(str && str.length>0 && str != ''){
+      var arr = str.split("@");
+      var list = arr[1].split(";&;");
+      if(list && list.length>0 && list != ''){
+        var obj = list[0].split("#&#");
+        latestBusTitle = obj[1];
+      }
+    }
+
+    return latestBusTitle;
+  },
+
+  /**
+   * 获取cookie
+   * @param Name
+   * @returns {string}
+   */
+  getCookie:function(Name) {
+    var m = "";
+    if (window.RegExp) {
+      var re = new RegExp(";\\s*" + Name + "=([^;]*)", "i");
+      m = re.exec(';' + document.cookie);
+    }
+    return (m ? unescape(m[1]) : "");
   },
 
   /**
