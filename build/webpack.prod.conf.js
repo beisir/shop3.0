@@ -89,7 +89,7 @@ var webpackConfig = merge({
         new webpack.DefinePlugin({
             'process.env': process.env.NODE_ENV
         }),
-        /*new webpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 screw_ie8: false
@@ -102,7 +102,7 @@ var webpackConfig = merge({
             mangle: {
                 screw_ie8: false
             }
-        }),*/
+        }),
 
         // split vendor js into its own file
         // new webpack.optimize.CommonsChunkPlugin({
