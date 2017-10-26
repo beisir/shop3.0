@@ -228,11 +228,6 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
              */
             _this.queryPrice();
 
-            /**
-             * 为十九大准备屏蔽含有敏感词的百度联盟广告
-             */
-            _this.hideSpecWordFor19($("#inquiryTitle").val());
-
         },
 
         /**
@@ -574,16 +569,86 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             });
             secondProductNum.on('blur', function() { //不为空校验
                 if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
-                    $(this).parent().find("em.warning").show();
+                    $(this).parent().find("em.warning.w120").show();
                 }
             });
-            secondProductNum.parent().on('click', function() { //重新输入
-                var warntip = $(this).find('em.warning');
-                if (warntip.is(":visible")) {
-                    warntip.hide();
+            secondProductNum.siblings('em.warning.w120').on('click', function() { //重新输入
+                //var warntip = $(this).find('em.warning.w120');
+                if ($(this).is(":visible")) {
+                  $(this).hide();
                 }
                 secondProductNum.focus();
             });
+
+          /**采购单位点击事件*/
+          //var twoWrap = $("#inquiryMessageDialog");
+          var unitInputBox = $("#inquiryMessageDialog").find('[node-name="unitBox"] .tsCon');
+          var buyUnit = $("#inquiryMessageDialog").find('[node-name="buyUnit"]');
+          var selectCon = unitInputBox.siblings('ul');
+          unitInputBox.on('click',function (e) {
+            e.stopPropagation();
+            var $this = $(this);
+            if($this.parent().siblings('em.warning.w100').is(":visible")){
+              $this.parent().siblings('em.warning.w100').hide();
+              buyUnit.focus();
+            }
+            selectCon.show();
+          });
+
+          $("#inquiryMessageDialog").find('em.warning.w100').on('click',function () {
+            $(this).hide();
+          });
+
+          //采购单位下拉点击空白处隐藏
+          $("#inquiryMessageDialog").on('click',function (e) {
+            //e.stopPropagation();
+            //if(selectCon.is(':visible')){
+              selectCon.hide();
+              selectCon.closest('[node-name="unitBox"]').siblings('em.warning.w100').hide();
+            //}
+          });
+          //采购单位选择事件
+          unitInputBox.siblings('ul').find('li').on('click',function () {
+            var $this = $(this);
+            buyUnit.val($this.text());
+            unitInputBox.siblings('ul').hide();
+          });
+
+          /**采购单位不为空*/
+          buyUnit.keyup(function () {
+            var $this = $(this);
+            var listItem = $(this).parent().siblings('ul').children();
+            var inputValue = $.trim($this.val());
+
+            if(inputValue.length>0){
+              var pattern = new RegExp("^[\u4e00-\u9fa5]+$");
+              if(!pattern.test(inputValue)){
+                listItem.hide();
+              }else{
+                var nowValReg = new RegExp( "(" + inputValue + ")" );
+                listItem.each(function(){
+                  var me = $(this);
+                  var notetext = me.text();
+                  if( !nowValReg.test( notetext ) ) {
+                    me.hide() ;
+                  }else{
+                    var filterword = RegExp.$1;
+                    me.html(filterword);
+                    me.show();
+                  }
+                });
+              }
+            }else{
+
+              listItem.show();
+              listItem.parent().show();
+            }
+
+          }).blur(function() { //不为空校验
+            if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
+              $(this).closest('[node-name="unitBox"]').siblings("em.warning.w100").show();
+            }
+          });
 
             //初始化日期插件
             HC.W.load('wdatepicker', function() {
@@ -686,6 +751,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                 tel: pageOne_tel,
                 desc: pageTwo_textarea,
                 amount: $("#inquiryMessageDialog").find("#amountInputnum"),
+                unit:$("#inquiryMessageDialog").find("[node-name='buyUnit']"),
                 //price: $("[data-query='CP_value']"),
                 closeBtn: $("#inquiryMessageDialog").find("[data-query='clearMask']"),
                 pThree: pageThree_content //第三页内容
@@ -778,6 +844,13 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                             secondProductNum.parent().find('em.warning').show();
                         }
 
+                        /**采购单位不为空*/
+                        if($.trim(buyUnit.val()) == '' || buyUnit.val().length<1){
+                          buyUnit.closest('.seleCon2').siblings('em.warning.w100').show();
+                        }else{
+                          buyUnit.closest('.seleCon2').siblings('em.warning.w100').hide();
+                        }
+
                         //采购截止日期不为空
                         if ($.trim($("#buyToDate").val()) == "" || $.trim($("#buyToDate").val()).length < 1) {
                             $("#buyToDate").parent().find('em.warning').show();
@@ -816,7 +889,9 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                                         purchaseInfo: encodeURIComponent(pageTwo_textarea.val()),
                                         inquiryNum: $.trim(secondProductNum.val()),
                                         deadline: $.trim($("#buyToDate").val()),
-                                        product: encodeURIComponent($.trim(secondProduct.val()))
+                                        product: encodeURIComponent($.trim(secondProduct.val())),
+                                        mobileCheck:true, //是否检验手机号，完善提交页面都是校验手机号的
+                                        unit:encodeURIComponent($.trim(buyUnit.val())) //采购单位
                                     });
                                     //判断第一页和第二页手机号是否一致，如果不一致，则发送两次请求，如果一致，则发送一次
                                     if (pageOne_data.telPhone == $.trim(pageTwo_tel.val())) {
@@ -1013,7 +1088,8 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                     if (param.titleLoc.parent().find("em").length > 0) param.titleLoc.parent().find("em").remove();
                     param.tel.val(""); //初始化联系电话
                     if (param.tel.parent().find("em").length > 0) param.tel.parent().find("em").remove();
-                    param.amount.val(1); //初始化采购数量
+                    param.amount.val(1); //
+                    param.unit.val("");
                     param.desc.val(""); //初始化用途描述
                     if (param.vailcode) { //清空验证码
                         pageTwo_imgCode.val(""); //图形验证码
@@ -1074,8 +1150,13 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             });
 
             $warning.on("click", function(evt) {
-              $(this).hide();
-              $(this).closest("div").find("input").focus();
+              var $this = $(this);
+              if($this.hasClass('w100')){//采购单位
+                $this.hide();
+              }else{
+                $this.hide();
+                $this.closest("div").find("input:not([node-name='buyUnit'])").focus();
+              }
             });
 
             $('#subtnonce').on('click', function() {
@@ -1167,6 +1248,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                             //初始化数据
                             secProduct.val("");
                             secProductNum.val("");
+                            $sendSuccess.find('[node-name="buyUnit"]').val('');
                             secDeadLine.val("");
                             secDesc.val("");
                             validCodeInput.val("");
@@ -1210,16 +1292,85 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                             });
                             secProductNum.on('blur', function() { //不为空校验
                                 if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
-                                    $(this).parent().find("em.warning").show();
+                                    $(this).parent().find("em.warning.w120").show();
                                 }
                             });
-                            secProductNum.parent().on('click', function() { //重新输入
-                                var warntip = $(this).find('em.warning');
-                                if (warntip.is(":visible")) {
-                                    warntip.hide();
+                            secProductNum.siblings('em.warning.w120').on('click', function() { //重新输入
+                               // var warntip = $(this).find('em.warning');
+                                if ($(this).is(":visible")) {
+                                  $(this).hide();
                                 }
                                 secProductNum.focus();
                             });
+
+                          /**采购单位点击事件*/
+                          var unitInputBox = $sendSuccess.find('[node-name="unitBox"] .tsCon');
+                          var buyUnit = $sendSuccess.find('[node-name="buyUnit"]');
+                          var selectCon = unitInputBox.siblings('ul');
+                          unitInputBox.on('click',function (e) {
+                            e.stopPropagation();
+                            var $this = $(this);
+                            if($this.parent().siblings('em.warning.w100').is(":visible")){
+                              $this.parent().siblings('em.warning.w100').hide();
+                              buyUnit.focus();
+                            }
+                            selectCon.show();
+                          });
+
+                          $sendSuccess.find('em.warning.w100').on('click',function () {
+                            $(this).hide();
+                          });
+
+                          //采购单位下拉点击空白处隐藏
+                          $sendSuccess.on('click',function (e) {
+                            //e.stopPropagation();
+                            //if(selectCon.is(':visible')){
+                            selectCon.hide();
+                            selectCon.closest('[node-name="unitBox"]').siblings('em.warning.w100').hide();
+                            //}
+                          });
+                          //采购单位选择事件
+                          unitInputBox.siblings('ul').find('li').on('click',function () {
+                            var $this = $(this);
+                            buyUnit.val($this.text());
+                            unitInputBox.siblings('ul').hide();
+                          });
+
+                          /**采购单位不为空*/
+                          buyUnit.keyup(function () {
+                            var $this = $(this);
+                            var listItem = $(this).parent().siblings('ul').children();
+                            var inputValue = $.trim($this.val());
+
+                            if(inputValue.length>0){
+                              var pattern = new RegExp("^[\u4e00-\u9fa5]+$");
+                              if(!pattern.test(inputValue)){
+                                listItem.hide();
+                              }else{
+                                var nowValReg = new RegExp( "(" + inputValue + ")" );
+                                listItem.each(function(){
+                                  var me = $(this);
+                                  var notetext = me.text();
+                                  if( !nowValReg.test( notetext ) ) {
+                                    me.hide() ;
+                                  }else{
+                                    var filterword = RegExp.$1;
+                                    me.html(filterword);
+                                    me.show();
+                                  }
+                                });
+                              }
+                            }else{
+
+                              listItem.show();
+                              listItem.parent().show();
+                            }
+
+                          }).blur(function() { //不为空校验
+                            if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
+                              $(this).closest('[node-name="unitBox"]').siblings("em.warning.w100").show();
+                            }
+                          });
 
                             //初始化日期插件
                             HC.W.load('wdatepicker', function() {
@@ -1406,6 +1557,12 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                                     secProductNum.parent().find('em.warning').show();
                                 }
 
+                                if($.trim(buyUnit.val()) == '' || buyUnit.val().length<1){
+                                  buyUnit.closest('.seleCon2').siblings('em.warning.w100').show();
+                                }else{
+                                  buyUnit.closest('.seleCon2').siblings('em.warning.w100').hide();
+                                }
+
                                 //采购截止日期不为空
                                 if ($.trim(secDeadLine.val()) == "" || $.trim(secDeadLine.val()).length < 1) {
                                     secDeadLine.parent().find('em.warning').show();
@@ -1445,7 +1602,9 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                                                 purchaseInfo: encodeURIComponent(secDesc.val()),
                                                 inquiryNum: $.trim(secProductNum.val()),
                                                 deadline: $.trim(secDeadLine.val()),
-                                                product: encodeURIComponent($.trim(secProduct.val()))
+                                                product: encodeURIComponent($.trim(secProduct.val())),
+                                                mobileCheck:true,
+                                                unit:encodeURIComponent(buyUnit.val())
                                             });
 
 
@@ -2277,21 +2436,9 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                 $(this).attr("href","//z.hc360.com/p4psearch/search.html?key=" + icon );
 
             });
-        },
-
-        /**
-         * 该方法是为19大准备，商机标题含有敏感词，屏蔽百度联盟广告
-         * @param businTitle 商机标题
-         */
-        hideSpecWordFor19:function (businTitle) {
-          var specWord = ['女性', '男性', '成人', '充气', '慰', '情趣', '人体', '男用', '乳房', '情趣', '阳具', '贞操', '全硅胶非半实体', '假胸', '娃娃', '快乐器', '飞机杯'];
-          for(var i =0;i<specWord.length;i++){
-            if(businTitle.indexOf(specWord[i]) > 0 || businTitle.indexOf(specWord[i]) == 0){
-              $('[data-hide="nineteen"]').hide();
-              break;
-            }
-          }
         }
+
+
 
     };
 

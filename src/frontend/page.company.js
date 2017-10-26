@@ -289,18 +289,23 @@ page_contact_us.prototype = {
 
     /**
      * 商机标题选取规则
-     * 先取最近搜索词，没有取该用户最近浏览商机标题，再没有取该商铺主营行业
+     * 先取最近搜索词，没有取该用户最近浏览商机标题，再没有取该商铺主营产品或行业
      */
-    if(HC.util.cookie.get('searchWord') && HC.util.cookie.get('searchWord').length>0){
-      var arr = (HC.util.cookie.get('searchWord') || '').split(',');
-      businTitle = arr[arr.length-1];
-    }else{
+    // if(HC.util.cookie.get('searchWord') && HC.util.cookie.get('searchWord').length>0){
+    //   var arr = (HC.util.cookie.get('searchWord') || '').split(',');
+    //   businTitle = arr[arr.length-1];
+    // }else{
       if(_this.getLatestBrowseBusTitle() != '' && _this.getLatestBrowseBusTitle().length>0){
         businTitle = _this.getLatestBrowseBusTitle();
       }else{
-        businTitle = (inquiryParamVO.areaName ||'').split(',')[0] ||''
+        if(inquiryParamVO.mainProducts && inquiryParamVO.mainProducts != '' && inquiryParamVO.mainProducts.length>0){
+          businTitle = (inquiryParamVO.mainProducts ||'').split(',')[0];
+        }else{
+          businTitle = (inquiryParamVO.areaName ||'').split(',')[0] ||'';
+        }
+
       }
-    }
+    // }
 
     var data = inquiryParamVO;
     data.contact = encodeURIComponent(window.companyContactor||'');
@@ -364,7 +369,7 @@ page_contact_us.prototype = {
     str=_this.getCookie('productHistory');
     if(str && str.length>0 && str != ''){
       var arr = str.split("@");
-      var list = arr[1].split(";&;");
+      var list = arr[0].split(";&;");
       if(list && list.length>0 && list != ''){
         var obj = list[0].split("#&#");
         latestBusTitle = obj[1];

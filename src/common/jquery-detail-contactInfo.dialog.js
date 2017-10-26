@@ -397,10 +397,22 @@
         '</div>',
         '</li>',
         '<li>',
-        '<span><b>*</b>采购数量：</span>',
-        '<div class="fConRig xjIBox">',
-        '<input type="text" class="telInput" node-name="buyAmount">',
-        '<em class="warning" style="display: none;"><strong></strong>请输入采购数量</em>',
+        '<span><b>*</b>采购数量/单位：</span>',
+        '<div class="fConRig xjIBox  zIndex5">',
+        '<input type="text" class="telInput w120" node-name="buyAmount" placeholder="采购数量" maxlength="6">',
+        '<div class="seleCon2" node-name="unitBox">',
+        '<div class="tsCon">	<input class="sec-p" placeholder="单位" node-name="buyUnit" maxlength="6">	<s></s></div>',
+        '<ul class="seleList" style="display:none">',
+          '<li>把</li><li>包</li><li>本</li><li>部</li><li>打</li><li>袋</li><li>单</li><li>吊</li><li>顶</li><li>对</li><li>组</li><li>尊</li>',
+          '<li>吨</li><li>幅</li><li>个</li><li>根</li><li>公斤</li><li>公升</li><li>罐</li><li>毫米</li><li>毫升</li><li>盒</li><li>座</li>',
+          '<li>架</li><li>件</li><li>节</li><li>具</li><li>卷</li><li>卡</li><li>棵</li><li>颗</li><li>克</li><li>块</li><li>款</li><li>株</li>',
+          '<li>厘米</li><li>立方</li><li>立方根</li><li>粒</li><li>辆</li><li>路</li><li>码</li><li>枚</li><li>米</li><li>面</li><li>盆</li>',
+          '<li>片</li><li>票</li><li>平方厘米</li><li>平方米</li><li>平方市尺</li><li>平方英尺</li><li>瓶</li><li>千克</li><li>升</li><li>束</li>',
+          '<li>台</li><li>双</li><li>套</li><li>条</li><li>桶</li><li>头</li><li>箱</li><li>英寸</li><li>盏</li><li>张</li><li>支</li><li>只</li>',
+        '</ul>',
+        '</div>',
+        '<em class="warning w120" style="display: none;"><strong></strong>请输入采购数量</em>',
+        '<em class="warning w100" style="display: none;"><strong></strong>请选择单位</em>',
         '</div>',
         '</li>',
         '<li>',
@@ -945,7 +957,71 @@
         }
       }).on('blur', function() { //不为空校验
         if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
-          $(this).siblings("em.warning").show();
+          $(this).siblings("em.warning.w120").show();
+        }
+      });
+
+      /**采购单位点击事件*/
+      var unitInputBox = twoWrap.find('[node-name="unitBox"] .tsCon');
+      var buyUnit = twoWrap.find('[node-name="buyUnit"]');
+      var selectCon = unitInputBox.siblings('ul');
+      unitInputBox.on('click',function (e) {
+        e.stopPropagation();
+        var $this = $(this);
+        if($this.parent().siblings('em.warning.w100').is(":visible")){
+          $this.parent().siblings('em.warning.w100').hide();
+          buyUnit.focus();
+        }
+        selectCon.show();
+      });
+
+      //采购单位下拉点击空白处隐藏
+      twoWrap.on('click',function () {
+        if(selectCon.is(':visible')){
+          selectCon.hide();
+          selectCon.closest('[node-name="unitBox"]').siblings('em.warning.w100').show();
+        }
+      });
+
+      unitInputBox.siblings('ul').find('li').on('click',function () {
+        var $this = $(this);
+        buyUnit.val($this.text());
+        unitInputBox.siblings('ul').hide();
+      });
+
+      /**采购单位不为空*/
+      buyUnit.keyup(function () {
+        var $this = $(this);
+        var listItem = $(this).parent().siblings('ul').children();
+        var inputValue = $.trim($this.val());
+
+        if(inputValue.length>0){
+          var pattern = new RegExp("^[\u4e00-\u9fa5]+$");
+          if(!pattern.test(inputValue)){
+            listItem.hide();
+          }else{
+            var nowValReg = new RegExp( "(" + inputValue + ")" );
+            listItem.each(function(){
+              var me = $(this);
+              var notetext = me.text();
+              if( !nowValReg.test( notetext ) ) {
+                me.hide() ;
+              }else{
+                var filterword = RegExp.$1;
+                me.html(filterword);
+                me.show();
+              }
+            });
+          }
+        }else{
+
+          listItem.show();
+          listItem.parent().show();
+        }
+
+      }).blur(function() { //不为空校验
+        if ($.trim($(this).val()) == "" || $(this).val().length == 0) {
+          $(this).siblings("em.warning.w100").show();
         }
       });
 
@@ -990,7 +1066,12 @@
 
       /**错误提示点击事件*/
       twoWrap.find('em.warning').on('click',function () {
-        $(this).hide().siblings('input[node-name]').focus();
+        var $this = $(this);
+        if($this.hasClass('w100')){//采购单位
+          $this.hide().siblings('[node-name="unitBox"]').find('input[node-name]').focus();
+        }else{
+          $this.hide().siblings('input[node-name]').focus();
+        }
       });
 
       /**验证码换一换*/
@@ -1022,8 +1103,16 @@
 
         /**采购数量不为空*/
         if($.trim(buyAmount.val()) == '' || buyAmount.val().length<1){
-          buyAmount.siblings('em.warning').show();
+          buyAmount.siblings('em.warning.w120').show();
           return false;
+        }
+
+        /**采购单位不为空*/
+        if($.trim(buyUnit.val()) == '' || buyUnit.val().length<1){
+          buyUnit.closest('.seleCon2').siblings('em.warning.w100').show();
+          return false;
+        }else{
+          buyUnit.closest('.seleCon2').siblings('em.warning.w100').hide();
         }
 
         /**采购截止日期不为空*/
@@ -1078,7 +1167,9 @@
               product:encodeURIComponent(buyProduct.val()),
               type: 1,
               buyerSourceId: 'detail_short_inquiry',
-              charset: 'utf8'
+              charset: 'utf8',
+              mobileCheck:true, //是否检验手机号，完善提交页面都是校验手机号的
+              unit:encodeURIComponent($.trim(buyUnit.val())) //采购单位
             };
             _this.submitData(twoWrap,sendData);
           }else if(res.code == 2){
