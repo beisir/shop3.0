@@ -30,19 +30,6 @@ require('../../src/frontend/css/main.css');
  */
 $(function() {
     $("input[type='text'],textarea").placeholder();
-
-    /**
-     * 右侧档案区微信图标弹框
-     */
-    HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
-
-      $('[data-query="weixin"]').queryDialog({
-        is3y:window.scyps.sc.is3y=="1" ? true : false,
-        companyName:window.infoname || '',
-        providerId:window.scyps.sc.providerId
-      });
-
-    });
 });
 /***
  * 判断是否是预览页面

@@ -170,6 +170,23 @@ page_contact_us.prototype = {
           that.checkMobilePhone();
        /* }*/
 
+       $.when(that.getBindStatusDef()).done(function (res) {
+        //绑定微信时，微信图标点亮
+        if(res && res.code=="200"){
+            $('[data-query="weixin"]').attr('src','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco1.png');
+        }
+      })
+    },
+
+    /**
+     * 获取微信绑定状态延迟对象
+     */
+    getBindStatusDef:function() {
+      return $.ajax({
+        url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
+        dataType:"jsonp",
+        data:{"imid":window.company_username||window.welfarename || window.userName }
+      })
     },
 
     /**

@@ -67,9 +67,40 @@ module_contact_us.prototype.initQQFFMod=function(){
 				var item=qqlist[0];
 				qqHtml='<a href="//wpa.qq.com/msgrd?v=3&uin='+item.qq+'&site=qq&menu=yes" target="_blank" onclick="return hcclick(&quot;?hcdetail_enterpriselog=contact_qq&quot;);" class="leftqqIco"'+qqMonitor+'/></a>';
 			}
-			qqHtml+='<a href="javascript:;" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(UserBehavior_detail_fafa_float_1?detailuserid='+userId+'),return hcclick(&quot;?hcdetail_enterpriselog=contact_weixin&quot;)"><img data-query="weixin" src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco2.png" /></a>'
-			$('[data-node-name="companyServiceMod"]').html(qqHtml);
+
+			$.when(getBindStatusDef()).done(function (res) {
+				//绑定微信时，微信图标点亮
+				if(res && res.code=="200"){
+					qqHtml+='<a href="javascript:;" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(UserBehavior_detail_fafa_float_1?detailuserid='+userId+'),return hcclick(&quot;?hcdetail_enterpriselog=contact_weixin&quot;)"><img data-query="weixin" src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco1.png" /></a>'
+				}else{
+					qqHtml+='<a href="javascript:;" class="awxIco" data-bcid="'+bcid+'" onmousedone="HC.UBA.sendUserlogsElement(UserBehavior_detail_fafa_float_1?detailuserid='+userId+'),return hcclick(&quot;?hcdetail_enterpriselog=contact_weixin&quot;)"><img data-query="weixin" src="//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco2.png" /></a>'
+				}
+				$('[data-node-name="companyServiceMod"]').html(qqHtml);
+
+				/**
+				 * 初始化微信图标弹框  
+				 */
+				HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+					
+							$('[data-query="weixin"]').queryDialog({
+							is3y:window.scyps.sc.is3y=="1" ? true : false,
+							companyName:window.infoname || '',
+							providerId:window.scyps.sc.providerId
+							});
+					
+				});
+			})
+						
 		}
 	});
+
+	function getBindStatusDef() {
+        return $.ajax({
+          url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
+          dataType:"jsonp",
+          data:{"imid":window.company_username||window.welfarename || window.userName }
+        })
+    }
+    
 };
 module.exports = module_contact_us;

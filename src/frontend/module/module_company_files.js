@@ -90,6 +90,29 @@ enterpriseArchives.prototype = {
         }).mouseleave(function() {
             $(this).find('.showduo').hide();
         });
+        
+        /**
+         * 初始化微信绑定图标
+         */
+        $.when(that.getBindStatusDef()).done(function (res) {
+        //绑定微信时，微信图标点亮
+        if(res && res.code=="200"){
+            $('[data-query="weixin"]').attr('src','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/wxIco1.png');
+        }
+
+        /**
+         * 初始化微信图标弹框  
+         */
+        HC.HUB.addScript('//style.org.hc360.com/js/module/shop3.0/dist/common/jquery-inqueryOnline.dialog.js',function () {
+            
+                    $('[data-query="weixin"]').queryDialog({
+                    is3y:window.scyps.sc.is3y=="1" ? true : false,
+                    companyName:window.infoname || '',
+                    providerId:window.scyps.sc.providerId
+                });
+            
+        });
+    })
     },
     /***
      * 收藏公司
@@ -230,6 +253,15 @@ enterpriseArchives.prototype = {
         } else {
             that.Ajaxshoucang();
         }
+    },
+
+    /**获取微信是否绑定延迟对象 */
+    getBindStatusDef:function() {
+        return $.ajax({
+            url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
+            dataType:"jsonp",
+            data:{"imid":window.company_username||window.welfarename || window.userName }
+        })
     }
 };
 
