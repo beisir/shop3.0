@@ -169,14 +169,14 @@ enterpriseArchives.prototype = {
                 $('[data-node-name="' + wrapName + '"]').hcQrcode({
                     width: _width,
                     height: _height,
-                    text: document.location.protocol+"//app.hc360.com/m.html?uid=" + shopName + ",a=x"
+                    text: "http://app.hc360.com/m.html?uid=" + shopName + ",a=x"
                 });
             });
         } else {
             $('[data-node-name="' + wrapName + '"]').hcQrcode({
                 width: _width,
                 height: _height,
-                text: document.location.protocol+"//app.hc360.com/m.html?uid=" + shopName + ",a=x"
+                text: "http://app.hc360.com/m.html?uid=" + shopName + ",a=x"
             });
         }
     },
