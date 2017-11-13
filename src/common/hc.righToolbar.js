@@ -1835,11 +1835,11 @@ var rightSidebar = {
                     if (that.qqlist && that.qqlist.length > 0) {
                         if (that.is3y) {
                             $qqTalkA.attr("href", '//wpa.qq.com/msgrd?v=3&uin=' + that.qqlist[0].qq + '&site=qq&menu=yes');
-                            $qqTalkImg.attr("src", "//wpa.qq.com/pa?p=2:" + that.qqlist[0].qq + ":51");
+                            $qqTalkImg.attr("src", "//style.org.hc360.com/images/detail/mysite/siteconfig/qqIco/qqIco1.gif");
                         }
                         $('div[node-id="weix"]').after(qq.join(''));
                         $.each(that.qqlist, function(index, item) {
-                            qqListHtml += "<li><a href='//wpa.qq.com/msgrd?v=3&uin=" + item.qq + "&site=qq&menu=yes' target='_blank' onmousedown=\"HC.UBA.sendUserlogsElement('" + that.getUserLog("qq", index + 1) + "')\"><img border='0' src='//wpa.qq.com/pa?p=2:" + item.qq + ":51' title='" + item.qqalias + "'/></a></li>";
+                            qqListHtml += "<li><a href='//wpa.qq.com/msgrd?v=3&uin=" + item.qq + "&site=qq&menu=yes' target='_blank' onmousedown=\"HC.UBA.sendUserlogsElement('" + that.getUserLog("qq", index + 1) + "')\"><img border='0' src='//style.org.hc360.com/images/detail/mysite/siteconfig/qqIco/qqIco1.gif' title='" + item.qqalias + "'/></a></li>";
                         });
                     }
                     qqListHtml += '</ul>';
