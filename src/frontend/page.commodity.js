@@ -402,7 +402,7 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             imgContainer.on('click', '#nextBtn,a.imgRight', function(e) {
 
 
-                if (baiduAds.is(':hidden') && imgCon.find('.owl-item').length - 1 == imgCon.find('.owl-pagination .active').index()) { //当仅有一张图片并且百度广告隐藏的
+                if (baiduAds.is(':hidden') && imgCon.find('.owl-item').length - 1 == imgCon.find('.owl-pagination .active').index() && (window.isAdsMmt == 'false')) { //当仅有一张图片并且百度广告隐藏的
                     //百度广告显示
                     baiduAds.show();
 
