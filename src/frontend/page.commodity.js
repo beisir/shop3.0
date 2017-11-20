@@ -650,16 +650,29 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
             }
           });
 
-            //初始化日期插件
-            HC.W.load('wdatepicker', function() {
-                $("#buyToDate").on('focus', function() {
-                    var tom1 = new Date();
-                    tom1.setDate(tom1.getDate() + 1);
-                    WdatePicker({
-                        dateFmt: 'yyyy-MM-dd',
-                        minDate: tom1
-                    });
+
+            HC.W.load('datepicker', function() {
+                $.datepicker.regional['zh-CN'] = {
+                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月'
+                    ],
+                    monthNamesShort: ['一', '二', '三', '四', '五', '六',
+                        '七', '八', '九', '十', '十一', '十二'
+                    ],
+                    dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+                    dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+                    dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+                    dateFormat: 'yy-mm-dd'
+                };
+                $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+    
+                var tom1 = new Date();
+                tom1.setDate(tom1.getDate() + 1);
+    
+                $("#buyToDate").datepicker({
+                    minDate: tom1
                 });
+    
             });
 
             //日期错误信息消失
@@ -1372,16 +1385,26 @@ require('../../src/components/OwlCarousel/owl.carousel.css');
                             }
                           });
 
-                            //初始化日期插件
-                            HC.W.load('wdatepicker', function() {
-                                $("#buyToDate1").on('focus', function() {
-                                    var tom = new Date();
-                                    tom.setDate(tom.getDate() + 1);
-                                    WdatePicker({
-                                        dateFmt: 'yyyy-MM-dd',
-                                        minDate: tom
-                                    });
+                            HC.W.load('datepicker', function() {
+                                $.datepicker.regional['zh-CN'] = {
+                                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                                        '七月', '八月', '九月', '十月', '十一月', '十二月'
+                                    ],
+                                    monthNamesShort: ['一', '二', '三', '四', '五', '六',
+                                        '七', '八', '九', '十', '十一', '十二'
+                                    ],
+                                    dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+                                    dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+                                    dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+                                    dateFormat: 'yy-mm-dd'
+                                };
+                                $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+                                var tom = new Date();
+                                tom.setDate(tom.getDate() + 1);
+                                $("#buyToDate1").datepicker({
+                                    minDate: tom
                                 });
+                    
                             });
 
                             //日期错误信息消失
