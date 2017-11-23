@@ -366,7 +366,7 @@
                 ];
                 $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
                 var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
-                $("#validcodeCon").find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
+                $("#validcodeCon").find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
               });
 
               if(_this.defaultOptions.isBindWX){
@@ -478,7 +478,7 @@
                       ];
                       $("#cInnerBox").append(hiMsg.join('')).scrollTop( $('#cInnerBox')[0].scrollHeight );
                       var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
-                      $("#validcodeCon").find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
+                      $("#validcodeCon").find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date()+'&buyid='+buyid);
                     });
 
                     _this.bindEvent(consultWrap);
@@ -702,7 +702,7 @@
        */
       wrap.on('click','.clCodeImg',function () {
         var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || '';
-        $(this).find('img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
+        $(this).find('img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
       });
 
       /**
@@ -904,7 +904,7 @@
                 validCodeZone.find('.clCode em.isError').show();
                 //验证码图片更换
                 var buyid = $.cookie('LoginID') ? $.cookie("newhcproviderid") || $.cookie('hc360_userid') : $.cookie("HC_anonyBuyerId") || ''
-                validCodeZone.find('.clCodeImg img').attr('src','http://my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
+                validCodeZone.find('.clCodeImg img').attr('src','//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGenerateimagecode/doGenerateimagecode?date="'+ new Date().getTime()+'&buyid='+buyid);
                 //发送按钮置为可用状态
                 $('button[data-node-name="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
               }

@@ -215,7 +215,7 @@ if (window.checkon) {
 window.hcclick = function(param) {
     if (document.images) {
         var rannumber = Math.round(Math.random() * 10000);
-        (new Image()).src = "//log.info.hc360.com/click.htm" + param + "&rannumber=" + rannumber;
+        (new Image()).src = "//loginfo.hc360.com/click.htm" + param + "&rannumber=" + rannumber;
     }
     return true;
 };
