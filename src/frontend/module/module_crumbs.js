@@ -59,6 +59,7 @@ module_crumbs.prototype.init = function() {
              */
             var _keyword = _this.txtKeyword.val(),
 
+
                 /**
                  * [_actionConfig 表单提交配置]
                  * @type {Object}
@@ -78,7 +79,8 @@ module_crumbs.prototype.init = function() {
                         });
                     }
                 };
-
+            
+                $('input:hidden[name="neww"]').val(encodeURIComponent(encodeURIComponent(_keyword)))
             /**
              * [判断关键字是否为空]
              */
@@ -86,6 +88,8 @@ module_crumbs.prototype.init = function() {
                 alert('请输入关键词！');
                 return false;
             }
+
+            
 
             /**
              * 根据搜索类型设置表单属性，提交表单
@@ -115,6 +119,10 @@ module_crumbs.prototype.init = function() {
          * @type {String}
          */
         _this.actionType = actionType;
+
+        /* if(actionType == 'search'){
+            $('input[name="w"]').val(encodeURIComponent(encodeURIComponent($('input[name="w"]').val())))
+        } */
 
         /**
          * 提交表单
