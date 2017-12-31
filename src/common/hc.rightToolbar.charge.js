@@ -4,7 +4,6 @@
 (function ($, window, undefined) {
     window.online=[];
     var ajaxUrl = {
-        // listData: "//detail.b2b.hc360.com/detail/turbine/template/saleser,qqser.html?jsoncallback=?"
         listData: "//wsdetail.b2b.hc360.com/qqser?jsoncallback=?"
     };
     var tool = {
@@ -93,15 +92,29 @@
         }
     };
     $.fn.rightSidebar = {
+        
         init: function (parm) {
             var that = this;
             that.options = $.extend($.fn.rightSidebar.defaults, parm);
 
-            $('<div>', {'class': 'fixedRifBox'}).appendTo("body");
+            var container = [
+                '<div class="fixedRifBox">',
+                    '<div class="fix-right-box">',
+                        '<div class="fix-right">',
+                        '</div>',
+                    '</div>',
+                    '<div class="recordListBox">',
+                        '<h3>我的浏览记录</h3>',
+                        '<a href="javascript:void(0)" class="recordClose" id="closeHistory"></a>',
+                        '<div class="recordListCon" id="recordWrap">',
 
-            $('<div>', {'class': 'fix-right-box'}).appendTo("fixedRifBox");
-            $('<div>', {'class': 'fix-right'}).appendTo($('.fix-right-box'));
-            $('<div>', {'class': 'fix-right'}).appendTo($('.fix-right-box')).hide();
+                        '</div>',
+                    '</div>',
+                '</div>'
+            ];
+
+            $('body').append(container.join(''));
+
             //初始化立即咨询，立即留言
             var consultStr='onclick="HC.UBA.sendUserlogsElement(\''+that.getUserLog("consult")+'\')"';
             var messageStr='onclick="HC.UBA.sendUserlogsElement(\''+that.getLog("message")+'\')"';
@@ -109,93 +122,77 @@
             var consultWbt='onmousedown="return hcclick(\'?hcdetail_supply=supplyself_online_chat\')"';
             var openShopWbt='onmousedown="return hcclick(\'?hcdetail_supply=supplyself_open_shop\')"';
             var backtopWbt='onmousedown="return hcclick(\'?hcdetail_supply=supplyself_backtop\')"';
+            
+            //在线咨询
+            var consult=[
+                '<div class="every weix" node-id="weix">',
+                '<a href="javascript:;"'+consultStr +'class="every-a"'+consultWbt+' id="OnlineBtn">',
+                '<img class="icon" src="//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_1.gif" height="37" width="43" alt="">',
+                '<span>在线咨询</span>',
+                '</a>',
+                '</div>'
+            ];
+            //即时留言
+            var message=[
+                '<div class="every rigProMessage">',
+                '<a href="javascript:;" class="every-a"'+messageStr+' id="proMessage">',
+                '<span class="border-none">立即留言</span>',
+                '</a>',
+                '</div>'
+            ];
 
-            /**
-             * 判断用户是否在绑定状态，未绑定还是以前的微信图标，绑定是新的微信图标 产品：高松  开发：xyh
-             * @type {[*]}
-             */
-            var flag;
-            $.when($.ajax({
-                    url: "//madata.hc360.com/mobileweb/m/get/bindstatus",
-                    dataType:"jsonp",
-                    data:{"imid":window.company_username||window.welfarename}
-                })
-            ).done(function (res) {
-                flag=res.code=="200";
-                flag ? initHtml("//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/wxIco.gif","微信","//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_3.gif"):initHtml();
-            }).fail(function () {
-                initHtml();
-            });
+            //浏览记录
+            var browseHistory = [
+                '<div class="every recordCon">',
+                '<a href="javascript:;" class="every-a" id="historyRecord">',
+                    '<span class="border-none" style="display:none;">浏览记录</span>',
+                '</a>',
+                '</div>'
+            ]
 
-            function initHtml(imgSrc,wText,msgImgSrc){
-                var isNewQQ = true;
-                if(!imgSrc && !wText && !msgImgSrc){
-                    imgSrc = "//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_1.gif";
-                    wText = "在线咨询";
-                    msgImgSrc = "//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/lyIco_2.gif";
-                    isNewQQ = false;
-                }
-                var consult=[
-                    '<div class="every weix" node-id="weix">',
-                    '<a href="javascript:;"'+consultStr +'class="every-a"'+consultWbt+' id="OnlineBtn">',
-                    '<img class="icon" src="'+ imgSrc +'" height="37" width="43" alt="">',
-                    '<span>'+ wText +'</span>',
+            //订阅商机
+            var srcLink = iflogin ? 'http://my.b2b.hc360.com/my/turbine/template/corcenter,subscibe,add_keywords.html?sorttag=0&keyword='+ supplyInfoJson.keyword  +'&supcatid='+pageBusinVO.supcatid : 'http://my.b2b.hc360.com/my/turbine/template/pubinfo,freesubscribe,free_subscribe.html?sorttag=0&keyword='+ supplyInfoJson.keyword +'&supcatid='+pageBusinVO.supcatid
+            var subscribeBus = [
+                '<div class="every subscribeCon">',
+                    '<a href="'+ srcLink +'" target="_blank" class="every-a">',
+                        '<span class="border-none" style="display:none;">订阅商机</span>',
                     '</a>',
-                    '</div>'
-                ];
-                //即时留言
-                var message=[
-                    '<div class="every">',
-                    '<a href="javascript:;" class="every-a"'+messageStr+' id="proMessage">',
-                    '<img class="icon" src="'+ msgImgSrc +'" height="37" width="43" alt="">',
-                    '<span class="border-none">立即留言</span>',
-                    '</a>',
-                    '</div>'
-                ];
+                '</div>'             
+            ]
 
-                //初始化一键开店
-                var fixRightTwo=[
-                    '<div class="R-top">',
-                    '<a href="http://my.b2b.hc360.com/my/turbine/template/firstview,reg_first.html?sourcetypeid=3731"'+openShopWbt+' target="_blank"><img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/R-top.png" alt="" height="64" width="73"></a>',
-                    '</div>'
+            //返回顶部
+            var returnTop=[
+                '<div class="every top"  id="gotoTop" style="display: none">',
+                '<a href="#"'+backtopWbt+' class="every-a">',
+                '<img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/p-top.png" height="37" width="43" alt="">',
+                '<span class="border-none">返回顶部</span>',
+                '</a>',
+                '</div>'
+            ];
 
-                ];
-                //返回顶部
-                var returnTop=[
-                    '<div class="every top"  id="gotoTop" style="display: none">',
-                    '<a href="#"'+backtopWbt+' class="every-a">',
-                    '<img class="icon" src="//style.org.hc360.cn/images/detail/mysite/siteconfig/fix-r/p-top.png" height="37" width="43" alt="">',
-                    '<span class="border-none">返回顶部</span>',
-                    '</a>',
-                    '</div>'
-                ];
-                $('.fix-right').eq(0).append(consult.join('')).append(message.join(''));
-                //一键开店按钮，在未登录状态下显示，点击链接不变；已登录状态下  不显示一键开店按钮。
-                if (!tool.Cookie.get("LoginID", 0) &&! tool.Cookie.get("HC360.SSOUser", 0)) { //未登录
-                    $('.fix-right-box').prepend(fixRightTwo.join(''));
-                }
-                /**
-                 * 返回顶部
-                 */
-                $('.fix-right').eq(1).append(returnTop.join(''));
-                var selfTop = $("#gotoTop").offset().top;
-                that.goUp(selfTop);//设置回顶部按钮是否显示
-                that.initQQToll();
-                that.handle();
+            $('.fix-right').append(consult.join('')).append(message.join('')).append(browseHistory.join('')).append(subscribeBus.join('')).append(returnTop.join(''));
 
-                //绑定状态下5秒钟之后提示卖家微信在线
-                if(isNewQQ){
-                    setTimeout(function () {
-                        $("[node-id='weix']").append('<div class="wxAlert">卖家微信在线</div>');
-                    },5000);
-                }
-            }
-
+            //初始化QQ
+            that.initQQToll();
+            
+            //绑定事件
+            that.handle();
         },
+
+
         //绑定事件
         handle:function(){
             var that=this,
                 timer=null;
+
+            /**
+             * 每个选项悬浮事件
+             */
+            $('.every .every-a').hover(function(){
+                $(this).find('span').show();
+            },function(){
+                $(this).find('span').hide();
+            })
 
             /**
              * 初始化在线咨询弹框
@@ -293,603 +290,62 @@
                 var selfTop = $(this).scrollTop();
                 that.goUp(selfTop);
             });
-            //在线咨询发送按钮
-            $("body").on('click','button[ele-type="subtn"]',function(){
 
-                var $this = $(this);
-                $this.addClass('cGrayBtn').attr("disabled", "disabled");
-                //that.submitFrom();
-                that.submitOnlineForm($this.attr('data-sceneid') || '');
-                return false;
-            });
             //即时留言信息提交按钮事件绑定
             $("body").on('click','#proMessSubmitBtn',function(){
                 that.submitProMessBtn();
                 return false;
             })
-        },
 
-        /**
-         * 在线咨询提交
-         */
-        submitOnlineForm:function (sceneid) {
-
-            var _this = this,flag=true;//联系人姓名;
-
-            var companyCount='';//公司名称
-            var contacter = '';
-            var phoneZone = $("#mobilephoneCon");
-            var validCodeZone = $('#validcodeCon');
-
-            $.each(elements, function (key, val) {
-                $(val.selector).focus().blur();
-            });
-
-            if($.trim($(elements.plantitle.selector).val()) == ""){
-                alert('请输入聊天内容！');
-                flag = false;
-            }
-
-            /**
-             * 手机号区域可见时，验证手机号有没有错误提示信息
-             */
-            if(phoneZone.is(':visible')){
-                if(phoneZone.find('.bInputBox em.warning').is(':visible')){
-                    flag = false;
-                }
-            }
-
-            /**
-             * 验证码区域可见时，验证验证码有没有错误提示信息
-             */
-            if(validCodeZone.is(':visible')){
-                if(validCodeZone.find('.clCode em.warning').is(':visible')){
-                    flag = false;
-                }
-
-            }
-
-            _this.forVal={
-                plantitle:$(elements.plantitle.selector).val(),
-                contacter:contacter,
-                MP:$(elements.MP.selector).val(),
-                name:companyCount
-            };
-
-            if(flag){
-
-                if(validCodeZone.is(':visible')){//验证码区域可见才校验验证码，否则直接发送聊天请求
-                    //验证通过之后向后台发送请求校验验证码是否正确，验证码正确之后，再发送聊天请求
-                    $.ajax({
-                        type: "GET",
-                        url: "//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doCheckpicvercode/doCheckpicvercode?callback=?",
-                        dataType: "jsonp",
-                        data:{
-                            picCode:$.trim($(elements.validCode.selector).val())
-                        },
-                        timeout: 2000,
-                        async: false,
-                        success: function(res) {
-                            if(res.code == 0){
-                                sendMessage();
-                            }else{
-                                //错误信息提示
-                                validCodeZone.find('.clCode em.isError').show();
-                                //验证码图片更换
-                                validCodeZone.find('.clCodeImg img').attr('src','//detail.b2b.hc360.com/detail/turbine/action/ajax.Sendcodebysupplyselfv2/eventsubmit_doGenerateimagecode/doGenerateimagecode?date='+new Date().getTime());
-                                //发送按钮置为可用状态
-                                $('button[ele-type="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
-                            }
-                        },
-                        error: function() {
-                            alert("网络异常，请重试");
-                        }
-                    });
-                }else{
-                    sendMessage();
-                }
-
-            }else{//有警告信息时，再将发送按钮置为可用状态
-
-                $('button[ele-type="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
-            }
-
-            function sendMessage() {
-                $.ajax({
-                    url:"//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doSendmsg/doSendmsg",
-                    type:"GET",
-                    timeout:5000,
-                    data:{
-                        isLogon : tool.Cookie.get("LoginID", 1) ? "1":"0",
-                        buyid: tool.Cookie.get("LoginID", 1) ? tool.Cookie.get("newhcproviderid", 1) : tool.Cookie.get("HC_anonyBuyerId", 1) || '',
-                        spid:_this.options.providerId,
-                        MP:encodeURIComponent($(elements.MP.selector).val()),
-                        plantitle:encodeURIComponent($(elements.plantitle.selector).val()),
-                        contacter:encodeURIComponent(contacter),
-                        introduce:encodeURIComponent($(elements.plantitle.selector).val()),
-                        qrcodeid:sceneid
-                    },
-                    dataType:"jsonp",
-                    jsonpCallback:'callback',
-                    success:function(res){
-                        if(res){
-
-                            if(res.code == 0){
-                                alert("发送失败，稍后重试！")
-                            }else if(res.code == 1){
-
-                                if(res.cntADay > 0){
-                                    //首次之后手机号不用再输
-                                    $('#mobilephoneCon').hide();
-
-                                    //发送成功之后内容框字数还原
-                                    $(elements.plantitle.selector).siblings('p.textareaLen').text('还可以输入150字');
-
-                                    if((res.cntADay)%5 == 0){//默认验证码不显示，模5需要输入验证码
-                                        $('#validcodeCon').show().find('.clCodeImg').trigger('click');
-                                        $('#validcodeCon').find('[ele-type="validCodeInput"]').val("");
-                                        $('#validcodeCon').find('em.warning').hide();
-                                    }else{
-                                        $('#validcodeCon').hide();
-                                    }
-
-                                    //消息发送成功后，将消息渲染到面板上
-                                    _this.MessageContent(res.msgId);
-
-                                    //滚动条滚到最底部
-                                    $("#cInnerBox").scrollTop( $('#cInnerBox')[0].scrollHeight);
-
-                                    //将发送按钮置为可用状态
-                                    $('button[ele-type="subtn"]').removeClass('cGrayBtn').removeAttr("disabled");
-                                }
-
-                            }else if(res.code == 3){
-                                alert("您不能给自己发留言！");
-                            }else{
-                                alert("留言次数超限，稍后重试！");
-                            }
-
-                        }
-                    },
-                    error:function(res){
-                        alert('网络异常，请稍后重试！');
-                    }
-                })
-            }
-
-        },
-
-        //表单提交事件
-        submitFrom:function(){
-            var flag = true,that=this;
-            $.each(elements, function (key, val) {
-                $(val.selector).focus().blur();
-            });
-            $.each(elements,function(key,val){
-                //如果em红色警告有显示，则退出不进行
-                if($(val.selector).closest('div').find('em.warning').is(":visible")){
-                    flag=false;
-                }
-                //如果发现红色违禁词显示，则退出不进行
-                if($(val.selector).closest('div').find('.ProhibitedTxt').is(":visible")){
-                    flag=false;
-                }
-            });
-            //如果输入内容为默认话术，则赋值为空
-            if($(elements.plantitle.selector).val() == elements.plantitle.defaultValue){
-                $(elements.plantitle.selector).val('');
-            }
-            if(flag){
-                //var companyCount=$(elements.company.selector).val()!=elements.company.defaultValue?$(elements.company.selector).val():'';
-                var companyCount='';//公司名称
-                var contacter = '';//联系人姓名
-                that.formDatas={
-                    plantitle:encodeURIComponent($(elements.plantitle.selector).val()),
-                    //contacter:encodeURIComponent($(elements.contacter.selector).val()),
-                    contacter:encodeURIComponent(contacter),
-                    MP:encodeURIComponent($(elements.MP.selector).val()),
-                    name:encodeURIComponent(companyCount),
-                    pid:that.options.providerId,
-                    comeUrl:window.location.href,
-                    buyerSourceId:"my_online_message"
-                };
-                that.forVal={
-                    plantitle:$(elements.plantitle.selector).val(),
-                    contacter:contacter,
-                    MP:$(elements.MP.selector).val(),
-                    name:companyCount
-                };
-                if($(elements.plantitle.selector).val().search(/\S*(?:\(\u5fae\)\s{0,2}\(\u4fe1\)|（\u5fae）\s{0,2}（\u4fe1）|\u5fae\u4fe1)\S*/)!=-1){
-                    $('.ProhibitedTxt').show();
-                }else{
-
-                    //获取微信场景id和微信二维码图片链接
-                    $.ajax({
-                        url:"//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dowechatpicid/doWechatpicid",
-                        type:"GET",
-                        dataType:"jsonp",
-                        jsonpCallback:'callback',
-                        success:function(res){
-                            if(res){
-                                sendAjaxFun(res.senceid,res.weChatPic);
-                            }else{
-                                sendAjaxFun();
-                            }
-                        },
-                        error:function(res){
-                            sendAjaxFun();
-                        }
-                    });
-
-                }
-            }
-
-            function sendAjaxFun(isGetSenceid,url){
-                $.ajax({
-                    url:"//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doCheckword/doCheckword",
-                    type:"GET",
-                    data:{plantitle:encodeURIComponent($(elements.plantitle.selector).val())},
-                    dataType:"jsonp",
-                    success:function(response){
-                        if(response.code==0){
-                            $('p.ProhibitedTxt').show();
-                        }else{
-                            $.extend(that.formDatas,{qrcodeid:isGetSenceid || ''});
-                            $.ajax({
-                                url:'//my.b2b.hc360.com/my/turbine/action/consulting.OnlineconsultingAction/eventsubmit_doperform/doPerform?',
-                                data:that.formDatas,
-                                dataType:"jsonp",
-                                jsonpCallback:'callback',
-                                success:function(data){
-                                    if(data.code==1){
-                                        $('button[ele-type="subtn"]').addClass('cGrayBtn');
-                                        $('button[ele-type="subtn"]').attr("disabled", "disabled");
-                                        that.MessageContent();
-                                        //将可输入字数回复成300
-                                        var ht = '还可以输入150字';
-                                        $(elements.plantitle.selector).closest('div').find('p.textareaLen').html(ht);
-                                        //改变二维码图片
-                                        if(isGetSenceid){
-                                            $(".ConsulRig dt img").attr("src",url).css({width:'185px',height:'187px'});
-                                            $(".ConsulRig dd").html('您好，微信扫码二维码，微信可随时接收消息回复');
-                                        }
-                                    }else{
-                                        alert("操作频繁，请稍后再试");
-                                        $('[ele-type="closeWindow"]').trigger("click");
-                                        $('html').css('overflow-y','auto');//取消禁止页面滚动
-                                        $('button[ele-type="subtn"]').removeClass('cGrayBtn');
-                                        $('button[ele-type="subtn"]').removeAttr("disabled");
-                                    }
-                                },
-                                error:function(){
-                                    alert('网络异常，请稍后重试！');
-                                }
-                            });
-                        }
-                    }
-                });
-            }
-        },
-        //提交成功后拼接到留言窗口
-        MessageContent: function (msgId) {
-            var that=this;
-            var MessageStr='';
-            //   replyStr='';
-            MessageStr += '<div class="clBoxRig inputCount" data-id="'+ msgId +'">'+
-                '<em class="clImg"></em>'+
-                '<div class="clImgRig">'+
-                '<p class="name clTime">我 <span>'+that.getDateTime(true)+'</span></p>'+
-                '<div class="ConsulList">'+
-                '<em></em>'+
-                '<p>'+that.forVal.plantitle+'</p>'+
-                '</div>'+
-                '</div>'+
-                '</div>';
-
-            $('#cInnerBox').append(MessageStr);
-            //清空输入框
-            $('textarea[ele-type="area"]').val('');
-            $.each(elements,function(key,val){
-                $(val.selector).css('color','gray');
-            });
-            /*setTimeout(function(){
-             //dialoge();
-             var innerHeight=$('.inputCount:last').height()+108;
-             var sTop=$('#cInnerBox').scrollTop()+innerHeight;
-             $('#cInnerBox').scrollTop(sTop);
-             $('button[ele-type="subtn"]').removeClass('cGrayBtn');
-             $('button[ele-type="subtn"]').removeAttr("disabled");
-             },1000);*/
-        },
-
-        /**
-         * 时间格式化为 yyyy-mm-dd hh:mm:ss
-         * @param isHasDate 是否加上日期
-         * @returns {string}
-         */
-        getDateTime:function(isHasDate){
-            var dataStr = new Date(),
-                year = dataStr.getFullYear(),
-                month = dataStr.getMonth() + 1,
-                day = dataStr.getDate(),
-                hours = dataStr.getHours(),
-                minutes = dataStr.getMinutes(),
-                seconds = dataStr.getSeconds();
-            function Appendzero(data) {
-                if (Number(data) < 10) {
-                    data = '0' + data;
-                }
-                return data;
-
-            }
-            if(isHasDate){
-                return year+'-'+Appendzero(month)+'-'+Appendzero(day)+' '+Appendzero(hours)+':'+Appendzero(minutes)+':'+Appendzero(seconds);
-            }else{
-                return Appendzero(hours)+':'+Appendzero(minutes)+':'+Appendzero(seconds);
-            }
-
-        },
-
-        /**
-         * 请求获取在线咨询的聊天内容接口
-         */
-        getMsgContent:function () {
-            var _this = this;
-            return $.ajax({
-                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGethismsg/doGethismsg',
-                type:'GET',
-                timeout:3000,
-                data:{
-                    buyid:tool.Cookie.get("LoginID", 1) ? tool.Cookie.get("newhcproviderid", 1): tool.Cookie.get("HC_anonyBuyerId", 1) || '',//买家信息，该值从cookie里取，未取到说明是新用户
-                    isLogon: tool.Cookie.get("LoginID", 1) ? "1":"0",
-                    spid:_this.options.providerId
-                },
-                dataType:"jsonp",
-                jsonpCallback:'callback'
-            });
-        },
-
-        /**
-         * 计算两个时间之差
-         * @param startDate
-         * @param endDate
-         */
-        getDateDifference:function (startDate,endDate) {
-            if(startDate>endDate) {
-                console.log("开始时间不能大于结束时间！");
-                return false;
-            }
-
-            //截取字符串，得到日期部分"2009-12-02",用split把字符串分隔成数组
-            var begin1=startDate.substr(0,10).split("-");
-            var end1=endDate.substr(0,10).split("-");
-
-            //将拆分的数组重新组合，并实例成化新的日期对象
-            var date1=new Date(begin1[1] + - + begin1[2] + - + begin1[0]);
-            var date2=new Date(end1[1] + - + end1[2] + - + end1[0]);
-
-            //得到两个日期之间的差值m，以分钟为单位
-            var m=parseInt(Math.abs(date2-date1)/1000/60);
-
-            //小时数和分钟数相加得到总的分钟数
-            var min1=parseInt(startDate.substr(11,2))*60+parseInt(startDate.substr(14,2));
-            var min2=parseInt(endDate.substr(11,2))*60+parseInt(endDate.substr(14,2));
-
-            //两个分钟数相减得到时间部分的差值，以分钟为单位
-            var n=min2-min1;
-
-            //将日期和时间两个部分计算出来的差值相加，即得到两个时间相减后的分钟数
-            var minutes=m+n;
-            return minutes;
-        },
-
-        getCodeUrlBySceneid:function (sceneid) {
-
-            return $.ajax({
-                url:'//detail.b2b.hc360.com/detail/turbine/action/ajax.MobileBcidAjaxAction/eventsubmit_dochatingpicid/doChatingpicid',
-                type:'GET',
-                data:{
-                    senceid:sceneid
-                },
-                dataType:"jsonp",
-                jsonpCallback:'callback'
+            //浏览记录
+            that.initHistory();
+            var rightWrap = $('#closeHistory').closest('.fixedRifBox');
+            $('#historyRecord').toggle(function(){
+                rightWrap.addClass('rigW305');
+            },function(){
+                rightWrap.removeClass('rigW305');
             })
+            $('#closeHistory').on('click',function(){
+                rightWrap.removeClass('rigW305');
+            })
+
         },
 
-        /**
-         *
-         * @param callback
-         */
-        getHistoryMsg:function (callback) {
-            var _this = this;
-            $.when(_this.getMsgContent()).done(function (res) {
+        //初始化浏览记录
+        initHistory:function(){
 
-                if(res && res.length > 0){
-                    var msgList = res,
-                        sceneid = msgList[0].qrcodeid;//该场景id如果有，表示以前有聊天记录，不需新生成场景id
-
-                    //将旧的场景id替换新生成的场景id
-                    $('button[ele-type="subtn"]').attr('data-sceneid',sceneid);
-
-                    for(var i=0;i<msgList.length;i++){
-                        if(msgList[i].infokind == "0"){//买家信息在右边
-                            var buyerMsg = [
-                                '<div class="clBoxRig" data-id="'+ msgList[i].id +'">',
-                                '<em class="clImg"></em>',
-                                '<div class="clImgRig">',
-                                '<p class="clTime">我  <span>'+ msgList[i].createtime+'</span></p>',
-                                '<div class="ConsulList">',
+            var historyStr= window.localStorage ? window.localStorage.productHistory : '';
+            var hasnoHistory = ['<div class="recordListNo">',
                                 '<em></em>',
-                                '<p>'+ msgList[i].purchaseinfo || '' +'</p>',
-                                '</div>',
-                                '</div>',
+                                '<p>暂无浏览足迹</p>',
                                 '</div>'
                             ];
-                            $("#cInnerBox").append(buyerMsg.join(''));
-
-                        }else if(msgList[i].infokind == "1"){//卖家信息在左边
-
-                            var sellerMsg = [
-                                '<div class="clBoxLeft" data-id="'+ msgList[i].id +'">',
-                                '<em class="clImg"></em>',
-                                '<div class="clImgRig">',
-                                '<p class="clTime">店经理  <span>'+ msgList[i].createtime+'</span></p>',
-                                '<div class="ConsulList">',
-                                '<em></em>',
-                                '<p>'+ msgList[i].purchaseinfo || '' +'</p>',
-                                '</div>',
-                                '</div>',
-                                '</div>'
-                            ];
-                            $("#cInnerBox").append(sellerMsg.join(''));
+            var histroyHtml = '<ul>';
+            if (historyStr && historyStr !== "") {
+                var arr = historyStr.split("@");
+                var list = arr[1].split(";&;");
+                if (list.length > 0 && list != "") {
+                    for (var i = 0; i < list.length; i++) {
+                        var obj = list[i].split("#&#");
+                        if (i < 16 && obj.length > 1) {
+                            histroyHtml += '<li>';
+                            histroyHtml += '<div class="recomImg">';
+                            histroyHtml += '<a href="//b2b.hc360.com/supplyself/' + obj[0] + '.html" onmousedown="return hcclick(\'?hcdetail_supply=supplyself_check_history\')" title="' + obj[1] + '" target="_blank"><img src="' + obj[2] + '" alt="' + obj[1] + '" onload="resizeImg(this,100,100)" onerror="imgonerror(this)"></a>';
+                            histroyHtml += '</div>';
+                            histroyHtml += '<p>'+ obj[3] +'</p>'
+                            histroyHtml += '</li>';
                         }
                     }
 
-                    if(res.length == 15){//只有满足一页的临界值时，显示查看更多按钮,小于一页临界值时默认没有更多数据了
+                    histroyHtml += '</ul>'
 
-                        $("#cInnerBox").prepend('<p class="moreList"><a href="javascript:;">点击查看更多</a></p>');
-                    }
-
-                    //用旧的场景id获取旧的二维码
-                    var codeUrlDom = $('span[ele-type="closeWindow"]');
-                    $.when(_this.getCodeUrlBySceneid(sceneid)).done(function (res) {
-                        codeUrlDom.attr('data-picurl',res.weChatPic);
-                    }).fail(function () {
-                        //获取失败时，还用默认的二维码
-                        codeUrlDom.attr('data-picurl','//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/cRigImg.png');
-                    })
-                }
-
-                /**
-                 * 使聊天记录窗口滚动条滚到最底部
-                 */
-                $('#cInnerBox').scrollTop( $('#cInnerBox')[0].scrollHeight );
-
-                if(callback){
-                    callback();
-                }
-
-            }).fail(function () {
-                console.log('Failed to obtain data,Please try again later!');
-            });
-        },
-
-        /**
-         * 每隔10s中请求获取在线咨询的聊天内容
-         */
-        loopGetMsgPer10s:function () {
-
-            var _this = this;
-            $.ajax({
-                url:'//my.b2b.hc360.com/my/turbine/action/outerinf.OnlinePcIMAction/eventsubmit_doGetpollintervalmsg/doGetpollintervalmsg',
-                type:'GET',
-                timeout:5000,
-                data:{
-                    buyid:tool.Cookie.get("LoginID", 1) ? tool.Cookie.get("newhcproviderid", 1) : tool.Cookie.get("HC_anonyBuyerId", 1) || '',//买家信息，该值从cookie里取，未取到说明是新用户
-                    isLogon: tool.Cookie.get("LoginID", 1) ? "1":"0",
-                    spid:_this.options.providerId,
-                    maxBpID:$('#cInnerBox').children(".clBoxRig:last").attr('data-id') || '',
-                    maxSpID:$('#cInnerBox').children(".clBoxLeft[data-id]:last").attr('data-id') || ''
-                    // msgID:$('#cInnerBox').children(".clBoxLeft[data-id]:last").attr('data-id')//最新的一条消息id
-                },
-                dataType:"jsonp",
-                jsonpCallback:'callback',
-                success:function (res) {
-
-                    //为了防止页面恰好轮询，此时关闭了聊天窗口，再进行以下逻辑js报错
-                    if($("#cInnerBox").length == 0){
-                        return false;
-                    }
-
-                    if(res && res.length > 0){
-                        var msgList = res;
-                        for(var i=0;i<msgList.length;i++){
-                            if(msgList[i].infokind == "0"){//买家信息在右边
-
-                                var buyerMsg = [
-                                    '<div class="clBoxRig" data-id="'+ msgList[i].id +'">',
-                                    '<em class="clImg"></em>',
-                                    '<div class="clImgRig">',
-                                    '<p class="clTime">我  <span>'+ msgList[i].createtime+'</span></p>',
-                                    '<div class="ConsulList">',
-                                    '<em></em>',
-                                    '<p>'+ msgList[i].purchaseinfo || '' +'</p>',
-                                    '</div>',
-                                    '</div>',
-                                    '</div>'
-                                ];
-                                $("#cInnerBox").append(buyerMsg.join(''));
-
-                            }else if(msgList[i].infokind == "1"){//卖家信息在左边
-
-                                var sellerMsg = [
-                                    '<div class="clBoxLeft" data-id="'+ msgList[i].id +'">',
-                                    '<em class="clImg"></em>',
-                                    '<div class="clImgRig">',
-                                    '<p class="clTime">店经理  <span>'+ msgList[i].createtime+'</span></p>',
-                                    '<div class="ConsulList">',
-                                    '<em></em>',
-                                    '<p>'+ msgList[i].purchaseinfo || '' +'</p>',
-                                    '</div>',
-                                    '</div>',
-                                    '</div>'
-                                ];
-                                $("#cInnerBox").append(sellerMsg.join(''));
-                            }
-
-                            if(i == msgList.length - 1){//有轮询数据返回时，轮询的最后一条数据时间为基准点
-                                _this.lastMsgTime = msgList[i].createtime;
-                            }
-
-                        }
-
-                        /**
-                         * 使聊天记录窗口滚动条滚到最底部
-                         */
-                        $('#cInnerBox').scrollTop( $('#cInnerBox')[0].scrollHeight );
-
-                    }else{//无轮询数据返回时，则默认最新的数据时间为基准点
-
-                        _this.lastMsgTime = $('#cInnerBox').children("[data-id]:last").find('p.clTime span').text();
-
-                    }
-
-                    /**
-                     * 比较打开窗口时间和聊天最新记录时间最大的作为弹窗关闭基准点时间
-                     */
-                    var startDialogTime = $('.Consultation:visible').attr('data-starttime');//聊天窗口打开时间
-                    var timeLevel = compareToGetMaxDate(startDialogTime,_this.lastMsgTime);//获取基准点时间
-                    var currentDate = _this.getDateTime(true);//当前时间
-
-                    //获取当前时间和基准点时间之差
-                    var timeDiff = _this.getDateDifference(timeLevel,currentDate);
-
-                    //如果时间差超过30分钟，则关闭该聊天窗口给予友情提示
-                    if(timeDiff >= 30){
-
-                        $('[ele-type="closeWindow"]').trigger("click");
-
-                    }
-
-
-                },
-                error:function () {
-                    alert('网络异常，请稍后重试！');
-                }
-            });
-
-
-            function compareToGetMaxDate(t1,t2){
-                if(!t2){
-                    return t1;
-                }
-                var date1 = Date.parse(new Date(t1.replace(/-/g,'/')));
-                var date2 = Date.parse(new Date(t2.replace(/-/g,'/')));
-                if(date1 - date2 > 0){
-                    return t1;
+                    $('#recordWrap').append(histroyHtml);
+                    
                 }else{
-                    return t2;
+                    $('#recordWrap').replaceWith(hasnoHistory.join(''))
                 }
+            } else{
+                $('#recordWrap').replaceWith(hasnoHistory.join(''))
             }
         },
 
@@ -900,10 +356,7 @@
             var data = this.getData(ajaxUrl.listData,param);
             var qq=[
                 '<div class="every qq" node-name="qqList">',
-                '<a href="#" class="every-a">',
-                '<img class="icon" src="//style.org.hc360.com/images/detail/mysite/siteconfig/fix-r/qqIco.gif" height="37" width="43" alt="">',
-                '<span>QQ</span>',
-                '</a>',
+                '<a href="javascript:void(0)" class="every-a">',
                 '<div class="qq-tk">',
                 '</div>',
                 '</div>'
@@ -921,9 +374,10 @@
                 }
                 qqArr+='</ul>';
                 $('.qq-tk').append(qqArr);
-                if(self.options.pageType!=="supplydetailself"){//终极页
-                    self.initQQFFMod();
-                }
+                self.initQQFFMod();
+                // if(self.options.pageType!=="supplydetailself"){//终极页
+                //     self.initQQFFMod();
+                // }
             })
         },
         //立即留言弹框方法
