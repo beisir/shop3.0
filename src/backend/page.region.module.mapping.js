@@ -35,6 +35,9 @@ function region_module_mapping(options) {
       },
       'syt': {
         name: '商盈通'
+      },
+      'ddz':{
+        name:'定制用户'
       }
     },
 
@@ -86,7 +89,7 @@ function region_module_mapping(options) {
       icon: 'gsAddIco3',
       relate: 1,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 1
     }, {
       name: '联系我们',
@@ -169,7 +172,7 @@ function region_module_mapping(options) {
       icon: 'gsAdd2Ico1',
       relate: 1,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 1
     }, {
       name: '买卖通档案',
@@ -179,7 +182,7 @@ function region_module_mapping(options) {
       icon: 'gsAdd2Ico2',
       relate: 1,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 1
     }, {
       name: '自定义内容',
@@ -189,7 +192,7 @@ function region_module_mapping(options) {
       icon: 'gsAdd2Ico4',
       relate: 1,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 1,
       simulatedlogin: true
     }, {
@@ -200,7 +203,7 @@ function region_module_mapping(options) {
       icon: 'cpAdd2Ico1',
       relate: 2,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 5,
       maximum_scope: 'page',
 
@@ -229,7 +232,7 @@ function region_module_mapping(options) {
       icon: 'cpAdd2Ico2',
       relate: 2,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 1
     }, {
       name: '通栏产品',
@@ -249,7 +252,7 @@ function region_module_mapping(options) {
       icon: 'ggAdd2Ico1',
       relate: 3,
       level: 2,
-      userlevel: ['mmt', 'syt'],
+      userlevel: ['mmt', 'syt','ddz'],
       maximum: 1,
       maximum_scope: 'page'
     }, {
@@ -260,7 +263,7 @@ function region_module_mapping(options) {
       icon: 'ggAddIco1',
       relate: 3,
       level: 2,
-      userlevel: ['syt'],
+      userlevel: ['syt','ddz'],
       maximum: 3
     }, {
       name: '自定义内容',
@@ -270,7 +273,7 @@ function region_module_mapping(options) {
       icon: 'gsAdd2Ico4',
       relate: 1,
       level: 2,
-      userlevel: ['syt'],
+      userlevel: ['syt','ddz'],
       maximum: 3,
       simulatedlogin: true
     },{
@@ -281,7 +284,7 @@ function region_module_mapping(options) {
       icon: 'gsAdd2Ico5',
       relate: 1,
       level: 2,
-      userlevel: ['syt'],
+      userlevel: ['syt','ddz'],
       maximum: 1,
       simulatedlogin: true
     }],
@@ -420,6 +423,7 @@ region_module_mapping.prototype.init = function() {
  * @return {Object}              [模块数据对象]
  */
 region_module_mapping.prototype.analyticPageModuleData = function(pageEntity, regionEntity) {
+  
   var _this = this,
 
     /**
@@ -514,10 +518,13 @@ region_module_mapping.prototype.analyticPageModuleData = function(pageEntity, re
        */
       if (_moduleEntity.userlevel) {
         var _syt = !!((_moduleEntity.userlevel.indexOf('syt') != -1) && _regionEntity.pageEntity.issyt),
+          //是否定制用户
+          _ddz = !!((_moduleEntity.userlevel.indexOf('ddz') != -1) && _regionEntity.pageEntity.isddz),
           _mmt = !!((_moduleEntity.userlevel.indexOf('mmt') != -1) && _regionEntity.pageEntity.ismmt);
-        _moduleEntity.limit_authority = _syt || _mmt;
+        _moduleEntity.limit_authority = _syt || _ddz ||  _mmt;
         if (!_moduleEntity.limit_authority) {
-          (!_syt) ? _moduleEntity.message.push('保存失败，请升级为商营通会员后使用！'): _moduleEntity.message.push('保存失败，请升级成为收费会员后使用！');
+          (!_syt)&&(!_ddz) ? _moduleEntity.message.push('保存失败，该服务已到期，如需使用请办理代运营定制服务！'): _moduleEntity.message.push('保存失败，请升级成为收费会员后使用！');
+       
         }
       }
 

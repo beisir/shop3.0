@@ -116,7 +116,7 @@ page_module_selector.prototype.init = function() {
 		_cache = _this.regionEntity.pageEntity.cache['module-setting-html'],
 		_htmlDeferrer = _this.getHTMLDeferred(),
 		_mustacheDeferrer = _this.loadMustacheDeferred();
-
+		
 	/**
 	 * 初始化模块数据
 	 */

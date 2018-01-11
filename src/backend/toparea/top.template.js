@@ -60,7 +60,7 @@ var tool = require('../common/module.setting.util'),
             fieldValue: '收费用户'
         }, {
             fieldType: 3,
-            fieldValue: '商营通用户'
+            fieldValue: '定制用户'
         }];
 
         /***
@@ -286,12 +286,16 @@ topTemplate.prototype = {
     publicTemEvent: function () {
         var that = this,
             _li = that.allTemplateWrap.find('.TemplateImg ul li');
+            //是否是商盈通
+            that.isCommercialVal = that.pageEntity.issyt;
+            // 是否是定制用户
+            that.isCustomInfo=that.pageEntity.isddz;
         /***
          * 模板缩率图点击事件
          */
         _li.click(function () {
             var templateEntity = JSON.parse($(this).data('templateEntity')),
-                isSyt = (that.isCommercialVal == undefined) ? that.pageEntity.issyt : that.isCommercialVal,
+                // isSyt = (that.isCommercialVal == undefined) ? that.pageEntity.issyt : that.isCommercialVal,
                 dialogHtml = [
                     '<div class="mbAlertBtn"><button type="button" node-name="application">应用</button><button type="button" node-name="close" class="cancelBtn">关闭</button></div>',
                     '<div class="mbAlertBoxCon">',
@@ -303,14 +307,7 @@ topTemplate.prototype = {
              */
             if (that.ismmt == false && templateEntity.usertype == 1) {
                 tool.createDialog('此模板是收费用户模板需升级为买卖通收费会员使用。');
-            }/* else if(!that.isCommercialVal&&templateEntity.usertype == 3){
-             /!** 不是商营通用户，点击商营通模板**!/
-                that.isCommercialVal = that.pageEntity.issyt;
-                if (that.isCommercialVal != true) {
-                    tool.createDialog('此模板是商营通用户模板需升级为商营通用户会员使用。');
-
-                }
-            }*/else {
+            }else {
                 var imageDiaLog = dialog({ //缩率图弹框
                         content: dialogHtml.join("")
                     }).showModal(),
@@ -327,17 +324,11 @@ topTemplate.prototype = {
                 /***
                  * 应用模板
                  */
-                application.click(function () {
-
-                  if(!that.isCommercialVal&&templateEntity.usertype == 3){
-                    /** 不是商营通用户，点击商营通模板**/
-                    that.isCommercialVal = that.pageEntity.issyt;
-                    if (that.isCommercialVal != true) {
-                      that.dialog('此模板是商营通用户模板需升级为商营通用户会员使用。','//b2b.hc360.com/bw/syt/index.html');
-
-                    }
+                application.click(function () {      
+                  // 如果不是商盈通用户并且不是定制用户，点击应用定制模板弹出提示框   
+                  if((!that.isCommercialVal&&!that.isCustomInfo)&&templateEntity.usertype == 3){
+                    that.dialog('此模板需购买代运营定制版服务方可使用。','//b2b.hc360.com/bw/syt/index.html');
                   }else{
-
                     that.dialog('您确定使用新的网站模板吗？',
                       function () {
                         that.templateOperaAjax(_data, function () {
