@@ -1,7 +1,4 @@
 /**
- * Created by hc360 on 2017/9/25.
- */
-/**
  * Created by xyh on 2017/9/13.
  *
  */
@@ -979,7 +976,9 @@
       twoWrap.on('click',function () {
         if(selectCon.is(':visible')){
           selectCon.hide();
-          selectCon.closest('[node-name="unitBox"]').siblings('em.warning.w100').show();
+          if(buyUnit.val() == "" || buyUnit.val().length ==0){
+            selectCon.closest('[node-name="unitBox"]').siblings('em.warning.w100').show();
+          }
         }
       });
 

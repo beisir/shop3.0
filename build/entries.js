@@ -16,6 +16,10 @@ module.exports = {
     html: false,
     name: '顶部'
   },
+  'common/jquery-issureInquery.alert':{
+    html: false,
+    name: '顶部'
+  },
   'common/hc.rightToolbar.charge':{
 	html: false,
     name: '顶部'
