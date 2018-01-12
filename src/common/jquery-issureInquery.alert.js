@@ -402,7 +402,7 @@
             data.CompanyName = encodeURIComponent(infoname);
             data.comeUrl = window.location.href;
             data.isbusin = 2;//3y以前msgDownloadAjax（2）方法中参数值为2
-            data.type = 301;
+            data.type = 301;//15是给公司推送卖家名片  非15是慧聪留言
             data.telPhone = $.trim(detailMP.val());
             data.buyerSourceId = "detail_contact_inquiry_3y";
             data.supcatName = encodeURIComponent(window.lastClass);
@@ -543,7 +543,7 @@
         type: "GET",
         dataType: "jsonp",
         data:{
-            imid:'test-cg'//测试环境“test-cg”,正式环境“hc360-hfb”
+            imid:'hc360-hfb'//测试环境“test-cg”,正式环境“hc360-hfb”
         },
         jsonpCallback: 'callback'
         });
