@@ -71,6 +71,7 @@ HC.W.load('searchModule', function() {
     $('#searchMod').length > 0 && $('#searchMod').searchModule({
         className: 'defaultSearch2',
         searchOur: 1,
+        isShopIndex:window.ishomepage || false,
         shopOurUrl: window.shopSearchUrl || '',
         userlogs: {
             input: 'onmousedown="return hcclick(\'?hcdetail_enterpriselog=topbar_searchInput\')"', //input
