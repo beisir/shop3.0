@@ -398,7 +398,7 @@
             inquiryParamVO.businTitle = inquiryParamVO.businTitle.length < 1 ? encodeURIComponent(jQuery("#inquiryTitle").val()) : inquiryParamVO.businTitle;
             var data = inquiryParamVO;
             var is3yFlag = typeof window.is3y == "undefined" ? window.scyps && window.scyps.sc.is3y : window.is3y;
-            data.contact = encodeURIComponent(companyContactor);
+            data.contact = '';
             data.CompanyName = encodeURIComponent(infoname);
             data.comeUrl = window.location.href;
             data.isbusin = 2;//3y以前msgDownloadAjax（2）方法中参数值为2
