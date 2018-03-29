@@ -16,7 +16,7 @@
   };
 
   var QDialog = function (options) {
-
+    console.log(options)
     this.defaultOptions = {
 
       /**是否是3y页面，默认不是*/
@@ -228,18 +228,22 @@
 
       var _this = this,
           downWrap = $('.dAlertBoxBg');
-
+        // 点击俩天icon事件
       _this.defaultOptions.element.on('click',function () {
-
-        var $this = $(this),sceneid='',codeUrl='//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg';
+            // 当前icon元素
+        var $this = $(this),
+            sceneid='', // 请求数据的sceneid
+            // 微信二维码
+            codeUrl='//style.org.hc360.com/images/detail/mysite/siteconfig/new_product/newImg/codeImg_3.jpg';
 
         //防止重复提交
+        // 在当前点击元素上判断是否有isopen自定义属性，看是否为第一次点击，如果有则终止程序运行
         if($this.attr('isopen')){
           return false;
         }
-
+        // 为当前点击元素添加自定属性 用来判断不重复点击弹出弹框
         $this.attr('isopen',true);
-
+        // jquery封装的 Promise 对象，用来获取  微信二维码图片，和seceneid
         $.when(_this.getChatWXDef()).done(function (res) {
 
           if(res && res.senceid){
