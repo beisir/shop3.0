@@ -11,7 +11,10 @@ module.exports = {
     html: false,
     name: '顶部'
   },
-
+  'common/jquery-inqueryOnline.dialog2':{
+    html: false,
+    name: '顶部'
+  },
   'common/jquery-detail-contactInfo.dialog':{
     html: false,
     name: '顶部'
